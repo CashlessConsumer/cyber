@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CERT-In Reports · Exposed .env Files — Security Investigations | CashlessConsumer</title>
+<meta name="description" content="CashlessConsumer's responsible disclosures to CERT-In of production .env files exposed at the web root of Indian banks — SMTP credentials and API key pairs in plain sight, plus the 9-entity expanded disclosure.">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="canonical" href="https://cyber.cashlessconsumer.in/pages/cert-in-dotenv.html">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../index.html"><span class="mark">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+    <nav class="links">
+      <a href="../index.html">Home</a>
+      <a href="bank-in-report.html">.bank.in Audit</a>
+      <a href="bob-breach.html">BoB Breach</a>
+      <a href="cert-in-dotenv.html">CERT-In · .env</a>
+      <a href="about.html">Method &amp; Ethics</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero env">
+    <div class="inner">
+      <div class="crumb"><a href="../index.html">cyber</a> / CERT-In · .env</div>
+      <span class="kicker">🔑 Responsible disclosure</span>
+      <h1>India's <span class="mono">.bank.in</span> domains kept serving <span class="mono">.env</span> files</h1>
+      <p class="lede">
+        A licensed payments bank and a co-operative bank were serving their <strong>production
+        <span class="mono">.env</span> files</strong> directly at <span class="mono">https://&lt;domain&gt;/.env</span> — no auth,
+        no WAF, no 403. SMTP passwords, Google API keys and full public/private key pairs, in plain text on the public web.
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+
+      <h2>How it was found</h2>
+      <p>
+        Prompted by a post asking, “it shouldn't be this easy,” we ran a systematic, read-only scan across the entire
+        <span class="mono">.bank.in</span> namespace on <strong>18 August 2026</strong>.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Metric</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Unique hostnames scanned</td><td>1,393</td></tr>
+            <tr><td>Passive probe</td><td>single <span class="mono">GET /&lt;path&gt;</span>, read-only, no follow-ups, no other paths</td></tr>
+            <tr><td>Paths probed</td><td><span class="mono">.env</span>, <span class="mono">phpinfo.php</span>, <span class="mono">composer.json</span>, <span class="mono">/actuator/env</span>, <span class="mono">/actuator/heapdump</span>, Laravel logs</td></tr>
+            <tr><td>HTTP 200 for <span class="mono">/.env</span></td><td>284 hosts — but all but three were HTML soft-404s / SPA fallbacks</td></tr>
+            <tr><td><b>Real dotenv files</b></td><td><b>2 banks / 3 hostnames</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>The confirmed <span class="mono">.env</span> exposures</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Host</th><th>Bank</th><th>What was exposed</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mono">nsdlpayments.bank.in/.env<br><span class="sub">www.nsdlpayments.bank.in/.env</span></td>
+              <td>NSDL Payments Bank Ltd <br><span class="sub">RBI-licensed payments bank, live since Oct 2018</span></td>
+              <td><span class="mono">APP_ENV=prod</span>, Google API key, a 128-char secret key, full public/private key pair</td>
+            </tr>
+            <tr>
+              <td class="mono">bnsb.bank.in/.env</td>
+              <td>Baran Nagrik Sahakari Bank, Baran <span class="sub">Rajasthan</span></td>
+              <td>SMTP mail credentials (<span class="mono">MAIL_USERNAME</span>, <span class="mono">MAIL_PASSWORD</span>, <span class="mono">MAIL_PORT</span>, <span class="mono">MAIL_FROM/TO</span>) + reCAPTCHA secret</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        These are real, parseable dotenv files served as <span class="mono">application/octet-stream</span> with HTTP 200 — not
+        cached pages. Only key names and lengths were logged; <strong>no credential values were stored anywhere</strong>.
+      </p>
+
+      <h2>The wider scan: 9 entities revealed</h2>
+      <p>
+        Beyond the two live <span class="mono">.env</span> leaks, the scan surfaced additional misconfigurations that were all folded
+        into a single expanded disclosure to CERT-In — nine entities in total:
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Class</th><th>Entities</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1–2</td><td><b>Production <span class="mono">.env</span></b></td><td>NSDL Payments Bank, Baran Nagrik Sahakari Bank</td></tr>
+            <tr><td>3</td><td><b>Spring Boot Actuator</b> (<span class="mono">/actuator/env</span>, <span class="mono">/actuator/heapdump</span>)</td><td>Yes Bank (credit-card application portal) — CRITICAL</td></tr>
+            <tr><td>4–5</td><td><b><span class="mono">phpinfo()</span></b></td><td>RBL Bank, Krishna District CCB</td></tr>
+            <tr><td>6–8</td><td><b>Laravel <span class="mono">storage/logs</span></b> (possible PII in stack traces)</td><td>Akhandanand Co-op Bank, Kakinada Town CCB, NAMCO Co-op Bank</td></tr>
+            <tr><td>9</td><td><b><span class="mono">composer.json</span></b> / framework metadata</td><td>Varachha, Panchganga, ABSL Co-op Banks</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Disclosure timeline</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">18 Aug 2026 · 15:44–15:45 IST</div>
+          <div class="tl-body"><b>Initial disclosure.</b> Sent to CERT-In, RBI, and directly to NSDL Payments Bank and Baran Nagrik Sahakari Bank IT/security contacts.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">19 Aug 2026</div>
+          <div class="tl-body"><b>CERT-In follow-up.</b> CERT-In requested exact URLs/paths and clarification. Our reply provided precise paths for every entity, re-verified live status, and retracted one erroneous earlier claim (Jana Small Finance Bank — no <span class="mono">.env</span> existed; domain does not resolve).</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Ongoing</div>
+          <div class="tl-body"><b>Remediation tracking.</b> We re-check hosts to confirm files are removed — not merely hidden behind a WAF.</div>
+        </div>
+      </div>
+
+      <h2>Remediation status</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Entity</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>NSDL Payments Bank</td><td><span class="pill on">WAF-blocked</span> (19 Aug) — verify origin removal recommended</td></tr>
+            <tr><td>Baran Nagrik Sahakari Bank</td><td><span class="pill on">Remediated</span> — <span class="mono">.env</span> now returns 403 (21 Aug)</td></tr>
+            <tr><td>Yes Bank / RBL / Krishna DCCB</td><td><span class="pill on">Blocked / timeout</span> — confirm upstream disable</td></tr>
+            <tr><td>Laravel-log + composer entities</td><td><span class="pill warn">partly open</span> — verification pending</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Report & raw material</h2>
+      <ul>
+        <li>Analysis narrative: <em>“India's <span class="mono">.bank.in</span> Domains Are Leaking Secrets”</em> (<span class="mono">Projects/bank-in-research/bank-in-misconfiguration-post.md</span>)</li>
+        <li>Env-exposure scan record: <span class="mono">bank_in_env_exposure.md</span>, full results <span class="mono">bank_in_env_scan.csv</span></li>
+        <li>CERT-In reply draft with exact paths and retraction: <span class="mono">CERT-In-reply-draft.md</span></li>
+      </ul>
+      <p class="muted">
+        Deliberately, this page and our public post do not reproduce credential values. We publish the class of exposure and the
+        disclosure record, so the sector fixes the pattern rather than the incident.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <span class="f-brand"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
+    <div class="f-links">
+      <a href="https://cashlessconsumer.in">cashlessconsumer.in</a>
+      <a href="https://x.com/logic" target="_blank" rel="noopener">@logic</a>
+      <a href="../pages/about.html">Method & Ethics</a>
+    </div>
+    <span class="f-note">All probes read-only · No PII published</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

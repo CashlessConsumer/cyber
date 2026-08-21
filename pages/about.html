@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Method & Ethics — Security Investigations | CashlessConsumer</title>
+<meta name="description" content="How CashlessConsumer runs its security investigations: read-only probes, metadata-level analysis, no PII, responsible disclosure to CERT-In and affected institutions.">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="canonical" href="https://cyber.cashlessconsumer.in/pages/about.html">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../index.html"><span class="mark">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+    <nav class="links">
+      <a href="../index.html">Home</a>
+      <a href="bank-in-report.html">.bank.in Audit</a>
+      <a href="bob-breach.html">BoB Breach</a>
+      <a href="cert-in-dotenv.html">CERT-In · .env</a>
+      <a href="about.html">Method &amp; Ethics</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero eth">
+    <div class="inner">
+      <div class="crumb"><a href="../index.html">cyber</a> / method &amp; ethics</div>
+      <span class="kicker">⚖️ How we work</span>
+      <h1>Consumer-first security research</h1>
+      <p class="lede">
+        Our goal is not notoriety — it is visible, accountable systems. Every scan and disclosure on this site follows a
+        strict, repeatable ethical framework so the findings are useful to regulators and defensible in public.
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <h2>Principles</h2>
+      <div class="grid2">
+        <div>
+          <h3>Read-only, always</h3>
+          <p>Only passive <span class="mono">GET</span> requests to discover exposed content. No authentication bypass, no
+          exploitation, no data exfiltration, no destructive tests.</p>
+        </div>
+        <div>
+          <h3>No PII, ever</h3>
+          <p>We never republish personal data from a leak or a scan. Only key names, lengths, paths and metadata are recorded.
+          Credential values are deliberately not stored.</p>
+        </div>
+        <div>
+          <h3>Evidence-led</h3>
+          <p>Every substantive claim is traceable to a probe result or crawl record. Aggregates are recomputable from published
+          CSVs and scripts.</p>
+        </div>
+        <div>
+          <h3>Responsible disclosure</h3>
+          <p>Findings go to CERT-In, RBI and affected institutions before any public post. We publish the class of exposure and the
+          disclosure record so the whole sector can fix the pattern.</p>
+        </div>
+      </div>
+
+      <h2>Disclosure workflow</h2>
+      <ol>
+        <li><b>Confirm</b> the exposure with repeated, independent checks (often across days).</li>
+        <li><b>Report</b> to CERT-In (<span class="mono">incident@cert-in.org.in</span>) and the affected entity's registered security/IT contacts.</li>
+        <li><b>Track remediation</b> — re-scan to confirm the file is removed, not merely hidden behind a WAF.</li>
+        <li><b>Correct ourselves</b> — if a claim doesn't hold up under scrutiny (as with the Jana Small Finance Bank .env claim), we retract and correct it publicly and in the disclosure thread.</li>
+        <li><b>Publish</b> the anonymised analysis only after disclosure to regulators.</li>
+      </ol>
+
+      <h2>Limitations we state</h2>
+      <p>
+        Scanner result counts are point-in-time; environments change. Metadata-level leak analysis cannot speak to the actual
+        contents of dumped files, only what file names and paths indicate. We say this plainly on every investigation page, and we
+        encourage independent verification.
+      </p>
+
+      <h2>A note on the .net stack</h2>
+      <p>
+        This site is a plain, dependency-free static build — HTML, CSS and a small JS file. No trackers, no analytics, no
+        third-party fonts. It is hosted on GitHub Pages and served from our own domain.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <span class="f-brand"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
+    <div class="f-links">
+      <a href="https://cashlessconsumer.in">cashlessconsumer.in</a>
+      <a href="https://x.com/logic" target="_blank" rel="noopener">@logic</a>
+      <a href="../pages/about.html">Method & Ethics</a>
+    </div>
+    <span class="f-note">All probes read-only · No PII published</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

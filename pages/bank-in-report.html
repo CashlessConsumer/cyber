@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>.bank.in Security Audit — Security Investigations | CashlessConsumer</title>
+<meta name="description" content="CashlessConsumer's audit of the .bank.in namespace and parallel Indian financial TLDs — DNS resolution, HTTPS reachability, status codes across 4,199 probed subdomains, plus the IDRBT registry investigation.">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="canonical" href="https://cyber.cashlessconsumer.in/pages/bank-in-report.html">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../index.html"><span class="mark">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+    <nav class="links">
+      <a href="../index.html">Home</a>
+      <a href="bank-in-report.html" class="active">.bank.in Audit</a>
+      <a href="bob-breach.html">BoB Breach</a>
+      <a href="cert-in-dotenv.html">CERT-In · .env</a>
+      <a href="about.html">Method &amp; Ethics</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero bankin">
+    <div class="inner">
+      <div class="crumb"><a href="../index.html">cyber</a> / .bank.in audit</div>
+      <span class="kicker">🏦 Financial namespace mapping</span>
+      <h1>The Indian financial internet, mapped as <span class="mono">attack&nbsp;surface</span></h1>
+      <p class="lede">
+        <span class="mono">.bank.in</span> is the de-facto namespace for Indian banking web presences — yet no registry publishes
+        the full subdomain list. This audit discovers and probes the whole namespace, exposing it as flat, open data for
+        security research, DNS monitoring, vendor attack-surface mapping and DPI transparency.
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+
+      <h2>The namespace, measured</h2>
+      <p>Live probes run daily via GitHub Actions. Current master snapshot (all six namespaces):</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Namespace</th><th>Probed</th><th>Resolves</th><th>HTTP 200</th><th>Verdict</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="mono">*.bank.in</td><td>4,199</td><td>1,680</td><td>941</td><td>Real RBI bank deployments</td></tr>
+            <tr><td class="mono">*.fin.in</td><td>376</td><td>0</td><td>0</td><td>Zone exists, no deployments</td></tr>
+            <tr><td class="mono">*.insurance.in</td><td>376</td><td>0</td><td>0</td><td>Zone exists, parked apex</td></tr>
+            <tr><td class="mono">*.nbfc.in</td><td>376</td><td>1</td><td>0</td><td>Single catch-all; not meaningful</td></tr>
+            <tr><td class="mono">*.npci.in</td><td>376</td><td>352</td><td>352</td><td>“Domain For Sale” parking wildcard</td></tr>
+            <tr><td class="mono">*.bank</td><td>268</td><td>12</td><td>9</td><td>Global fTLD; ≈12 Indian-prefix entities</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <span class="mono">.bank.in</span> is the only widely-deployed financial namespace in the <span class="mono">.in</span> space —        roughly four-fifths of its live hosts are real bank subdomains. The other proposed financial TLDs remain largely inert, and        <span class="mono">.npci.in</span> is a parking wildcard rather than a deployment.
+      </p>
+
+      <h2>The largest bank attack surfaces</h2>
+      <p>Top banks by subdomain count — including a striking volume of <strong>UAT / test environments</strong> parked inside      the banking namespace, which can act as stepping stones to live systems:</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Bank</th><th>Subdomains</th><th>Live</th><th></th><th>Bank</th><th>Subdomains</th><th>Live</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Axis</td><td>421</td><td>125</td><td></td><td>SBI</td><td>291</td><td>71</td></tr>
+            <tr><td>SBI (UAT)</td><td>256</td><td>64</td><td></td><td>HDFC (UAT)</td><td>242</td><td>61</td></tr>
+            <tr><td>IndusInd</td><td>223</td><td>67</td><td></td><td>HDFC</td><td>169</td><td>60</td></tr>
+            <tr><td>PNB</td><td>151</td><td>50</td><td></td><td>Bank of India</td><td>145</td><td>46</td></tr>
+            <tr><td>Indian Bank (UAT)</td><td>83</td><td>15</td><td></td><td>Yes Bank</td><td>82</td><td>37</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted">
+        Across the namespace, more than 80 bank UAT environments reside under <span class="mono">.bank.in</span>, frequently running        weaker controls — default credentials and debug endpoints — that widen the reachable attack surface.      </p>
+
+      <h2>Global <span class="mono">.bank</span> name collisions</h2>
+      <p>On the global fTLD, identical prefixes can belong to <em>different</em> banks — a spoofing / brand-confusion hazard worth knowing:</p>
+      <ul>
+        <li><span class="mono">sbi.bank</span> → Sovereign Bank International (US) — <strong>not</strong> SBI India</li>
+        <li><span class="mono">bob.bank</span> → Bank of Bahrain &amp; Kuwait — <strong>not</strong> Bank of Baroda</li>
+        <li><span class="mono">apgb.bank</span> → Andhra Pradesh Grameena Bank (redirects to <span class="mono">.bank.in</span>)</li>
+        <li><span class="mono">capital.bank</span>, <span class="mono">csb.bank</span>, <span class="mono">sbm.bank</span> → genuine Indian deployments</li>
+      </ul>
+
+      <h2>TLS certificate landscape (from CT logs)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Issuer</th><th>Certificates</th><th>Comment</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>DigiCert</td><td>1,591</td><td>dominant</td></tr>
+            <tr><td>Let's Encrypt / ZeroSSL</td><td>602</td><td>self-managed footprint</td></tr>
+            <tr><td>GlobalSign</td><td>478</td><td></td></tr>
+            <tr><td>Sectigo</td><td>392</td><td></td></tr>
+            <tr><td>eMudhra (Indian CA)</td><td>179</td><td>domestic issuance growing</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Related: the IDRBT registry investigation</h2>
+      <p>
+        A companion audit of the <strong>IDRBT Domain Registration Portal</strong> — the exclusive registry for <span class="mono">.bank.in</span> —        found <strong>33+ unauthenticated API endpoints</strong> exposing a user database of <strong>5,576 records</strong> with bcrypt hashes,        phantom test domains on NIXI, missing DMARC enforcement across 40% of the namespace, data-residency violations, and a vendor appointed        without a visible tender. Reported to CERT-In; <strong>CERT-In confirmed the vulnerability fixed on 26 June 2026</strong>.
+      </p>
+      <p>
+        <a class="cta primary" href="https://bankin-report.cashlessconsumer.in" target="_blank" rel="noopener">Full IDRBT report ↗</a>
+      </p>
+
+      <h2>Data & reproductions</h2>
+      <ul>
+        <li>Searchable live UI: <span class="mono">ccagentorg.github.io/bank-domains-ui</span></li>
+        <li>Open dataset (CSV / JSONL / Parquet / SQLite): <span class="mono">CCAgentOrg/bank-in-domains</span> — updated daily</li>
+        <li>IDRBT open data: <span class="mono">zo.pub/cashlessconsumer/idrbt-open-data</span></li>
+      </ul>
+      <p class="muted">
+        Sources: Wayback Machine CDX, HackerTarget certificate-transparency, live DNS + HTTPS probes. Full methodology is open and        reproducible from the data repos.      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <span class="f-brand"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
+    <div class="f-links">
+      <a href="https://cashlessconsumer.in">cashlessconsumer.in</a>
+      <a href="https://x.com/logic" target="_blank" rel="noopener">@logic</a>
+      <a href="../pages/about.html">Method &amp; Ethics</a>
+    </div>
+    <span class="f-note">All probes read-only · No PII published</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

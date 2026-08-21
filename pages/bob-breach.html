@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank of Baroda Breach — Verification — Security Investigations | CashlessConsumer</title>
+<meta name="description" content="CashlessConsumer's verification of the July 2026 Bank of Baroda data breach by Triple X ransomware. Metadata-level analysis of the Tor dump: 162K files, 16,474 directories, 1.07 TB. The full investigation lives at bobbreach.cashlessconsumer.in.">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="canonical" href="https://cyber.cashlessconsumer.in/pages/bob-breach.html">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../index.html"><span class="mark">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+    <nav class="links">
+      <a href="../index.html">Home</a>
+      <a href="bank-in-report.html">.bank.in Audit</a>
+      <a href="bob-breach.html">BoB Breach</a>
+      <a href="cert-in-dotenv.html">CERT-In · .env</a>
+      <a href="about.html">Method &amp; Ethics</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero bob">
+    <div class="inner">
+      <div class="crumb"><a href="../index.html">cyber</a> / BoB breach</div>
+      <span class="kicker">🛡️ Breach verification</span>
+      <h1>Bank of Baroda breach: verified &amp; consumer-mapped</h1>
+      <p class="lede">
+        On <strong>24 July 2026</strong>, the Triple X ransomware group claimed to have exfiltrated 1 TB from India's
+        second-largest public-sector bank. We independently crawled the public Tor dump and verified the scale at
+        <strong>metadata level</strong>. The complete, consumer-first investigation lives at
+        <a href="https://bobbreach.cashlessconsumer.in" target="_blank" rel="noopener">bobbreach.cashlessconsumer.in</a> — this page
+        is the verification summary.
+      </p>
+      <div class="cta-row">
+        <a class="cta primary" href="https://bobbreach.cashlessconsumer.in" target="_blank" rel="noopener">Visit the full investigation →</a>
+        <a class="cta ghost" href="https://bobbreach.cashlessconsumer.in/search.html" target="_blank" rel="noopener">Check if your branch is affected</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner">
+      <div class="stats">
+        <div class="stat-card"><div class="num">162,111</div><div class="label">files observed</div></div>
+        <div class="stat-card"><div class="num">16,474</div><div class="label">directories</div></div>
+        <div class="stat-card"><div class="num">90</div><div class="label">top-level directories</div></div>
+        <div class="stat-card"><div class="num">1,088+</div><div class="label">branches impacted</div></div>
+        <div class="stat-card"><div class="num">≈1.07 TB</div><div class="label">data volume (listed)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <h2>What we verified &amp; how</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Lens</th><th>Method</th><th>What we can state</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>File count / volume</b></td>
+              <td>Completed crawl of the public Tor dump directory listing</td>
+              <td>162,111 files across 16,474 directories, ≈1.07 TB in listed sizes — <span class="pill warn">0 crawl errors</span></td>
+            </tr>
+            <tr>
+              <td><b>Data types</b></td>
+              <td>File-name / path-pattern analysis</td>
+              <td>customer KYC, security reports, internal audit documents, branch references</td>
+            </tr>
+            <tr>
+              <td><b>Branch impact</b></td>
+              <td>Path references crossed against IFSC database</td>
+              <td>1,088+ impacted branches mapped, searchable by IFSC</td>
+            </tr>
+            <tr>
+              <td><b>Threat actor</b></td>
+              <td>Triple X group dossier</td>
+              <td>timeline from May–July 2026, modus operandi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout info">
+        <div class="co-title">Fine print we hold ourselves to</div>
+        <p>
+          This is <strong>metadata-level analysis</strong> of file names, paths and document types visible in the leak's directory
+          structure — programmatically extracted, human-directed, cross-referenced. No LLM has access to actual file contents, and
+          no PII from the dump is republished. Numbers are indicative. Independent verification is encouraged; full
+          methodology is on the investigation site.
+        </p>
+      </div>
+
+      <h2>Beyond the summary</h2>
+      <ul>
+        <li><b>Overview</b> — what happened, what data was exposed, timeline, consumer protection guide</li>
+        <li><b>Branch search</b> — IFSC-based impact lookup for individual customers</li>
+        <li><b>Eli5 / TL;DR</b> — plain-language explainer</li>
+        <li><b>Vector, demands, why</b> — intrusion-vector and threat-actor analysis</li>
+        <li><b>Censorship log</b> — reports silenced for covering the breach</li>
+      </ul>
+      <p>
+        The verification and all related detail continue to be updated on the dedicated site.
+      </p>
+      <a class="cta primary" href="https://bobbreach.cashlessconsumer.in" target="_blank" rel="noopener" style="margin-top:18px;">Open bobbreach.cashlessconsumer.in</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <span class="f-brand"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
+    <div class="f-links">
+      <a href="https://cashlessconsumer.in">cashlessconsumer.in</a>
+      <a href="https://x.com/logic" target="_blank" rel="noopener">@logic</a>
+      <a href="../pages/about.html">Method & Ethics</a>
+    </div>
+    <span class="f-note">All probes read-only · No PII published</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
