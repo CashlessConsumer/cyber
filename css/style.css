@@ -283,3 +283,36 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .step { display: flex; gap: 14px; margin-bottom: 14px; }
 .step .n { flex: 0 0 30px; height: 30px; display: grid; place-items: center; border-radius: 8px; background: var(--bg2); border: 1px solid var(--line-strong); font-family: var(--mono); font-weight: 700; color: var(--accent); }
 .step p { margin: 2px 0 0; }
+
+
+/* ============ Agentic-work disclosure strip ============ */
+.disclosure {
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(180,143,217,0.06), transparent);
+  font-size: 0.88rem;
+}
+.disclosure summary {
+  cursor: pointer; list-style: none; padding: 12px 0;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  color: var(--muted); font-family: var(--mono); font-weight: 600;
+}
+.disclosure summary::-webkit-details-marker { display: none; }
+.disclosure summary:hover { color: var(--fg-strong); }
+.ai-badge {
+  display: inline-block; font-family: var(--mono); font-size: 0.66rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--purple); border: 1px solid rgba(180,143,217,0.45);
+  background: rgba(180,143,217,0.1); border-radius: 999px; padding: 3px 10px;
+}
+.dblink { margin-left: auto; font-family: var(--mono); font-size: 0.76rem; color: var(--muted-2); }
+.disclosure[open] .dblink { color: var(--accent); }
+.disclosure[open] summary { margin-bottom: 6px; }
+.disclosure .d-body { padding: 0 0 18px; color: var(--muted); max-width: 860px; }
+.disclosure .d-body p { margin: 0 0 10px; }
+.disclosure .d-body p:last-child { margin-bottom: 0; }
+.disclosure .d-body b { color: var(--fg-strong); }
+
+/* two-column grid (about / content pages) */
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin: 0 0 20px; }
+.grid2 h3 { margin: 0 0 8px; }
+.grid2 p { margin: 0; color: var(--muted); }
