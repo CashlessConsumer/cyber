@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breach Verification — Security Investigations | CashlessConsumer</title>
+<meta name="description" content="Independent, metadata-level verification of ransomware breach claims against Indian financial infrastructure. Bank of Baroda (Triple X, July 2026) and Dodo Payments (DireWolf, August 2026).">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="canonical" href="https://cyber.cashlessconsumer.in/pages/breaches.html">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../index.html"><span class="mark">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+    <nav class="links">
+      <a href="../index.html">Home</a>
+      <a href="bank-in-report.html">.bank.in Audit</a>
+      <a href="breaches.html">Breaches</a>
+      <a href="cert-in-dotenv.html">CERT-In · .env</a>
+      <a href="about.html">Method &amp; Ethics</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<details class="disclosure">
+  <div class="inner">
+    <summary><span class="ai-badge">Agentic work</span> Human-supervised AI on Zo Computer <span class="dblink">▸ what this means</span></summary>
+    <div class="d-body">
+      <p>Everything on this site is <b>agentic cyber work</b>: AI agents running on
+      <b>Zo Computer</b> plan the probes, execute read-only scans, analyse the results and
+      draft the findings — <b>predominantly on DeepSeek V4 Flash</b>. A human steers and monitors
+      every stage. No scan runs, no finding is disclosed and no text is published without human
+      review and sign-off.</p>
+      <p>The machine does the legwork at speed and scale; the intent, the ethics and the
+      accountability are human.</p>
+    </div>
+  </div>
+</details>
+
+<main>
+  <section class="page-hero bob">
+    <div class="inner">
+      <div class="crumb"><a href="../index.html">cyber</a> / breach verification</div>
+      <span class="kicker">🛡️ Breach verification</span>
+      <h1>When ransomware crews claim Indian fintech, we check</h1>
+      <p class="lede">
+        Leak-site claims are attacker marketing until independently verified. This is our
+        running ledger of breach verifications against Indian financial infrastructure —
+        what the attackers claim, what the company says, what the metadata actually shows,
+        and where the stories diverge. Metadata-level only; no PII is republished, ever.
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner">
+
+      <a class="case" href="bob-breach.html">
+        <div class="case-head">
+          <span class="emoji">🛡️</span>
+          <h2>Bank of Baroda <span class="pill warn">files published · investigation live</span></h2>
+        </div>
+        <p>
+          Triple X ransomware claimed 1&nbsp;TB from India's second-largest public-sector bank on
+          <b>24 July 2026</b>. We completed a full crawl of the public Tor dump and verified it at
+          metadata level: <b>162,111 files across 16,474 directories, ≈1.07&nbsp;TB</b>, with
+          <b>1,088+ branches</b> mapped by IFSC. The complete consumer investigation — branch
+          search, explainer, vector analysis, censorship log — lives on its dedicated site.
+        </p>
+        <div class="case-meta">
+          <span class="pill">162,111 files</span>
+          <span class="pill">1,088+ branches</span>
+          <span class="pill">≈1.07 TB</span>
+          <span class="arrow">→</span>
+        </div>
+      </a>
+
+      <a class="case" href="dodo-breach.html">
+        <div class="case-head">
+          <span class="emoji">🐦</span>
+          <h2>Dodo Payments <span class="pill warn">claim verified · dump unpublished</span></h2>
+        </div>
+        <p>
+          DireWolf named the merchant-of-record fintech on <b>15 August 2026</b>, claiming
+          <b>60.8&nbsp;GB, 4 ClickHouse databases, ~39.3M rows</b> (2025-05 → 2026-08). We verified the
+          leak-site briefing over Tor and cross-checked it against Dodo's disclosure of a
+          CVE-2026-72898 Metabase compromise the next day. The tension: the claimed inventory shape
+          (CDC streams, prod + dev warehouses, Keycloak credentials) is broader than a "single
+          internal reporting system" should hold. Download links are not yet live; our hourly
+          watch is running.
+        </p>
+        <div class="case-meta">
+          <span class="pill">60.8 GB claimed</span>
+          <span class="pill">~39.3M rows</span>
+          <span class="pill">KYC · Keycloak · PSP data in briefing</span>
+          <span class="arrow">→</span>
+        </div>
+      </a>
+
+      <div class="callout info">
+        <div class="co-title">How we verify — and what we won't do</div>
+        <p>
+          We fetch leak sites over Tor, capture the attacker's own briefing, cross-check against
+          company statements and third-party trackers (ransomware.live, SOCRadar, Breachsense), and
+          analyse <strong>metadata only</strong> — file names, paths, table inventories. We do not
+          download, republish or trade in stolen personal data. Numbers from leak sites are
+          attacker-authored and marked as such until the underlying files can be independently
+          examined. Every claim on these pages links to its source.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <span class="f-brand"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
+    <div class="f-links">
+      <a href="https://cashlessconsumer.in">cashlessconsumer.in</a>
+      <a href="https://x.com/logic" target="_blank" rel="noopener">@logic</a>
+      <a href="../pages/about.html">Method & Ethics</a>
+    </div>
+    <span class="f-note">All probes read-only · No PII published · Human-supervised agentic work</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
