@@ -133,6 +133,17 @@
         <div class="tl-item">
           <div class="tl-date">19 Aug 2026</div>
           <div class="tl-body"><b>CERT-In follow-up.</b> CERT-In requested exact URLs/paths and clarification. Our reply provided precise paths for every entity, re-verified live status, and retracted one erroneous earlier claim (Jana Small Finance Bank — no <span class="mono">.env</span> existed; domain does not resolve).</div>
+        </div>        <div class="tl-item">
+          <div class="tl-date">21 Aug 2026</div>
+          <div class="tl-body"><b>First closures confirmed.</b> CERT-In confirmed the two <span class="mono">.env</span> files are no longer accessible (refs <span class="mono">CERTIn-19257826</span>, <span class="mono">CERTIn-49794926</span>); our re-check agreed (403/404). The expanded 9-entity report was registered (Yes Bank ref <span class="mono">CERTIn-26992926</span>). A further follow-up flagged a <span class="mono">.env</span> on a co-operative-bank complaint portal.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">24 Aug 2026</div>
+          <div class="tl-body"><b>Attribution correction.</b> CERT-In (PGP-signed) advised the complaint-portal host does not pertain to the bank its registry record suggests; the operator remains unattributed and the file remained reachable.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">28 Aug 2026</div>
+          <div class="tl-body"><b>Published re-check.</b> All reported paths re-probed read-only; status table updated. No credential values stored or shown at any point.</div>
         </div>
         <div class="tl-item">
           <div class="tl-date">Ongoing</div>
@@ -140,7 +151,71 @@
         </div>
       </div>
 
-      <h2>Remediation status</h2>
+      <h2>Reports filed — 14–28 Aug 2026</h2>
+      <p>
+        Three separate disclosures went to CERT-In in the last fortnight, plus direct notifications to affected entities.
+        CERT-In registered and actioned each; references are quoted from their PGP-signed replies.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Report</th><th>Filed</th><th>CERT-In reference</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Publicly accessible <span class="mono">.env</span> files — NSDL Payments Bank, Baran Nagrik Sahakari Bank</td>
+              <td>18 Aug</td>
+              <td><span class="mono">CERTIn-49794926</span>, <span class="mono">CERTIn-19257826</span></td>
+            </tr>
+            <tr>
+              <td>Expanded <span class="mono">.bank.in</span> exposures — 9 entities (classes as tabled above; exact paths shared with CERT-In, withheld here for unfixed items)</td>
+              <td>18 Aug</td>
+              <td><span class="mono">CERTIn-26992926</span> (Yes Bank) + per-entity refs</td>
+            </tr>
+            <tr>
+              <td>Follow-up: <span class="mono">.env</span> on a co-operative-bank complaint portal (registry records the registrant as a small-finance bank; CERT-In advises the host does not pertain to that bank — operator still unattributed)</td>
+              <td>21 Aug</td>
+              <td>same thread</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Re-check — 28 Aug 2026</h2>
+      <p>
+        Ten days after the expanded report, we re-probed every reported path with the same read-only method. Detail below is
+        limited to the <span class="mono">.env</span> exposures; for the other classes we state only entity + class + status.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Entity</th><th>Class</th><th>19 Aug (reported)</th><th>28 Aug (re-check)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Baran Nagrik Sahakari Bank</td><td><span class="mono">.env</span></td><td>live (206)</td><td><span class="pill on">Fixed</span> — 403; CERT-In confirmed closure 21 Aug</td></tr>
+            <tr><td>NSDL Payments Bank (both hostnames)</td><td><span class="mono">.env</span></td><td>WAF page</td><td><span class="pill on">Blocked</span> — application page served, no dotenv; origin removal still to be confirmed</td></tr>
+            <tr><td>Co-op complaint portal (operator unattributed)</td><td><span class="mono">.env</span></td><td>live</td><td><span class="pill danger">Still open</span> — full production dotenv (35 keys incl. cloud + DB credentials) served, 1,539 bytes</td></tr>
+            <tr><td>Yes Bank</td><td>Spring Actuator</td><td>host unreachable</td><td><span class="pill info">Unreachable</span> — unchanged; removal unverified</td></tr>
+            <tr><td>RBL Bank</td><td>phpinfo()</td><td>WAF denial</td><td><span class="pill on">Removed</span> — 404</td></tr>
+            <tr><td>Krishna DCCB</td><td>phpinfo()</td><td>WAF</td><td><span class="pill on">Removed</span> — 404</td></tr>
+            <tr><td>Akhandanand Co-op Bank</td><td>Laravel log</td><td>open</td><td><span class="pill danger">Still open</span></td></tr>
+            <tr><td>Kakinada Town CCB</td><td>Laravel log + composer.json</td><td>open</td><td><span class="pill danger">Still open</span> — log now ~4.4 MB</td></tr>
+            <tr><td>NAMCO Co-op Bank</td><td>Laravel log</td><td>open</td><td><span class="pill danger">Still open</span> — log now ~12.6 MB</td></tr>
+            <tr><td>Varachha Co-op Bank</td><td>composer.json</td><td>open</td><td><span class="pill warn">Changed</span> — path now returns the site's HTML app page</td></tr>
+            <tr><td>Panchganga Co-op Bank</td><td>composer.json</td><td>open</td><td><span class="pill on">Removed</span> — 404</td></tr>
+            <tr><td>ABSL Co-op Bank (webmail host)</td><td>composer.json</td><td>open</td><td><span class="pill info">Host unreachable</span> — unverified</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Score at ten days: <strong>3 confirmed fixed</strong> (Baran, RBL, Krishna DCCB), <strong>1 blocked pending origin</strong> (NSDL),
+        <strong>3 still open</strong> (the unattributed complaint-portal <span class="mono">.env</span> plus co-operative-bank log/metadata
+        exposures), <strong>2 unverifiable</strong> (unreachable hosts), <strong>1 changed</strong>. The still-open <span class="mono">.env</span> is the
+        most serious remaining item: a production Laravel environment with cloud and database credentials, on a host whose
+        operator CERT-In says is not the bank the domain name suggests.
+      </p>
+
+      <h2>Earlier remediation status</h2>
       <div class="table-wrap">
         <table>
           <thead>
