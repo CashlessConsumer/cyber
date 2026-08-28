@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dodo Payments Breach — Verification — Security Investigations | CashlessConsumer</title>
+<meta name="description" content="CashlessConsumer's verification of the August 2026 Dodo Payments breach by DireWolf ransomware. Metadata-level analysis of the leak briefing: 60.8 GB, 4 databases, ~39.3M rows — cross-checked against Dodo's official response and media coverage.">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="canonical" href="https://cyber.cashlessconsumer.in/pages/dodo-breach.html">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../index.html"><span class="mark">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+    <nav class="links">
+      <a href="../index.html">Home</a>
+      <a href="bank-in-report.html">.bank.in Audit</a>
+      <a href="bob-breach.html">BoB Breach</a>
+      <a href="dodo-breach.html">Dodo Breach</a>
+      <a href="cert-in-dotenv.html">CERT-In · .env</a>
+      <a href="about.html">Method &amp; Ethics</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<details class="disclosure">
+  <div class="inner">
+    <summary><span class="ai-badge">Agentic work</span> Human-supervised AI on Zo Computer <span class="dblink">▸ what this means</span></summary>
+    <div class="d-body">
+      <p>Everything on this site is <b>agentic cyber work</b>: AI agents running on
+      <b>Zo Computer</b> plan the probes, execute read-only scans, analyse the results and
+      draft the findings. A human steers and monitors every stage. No scan runs, no finding is
+      disclosed and no text is published without human review and sign-off.</p>
+      <p>The machine does the legwork at speed and scale; the intent, the ethics and the
+      accountability are human.</p>
+    </div>
+  </div>
+</details>
+
+
+
+<main>
+  <section class="page-hero dodo">
+    <div class="inner">
+      <div class="crumb"><a href="../index.html">cyber</a> / Dodo Payments breach</div>
+      <span class="kicker">🛡️ Breach verification</span>
+      <h1>Dodo Payments breach: claimed, confirmed — and not yet published</h1>
+      <p class="lede">
+        On <strong>15 August 2026</strong>, the DireWolf ransomware group listed DodoPayments — an India-based,
+        PCI DSS Level 1 merchant-of-record fintech used by thousands of indie SaaS founders — on its Tor leak site.
+        The next day, Dodo confirmed a security incident. The attackers publish a <strong>data-warehouse briefing</strong>
+        (60.8 GB, ~39.3M rows) but the actual files are <strong>not yet downloadable</strong>. We verified the claim at
+        metadata level and cross-checked it against Dodo's official response and the coverage trail.
+      </p>
+      <div class="cta-row">
+        <a class="cta primary" href="https://dodopayments.com/blogs/security-incident-internal-analytics-system" target="_blank" rel="noopener">Dodo's official statement →</a>
+        <a class="cta ghost" href="#discrepancy">Read the open questions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner">
+      <div class="stats">
+        <div class="stat-card"><div class="num">60.8 GB</div><div class="label">claimed dump size</div></div>
+        <div class="stat-card"><div class="num">1,342</div><div class="label">files</div></div>
+        <div class="stat-card"><div class="num">4</div><div class="label">databases (ClickHouse)</div></div>
+        <div class="stat-card"><div class="num">≈39.3M</div><div class="label">rows</div></div>
+        <div class="stat-card"><div class="num">May '25→Aug '26</div><div class="label">data range (claimed)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <h2>Timeline</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Date</th><th>Event</th><th>Source</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>May 2025</td><td>Earliest data in the leak inventory — exfiltrated material spans 15 months, up to August 2026</td><td>DireWolf briefing</td></tr>
+            <tr><td>15 Aug 2026</td><td>DireWolf publishes the DodoPayments victim page (article 82) with a "Data Warehouse Briefing"</td><td>Tor leak site, verified live 28 Aug</td></tr>
+            <tr><td>16 Aug 2026</td><td>Dodo becomes aware of the incident and contains it "within hours"</td><td>Official statement</td></tr>
+            <tr><td>16–17 Aug 2026</td><td>Threat-intel trackers list the victim: HookPhish, then Breachsense, SOCRadar, DeXpose</td><td>Media table below</td></tr>
+            <tr><td>17 Aug 2026</td><td>Dodo publishes its full statement: Metabase CVE-2026-72898 in an internal analytics system</td><td>Official statement</td></tr>
+            <tr><td>20 Aug 2026</td><td>Our prior recon: <span class="mono">keycloak.dodopayments.com</span> admin console exposed (HTTP 302) — after the incident window</td><td>Our own probe</td></tr>
+            <tr><td>22 Aug 2026</td><td>Beralock details the 60.8 GB / 1,342-file listing</td><td>Beralock intel</td></tr>
+            <tr><td>28 Aug 2026</td><td>Leak page re-verified live over Tor; <b>no dump files published yet</b> — all download endpoints 404</td><td>This verification</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>What the leak briefing claims</h2>
+      <p>
+        DireWolf's page is not a file dump — it is a generated <strong>inventory</strong> of what they say they took.
+        The profile is unusually specific, which is what makes it testable:
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Database</th><th>Rows</th><th>Size</th><th>Stated content</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="mono">prod_psp_recon</span></td><td>19,885,940</td><td>31.36 GB</td><td>Stripe &amp; Airwallex raw objects, PeerDB CDC streams, customers, invoices, subscriptions, KYC/KYB, fraud events, ledgers</td></tr>
+            <tr><td><span class="mono">prod</span></td><td>18,085,954</td><td>27.46 GB</td><td>Core billing warehouse: subscriptions, invoices, discounts, entitlements, credit ledgers, KYC, Keycloak identity, PSP records</td></tr>
+            <tr><td><span class="mono">dev</span></td><td>752,937</td><td>1.21 GB</td><td>Dev mirror incl. test payments, Keycloak mirror</td></tr>
+            <tr><td><span class="mono">dev_psp_recon</span></td><td>600,270</td><td>718 MB</td><td>Dev PSP reconciliation (test objects, test ledgers)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Sensitive categories in the inventory: ~249K KYC/KYB verification rows, payout bank accounts, UBO (ultimate
+        beneficial owner) requests, a Keycloak identity store including <strong>credential tables and offline sessions</strong>,
+        internal auth tables (API keys, signup/login OTPs), fraud-prevention fingerprint events with user emails and
+        client IPs, and invoices with billing addresses and tax IDs.
+      </p>
+      <div class="callout info">
+        <div class="co-title">Origin signature — what the shape of the dump suggests</div>
+        <p>
+          The inventory lists <strong>PeerDB CDC replication streams</strong>, <strong>dev database mirrors</strong> and
+          <strong>Keycloak credential tables</strong>. That is not the shape of a Metabase reporting export — it is the
+          shape of wholesale ClickHouse warehouse exfiltration, including infrastructure that a BI tool would normally
+          never touch. Either the Metabase service could query vastly more than a "single internal reporting system",
+          or the exfiltration went beyond the analytics instance. This is the central open question.
+        </p>
+      </div>
+
+      <h2 id="discrepancy">Claim vs. claim: the open questions</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Lens</th><th>DireWolf briefing (attacker-authored)</th><th>Dodo statement (17 Aug)</th><th>What we can state</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Entry point</b></td>
+              <td>not stated in briefing</td>
+              <td>Metabase CVE-2026-72898 (SQL injection → auth bypass, GHSA-vwf4-m7j8-wcjf); "did not require any Dodo Payments credential"</td>
+              <td>Consistent with a self-hosted Metabase being the initial foothold — the briefing doesn't claim a vector</td>
+            </tr>
+            <tr>
+              <td><b>Scope</b></td>
+              <td>4 full databases incl. prod + dev, CDC streams, Keycloak, PSP reconciliation</td>
+              <td>"limited to this single internal reporting system" — a Metabase analytics instance</td>
+              <td><span class="pill warn">Tension</span> A BI layer holding CDC logs, dev mirrors and credential tables would mean extremely broad standing access from the reporting tool</td>
+            </tr>
+            <tr>
+              <td><b>Card data</b></td>
+              <td>raw Stripe/Airwallex objects listed</td>
+              <td>no full card numbers held; PCI DSS unaffected; cardholder data resides with PSPs</td>
+              <td>Plausible: PSP <em>objects</em> (charges, intents, payouts) are processor-side records and need not contain PANs — but full reconciliation data is still commercially sensitive</td>
+            </tr>
+            <tr>
+              <td><b>Credentials</b></td>
+              <td>Keycloak credential tables + API keys + OTPs listed in inventory</td>
+              <td>"No password, credential or MFA factor was compromised"; API keys not stored in the affected system</td>
+              <td><span class="pill warn">Unresolved</span> — presence in an inventory is a claim, not proof of exfiltration of usable secrets; dump publication is the test</td>
+            </tr>
+            <tr>
+              <td><b>Funds</b></td>
+              <td>balance/wallet/ledger tables listed</td>
+              <td>"No funds were accessed"</td>
+              <td>Ledger tables are records, not money movement — consistent, but settlement metadata is exposed</td>
+            </tr>
+            <tr>
+              <td><b>Dump publication</b></td>
+              <td>promised, not yet released</td>
+              <td>n/a</td>
+              <td>As of 28 Aug: no downloadable files. Authenticity is <b>not yet verifiable</b> — the briefing is attacker-authored</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout info">
+        <div class="co-title">Fine print we hold ourselves to</div>
+        <p>
+          This is <strong>metadata-level analysis</strong> of the attacker's own inventory — programmatically extracted
+          from the Tor leak page, human-directed, cross-referenced. <strong>No dump contents have been downloaded</strong>
+          (none are published), no PII from the leak is republished, and every claim above is attributed to its source.
+          An attacker-authored briefing is an allegation, not evidence; Dodo's statement is one party's account. The row
+          counts are internally coherent (prod ≈ dev mirrors + recon deltas), which lends plausibility but is not proof.
+        </p>
+      </div>
+
+      <h2>Dodo's response, in brief</h2>
+      <ul>
+        <li><b>Root cause:</b> CVE-2026-72898 — SQL injection enabling auth bypass in self-hosted Metabase, used for internal reporting only</li>
+        <li><b>Containment:</b> aware 16 Aug, contained within hours — patched, restricted the endpoint, revoked all sessions, OAuth tokens and internal API keys, preserved forensics, documented attacker infrastructure for authorities</li>
+        <li><b>Stated impact:</b> "information relating to some of our merchants" — categories and affected parties still being determined; affected merchants to be contacted directly</li>
+        <li><b>Stated non-impact:</b> payment processing, full card numbers, PCI DSS certification, API keys/credentials, funds, service availability</li>
+        <li><b>Remediation:</b> removing internet exposure from internal analytics, SSO + IP allow-listing + WAF on admin interfaces, formal patch-monitoring for self-hosted tools, log retention expansion, re-architecting reporting-tool data access, independent assessors; SOC 2 and ISO/IEC 27001 said to be in progress</li>
+        <li><b>Contact:</b> privacy@dodopayments.com for incident queries; their security policy notes no monetary bug bounty</li>
+      </ul>
+
+      <h2>Media &amp; tracker coverage</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Outlet / tracker</th><th>Date</th><th>What they reported</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="https://www.hookphish.com/blog/ransomware-group-direwolf-hits-dodopayments" target="_blank" rel="noopener">HookPhish</a></td><td>16 Aug 2026</td><td>First tracker listing: DireWolf hits DodoPayments, discovered 15 Aug 20:27 UTC</td></tr>
+            <tr><td><a href="https://www.breachsense.com/breaches/dodo-payments-data-breach" target="_blank" rel="noopener">Breachsense</a></td><td>17 Aug 2026</td><td>Breach record; separately notes pre-existing credential exposure for the domain (infostealer logs — not linked to the ransomware incident)</td></tr>
+            <tr><td><a href="https://socradar.io/free-tools/ransomware-intelligence/victims/dodopayments-direwolf-4de393c4" target="_blank" rel="noopener">SOCRadar</a></td><td>17 Aug 2026</td><td>Victim entry, confidence 100%, status "Claimed"</td></tr>
+            <tr><td><a href="https://www.dexpose.io/direwolf-targets-financial-software-firm-dodopayments" target="_blank" rel="noopener">DeXpose</a></td><td>Aug 2026</td><td>DireWolf statement quoted: "The full leak will be published soon, unless a company representative contacts us"</td></tr>
+            <tr><td><a href="https://beralock.com/blog/dodo-payments-ransomware-60gb-data-leak-mt4aa6by" target="_blank" rel="noopener">Beralock</a></td><td>22 Aug 2026</td><td>Details the 60.8 GB / 1,342 files / 4 databases / ~39.3M rows inventory</td></tr>
+            <tr><td>Reddit (r/pwnhub), X, LinkedIn PSAs</td><td>16–17 Aug 2026</td><td>Community + founder PSAs; Dodo's co-founder amplified the containment claim ("No funds moved")</td></tr>
+            <tr><td><a href="https://www.darkreading.com/threat-intelligence/dire-wolf-ransomware-manufacturing-technology" target="_blank" rel="noopener">Dark Reading</a> (group profile)</td><td>2025–26</td><td>DireWolf background: Golang ransomware, first documented May 2025, ~100+ victims, double extortion, ransoms up to $500K</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>What this means for merchants &amp; buyers</h2>
+      <ul>
+        <li><b>If you sell through Dodo Payments:</b> assume your business profile, billing details and payout metadata were in the exposed warehouse until Dodo's review concludes. The official advice (rotate API keys, watch for phishing) is sound even as hygiene.</li>
+        <li><b>If you bought from a Dodo-powered store:</b> your email and purchase metadata may be in the inventory. Full card numbers are claimed absent — card data lives with Stripe/Airwallex — but treat unexpected payment-themed email as hostile.</li>
+        <li><b>The real lesson:</b> an internal analytics tool became the breach surface. "The dashboard doesn't process payments" is not a security boundary — whatever a reporting tool can <em>query</em>, it can <em>leak</em>.</li>
+        <li><b>Status:</b> this page is a live verification. When (if) DireWolf publishes the actual files, we will run a score-by-evidence download pass over Tor and update the claim-vs-claim table with file-level findings — PII-free, as with the <a href="bob-breach.html">BoB breach verification</a>.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <span class="f-brand"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
+    <div class="f-links">
+      <a href="https://cashlessconsumer.in">cashlessconsumer.in</a>
+      <a href="https://x.com/logic" target="_blank" rel="noopener">@logic</a>
+      <a href="../pages/about.html">Method & Ethics</a>
+    </div>
+    <span class="f-note">All probes read-only · No PII published · Human-supervised agentic work</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
