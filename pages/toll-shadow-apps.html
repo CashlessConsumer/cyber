@@ -41,7 +41,7 @@
       <a class="cta" href="toll-shadow-apps-explainer.pdf">Read the full PDF report (24 pp)</a>
       <a class="cta ghost" href="#opendata">Jump to the open data</a>
     </div>
-  <details class="mini-toc"><summary>On this page (9 sections)</summary><nav><a href="#sec-1-how-a-toll-plaza-actually-wo"><span class="toc-n">1</span>How a toll plaza actually works</a><a href="#sec-2-the-scam"><span class="toc-n">2</span>The scam</a><a href="#sec-3-why-nobody-caught-it"><span class="toc-n">3</span>Why nobody caught it</a><a href="#sec-4-timeline"><span class="toc-n">4</span>Timeline</a><a href="#sec-5-the-names-problem"><span class="toc-n">5</span>The names problem</a><a href="#sec-6-what-changed-and-what-didn-t"><span class="toc-n">6</span>What changed (and what didn't)</a><a href="#sec-7-for-the-driver"><span class="toc-n">7</span>For the driver</a><a href="#sec-8-the-open-data"><span class="toc-n">8</span>The open data</a><a href="#sec-9-sources-amp-evidence"><span class="toc-n">9</span>Sources &amp; evidence</a></nav></details>
+  <details class="mini-toc"><summary>On this page (10 sections)</summary><nav><a href="#sec-1-how-a-toll-plaza-actually-wo"><span class="toc-n">1</span>How a toll plaza actually works</a><a href="#sec-2-the-scam"><span class="toc-n">2</span>The scam</a><a href="#sec-3-why-nobody-caught-it"><span class="toc-n">3</span>Why nobody caught it</a><a href="#sec-4-timeline"><span class="toc-n">4</span>Timeline</a><a href="#sec-5-the-names-problem"><span class="toc-n">5</span>The names problem</a><a href="#sec-6-what-changed-and-what-didn-t"><span class="toc-n">6</span>What changed (and what didn't)</a><a href="#sec-privacy"><span class="toc-n">7</span>Privacy & the state's stake</a><a href="#sec-7-for-the-driver"><span class="toc-n">8</span>For the driver</a><a href="#sec-8-the-open-data"><span class="toc-n">9</span>The open data</a><a href="#sec-9-sources-amp-evidence"><span class="toc-n">10</span>Sources & evidence</a></nav></details>
   </div>
 </section>
 
@@ -157,9 +157,19 @@
   </div>
 </section>
 
+
+<section class="block alt">
+  <div class="inner prose">
+    <h2 id="sec-privacy">7 · Privacy &amp; the state's stake<a class="anchor" href="#sec-privacy">#</a></h2>
+    <p><strong>Why the lane stayed dark: the state was buying data, not control.</strong> FASTag was designed as a <em>data</em> system, not a control system. Every NETC transaction clears through two centralised hubs (NPCI and IHMCL), building one of India's largest vehicle-movement databases with bank accounts attached. That data now prices the monetisation machine: toll securitisation, toll-operate-transfer (ToT) concessions and the NHAI InvIT all bid on FASTag-measured traffic. What nobody bought was <em>per-transaction integrity at the lane</em> — so a 10%-volume shadow app ran for two years. The state privatised the upside of collection; the shadow app was the operator privatising the leftover cash. This was argued back in December 2019 — before the mandate — in CashlessConsumer's analysis for The Wire, <a href="https://thewire.in/economy/fastag-will-datafication-of-indias-tolls-boost-highway-development" target="_blank" rel="noopener">&ldquo;FASTag: Will Datafication of India's Tolls Boost Highway Development?&rdquo;</a>, which flagged exactly this: centralised data without a data-protection law, anonymised instruments rejected in favour of traceability, blacklist geo-fencing potential, and the 4% ETC cut baked into every gazetted fee.</p>
+    <p><strong>What the system knows about you.</strong> Every plaza pass generates: vehicle registration number, tag ID, issuing bank account, plaza ID, timestamp, lane, fee class — visible to your bank, NPCI, IHMCL and the agency. Non-FASTag vehicles surrender <em>more</em> data: the ANPR camera photographs your plate, and the receipt demands your details. CCTV images complete the set. The registry below even shows fee discrimination by home district — monthly passes are cheaper for vehicles <em>registered</em> in the district, meaning the system encodes where your vehicle lives. None of this had a data-protection law over it until DPDP 2023 — the mandate shipped in 2019, four years before the law. There are no published retention limits, no purpose limitation, and no public accounting of who queries the movement database. The Wire's parallel analysis — how economic transactions including FASTag were weaponised for mass surveillance after 26/11 — reads differently now that every post-scam fix (ANPR at every lane, MLFF plate-reading, bank-side VRN validation with blacklisting) deepens the same capture.</p>
+    <p><strong>The scam is now the justification.</strong> Each fix is real — and each expands the dataset. None of the post-scam procurements we reviewed contains a consumer data-governance clause: retention limits, purpose limitation, access logs, or independent audit of who queries the movement database. The fraud is real, and so is the risk that it becomes the standing excuse for a surveillance infrastructure nobody chose.</p>
+  </div>
+</section>
+
 <section class="block">
   <div class="inner prose">
-    <h2 id="sec-7-for-the-driver">7 · For the driver<a class="anchor" href="#sec-7-for-the-driver">#</a></h2>
+    <h2 id="sec-7-for-the-driver">8 · For the driver<a class="anchor" href="#sec-7-for-the-driver">#</a></h2>
     <ul>
       <li><strong>FASTag was never hacked.</strong> The RFID/deduction path is untouched by this case. Your tag and wallet are fine.</li>
       <li>If you paid cash at a toll plaza (pre-Apr 2026), keep the receipt. If a receipt looks wrong — wrong time, missing plaza name, no TIN — that is now a known fraud signature; complain to NHAI's helpline (1033) with the receipt photo.</li>
@@ -170,7 +180,7 @@
 
 <section class="block" id="opendata">
   <div class="inner prose">
-    <h2 id="sec-8-the-open-data">8 · The open data<a class="anchor" href="#sec-8-the-open-data">#</a></h2>
+    <h2 id="sec-8-the-open-data">9 · The open data<a class="anchor" href="#sec-8-the-open-data">#</a></h2>
     <p>To test how far the scam network reached into the official registry, we parsed IHMCL's <em>National Highway Fee Plaza list</em> (August 2025 — the official NETC plaza registry) from PDF into structured data:</p>
     <div class="table-wrap">
       <table>
@@ -226,7 +236,7 @@
 
 <section class="block">
   <div class="inner prose">
-    <h2 id="sec-9-sources-amp-evidence">9 · Sources &amp; evidence<a class="anchor" href="#sec-9-sources-amp-evidence">#</a></h2>
+    <h2 id="sec-9-sources-amp-evidence">10 · Sources &amp; evidence<a class="anchor" href="#sec-9-sources-amp-evidence">#</a></h2>
     <p>Primary reporting and documents behind this page (full evidence folder + master dossier in the CashlessConsumer research archive):</p>
     <div class="linklist">
       <a href="https://www.tribuneindia.com/news/india/about-100-highway-plazas-used-illegal-apps-to-collect-toll-from-vehicles-not-bearing-fastag-stickers-ed/" target="_blank" rel="noopener">The Tribune — ED: ~100 plazas used illegal apps on non-FASTag toll (Sep 3, 2026)</a>
@@ -235,7 +245,8 @@
       <a href="https://indialegallive.com/constitutional-law-news/courts-news/delhi-high-court-sets-aside-nhai-action-against-toll-contractors-in-software-fraud-case" target="_blank" rel="noopener">India Legal Live — Delhi HC sets aside NHAI action against toll contractors (Jul 2026)</a>
       <a href="https://timesofindia.indiatimes.com/city/lucknow/ed-conducts-searches-at-14-premises-in-6-states-seizes-rs-1-03-crore-cash-in-toll-collection-fraud-case/articleshow/133732293.cms" target="_blank" rel="noopener">TOI — ED searches 14 premises in 6 states (Sep 2026)</a>
       <a href="https://www.tv9hindi.com/state/uttar-pradesh/cctv-camera-found-in-women-restroom-baghpat-toll-plaza-misdeeds-including-allegations-of-illegal-extortion-3708444.html" target="_blank" rel="noopener">TV9 Hindi — Baghpat receipt-anomaly complaint (Mar 2026)</a>
-      <a href="https://www.stqc.gov.in/en/toll-management-system-products-certification-scheme" target="_blank" rel="noopener">STQC — Toll Management System certification scheme (the control that wasn't procured)</a>
+            <a href="https://thewire.in/economy/fastag-will-datafication-of-indias-tolls-boost-highway-development" target="_blank" rel="noopener">The Wire — FASTag: Will Datafication of India's Tolls Boost Highway Development? (Srikanth Lakshmanan, Dec 2019 — source for the privacy/state-stake sections)</a>
+<a href="https://www.stqc.gov.in/en/toll-management-system-products-certification-scheme" target="_blank" rel="noopener">STQC — Toll Management System certification scheme (the control that wasn't procured)</a>
       <a href="https://www.business-standard.com/article/economypolicy/govt-plans-to-plug-highway-toll-collection-loopholes-125032000572_1.html" target="_blank" rel="noopener">Business Standard — Govt plans to plug toll-collection loopholes (Mar 2025)</a>
     </div>
     <p class="small">Corrections welcome. If you hold documents — court records, ED releases, agency contracts — write to us. Attribution: CashlessConsumer Research, September 2026. This page will be updated when the ED press release and court filings become public.</p>
