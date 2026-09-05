@@ -205,6 +205,8 @@ td .mono { color: var(--fg-strong); }
 
 /* status chips in tables */
 .chip { display: inline-block; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; padding: 2px 9px; border-radius: 999px; }
+.chiplist { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.chiplist .chip { color: var(--muted); background: rgba(255,255,255,0.04); border: 1px solid var(--line); }
 .chip.exposed { color: var(--red); background: rgba(255,93,108,0.12); border: 1px solid rgba(255,93,108,0.4); }
 .chip.remediated { color: var(--accent); background: rgba(57,217,138,0.12); border: 1px solid rgba(57,217,138,0.4); }
 .chip.monitoring { color: var(--amber); background: rgba(242,179,95,0.1); border: 1px solid rgba(242,179,95,0.4); }
@@ -363,9 +365,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .tag.red, .tag-amber { color: var(--amber); border-color: rgba(242,179,95,0.4); }
 .tag-red { color: var(--red); border-color: rgba(255,93,108,0.4); }
 .tag-amber { background: rgba(242,179,95,0.08); }
+.tag-green { color: #4cc38a; border-color: rgba(76,195,138,0.4); background: rgba(86,182,139,0.06); }
 
 /* ============ Misc ============ */
-.page-hero.eth { border-bottom: 1px solid var(--line); box-shadow: inset 0 -40px 60px -60px rgba(180,143,217,0.25); }
+.page-hero.eth { border-bottom: 1px solid var(--line); box-shadow: inset 0 -40px 60px -60px rgba(180,143,217,0.25); }.page-hero.toll { border-bottom: 1px solid var(--line); box-shadow: inset 0 -40px 60px -60px rgba(242,179,95,0.2); }
 .sub { display: block; font-size: 0.8rem; color: var(--muted-2); }
 
 /* incident timeline items (cert-in page) */

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Shadow Toll — fake software on India's highway plazas</title>
+<meta name="description" content="How parallel software on ~100 Indian toll plazas printed NHAI-identical receipts for 2× cash from non-FASTag vehicles for two years — and why nothing in the official system ever noticed.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../index.html"><span class="mark">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+    <nav class="links">
+      <a href="../index.html">Home</a>
+      <a href="bank-in-report.html">.bank.in Audit</a>
+      <a href="toll-shadow-apps.html" class="active">Shadow Toll</a>
+      <a href="breaches.html">Breaches</a>
+      <a href="cert-in-dotenv.html">CERT-In · .env</a>
+      <a href="about.html">Method &amp; Ethics</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<section class="page-hero toll">
+  <div class="inner">
+    <span class="kicker">DPI systems investigation · September 2026</span>
+    <h1>The shadow toll: fake software on India's <span class="mono">cashless</span> highways</h1>
+    <p class="lede">For about two years, at roughly 100 national-highway toll plazas, operators ran unofficial software alongside the official tolling system. It let them pocket most of the cash collected from vehicles without a FASTag — while printing receipts identical to the government's own. The national tolling system recorded almost none of it. Police caught the scheme; the government's audit machinery did not.</p>
+    <div class="chiplist">
+      <span class="chip">~100 plazas</span>
+      <span class="chip">14+ states</span>
+      <span class="chip">2-year run</span>
+      <span class="chip">₹120 cr+ est. diverted</span>
+      <span class="chip tag-red">Caught by police, not audits</span>
+      <span class="chip">ED PMLA case, Sep 2026</span>
+    </div>
+    <div class="cta-row">
+      <a class="cta" href="toll-shadow-apps-explainer.pdf">Read the full PDF report (24 pp)</a>
+      <a class="cta ghost" href="#opendata">Jump to the open data</a>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="inner prose">
+    <div class="callout info">
+      <strong>TL;DR.</strong> Toll plazas had a cash side-door for vehicles without a valid FASTag: the driver pays double, the operator types the vehicle class by hand, a receipt prints, the agency is supposed to remit the money to NHAI. A small piece of software — referred to in court-adjacent reporting and the ED case as <em>'Mobdata'</em> and <em>'Any'</em> — let operators book only ~5% of that cash into the official system and pocket the rest, with plausible receipts hiding the theft. It was discovered because a citizen complained to Uttar Pradesh police in January 2025, not because any government system flagged it. A money-laundering case (ED, September 2026) is now the state's second attempt at accountability after courts quashed the first one.
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="inner prose">
+    <h2>1 · How a toll plaza actually works</h2>
+    <p>India's national highways collect toll electronically. Over <strong>98% of vehicles</strong> pay via <strong>FASTag</strong> — an RFID sticker linked to a prepaid wallet, read by an antenna as the car passes. This is the NETC (National Electronic Toll Collection) system run by IHMCL, a NHAI subsidiary. The barrier lifts, the fee moves digitally. There is no cash and almost nothing for an operator to steal.</p>
+    <p>The other few percent — vehicles with no tag, a dead wallet, or a blacklisted tag — hit the manual side of the lane:</p>
+    <ul>
+      <li>The barrier stays down. The booth operator keys in the vehicle class by hand.</li>
+      <li>Because the vehicle is non-compliant, the rules impose a <strong>2× penalty toll</strong>, collected in cash.</li>
+      <li>A receipt prints from the plaza's official software (the <em>Toll Management System</em>, TMS).</li>
+      <li>The collection agency — a private contractor hired per highway package — batches the day's cash and remits it to NHAI on a daily/weekly schedule, keeping an agreed cut as its fee.</li>
+    </ul>
+    <p>Two categories in the official software are keyed entirely by human judgment: <span class="mono">exempted</span> (ambulances, dignitaries, defence convoys…) and <span class="mono">violation</span> (tag-less vehicles). Nobody counts the cars independently. Remember that — it is the whole story.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="inner prose">
+    <h2>2 · The scam</h2>
+    <p>In January 2025, UP STF raided the Atraila Shiv Gulam plaza on NH-135 near Mirzapur after a citizen complaint about cash being taken from tag-less vehicles <em>without</em> receipts. What they found was not a greedy booth clerk but a small software firm's work.</p>
+    <p><strong>Alok Kumar Singh</strong>, 35, an MCA who had briefly worked at a toll plaza in 2021, had built a pair of applications — later referred to as <em>'Mobdata'</em> and <em>'Any'</em> — and rented them out to collection agencies across the country:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Element</th><th>What it did</th></tr></thead>
+        <tbody>
+          <tr><td>Client app (booth PC)</td><td>Ran on the plaza's own computers alongside the official TMS. Computed the same 2× fee from the public toll schedule. Printed <strong>identical thermal receipts</strong> on the same printer — drivers had no way to tell.</td></tr>
+          <tr><td>The 5% rule</td><td>Only ~5% of non-FASTag transactions were keyed into the official TMS — just enough to make the day's exemption/violation numbers look plausible. The rest existed only in the shadow app.</td></tr>
+          <tr><td>Central monitoring</td><td>Per-plaza collections streamed to a central portal and the operator's laptop. One person watched ~40 plazas' cash intake in real time.</td></tr>
+          <tr><td>The money</td><td>Cash stayed at the plaza; the developer's share moved through multiple bank accounts and wallets. STF estimated ~₹45,000/day from a single plaza.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout danger">
+      <strong>The camouflage math.</strong> Non-FASTag traffic is ~2% of volume. Skimming 95% of that slice removes under 2% of gross revenue — invisible in any aggregate dashboard. A plaza remitting 98% of expected revenue raises no alarm. The fraud was designed to sit under the resolution of every report NHAI looked at.
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="inner prose">
+    <h2>3 · Why nobody caught it</h2>
+    <p>This is the part that should worry anyone who builds or audits digital public infrastructure:</p>
+    <ul>
+      <li><strong>Auditors audit the official system.</strong> The shadow app never wrote a byte to TMS. Every NHAI inspection of plaza software checked the one database the fraud carefully avoided.</li>
+      <li><strong>There was no ground truth.</strong> No independent count of vehicles passing a lane (from barrier events, cameras or axle sensors) was ever reconciled against keyed transactions. NHAI announced AI audit cameras only <em>after</em> the scam surfaced — an admission of the missing control.</li>
+      <li><strong>Plaza computers were operator territory.</strong> Collection agencies installed whatever software they liked on booth PCs. Remote-access tools on a toll computer are indistinguishable from legitimate vendor support.</li>
+      <li><strong>Receipts were real.</strong> A driver who paid 2× cash got a genuine-looking receipt against a genuine-looking plaza. Consumer complaints would have caught the <em>absence</em> of receipts — not the wrong database behind them. (One Baghpat complaint in March 2026 — a receipt timestamped 8:46 PM for an 11:30 AM crossing — shows the signature persisting even after the crackdown.)</li>
+    </ul>
+    <p>A national certification scheme for toll software exists — STQC's <span class="mono">CTS</span> mark, which requires exactly the properties that were missing (tamper-proof databases, audit trails, secure code review). There is no evidence it was ever a procurement requirement for plaza software. That question is now the subject of an RTI request.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="inner prose">
+    <h2>4 · Timeline</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Date</th><th>Event</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">2021</td><td>Singh works briefly at a toll plaza; begins building the bypass.</td></tr>
+          <tr><td class="mono">~2023</td><td>Fraud goes live; spreads to agencies across 14+ states.</td></tr>
+          <tr><td class="mono">22 Jan 2025</td><td>FIR 0017/2025 (Lalganj PS, Mirzapur). UP STF arrests Singh near Varanasi airport; plaza manager and operator held at Atraila. Seizures: laptops, phones, a printer, an MUV.</td></tr>
+          <tr><td class="mono">23 Jan 2025</td><td>STF names 42 plazas across 14 states. NHAI orders all regional offices to check their plazas — most find "no significant evidence".</td></tr>
+          <tr><td class="mono">Feb 2025</td><td>Fourth arrest; 150–200 plazas under examination; notices to plaza managers in six districts.</td></tr>
+          <tr><td class="mono">Mar 2025</td><td>NHAI debars 14 collection agencies, forfeits ₹100+ crore in performance securities; Gadkari tells Parliament the ETC system itself was never breached. AI audit cameras and ANPR pilots announced.</td></tr>
+          <tr><td class="mono">5 Mar 2026</td><td>A driver's complaint in Baghpat (UP) shows a receipt issued 8:46 PM for an 11:30 AM crossing — the shadow-receipt signature, still alive.</td></tr>
+          <tr><td class="mono">Apr 2026</td><td>Cash abolished at all national-highway plazas — FASTag only (UPI at 1.25×). The vector is killed, not fixed.</td></tr>
+          <tr><td class="mono">Jul 2026</td><td>Delhi High Court quashes NHAI's debarments and the ₹100+ crore forfeitures: a press note, one confession and statistical inference are not evidence. No agency employee was named in any charge sheet; no shadow software was recovered from the petitioners' plazas.</td></tr>
+          <tr><td class="mono">2–3 Sep 2026</td><td>ED raids 14 premises across 6 states under PMLA: ₹1.03 crore cash, 8 bank accounts. Device forensics: the apps and monitoring portals touched <strong>~100 plazas</strong>; receipts "running in crores".</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="inner prose">
+    <h2>5 · The names problem</h2>
+    <div class="callout">
+      <strong>A note on 'Mobdata' and 'Any'.</strong> These two names come from ED-attributed wire reporting. We could not find either name in any app store, code repository, code-hosting site, or certificate-transparency log — which is consistent with internal codenames visible only on the seized devices and dashboards, not public products. Treat them as attributed labels, not established product names. (They are also unrelated to "MobData", a Chinese mobile-analytics SDK that happens to share a name.)
+    </div>
+    <p>The named human actors: the developer (<strong>Alok Kumar Singh</strong>), plaza-level arrests (manager Rajeev Mishra, operator Manish Mishra, a fourth accused Saaban Lal Kumhavat), and two "system managers" — Sawant and Sukhantu — who ran day-to-day operations across the ~42-plaza network. The collection agencies' names are public; their culpability is precisely what the High Court said was not proven — and what the ED case is now trying to establish.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="inner prose">
+    <h2>6 · What changed (and what didn't)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Fix</th><th>Status</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td>Cash abolished at plazas (FASTag/UPI-only)</td><td>Live since Apr 2026</td><td class="tag-green">Kills this fraud's vector entirely</td></tr>
+          <tr><td>MLFF barriers-free tolling (violations become digital e-notices)</td><td>First RFPs issued; one-plaza pilots</td><td class="tag-green">Digitises the exception itself — but scales one plaza at a time</td></tr>
+          <tr><td>Unified ATMS (single national toll-software spec)</td><td>RFP Vol-2, May 2026 (239 pp)</td><td class="tag-green">No manual lane exists in the successor spec</td></tr>
+          <tr><td>TRAS (remittance alerts to NHAI)</td><td>RFP Apr 2023; go-live unknown</td><td class="tag-amber">Reconciles only what agencies <em>choose</em> to report — blind to unbooked cash by design</td></tr>
+          <tr><td>STQC software certification (tamper-proof DB, audit trail)</td><td>Scheme exists</td><td class="tag-amber">Right control; no evidence it was ever procured for plaza software</td></tr>
+          <tr><td>Independent per-lane vehicle counts (AI audit cameras, ANPR)</td><td>Announced Mar 2025; deployment unclear</td><td class="tag-red">The one control that would have caught this — still not confirmed live</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>The DPI lesson:</strong> India deleted the fraud surface by deleting cash — a genuine success for digital public infrastructure. But every fallback (UPI QR at a plaza, an e-notice, an ANPR mis-read) creates its own dispute-and-fraud class. The next shadow app will not need a printer.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="inner prose">
+    <h2>7 · For the driver</h2>
+    <ul>
+      <li><strong>FASTag was never hacked.</strong> The RFID/deduction path is untouched by this case. Your tag and wallet are fine.</li>
+      <li>If you paid cash at a toll plaza (pre-Apr 2026), keep the receipt. If a receipt looks wrong — wrong time, missing plaza name, no TIN — that is now a known fraud signature; complain to NHAI's helpline (1033) with the receipt photo.</li>
+      <li>Today, a plaza that demands cash is itself non-compliant. UPI is allowed at 1.25× for tag-less vehicles; anything else, refuse and report.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="opendata">
+  <div class="inner prose">
+    <h2>8 · The open data</h2>
+    <p>To test how far the scam network reached into the official registry, we parsed IHMCL's <em>National Highway Fee Plaza list</em> (August 2025 — the official NETC plaza registry) from PDF into structured data:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>State</th><th>Plazas in registry</th></tr></thead>
+        <tbody>
+          <tr><td>Rajasthan</td><td>164</td></tr>
+          <tr><td>Uttar Pradesh</td><td>141</td></tr>
+          <tr><td>Maharashtra</td><td>102</td></tr>
+          <tr><td>Madhya Pradesh</td><td>90</td></tr>
+          <tr><td>Haryana</td><td>82</td></tr>
+          <tr><td>Tamil Nadu</td><td>81</td></tr>
+          <tr><td>Andhra Pradesh</td><td>79</td></tr>
+          <tr><td>Gujarat</td><td>62</td></tr>
+          <tr><td>Karnataka</td><td>62</td></tr>
+          <tr><td>Bihar</td><td>42</td></tr>
+          <tr><td>Punjab</td><td>41</td></tr>
+          <tr><td>+ 11 more states</td><td>145</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>1,129 plazas across 22 states.</strong> The scam's footprint touches this registry everywhere: for example, the case's ground-zero plaza —</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Scam plaza (from STF/press)</th><th>NETC code</th><th>In official registry (Aug 2025)?</th></tr></thead>
+        <tbody>
+          <tr><td>Atraila Shiv Gulam (Mirzapur, UP) — ground zero</td><td class="mono">320132</td><td>Yes — still listed</td></tr>
+          <tr><td>Patni Pratappur (Shamli, UP)</td><td class="mono">536051</td><td>Yes</td></tr>
+          <tr><td>Baleni/Balaini (Baghpat, UP) — site of the 2026 receipt complaint</td><td class="mono">320137</td><td>Yes</td></tr>
+          <tr><td>Faridpur (Bareilly, UP)</td><td class="mono">520036</td><td>Yes</td></tr>
+          <tr><td>Nainsar (Gorakhpur, UP) — raided Jan 2025</td><td class="mono">320084</td><td>Yes</td></tr>
+          <tr><td>Madanpur (Assam) — agency later debarred</td><td class="mono">378006</td><td>Yes</td></tr>
+          <tr><td>Okha Mandi / Okhamadi (Devbhumi Dwarka, GJ)</td><td class="mono">336009</td><td>Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>A year after the STF case — and months after the debarments — the plazas remained active NETC collection points. Termination of one agency, it turns out, does not remove the plaza: a new contractor takes over the same booth.</p>
+    <div class="callout">
+      <strong>Method &amp; caveats.</strong> Source: IHMCL NH Fee Plaza list (Aug 2025). We parsed the PDF's text layer (pdftotext -layout); 1,129 of ~1,159 listed plazas parsed cleanly — name-only rows whose continuation lines truncated are omitted. State/district names are as printed (incl. minor misspellings in the source). Scam-plaza names come from press lists transliterated from Hindi; crosswalks are high-confidence matches on name + district + highway, marked as such.
+    </div>
+    <h3>Downloads</h3>
+    <div class="linklist">
+      <a href="../data/toll-plazas-ihmcl-aug2025.csv" download>toll-plazas-ihmcl-aug2025.csv — full registry, 9 columns (NETC code, name, state, district, section, NH, PIU, regional office)</a>
+      <a href="https://zo.pub/cashlessconsumer/fastagscam-open-data" target="_blank" rel="noopener">fastagscam-open-data — full bundle: CSV + scam crosswalk + parser + source notes</a>
+      <a href="toll-shadow-apps-explainer.pdf" download>The Shadow Toll — full PDF report (24 pages, LaTeX-typeset)</a>
+      <a href="https://ihmcl.co.in/" target="_blank" rel="noopener">Source: IHMCL (IHMCL.co.in) — official fee-plaza list</a>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="inner prose">
+    <h2>9 · Sources &amp; evidence</h2>
+    <p>Primary reporting and documents behind this page (full evidence folder + master dossier in the CashlessConsumer research archive):</p>
+    <div class="linklist">
+      <a href="https://www.tribuneindia.com/news/india/about-100-highway-plazas-used-illegal-apps-to-collect-toll-from-vehicles-not-bearing-fastag-stickers-ed/" target="_blank" rel="noopener">The Tribune — ED: ~100 plazas used illegal apps on non-FASTag toll (Sep 3, 2026)</a>
+      <a href="https://timesofindia.indiatimes.com/city/lucknow/mca-grad-behind-toll-fraud-arrested/articleshow/117498101.cms" target="_blank" rel="noopener">TOI — MCA grad behind toll fraud arrested (Jan 2025)</a>
+      <a href="https://www.opindia.com/2025/01/nhai-orders-action-in-the-toll-plaza-scam-uncovered-by-the-up-stf-3-arrested" target="_blank" rel="noopener">OpIndia — STF seizures, monitoring software, NHAI order (Jan 2025)</a>
+      <a href="https://indialegallive.com/constitutional-law-news/courts-news/delhi-high-court-sets-aside-nhai-action-against-toll-contractors-in-software-fraud-case" target="_blank" rel="noopener">India Legal Live — Delhi HC sets aside NHAI action against toll contractors (Jul 2026)</a>
+      <a href="https://timesofindia.indiatimes.com/city/lucknow/ed-conducts-searches-at-14-premises-in-6-states-seizes-rs-1-03-crore-cash-in-toll-collection-fraud-case/articleshow/133732293.cms" target="_blank" rel="noopener">TOI — ED searches 14 premises in 6 states (Sep 2026)</a>
+      <a href="https://www.tv9hindi.com/state/uttar-pradesh/cctv-camera-found-in-women-restroom-baghpat-toll-plaza-misdeeds-including-allegations-of-illegal-extortion-3708444.html" target="_blank" rel="noopener">TV9 Hindi — Baghpat receipt-anomaly complaint (Mar 2026)</a>
+      <a href="https://www.stqc.gov.in/en/toll-management-system-products-certification-scheme" target="_blank" rel="noopener">STQC — Toll Management System certification scheme (the control that wasn't procured)</a>
+      <a href="https://www.business-standard.com/article/economypolicy/govt-plans-to-plug-highway-toll-collection-loopholes-125032000572_1.html" target="_blank" rel="noopener">Business Standard — Govt plans to plug toll-collection loopholes (Mar 2025)</a>
+    </div>
+    <p class="small">Corrections welcome. If you hold documents — court records, ED releases, agency contracts — write to us. Attribution: CashlessConsumer Research, September 2026. This page will be updated when the ED press release and court filings become public.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <span class="f-brand"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
+    <div class="f-links">
+      <a href="https://cashlessconsumer.in">cashlessconsumer.in</a>
+      <a href="https://x.com/logic" target="_blank" rel="noopener">@logic</a>
+      <a href="about.html">Method &amp; Ethics</a>
+    </div>
+    <span class="f-note">Public documents only · No PII published · Human-supervised agentic work</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -11,9 +11,13 @@ financial and government infrastructure.
 |------|-------|
 | `index.html` | Hub — index of all cyber efforts |
 | `pages/bank-in-report.html` | `.bank.in` namespace security audit + IDRBT registry investigation |
+| `pages/toll-shadow-apps.html` | Toll shadow-software investigation ('Mobdata'/'Any') + open plaza-registry dataset; PDF: `pages/toll-shadow-apps-explainer.pdf` |
+| `pages/toll-shadow-apps.html` | Toll shadow-software scam explainer ('Mobdata'/'Any', ED PMLA 2026) + open plaza-registry dataset |
+| `pages/breaches.html` | Ransomware breach verification index (BoB / Triple X, Dodo / DireWolf) |
 | `pages/bob-breach.html` | Bank of Baroda breach verification gateway (links to bobbreach.cashlessconsumer.in) |
 | `pages/cert-in-dotenv.html` | CERT-In responsible disclosures — `.env` files on `.bank.in` |
 | `pages/about.html` | Methodology, ethics, disclosure policy |
+| `pages/toll-shadow-apps-explainer.pdf` | 24-page LaTeX (Eisvogel) explainer report backing the shadow-toll page |
 
 ## Structure
 
@@ -21,6 +25,7 @@ financial and government infrastructure.
 |------|---------|
 | `index.html` | Landing / hub page |
 | `pages/` | Individual investigation pages |
+| `data/` | Open datasets referenced by pages (CSV) |
 | `css/style.css` | Shared stylesheet (dark security theme) |
 | `js/main.js` | Shared nav + theme toggle |
 | `CNAME` | Custom domain: cyber.cashlessconsumer.in |
@@ -33,8 +38,19 @@ financial and government infrastructure.
   live data repos `CCAgentOrg/bank-in-domains` and `bank-domains-ui`.
 - **bob-breach:** Verbatim headline stats match `BoBBreach` (metadata-level;
   names/paths/volume only).
+- **toll-shadow-apps:** IHMCL NH fee-plaza list (Aug 2025 PDF, gov source) parsed via
+  `pdftotext -layout` — 1,129 plazas, 22 states. Scam-plaza crosswalk from STF/ED
+  press coverage (see `Documents/research/FASTagScam/` for the full evidence folder).
 - **cert-in-env:** `Projects/bank-in-research/bank_in_env_scan.csv`,
   `bank_in_env_exposure.md`, `CERT-In-reply-draft.md`.
+- **toll-shadow-apps:** `data/toll-plazas-ihmcl-aug2025.csv` — parsed from
+  IHMCL's official "List of Fee Plazas on NH" PDF (Aug 2025, 1,129 plazas,
+  22 states) via `pdftotext -layout` + row-wrap-tolerant parser (source PDF +
+  script in `Documents/research/FASTagScam/`, public copy at
+  https://zo.pub/cashlessconsumer/fastagscam-open-data). Scam-plaza NETC
+  crosswalks (Atraila 320132, Patni Pratappur 536051, Baleni 320137, Faridpur
+  520036, Madanpur 378006) verified against press lists. All data public-domain
+  government material; no PII.
 
 ## Maintainers
 
