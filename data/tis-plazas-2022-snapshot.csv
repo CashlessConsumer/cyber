@@ -1,0 +1,783 @@
+tis_plaza_id,plaza_name,operator_from_tis,project_type,latitude,longitude,car_single,lcv_single,bus_single,truck_3axle_single,hcm_eme_single,oversized_7plus_single
+4,Thakurtola (End of Durg Bypass),M/s Ashoka Highways Durg Ltd,BOT (Toll),21.117914,81.122298,95,165,335,535,535,535
+6,Hirebagewadi,M/s Ashoka Belgaum Dharwad Tollway Ltd,BOT (Toll),15.76311,74.64785,110,175,365,575,575,700
+7,Durg Bypass (Dhamdanaka),Ms Durg Shivnath Expressways Pvt Ltd.,BOT (Toll),21.214518,81.287962,70,140,210,,415,
+8,Hattargi,Ms Sahakar Global Ltd.,Public Funded,16.1433,74.51696,30,50,110,120,170,210
+9,Kognoli,Ms Ranchor Infra Developers Pvt. Ltd.,Public Funded,16.5422,74.31825,85,135,280,305,440,535
+10,Tundla,M/s AE Tollways Pvt Ltd,BOT (Toll),27.218247,78.272821,100,160,335,370,530,645
+11,Brahamarakotlu,Sh. Suresh Chandra Agarwal,Public Funded,12.875095,75.003849,30,50,100,110,155,190
+12,Cable Stayed Naini Bridge,Bholanath Rajpati Shukla,Public Funded,25.41629,81.861017,25,40,90,95,135,165
+13,Bassi,Ashirwad Smart Infralink Pvt. Ltd.,OMT,25.033921,74.817676,85,140,295,325,465,565
+14,Aroli,Ashirwad Smart Infralink Pvt. Ltd.,OMT,25.09118,75.199063,75,120,255,275,395,480
+15,Dhaneshwar,Ashirwad Smart Infralink Pvt. Ltd.,OMT,25.072621,75.598467,75,120,245,270,385,470
+16,Fatehpur,Ms Kalyan Toll Infrastructure Limited,OMT,25.122,76.572806,105,175,360,395,570,690
+17,Simliya,Ms Kalyan Toll Infrastructure Limited,OMT,25.170089,76.130552,80,130,275,300,435,530
+18,Omallur,M/s M.V.R. Infrstructure And Tollways Pvt Ltd,BOT (Toll),11.72034,78.07338,85,145,290,470,470,470
+19,Nathakkarai,M/s SU Toll Road Private Limited,BOT (Toll),11.592809,78.780812,50,90,185,295,295,295
+20,Veeracholapuram (West),M/s SU Toll Road Private Limited,BOT (Toll),11.736464,79.010409,50,90,185,295,295,295
+21,Palayam (Dharmapuri),M/s L&amp;T Krishnagiri Thopur Toll Road Limited,BOT (Toll),12.00643,78.08042,105,185,365,590,590,590
+22,Rasampalayan,M/s NK Toll Road Ltd,BOT (Toll),11.193895,78.103219,50,90,175,285,285,285
+23,Nemili (Sriperumbudur),Ms Sahakar Global Ltd.,Public Funded,12.982155,79.968944,50,85,175,190,270,330
+24,Joya,Ms Prakash Asphalting and Toll Highways India Ltd.,Public Funded,28.836176,78.420749,40,65,130,145,205,250
+25,"Khalghat -MP/Maharashtra Border(Sendhwa, Jamli)",M/s Sew Navayuga Barwani Tollways Pvt Ltd,BOT (Toll),21.75667,75.156824,95,165,335,540,540,540
+26,Boothakudi,Kalyan Toll Infrastructure Ltd.,OMT,10.64127,78.581277,95,155,325,355,510,625
+27,Chittampatti,Ms Sri Sai Enterprises,OMT,9.989594,78.244086,100,160,335,365,520,635
+29,Chalageri,Ms Sri Sai Enterprises,Public Funded,14.556778,75.728025,75,125,260,280,540,495
+30,Choundha,M/s Agra-Gwalior Pathways Pvt Ltd,OMT,26.467309,78.010916,80,130,265,290,420,510
+31,Brijghat,Sh. Suresh Chandra Agarwal,Public Funded,28.767149,78.110043,55,90,195,210,305,370
+34,Usaka ( Chamari),Prakash Asphaltings and Toll Highways(India) Ltd.,Public Funded,26.036608,79.577976,100,165,340,370,535,650
+35,Indore Dewas  (Indore Bypass),M/s Indore Dewas Tollways Limited,BOT (Toll),22.822692,75.938208,60,100,210,325,325,395
+39,Siwaya,M/s Western Up Tollway Limited,BOT (Toll),29.095601,77.710995,110,190,385,620,620,620
+40,Daffi,M/s Soma Isolux Varanasi Aurangabad Tollway Pvt Ltd,BOT (Toll),25.248275,82.994017,75,120,255,395,395,485
+41,Mohania,M/s Soma Isolux Varanasi Aurangabad Tollway Pvt Ltd,BOT (Toll),25.19093,83.559544,60,95,195,310,310,375
+43,Sasaram,M/s Soma Isolux Varanasi Aurangabad Tollway Pvt Ltd,BOT (Toll),24.957125,83.954997,130,210,435,685,685,835
+44,Anantram,M/s Etawah Chakeri Kanpur Highway Pvt Ltd,BOT (Toll),26.594931,79.268034,100,160,340,370,530,645
+45,Tendua (Gorakhpur Bypass),M/s Gorakhpur-Kasiya Tollways Pvt Ltd,OMT,26.724015,83.274398,90,150,315,340,490,595
+47,Barajore (Bara),M/s Etawah Chakeri Kanpur Highway Pvt Ltd,BOT (Toll),26.386389,80.021485,165,260,530,580,815,1030
+48,Bharudi,M/s West Gujarat Expressway Ltd,BOT (Toll),21.805381,70.663976,40,65,130,215,215,215
+49,Pithadiya,M/s West Gujarat Expressway Ltd,BOT (Toll),22.082642,70.781004,40,65,130,215,215,215
+50,Choryasi,Ms Asphalting and Toll Highways (India) Ltd.,BOT (Toll),21.303367,72.95418,80,140,280,455,455,455
+56,Anewadi,M/s PS Toll Road Pvt Ltd,BOT (Toll),17.810312,73.971381,75,125,260,405,405,495
+57,Mettupatti,M/s SU Toll Road Private Limited,BOT (Toll),11.66167,78.330768,50,90,185,295,295,295
+58,Doddakarenahalli (Neelmangala ),M/s Lanco Devihalli Highawys Ltd,BOT (Toll),13.068175,77.3605999,45,80,160,260,260,
+59,Thirumandurai,M/s Trichy Tollway Private Limited,BOT (Toll),11.396808,78.99356,55,100,200,320,320,320
+64,Patas,M/s Pune Solapur Expressways Pvt Ltd,BOT (Toll),18.424491,74.466193,85,135,290,450,450,550
+66,Thandikhui,Ms Datar Security Service Group,Public Funded,32.607394,74.944346,80,125,265,290,415,510
+67,Daroda,Ms Highway and Tandon Tollways,OMT,20.450467,78.755153,100,165,340,375,535,655
+68,Samakhiyali,M/s L&amp;T Samakhiyali Gandhidham Tollway Limited,BOT (Toll),23.308555,70.49059,75,125,260,405,405,495
+70,Kelapur,Ms Skylark Infra Engineering Pvt. Ltd.,Public Funded,20.019307,78.54022,100,165,340,375,535,655
+71,Nandgaon Peth,M/s IRB Talengaon Amravati Tollway,BOT (Toll),20.951008,77.788359,115,180,365,560,560,710
+72,Mundiyar,Sh. Suresh Chandra,OMT,25.208647,77.136059,100,160,335,365,525,635
+73,Raksha,Ms Prakash Asphalting and Toll Highways(I) Ltd.,OMT,25.461841,78.451052,120,195,415,450,645,790
+74,Ramnagar,Rishiraj Singh,OMT,25.278913,77.614165,95,155,320,350,505,615
+75,Athur (Tindivanam),Ms Coral Associates,Public Funded,12.346862,79.779856,65,105,220,240,345,425
+76,Vanagaram (Chennai Bypass),Ms Inderdeep Construction Co.,Public Funded,13.043526,80.149598,50,80,165,180,260,315
+77,Mandawnagar,M/s Ayodhya-Gorakhpur Sms Tolls Pvt Ltd,OMT,26.810525,82.731283,85,140,290,315,455,555
+79,Surapattu (Chennai Bypass II),Riddhi Siddhi Associates,Public Funded,13.136678,80.181624,70,110,230,250,360,435
+80,Paranur (Chengalpet),Ms Eagle Infra India Ltd.,Public Funded,12.723887,79.981917,60,100,205,225,325,395
+82,Nallur,Inderdeep Construction Co.,Public Funded,13.216958,80.169353,70,115,245,265,380,465
+85,Eliyarpathi,M/s Madurai Tuticorin Expressway Limited,BOT (Toll),9.78299,78.094492,75,130,260,415,415,415
+86,Pudurpandiyapuram,M/s Madurai Tuticorin Expressway Limited,BOT (Toll),8.862935,78.117106,75,130,260,415,415,415
+88,Malthone,M/s DPJ-DRA Tollways Pvt Ltd,OMT,24.322069,78.526217,115,185,390,425,615,745
+90,Titarpani,M/s DPJ-DRA Tollways Pvt Ltd,OMT,23.233839,79.047247,105,170,355,390,560,680
+92,Gurau (Semra Atikabad),M/s AE Tollways Pvt Ltd,BOT (Toll),26.996524,78.777334,105,175,365,395,570,695
+95,Jajau (Old Baretha),M/s Agra-Gwalior Pathways Pvt Ltd,OMT,26.931976,77.933397,90,145,300,330,470,575
+96,Vaiguntham,M/s Salem Toll Ways Limited,BOT (Toll),11.513282,77.923946,65,115,230,365,365,365
+97,Makhel,Ms Ayushajay Construction Pvt. Ltd.,OMT,23.490457,70.942745,125,200,425,460,665,805
+98,Vijaymangalmam,M/s Kumarapalayam Toll Ways Limited,BOT (Toll),11.245714,77.519702,60,105,205,330,330,330
+99,Bhiladi,Ms Ashirwad Smart Infralink Pvt. Ltd.,OMT,24.143855,71.977168,120,195,405,440,635,775
+100,Kumbalam,M/s Kochi Aroor Tollways Pvt Ltd,OMT,9.89525,76.313542,45,70,145,160,225,275
+101,Varahi,Ms Highways and Tandon Tollways,OMT,23.791263,71.427652,60,95,200,215,315,380
+102,Velanchettiyur,M/s TN(DK) Expressways Limited,BOT (Toll),10.699008,77.932875,95,165,330,530,530,530
+103,Krishnagiri(Thopur),M/s Hk Toll Road Pvt Ltd,BOT (Toll),12.544583,78.201132,80,130,275,435,435,525
+104,Vikravandi(Villupuram),M/s Ulundurpet Expressways Private Limited,BOT (Toll),12.024441,79.538059,90,155,310,500,500,500
+105,Pallikonda,M/s L&amp;T Krishnagiri Walajahpet Tollway Limited,BOT (Toll),12.905829,78.951686,105,165,345,545,545,665
+106,Morattandi,M/s Pondicheery Tindivinam Tollway Ltd,BOT (Toll),11.983278,79.78836,45,80,155,250,250,250
+107,Vaniyambadi,M/s L&amp;T Krishnagiri Walajahpet Tollway Limited,BOT (Toll),12.648554,78.5833,100,160,335,525,525,640
+108,Nanguneri,Sanghvi Cylinders Pvt. Ltd.,Public Funded,8.527035,77.663289,105,165,350,380,545,665
+109,Kodairoad,M/s DS Toll Road Limited,BOT (Toll),10.194488,77.909317,65,115,225,365,365,365
+110,Ludhawai,M/s Madhucon Agra Jaipur Expressways Ltd,BOT (Toll),27.178509,77.416845,20,40,80,130,130,130
+111,Etturvattam,Ms Inderdeep Construction Company,Public Funded,9.385445,77.914347,95,150,320,350,500,610
+112,Kappalur,Inderdeep Construction Co.,Public Funded,9.844294,78.011209,95,150,315,345,495,605
+113,Salaipudhur,Feedback Highways OMT Pvt. Ltd.,Public Funded,8.975702,77.774608,115,185,390,425,610,745
+114,Paliyekkara,M/s Guruvayoor Infrastructure Private Limited,BOT (Toll),10.442868,76.260179,80,140,275,445,445,445
+115,Valavanthankottai,M/s Trichy - Thanjavur Expressways Ltd,BOT (Toll),10.744371,78.834044,65,115,230,365,365,365
+116,Karbylu (Bellur Cross),M/s Lanco Devihalli Highawys Ltd,BOT (Toll),12.962828,76.765205,45,80,160,260,260,
+117,Pudukottai (Vagaikulam),Ms Sri Sai Enterprises,Public Funded,8.755472,78.065264,70,115,240,265,380,460
+118,Samayapuram,M/s Trichy Padalur Tollways Private Limited,BOT (Toll),10.92937,78.744056,45,80,165,265,265,265
+119,Sengurichi,M/s Trichy Tollway Private Limited,BOT (Toll),11.706434,79.322335,55,100,200,320,320,320
+120,Korai,M/s Oriental Pathways (Agra) Pvt Ltd,BOT (Toll),27.114895,77.715981,50,90,180,290,385,290
+121,Khalghat  (Indore - Khalghat),M/s Oriental Pathways (Indore) Pvt Ltd,BOT (Toll),22.173782,75.456797,60,100,205,325,435,325
+123,Parsoni Khem,Ms Ranchor Electronics Pvt. Ltd.,Public Funded,26.451663,85.022711,115,190,395,430,620,755
+124,Kishangarh (Badgaon),M/s GVK Jaipur Expressway Pvt Ltd,BOT (Toll),26.595329,74.939169,45,75,150,240,320,240
+125,Maithi,Ms SMSAABS India Tollway Pvt Ltd,OMT,26.112648,85.564827,130,215,445,490,700,855
+129,Tatiyawas,M/s Jaipur Reengus Toll Roads (P) Ltd,BOT (Toll),27.089775,75.7415,70,115,240,375,375,455
+130,Chiddan,Ms Jal Singh and Company,Public Funded,31.617167,74.692378,50,80,165,180,260,315
+131,Dappar,M/s GMR Ambala-Chandigarh Expressways Pvt Ltd,BOT (Toll),30.527449,76.813037,40,70,140,230,305,230
+132,Gogunda (Jaswantgarh),Ms Feedback Highways OMT Pvt. Ltd.,OMT,24.766166,73.523999,80,130,275,300,435,525
+133,Kurali (Behrampur),M/s BSC C&amp;C Kurali Toll Road Ltd,BOT (Toll),30.842218,76.568495,50,85,175,280,280,280
+134,Jojro Ka Khera,CG Tollway Pvt. Ltd.,Public Funded,25.082922,74.624379,95,155,320,350,505,615
+135,Kedi,Ms KISHANGARH GULABPURA TOLLWAY PVT. LTD.,BOT (Toll),26.104125,74.685331,75,120,250,275,395,480
+136,Khandi Obari,Ms Coral Associates,BOT (Toll),23.993636,73.627895,165,265,555,605,870,1060
+137,Narayanpura,M/s Prakash Asphaltings &amp; Toll Highways (India) Ltd,Public Funded,24.613529,74.233079,130,210,445,485,695,845
+138,Malera,Ms SPC Infrastructure Pvt. Ltd.,OMT,24.712368,73.093755,110,180,375,410,585,715
+139,Ghoti,M/s Mumbai-Nashik Expressway Ltd Mumbai,BOT (Toll),19.708905,73.614819,135,240,480,775,775,775
+140,Vaghasia,Bamanbore tollway pvt Ltd,Public Funded,22.42301,71.088805,105,170,360,390,565,685
+141,Lakhanpur/ Rajbagh,Ms Choudhary Power Project Pvt. Ltd.,Public Funded,32.382605,75.598788,95,155,330,360,515,630
+142,Dhumiyani,Porbander Jetpur Tollways Pvt Ltd.,Public Funded,21.751451,70.326793,110,180,375,405,585,715
+143,Chandwad,M/s lrcon - Soma Tollway Pvt Ltd,0,20.325014,74.210751,165,290,575,925,925,925
+144,Khedshivapur,M/s PS Toll Road Pvt Ltd,BOT (Toll),18.3313849,73.8525197,110,175,370,585,585,710
+145,Baswant (Pimplegaon),Ms Skylark Infra Engineering Pvt. Ltd.,Public Funded,20.141701,73.976492,210,340,715,780,1120,1365
+146,Sendurwafa,M/s Ashoka Highways (Bhandara) Ltd,BOT (Toll),21.088119,80.032855,85,145,290,470,470,470
+147,Shirpur,M/s Dhule Palesner Tollway Ltd,BOT (Toll),21.319718,74.889291,120,190,385,590,590,755
+148,Gondhkhairi/ Kondhali,M/s Atlanta Infra Assets Pvt Ltd,BOT (Toll),21.137001,78.89666,45,80,165,265,350,265
+149,Chandimandir,M/s Himalyan Expressway Ltd,BOT (Toll),30.738834,76.897977,30,55,110,180,180,180
+150,Dighal,M/s Kurukshera Expressway Pvt Ltd,BOT (Toll),28.776746,76.621688,50,85,175,275,275,335
+151,Dhilwan,Ms R. K. Jain Infra Projects Pvt. Ltd.,0,31.499318,75.323065,60,95,200,220,315,385
+152,Gangaycha Jatt,Ms R. K. Jain Infra Projecta Pvt. Ltd.,BOT (Toll),28.275006,76.613363,90,140,290,445,445,565
+153,Nijjarpura,MS Skylark Infra Engg. Pvt. Ltd.,BOT (Toll),31.577704,74.997072,55,95,195,210,305,370
+154,Panipat Elevated,L and T Panipat Elevated Corridor Limited,BOT (Toll),29.433664,76.97014,40,60,120,120,120,120
+155,Gharaunda (Karnal),Ms PATH (India) Pvt. Ltd.,BOT (Toll),29.584373,76.978792,125,220,445,715,715,715
+156,Sambhu(Ghaggar),Ms Skylark Infra and Shiva Corp.,BOT (Toll),30.403832,76.736825,75,135,265,430,430,430
+157,Ladowal,Ms PATH (India) Pvt. Ltd.,BOT (Toll),30.990725,75.790082,135,235,465,750,750,750
+158,Karanja (Ghadge),M/s Oriental Pathways (Nagpur) Pvt Ltd,BOT (Toll),21.162103,78.399287,55,100,200,320,430,320
+159,Srinagar,M/s DA Toll Road Pvt Ltd,BOT (Toll),28.00548,77.332377,120,195,415,650,650,790
+160,Mahuvan,M/s DA Toll Road Pvt Ltd,BOT (Toll),27.337188,77.737458,95,150,320,500,500,605
+161,Lalanagar,Jawahar Lal Gupta,Public Funded,25.266948,82.491513,210,340,715,780,1120,1365
+162,Salemgarh,M/s Gorakhpur-Kasiya Tollways Pvt Ltd,OMT,26.631703,84.238336,60,95,195,215,310,375
+163,Muziana Hetim,M/s Gorakhpur Kasiya Toll way Pvt Ltd,OMT,26.733855,83.808555,60,95,200,215,310,375
+164,Chaukadi,M/s Ayodhya-Gorakhpur Sms Toll Pvt Ltd,OMT,26.781312,82.417008,115,180,375,410,580,730
+165,Katoghan,Ms R.K. Transport Pvt. Ltd.,Public Funded,25.749487,81.170481,55,90,185,205,295,355
+166,Gurapalli,Sonu Kumar,Public Funded,19.638154,85.140017,95,150,320,350,500,610
+168,Srirampur,Ms Ranchor Infra Developers Pvt. Ltd.,Public Funded,20.678864,86.165581,140,230,475,520,750,910
+169,Gudipada (Old Gangapada),Bholanath Rajpati Shukla,Public Funded,20.20348,85.668597,75,120,255,280,400,490
+170,Sergarh,Bholanath Rajpati Shukla,Public Funded,21.429889,86.836645,60,95,200,220,315,385
+171,Panikholi,M/s Sahakar Global Ltd,Public Funded,20.897746,86.21625,115,185,385,420,605,735
+172,Bandalo(Old Maguli),M/s Shree Jagannath Expressways Pvt Ltd,BOT (Toll),20.540387,85.96387,135,215,440,680,680,855
+173,Krishnavaram,Diwancheruvu Tollways Pvt Ltd,BOT (Toll),17.215448,82.1107,100,160,335,365,525,640
+174,Rolmamda,M/s Sri Sai Enterprises,Public Funded,19.28019,78.409222,100,160,335,365,525,635
+175,Manoharabad,Ms Sahakar Global Ltd.,Public Funded,17.801103,78.471683,95,155,320,350,500,610
+176,Gamjal,M/s Inderdeep Construction Co.,Public Funded,19.026592,78.362705,55,90,195,210,300,370
+177,Pippalwada,Ms Highway and Tandon Tollways,Public Funded,19.781093,78.565772,90,150,310,340,490,595
+178,Pundag,Ms Sahakar Global Ltd.,Public Funded,23.542635,85.503153,115,190,395,430,620,755
+179,Sikandra,M/s Jaipur Mahua Tollway Pvt Ltd,BOT (Toll),26.944488,76.557567,70,120,240,380,380,380
+180,Rajadhok,M/s Jaipur Mahua Tollway Pvt Ltd,BOT (Toll),26.859184,76.105596,65,120,235,380,380,380
+181,Amoli,M/s Madhucon Agra Jaipur Expressways Ltd,BOT (Toll),27.101301,77.090874,45,80,165,265,265,265
+182,Thikariya (Jaipur),M/s GVK Jaipur Expressway Pvt Ltd,BOT (Toll),26.843328,75.615578,70,120,240,390,520,390
+183,Barkheda (Chandlai),M/s IRB-Jaipur Deoli Tollway Private Ltd,BOT (Toll),26.68816,75.904726,110,175,365,570,570,710
+184,Sonwa (Sonva),M/s IRB-Jaipur Deoli Tollway Pvt Ltd,BOT (Toll),26.109852,75.744832,95,155,325,505,505,615
+185,Lambiya Kalan,CG Tollway Pvt. Ltd.,BOT (Toll),25.5938407,74.5948394,90,150,310,340,485,590
+186,Hoskote,M/s Lanco Hoskote Highway Limited,BOT (Toll),13.059436,77.770734,20,35,65,105,105,105
+187,Bagepalli,Ms Sahakar Global Ltd.,Public Funded,13.793094,77.764384,110,175,370,400,575,700
+188,Kirasave,M/s L&amp;T Devihalli Hassan Tollways Ltd,BOT (Toll),12.958304,76.623563,50,80,175,270,270,330
+189,Shanthigrama,M/s L&amp;T Devihalli Hassan Tollway Limited,BOT (Toll),12.982709,76.228913,45,70,150,235,235,285
+190,Bann,SP Jammu Udhampur Highway Limited,Public Funded,32.838919,74.940161,155,255,530,580,830,1010
+191,Harsa Mansar,M/s Prakash Asphaitings &amp; Toll Highways (India) Ltd,Public Funded,32.058621,75.614278,120,190,400,435,625,765
+193,Arjunali,M/s Mumbai-Nashik Expressway Ltd Mumbai,BOT (Toll),19.361481,73.165874,135,240,480,775,775,775
+194,Mansar (Kamptee - Kanhan Bypass)/ Tekadi,M/s Oriental Nagpur Bye Pass Construction Pvt Ltd,BOT (Toll),21.382332,79.253327,150,235,475,725,725,935
+195,Borkhedi (Nagpur ByPass),M/s Oriental Nagpur Bye Pass Construction Pvt Ltd,BOT (Toll),20.85612,78.963632,145,225,455,690,690,890
+197,Laling (Dhule),M/s lrcon - Soma Tollway Pvt Ltd New Delhi,BOT (Toll),20.833054,74.754192,165,290,575,925,925,925
+199,Vanana,Porbander Jetpur Tollways Pvt Ltd.,Public Funded,21.664929,69.709536,75,120,250,275,395,480
+200,Ait,M/s  Prakash Asphalting &amp; Toll Highway(India)Ltd,OMT,25.879908,79.210298,115,185,385,420,605,735
+201,Vighakhet,Skylark Infra Engg. Pvt. Ltd.,Public Funded,24.789564,78.448812,80,130,275,300,435,530
+202,Khemana,Ms Sahakar Global Limited,Public Funded,24.241335,72.462709,70,110,235,255,370,450
+203,Laxmipuram,Md Usman,BOT (Toll),18.05799,83.52111,135,215,455,495,715,870
+204,Raje(Old Naraur),M/s SMS-AABS India Tollway Pvt Ltd,OMT,26.225984,86.153489,130,210,440,480,685,835
+205,Chilakapalem,M/s Sahakar Global Ltd,Public Funded,18.273462,83.807965,75,120,245,270,385,470
+207,Indalwai,M/s Navayuga Dichpally Tollway Pvt Ltd,BOT (Toll),18.538266,78.239734,80,130,275,435,435,530
+208,Sardewadi / Indapur,M/s Pune Solapur Expressways Pvt Ltd,BOT (Toll),18.844903,73.09453,85,135,280,430,430,545
+209,Itunja (Barabhari),M/s Lucknow Siatpur Expressway Limited,BOT (Toll),27.1037,80.8836,45,75,155,245,330,245
+210,Ahmadpur,M/s PNC Kanpur Ayodhya Tollways Pvt Ltd.,OMT,26.858314,81.422445,110,175,365,400,570,695
+211,Ronahi,M/s PNC Kanpur Ayodhya Tollways Pvt Ltd,OMT,26.763728,82.006302,115,185,385,420,600,730
+212,Nawabganj,M/s PNC Kanpur Ayodhya Tollways Pvt Ltd,OMT,26.623172,80.694765,90,140,295,325,465,565
+213,Shahjahanpur,M/s Pink City Expressway Pvt Ltd (PCEPL),BOT (Toll),27.99978,76.430522,140,240,485,780,780,780
+214,Manoharpur,M/s Pink City Expressway Pvt Ltd (PCEPL),BOT (Toll),27.3056399,75.9535128,65,115,230,375,375,375
+215,Daulatpura,M/s Pink City Expressway Pvt Ltd (PCEPL),BOT (Toll),27.0868994,75.8345568,55,100,195,315,315,315
+216,Raikal,M/s Jadcherla Expressways Ltd,BOT (Toll),17.005867,78.194493,70,125,245,395,395,395
+217,Shakhapur,M/s L&amp;T Western Andhra Tollways Limited,BOT (Toll),16.535645,77.944453,65,110,220,355,355,355
+218,Gudur (Hyd-Yadgiri),M/s Hyderabad-Yadgiri Tollway Pvt Ltd,BOT (Toll),17.486162,78.821053,110,165,340,510,510,665
+219,Pullur,M/s Sri Sai Enterprises,Public Funded,15.887742,78.016978,125,205,425,465,670,815
+220,Vempadu,Anakapalli Tollways Pvt Ltd,BOT (Toll),17.397831,82.67582,130,205,435,475,680,830
+222,Panthangi,M/s GMR Hyderabad Viijaywada Expressway Pvt Ltd,BOT (Toll),17.232887,78.960464,90,140,290,450,450,560
+223,Paschim Madati,Ms Inderdeep Construction Co.,Public Funded,26.568967,88.275366,90,145,305,330,475,580
+224,Rampura,M/s Baleshwar Kharagpur Expressway Limited,BOT (Toll),22.24076,87.39207,90,145,305,330,475,580
+225,Rasoiya Dhamna,Prakash Asphaltings and Toll Highways(India) Ltd,Public Funded,24.3234,85.3881,115,190,395,430,620,755
+226,Ghanghri,Ms Coral Associates,Public Funded,24.030104,85.948614,115,180,380,415,600,730
+227,Keesara,M/s Swarna Tollway Pvt Ltd,BOT (Toll),16.718077,80.324314,70,120,240,510,510,510
+228,Kaza,M/s Vijayawada Tollway Pvt Ltd,BOT (Toll),16.3856,80.53367,95,165,335,535,535,535
+229,Budhanam,M/s Swarna Tollway Private Ltd,BOT (Toll),14.059589,79.894624,50,85,170,370,370,370
+230,Marur,Ms Sri Sai Enterprises,Public Funded,14.499817,77.631127,130,210,435,475,685,835
+231,Debra,M/s Ashoka Dhankuni Kharagpur Tollway Ltd,BOT (Toll),22.397144,87.522855,70,115,245,385,385,465
+232,Sonapetya,M/s Sahakar Global Ltd,Public Funded,22.335479,87.869477,100,165,345,375,535,655
+233,Karapadu (Old Bellupada),M/S Eagle Infra India Ltd,BOT (Toll),19.111282,84.699281,105,170,355,390,560,680
+235,Madapam,Sri Sai Enterprises,Public Funded,18.377344,84.000528,45,75,160,175,250,300
+236,Aganampudi,Arvind Chandrasekaran,Public Funded,17.685435,83.149931,60,95,205,220,320,390
+237,Balgudar,Sh. Rajendra Singh,Public Funded,25.250014,86.034744,55,90,185,200,290,355
+238,Saukala,Rajendra Singh,Public Funded,24.599579,84.70284,100,160,340,370,530,645
+239,Ponnambalapatti,Mahender Godara,BOT (Toll),10.536361,78.257067,100,175,355,565,565,565
+240,Main Toll (Panchvati colony) (Sheela Nagar),Ms Sri Sai Enterprises,Public Funded,17.713856,83.212186,45,78,156,254,254,313
+242,Kasaba (Bijapur),M/s Bijapur Hungund Toll Way Pvt Ltd,BOT (Toll),16.786741,75.739648,65,105,225,350,350,430
+243,Venkatachalam (Old Nellore),M/s SWARNA TOLLWAY PRIVATE LIMITED,BOT (Toll),14.312218,79.916296,35,65,125,270,270,270
+244,Undavariya/ Sirohi,Ms Ashirwad Smart Infralink Pvt. Ltd.,Public Funded,24.633512,72.907078,45,70,150,165,235,285
+245,Indore Dewas (Indore side),M/s Indore Dewas Tollways Limited,BOT (Toll),22.959586,76.084165,20,30,60,95,95,120
+246,Nathavalasa/ Vizianagaram,Feedback Highways OMT Pvt. Ltd.,Public Funded,18.057967,83.521081,70,115,240,260,375,455
+247,Pottipadu,Ms Sri Sai Enterprises,Public Funded,16.572341,80.862502,60,95,200,220,315,385
+248,Kalaparru,V. Vidyasagar Reddy,Public Funded,16.676408,81.022129,50,80,170,185,265,320
+250,Sullurpet,M/s SWARNA TOLLWAY PRIVATE LIMITED,BOT (Toll),13.744936,79.990993,70,125,255,540,540,540
+251,Sunambatti (Musunuru),M/s Simhapuri Expressway Ltd,BOT (Toll),14.851896,79.987757,60,95,200,315,315,380
+252,Bolapalli,M/s Simhapuri Expressway Ltd,BOT (Toll),15.886754,80.070843,165,255,525,805,805,1025
+253,Tanguturu,M/s Simhapuri Expressway Ltd,BOT (Toll),15.358166,80.040105,95,150,320,500,500,605
+255,Kasepalli,Ms Skylark Infra Engineering Pvt. Ltd.,Public Funded,15.061783,77.630325,115,190,395,430,620,755
+258,Amakathadu,Sri Sai Enterprises,Public Funded,15.48468,77.897632,125,200,425,460,665,810
+259,Bhalgam (Belgaum),Ms Highways and Tandon Tollways,OMT,23.912341,71.783991,85,140,295,320,460,560
+260,Laxmannath,M/s Baleshwar Kharagpur Expressway Limited,BOT (Toll),13.1955,77.652944,75,120,245,270,385,470
+261,Varwade,M/s Pune Sholapur Road Development Company Ltd,BOT (Toll),17.957588,75.331066,70,110,235,255,365,445
+262,Gwalior Bypass (Mehra),M/s Agra-Gwalior Pathways Pvt Ltd,OMT,26.197589,78.240691,90,145,305,335,480,585
+263,Surajbari,MS Riddhi Siddhi Associates,Public Funded,23.233738,70.689457,85,140,295,320,460,560
+264,Sawaleshwar,M/s  Pune Sholapur Road Development Company Ltd,BOT (Toll),17.764629,75.75589,70,110,235,255,365,445
+265,Chitora,M/s DPJ-DRA Tollways Pvt Ltd,OMT,23.725268,78.809133,135,215,455,495,715,865
+266,Bakori,M/s DPJ-DRA Tollways Pvt Ltd,OMT,23.780036,79.464288,135,215,450,490,705,860
+267,Guilalu,M/s IRB Tumkur Chitradurga Tollway Pvt Ltd,BOT (Toll),14.053778,76.560573,80,125,265,410,410,500
+269,Karjeevanhalli,M/s IRB Tumkur Chitradurga Tollway Pvt Ltd,BOT (Toll),13.612918,76.953866,80,125,265,410,410,500
+270,Navayuga Devanahalli / Sadahalli / Pujanahalli,M/s Navayuga Devanahalli Tollway Pvt Ltd,BOT (Toll),13.19355,77.649812,105,165,330,500,500,650
+271,Kaythsandra/Tumkur/Chokkanahalli,M/s  JASS Toll Road Co. Ltd,BOT (Toll),13.302065,77.161956,35,65,130,,,
+272,Kherki Daula,M/s Millennium City Expressways Private Ltd,BOT (Toll),28.395604,76.98176,80,115,235,235,235,235
+273,Palsit,Ms Kalyan Toll Infrastructure Ltd.,Public Funded,23.178722,88.026395,100,160,335,365,520,635
+275,Badauri,Ms Ayushajay Construction Pvt. Ltd.,Public Funded,26.126972,80.585425,70,115,240,260,375,460
+278,Nivedita Setu,M/s Second Vivekananda Bridge Tollway Co. Pvt Ltd,BOT (Toll),22.654373,88.325118,,,,,,
+279,Dankuni,Eagle Infra India Ltd,Public Funded,22.698891,88.288862,75,120,250,270,390,475
+280,Jaladhulagori (Dhulagarh),M/s Ashoka Dhankuni kharagpur Tollway Pvt Ltd,BOT (Toll),22.57319,88.181739,120,190,395,610,610,770
+281,Surjapur,Skylark Infra Engg. Pvt. Ltd.,Public Funded,25.933485,87.843205,85,140,295,320,460,560
+282,Beliyad,M/s Barwa Adda Expressway Ltd - BOT (Toll) concessionaire,BOT (Toll),23.763627,86.79803,90,145,310,335,480,585
+283,Hariabara,M/s SMS-AABS India Tollway Pvt Ltd,OMT,26.152636,87.445216,130,205,430,470,675,825
+284,Barsoni,Shiva Corporation India Ltd,Public Funded,25.804671,87.59074,65,105,220,240,345,425
+285,Kharik,Rajendra Singh,Public Funded,25.385796,87.01154,55,90,195,210,305,370
+286,Maranga,Ms R K Transport Pvt. Ltd.,Public Funded,25.728646,87.458249,65,110,230,250,355,435
+287,Boriach,M/s IRB Surat Dahisar Tollways Pvt Ltd,BOT (Toll),20.885548,73.052162,65,110,225,360,360,360
+288,Bhagwada,M/s IRB Surat Dahisar Tollways Pvt Ltd,BOT (Toll),20.43495,72.917204,75,125,255,410,410,410
+289,Charoti,M/s IRB Surat Dahisar Tollways Pvt Ltd,BOT (Toll),19.890544,72.942644,65,115,230,375,375,375
+290,Khaniwade,Ms Sri Sai Enterprises,BOT (Toll),19.520454,72.916883,75,125,255,410,410,410
+291,Dahar,M/s Concessionaire Rohtak-Panipat Tollway Pvt Ltd,BOT (Toll),29.31922,76.918442,100,160,320,490,490,630
+292,Makrauli Kalan,Ms Inderdeep Construction Co.,BOT (Toll),28.944307,76.609736,155,240,480,725,725,955
+294,Asanpur,M/s SMS-AABS India Tollway Pvt Ltd,OMT,26.299831,86.630217,100,160,335,365,520,635
+295,Hebbalu,Ms Sri Sai Enterprises,Public Funded,14.375564,76.106875,60,95,195,215,310,375
+296,Chennasamudram,Ms Sri Sai Enterprises,Public Funded,12.910943,79.40121,45,70,145,160,230,280
+298,Songir,M/s Dhule Palesner Tollway Ltd  Mumbai,BOT (Toll),21.050995,74.785116,75,120,250,380,380,480
+299,IGI Airport,M/s Millennium City Expressways Private Ltd,BOT (Toll),28.543853,77.115435,25,35,70,70,70,70
+300,Shahapur,M/s  GMR OSE HungundHospet HighwaysPvt Ltd,BOT (Toll),15.357898,76.312781,60,95,200,310,310,380
+301,Vanagari,M/s GMR OSE Hungund Hospet Highways Pvt Ltd,BOT (Toll),16.290681,75.923324,60,95,200,310,310,380
+302,BharthanKarjan,Ms Ayushajay Construction Pvt. Ltd.,BOT (Toll),22.015027,73.115049,105,180,360,580,580,580
+303,Deingpasoh,Anil Kumar Shukla,Public Funded,25.648846,92.047612,60,95,200,220,315,380
+304,Thirupparaithurai,"M/s.TK Toll Road Pvt., Ltd.,",BOT (Toll),10.885791,78.557668,25,45,90,145,145,145
+305,Manavasi,"M/s TK Toll Road Pvt, Ltd,",BOT (Toll),10.930934,78.215268,45,85,165,265,265,265
+306,Lechchumanapatti,Md. Yousuf Ali,Public Funded,10.624244,78.747767,45,75,150,165,240,290
+308,Vantada,Anil Kumar Shukla,Public Funded,23.61615,73.254472,35,60,120,135,190,235
+309,Kathpur,Ms Feedback Highways OMT Pvt. Ltd.,Public Funded,23.410181,72.828618,70,110,235,255,365,445
+310,Lambalakudi,Anil Kumar Shukla,Public Funded,10.299776,78.770713,40,60,130,140,205,250
+311,Ahmedabad,M/s Ahmedabad Vadodara Super Express Tollway Pvt Ltd,BOT (Toll),22.975844,72.650399,125,205,430,470,675,820
+312,Attibele (BETL),M/s Bangalore Elevated Tollway Private  Limited,BOT (Toll),12.776883,77.777119,30,50,105,,220,
+313,Neelamangala  - Tumkur /Kulumepalya,M/s  JASS Toll Road Co. Ltd,BOT (Toll),13.114638,77.37463,35,65,130,,,
+314,Elevated Section/ Electronic City,M/s Bangalore Elevated Tollway Private  Limited,BOT (Toll),12.847667,77.670866,50,75,145,,295,
+315,Nagarhalla,M/s Bijapur Hungund Toll Way Pvt Ltd (BHTPL),BOT (Toll),16.292989,75.921069,105,165,340,525,525,665
+316,Gabbur (MoRTH),MORTH,BOT,15.318834,75.139696,45,113,151,178,,
+321,Narendra (MoRTH),"M/s. Nandi Highway Developers Ltd, Bangalore (SPV)",BOT,15.488902,74.969857,45,113,151,195,,
+324,Pamban Bridge (MoRTH),"Thiru. Arjuna, Raneswaram",Bridges,9.283225,79.215127,9,14,31,31,41,
+326,Kalia Bhomora Bridge (MoRTH),Abdul Khalique Bepari,Bridges,26.567367,92.869461,26,39,78,86,116,156
+330,Gangadhar Bridge (MoRTH),MORTH,Bridges,26.149881,89.811537,7,9,19,24,27,34
+333,Baggad (MoRTH),MS AV Enterprises,0,25.592575,73.904897,40,70,145,225,225,275
+338,Bagaliya (MoRTH),MS AV Enterprises,OMT,25.884014,74.160275,40,65,140,215,215,265
+339,Bagodara (MoRTH),MORTH,BOT,22.620565,72.161496,20,37.5,75,75,84,84
+340,Kharpada (MoRTH),M/S Ideal road Builders Limited,Bridges,18.844713,73.094525,10,30,30,50,,
+341,Jia Bridge (MoRTH),MORTH,BOT,31.898237,77.148301,10,20,35,35,50,70
+342,Savitri (MoRTH),MORTH,Bridges,18.084885,73.462503,5,5,15,20,,
+344,Fekri (MoRTH),M/s ADCC-VHCPL-SCPLJV Nagpur,BOT,21.039996,75.829168,10,10,35,45,,
+345,Kharegaon (MoRTH),M/s I.R.B.Pvt.Ltd. Mumbai,BOT,19.2121,73.006946,29,51,103,220,,
+346,Moshi (MoRTH),MORTH,0,18.605613,73.823404,25,43,85,182,,
+347,Parvati Bridge (MoRTH),eepwdnhbpl@gmail.com,Bridges,23.471246,77.071876,5,5,15,15,15,20
+348,Chandloi/ Rajgurunagar (MoRTH),S.G. Inamdar,BOT,18.844296,73.881986,25,43,85,182,,
+349,Ashoka DSC Katni bypass (MoRTH),Ganesh Vikhe,BOT,23.888883,80.384806,20,60,215,215,300,
+350,Kawdipath (MoRTH),Inamdar S.G.,BOT,18.493223,73.992593,25,25,60,60,,
+351,Kasurdi (MoRTH),Inamdar S.G.,BOT,18.48286,74.234706,25,25,60,60,,
+352,Koshta (MoRTH),Ajay Pratap Singh,BOT,24.550197,81.346796,40,21,113,113,113,194
+353,Kardha (MoRTH),Mr. Abhijeet Ashoka Infrastructure Pvt. Ltd. Nagpur,Bridges,21.139568,79.675405,21,21,106,169,,
+354,Tiwasa (MoRTH),M/s V.H.P.L.-A.D.C.C.Pinglai Infrastructure  Pvt.Lt. Nagpur,Bridges,21.086207,78.066995,10,10,35,35,,
+357,Nardana (MoRTH),MORTH,BOT,21.181762,74.823119,8,8,25,30,,
+358,Baretha (MoRTH),M.P. Highways Pvt. Ltd.,0,26.320743,78.272518,70,115,245,265,385,470
+359,Wadakbal (MoRTH),"M/s Patil& Co, Solapur",Bridges,17.534301,75.880075,5,10,15,15,,
+360,Barahi (MoRTH),M.P. Highways Pvt. Ltd.,BOT,26.683159,78.917937,30,45,100,155,155,190
+362,Bamanbore (MoRTH),"R & B Dept, Gujarat Govt.",BOT,22.409684,71.015587,20,37.5,75,84,,
+363,Patancheru (Prograssive Construction Toll) (MoRTH),MORTH,BOT,17.523428,78.273342,22,44,81,176,,
+364,Rawason Bridge (MoRTH),MORTH,Bridges,29.842349,78.19098,5,10,15,15,,
+366,Nandghat Bridge (MoRTH),Bridge Constructed By M/s Gordhands Bobindram Contractor the toll being collected throung state PWD,Bridges,21.766145,81.812198,10,15,25,,,
+367,Kharun (MoRTH),M/s DSCVentures Pvt. Ltd. New Delhi,BOT,21.252543,81.536664,24,40,81,177,,
+368,Kosa Nala (MoRTH),M/s DSCVentures Pvt. Ltd. New Delhi,BOT,21.204731,81.337106,24,40,81,177,,
+370,Kundannur (MoRTH),MORTH,Public Funded,9.94307,76.318202,5,5,15,20,,
+371,Akkulam (MoRTH),PWD NH Wing,Public Funded,8.520122,76.89465,5,10,20,25,40,
+373,Varapuzha Bridge (MoRTH),"Departmental Toll Collection, Asst. Exec. Engineer",Bridges,10.074058,76.28012,5,15,20,,,
+374,Bhatwada (Godhra),M/s BSCPL Godhra Tollways Limited,BOT (Toll),22.792886,73.842871,165,260,535,830,830,1040
+375,Chollang,Rakesh Kumar Chaudhary,Public Funded,31.623756,75.640462,100,160,335,365,525,640
+376,Chillakallu,M/s GMR Hyderabad Viijaywada Expressway Pvt Ltd,BOT (Toll),16.885015,80.160654,100,160,330,505,505,635
+377,Korlaphadu,M/s GMR Hyderabad Viijaywada Expressway Pvt Ltd,BOT (Toll),17.159677,79.474848,120,190,395,615,615,765
+379,Hitnal,M/s GMR OSE Hungund Hospet Highways Pvt Ltd,BOT (Toll),15.323649,76.303646,45,70,145,220,220,290
+380,Madrak,M/s Brij Bhoomi Expressway Pvt Ltd,BOT (Toll),27.804002,78.087022,35,55,110,175,175,210
+381,Baros,M/s Brij Bhoomi Expressway Pvt Ltd,BOT (Toll),27.346247,78.032201,35,55,110,175,175,210
+384,Khairabad (Karondi),M/s Lucknow Siatpur Expressway Limited,BOT (Toll),27.50378,80.75254,45,75,155,245,330,245
+385,Pithai,Ms Coral Associates,BOT (Toll),22.913088,72.957401,115,185,380,585,585,735
+386,Vavadikhurd,Ms Riddhi Siddhi Associates,BOT (Toll),22.792571,73.533274,130,200,410,620,620,800
+387,Mulbagal,M/s Lanco Hoskote Highway Limited,BOT (Toll),13.148469,78.290548,75,130,255,415,415,415
+388,Kishorpur (Chandermore),M/s Baharampore Farakka Highways Ltd,BOT (Toll),24.563182,88.019993,70,110,230,360,360,440
+389,Gopgram (Shibpur),M/s Baharampore Farakka Highways Ltd,BOT (Toll),24.150449,88.18629,55,85,185,285,285,350
+394,Babina,Ms Skylark Infra Engineering Pvt. Ltd.,Public Funded,25.216966,78.464471,110,180,375,410,590,720
+395,Dahalapara,M B Consortium,Public Funded,26.476288,90.712054,85,135,285,310,445,545
+396,Niyamatpur Ekrotiya,M/s Moradabad-Bareilly expressway Ltd,BOT (Toll),28.814182,78.902248,140,220,445,680,680,875
+397,Thriyakhetal,M/s Moradabad-Bareilly expressway Ltd,BOT (Toll),28.480289,79.283886,145,225,455,690,690,900
+398,Guabari,Ms Mandeepa Enterprises,Public Funded,26.476592,89.756535,45,75,160,175,250,305
+400,Fulara,Ms Ashmi Road Carriers Pvt. Ltd.,Public Funded,22.043538,79.418722,60,100,205,225,320,390
+401,Chikhalikala,Ms Ashmi Road Carriers Pvt. Ltd.,Public Funded,21.841921,78.433316,70,110,230,255,365,445
+402,Jungawani,Ms Ashmi Road Carriers Pvt. Ltd.,Public Funded,22.377896,79.151021,85,140,290,315,455,550
+403,Jaitpur,Ms Ashmi Road Carriers Pvt. Ltd.,Public Funded,22.548497,79.600413,60,100,205,225,320,390
+405,Dakhina Sekhpur,Ms Skylark Infra Engineering Pvt. Ltd.,Public Funded,26.524482,81.066094,105,170,360,390,560,685
+406,Kelwad,Md. Karimunnisa,Public Funded,21.471322,78.8726,75,125,260,285,410,500
+408,Chullimada Hamlet (Pampampallam),M/s KNR Walayar Tollways Pvt Ltd,BOT (Toll),10.81311,76.798051,75,120,245,385,385,470
+409,Aliyapur,M/s PNC (Kanpur) Highways Ltd,BOT (Toll),26.069752,80.163011,50,80,165,260,260,315
+410,Khanna,M/s PNC (Kanpur) Highways Ltd,BOT (Toll),25.543293,80.060095,50,85,180,280,280,340
+411,Baragarh (Barhaguda),M/s Ashoka Sambalpur Baragrah Tollway Pvt Ltd,BOT (Toll),21.35447,83.681021,145,230,480,745,745,925
+412,Ponnarimangalam,Ms Datar Security Service Group,0,10.010336,76.257977,60,95,195,215,310,375
+413,Ladpalwan,M/s IRB Pathankot Amritsar Toll Road Ltd,BOT (Toll),32.197881,75.533697,125,190,390,590,590,765
+414,Waryam Nangal,M/s IRB Pathankot Amritsar Toll Road Ltd,BOT (Toll),31.731947,75.041365,105,165,340,520,520,665
+415,Deederganj,M/s  Patna Bakhtiyarpur Tollway Limited,BOT (Toll),25.570828,85.247807,125,190,380,575,575,755
+416,Akhepura,Ms Inderdeep Construction Co.,Public Funded,27.50603,75.348401,65,105,225,245,350,430
+417,Milanpur,Sh Khalatkar Cunstruction,Public Funded,21.864457,77.961508,95,155,325,355,515,625
+418,Khambara,Md. Usman,Public Funded,21.693812,78.387824,95,150,315,345,495,600
+419,Patanswangi,Khalatkar Construction,Public Funded,21.343724,79.009038,95,155,330,360,515,630
+420,Gegal,M/s Soma Isolux Kishangarh Beawar Tollway Pvt Ltd,BOT (Toll),26.551347,74.780202,65,105,215,340,340,410
+421,Pipalaz,M/s Soma Isolux Kishangarh Beawar Tollway Pvt Ltd,BOT (Toll),26.158466,74.371725,60,100,210,330,330,400
+422,Gadoi,Sh. Anil Kumar Shukla,Public Funded,21.425234,70.295437,70,115,240,265,380,460
+423,Dari,Ms Prakash Asphaltings and Toll Highways (India) Ltd.,Public Funded,20.961287,70.334349,90,145,305,335,480,585
+424,Raha(Saragaon),Ms M.B. Consortium,Public Funded,26.245678,92.541521,110,175,370,405,580,705
+426,Nazira Khat,Haren Mahanta,Public Funded,26.100258,91.879125,130,205,430,470,680,825
+427,Mandal (Vyara),M/s Soma Isolux,BOT (Toll),21.134676,73.478511,160,250,510,780,780,1000
+428,Bhatia,M/s Soma  Isolux,BOT (Toll),21.190249,72.869085,125,200,410,630,630,790
+429,Luharali,M/s Ghaziabad Aligarh Expressway Pvt Ltd,BOT (Toll),28.497746,77.629298,135,210,430,660,660,840
+430,Somna,M/s Ghaziabad Aligarh Expressway Pvt Ltd,BOT (Toll),28.062821,77.946047,175,270,540,820,820,1075
+431,Lakholi,M/s Raipur Expressway Ltd,BOT (Toll),21.20296,81.905328,25,45,85,140,140,140
+432,Sundar Nagar,M/s Raipur Expressway Ltd,BOT (Toll),21.229353,81.607029,25,40,85,135,135,135
+433,Raipur,M/s L&amp;T BPP Tollway Pvt Ltd,BOT (Toll),26.063535,74.05947,90,145,305,335,480,585
+434,Indranagar,M/s L&amp;T BPP Tollway Pvt Ltd,BOT (Toll),25.828286,73.45492,80,130,270,295,420,515
+438,Birami,M/s L&amp;T BPP Tollway Pvt Ltd,BOT (Toll),25.371114,73.201486,100,160,335,365,525,635
+439,Uthamam,M/s L&amp;T BPP Tollway Pvt Ltd,BOT (Toll),25.033571,72.94353,135,210,435,475,675,845
+440,Gaddurur,M/s J.S.R.Mulbagal Tollways Pvt Ltd,BOT (Toll),13.194218,78.545197,30,50,100,110,160,195
+441,WEPL Mathani,M/s  Wainganga Expressway Private Ltd,BOT (Toll),21.139545,79.365105,60,100,210,230,330,400
+442,Runni,Sonu Kumar,Public Funded,26.373615,85.493984,80,130,275,300,430,525
+443,S V Puram,Aravind Chandrasekaran,BOT (Toll),13.525577,79.532925,80,125,255,390,390,500
+444,Pattaraiperumbudur (temporary TP),R. Muthusamy,BOT (Toll),13.150776,79.834675,35,60,125,195,195,240
+445,Paat Sahanipur (Pipli),Ms Sahakar Global Ltd.,BOT (Toll),20.137113,85.83902,130,200,410,625,625,795
+446,Methoon,Sh. Rishiraj Singh Rathor,Public Funded,24.420042,76.503896,55,90,185,200,290,350
+447,Kaniyur,M/s  IVRCL Chengapalli Tollways Ltd Avinashi,BOT (Toll),11.012827,77.073181,110,170,345,525,525,685
+448,Mokha,Ms Coral Associates,BOT (Toll),22.934663,69.801655,125,200,410,630,630,790
+450,Eethakota,Diwantham Tollways Pvt Ltd,BOT (Toll),16.715205,81.827876,110,180,375,410,590,720
+451,Unguturu,Siddanntham Tollways Pvt Ltd,BOT (Toll),16.823729,81.430664,105,170,350,385,555,675
+452,Chagalmarri,M/s KMC Construction Limited &amp; IVRCL infrastructure Limited,BOT (Toll),14.979577,78.574764,80,130,275,435,435,530
+453,Palempalli,M/s KMC Construction Limited &amp; IVRCL infrastructure Limited,BOT (Toll),14.513518,78.79121,40,65,140,220,220,270
+454,Pahammawlein,M B Consortium,Public Funded,25.99328,91.860491,90,145,300,325,470,570
+455,Rohad,M/s West Haryana Higway Project Pvt Ltd,BOT (Toll),28.754563,76.795216,65,115,225,360,360,360
+456,Kishorpura,Noor Mohammad,BOT (Toll),25.17025,76.130522,155,245,500,770,770,970
+457,Mandawada (Gomati),M/s Shreenathji-Udaipur Tollway Pvt Ltd,BOT (Toll),25.20385,73.814701,45,75,160,170,250,300
+458,Negadiya,M/s Shreenathji-Udaipur Tollway Pvt Ltd,BOT (Toll),25.704011,74.061836,145,225,465,510,710,910
+459,Surathkal,Noor Mohammad,Public Funded,12.993098,74.792333,60,100,210,225,325,400
+460,Bhiknoor,V. Vidyasagar Reddy,Public Funded,18.205251,78.398261,85,140,290,320,460,555
+461,Kunwarpur,Ms R.K. Jain Infra Projects Pvt. Ltd.,Public Funded,25.674873,82.32499,75,120,250,270,390,475
+462,Nuruddinpur,Bholanath Rajpati Shukla,Public Funded,26.035838,81.43825,80,125,265,285,410,500
+464,Chuipali,M/s BSCPL Aurang Tollway Ltd,BOT (Toll),21.299829,82.94286,120,190,400,435,630,765
+465,Dhank,M/s BSCPL Aurang Tollway Ltd,BOT (Toll),21.226901,82.422438,160,255,525,570,810,1015
+466,Vasad,M/s Ahmedabad Vadodara Super Express Tollway Pvt Ltd,BOT (Toll),22.453254,73.070539,140,220,450,495,690,885
+467,Radhvanaj (Kheda),M/s Ahmedabad Vadodara Super Express Tollway Pvt Ltd,Public Funded,22.715971,72.740887,100,155,320,350,500,625
+468,Madina Korsan,Noor Mohammad,BOT (Toll),28.927049,76.442169,70,110,230,250,360,440
+469,Ramayana,Ms Prakash Asphltings and Toll Highways (India) Ltd.,BOT (Toll),29.100833,75.885093,85,140,295,320,460,560
+470,Para,Ms Bheema Tolling and traffic Solution pvt. ltd.,Public Funded,25.788339,74.338933,65,105,220,245,350,425
+471,Saidpur Patedha,Sahakar Global Limited,Public Funded,25.802861,85.283461,60,95,200,220,315,380
+472,Lilamba,MS Riddhi Siddhi Associates,Public Funded,26.084278,74.001389,50,80,170,190,270,330
+473,Aaini,Sanjay Kumar Agrawalla,Public Funded,27.292105,81.54465,40,65,140,150,220,265
+474,Gulalpurva,Ms Topline Infra Projects Pvt. Ltd.,Public Funded,27.825548,81.527252,45,75,160,175,250,305
+475,Sonvay (Indore - Khalghat),M/s Oriental Pathways (Indore) Pvt Ltd,BOT (Toll),22.61213,75.776469,30,55,110,175,235,175
+476,Chalakwadi,M/s Khed Sinnar Expressway Limited,BOT (Toll),19.170738,74.074993,50,85,175,190,275,335
+477,Hivargaon Pavsa,M/s Khed Sinnar Expressway Limited,BOT (Toll),19.516452,74.201583,95,155,320,350,505,610
+478,Nimbaniya Ki Dhani (Bayatu),Ms Jai Singh and Company,Public Funded,25.865638,71.616734,65,105,225,245,355,430
+479,Gundmi,M/s Navayuga Udupi Tollway Private Limited,BOT (Toll),13.47641,74.713082,50,85,175,275,275,330
+480,Hazamady,NA,SPV,13.108245,74.784562,40,70,145,225,225,275
+481,Talapady,M/s Navayuga Udupi Tollway Private Limited,SPV,12.75958,74.874087,45,70,145,220,220,285
+482,Kadthal,V. Vidyasagar Reddy,Public Funded,16.985586,78.50172,45,75,150,165,240,290
+483,Konetipuram,Sri Sai Enterprises,Public Funded,16.608082,78.677722,25,40,85,95,135,165
+484,Chinthapally,Md. Yousuf Ali,SPV,17.471578,79.980527,40,65,140,155,220,270
+485,Lakshmipur,HCC LIMITED,BOT (Toll),24.822455,87.966864,130,205,420,645,645,820
+486,Chakseherdi (Gajol) Bagsarai,NA,BOT (Toll),25.195872,88.182566,60,95,200,315,315,380
+487,Mahanth Maniyari,KNR Muzaffarpur-Barauni Tollway Pvt. Ltd.,BOT (Toll),26.038799,85.447437,45,75,160,170,245,300
+488,Govindpur (Murli),KNR MuzaffarpurBarauni Tollway Pvt. Ltd.KNR Muzafffarpur Barauni Tollway Pvt. Ltd.,BOT (Toll),25.590289,85.875945,40,65,140,150,220,265
+489,Konder,Rishiraj Singh,Public Funded,26.537213,77.086068,45,70,150,160,235,285
+490,Chila Chond,Rishiraj Singh,Public Funded,26.613002,77.515359,50,80,170,185,265,320
+491,Raibha,Ms Sahakar Global Ltd.,Public Funded,27.177493,77.811532,75,125,260,280,405,495
+492,Mada,Chanani Nashri Tunnelway Limited,BOT (Toll),33.024637,75.252118,75,120,255,275,395,485
+493,Nashri,Chanani Nashri Tunnelway Limited,BOT (Toll),33.174771,75.303421,75,120,255,275,395,485
+1476,Banthadi,Mahender Godara,Public Funded,27.275167,74.351659,55,90,185,205,290,355
+1477,Tamdoli,Ms SPC Infrastructure Pvt. Ltd.,Public Funded,26.870978,74.293475,60,95,200,220,315,385
+1478,Rupa Kheda,Ms Bhilwara Rajsamand Tollway Pvt. Ltd.,BOT (Toll),25.110565,73.988241,70,110,235,255,365,445
+1479,Mujras,Ms Bhilwara Rajsamand Tollway Pvt. Ltd.,BOT (Toll),25.274995,74.492879,60,100,205,225,320,390
+4480,SixML,Ms Inderdeep Construction Co.,Public Funded,29.810574,73.875389,75,120,250,270,390,475
+4481,Lasedi,Ms Salasar Highways Private Ltd.,BOT (Toll),28.712002,75.481566,55,85,180,195,280,340
+4482,Dhadhar,Ms Salasar Highways Private Ltd.,BOT (Toll),28.329757,75.05592,50,80,165,180,255,310
+4483,Shobhasar,Ms Salasar Highways Private Ltd.,BOT (Toll),27.76326,74.723371,35,55,110,120,175,215
+4484,Rapur,T Suryanarayan Reddy,Public Funded,14.210397,79.560418,35,60,125,135,195,240
+4485,Chintalapalem,Anil Kumar Shukla,Public Funded,13.788513,79.589622,35,55,115,125,180,220
+4486,Badava,Md. Yousuf Ali,Public Funded,16.850428,80.633633,65,110,225,250,355,435
+4489,Shenbagampettai,R Muthusamy,Public Funded,10.158744,78.651128,75,120,250,275,395,480
+4490,Jasnathnagar,Rajaram Godara,Public Funded,26.308858,72.914295,65,110,225,245,355,430
+4491,Motisar (Khanori),Ms R K Jain Infra project Pvt. Ltd.,Public Funded,26.570811,72.327192,65,105,225,245,350,425
+4492,Morani (Pokaran),Ms  Sk Infra,Public Funded,26.889721,71.981819,15,20,45,50,75,90
+4493,Mekalavaripalli,Md. Karimunnisa,Public Funded,15.412411,79.497541,45,70,150,160,235,285
+4494,Raviguntapalli,Md. Karimunnisa,Public Funded,15.197922,79.450868,35,55,115,130,185,225
+4495,Brahmanapalli,Amit Khampariya,Public Funded,14.736039,79.049052,55,90,190,205,295,360
+4496,Hasanpur (Sainkul),Ms A.K. Construction Company,BOT (Toll),21.147001,86.117538,85,135,280,305,440,535
+4497,Khantaghar (Dhenkikote),Ms Om Enterprise,BOT (Toll),21.508544,85.826198,55,85,180,195,280,340
+4498,Banajodi (Padmapur),Sonu Kumar,BOT (Toll),21.710167,85.5836,85,135,285,315,450,545
+4499,Khadda,Puspa Rai,Public Funded,24.522264,81.365223,25,45,90,100,140,170
+4500,Sonvarsaa,Ms Topline Infra Project Pvt. Ltd.,Public Funded,24.395853,81.802372,30,50,105,115,165,200
+4501,Landhari,Ms Skylark Infra Engineering Pvt. Ltd.,Public Funded,29.292067,75.648213,90,140,295,325,465,565
+4502,Narwana,Ms Kaithal Tollway Pvt. Ltd,BOT (Toll),29.578554,76.088477,85,135,285,310,445,540
+4503,Badopatti,Ms Kaithal Tollway Pvt. Ltd,BOT (Toll),29.299141,75.819719,115,180,380,415,600,730
+4504,Chaudhriwas,Ms Kaithal Tollway Pvt. Ltd,BOT (Toll),28.99832,75.604417,65,105,220,240,345,425
+4506,Badbar,Ms Feedback Highways OMT Pvt. Ltd.,Public Funded,30.247772,75.640226,100,160,335,365,525,635
+4507,Bhagan,Ms. Riddhi Sidhi Associates,Public Funded,29.060626,77.064081,95,155,325,355,510,625
+4508,Sosokhurd,R.K. Jain Infra Projects Pvt. Ltd.,Public Funded,23.548753,85.756866,45,75,155,170,245,300
+4509,Tand Balidih,Ms Coral Associates,Public Funded,23.668354,86.045229,35,60,125,140,200,240
+4510,Doli,Noor Mohammad,Public Funded,26.062927,72.673202,75,125,260,285,405,495
+4511,Palaya Gandharvakottai,Jai Kamtanath and Company,Public Funded,10.612499,79.0306,50,80,165,180,260,315
+4512,Mangalgi,NA,BOT (Toll),17.745596,77.317882,105,170,350,385,550,675
+4513,Kamkole,NA,BOT (Toll),17.645717,77.820114,105,170,355,390,560,680
+4515,Yedeshi,0,BOT (Toll),,,65,100,210,230,335,405
+4520,Tamalwadi,0,BOT (Toll),1,1,65,100,210,230,335,405
+4536,Deoria,KASHIPUR SITARGANJ HIGHWAYS PVT. LTD.,BOT (Toll),28.930785,79.475734,90,145,305,330,475,580
+4537,Jogipura,Jalpa Devi Tollways Ltd,BOT (Toll),24.097278,76.988952,65,105,220,240,350,425
+4538,Pagara,Jalpa Devi Tollways Ltd.,BOT (Toll),24.517835,77.186491,75,125,260,285,410,500
+4539,Sakatpura(LHS)(Staggered),Ms KG Associates,Public Funded,25.155846,75.781932,75,120,250,270,390,475
+4540,Nayagaon(RHS) (Staggered),Ms KG Associates,Public Funded,25.132506,75.796565,75,120,250,270,390,475
+4541,Mandava,Ms Inderdeep Construction Co.,Public Funded,21.702698,73.059975,30,45,95,100,145,180
+4542,Basapuram,T. Suryanarayan Reddy,Public Funded,14.708361,78.872406,40,70,145,155,225,275
+4543,Nannur,Ms. Rayalseema Expressway Pvt. Ltd.,BOT (Toll),15.741038,78.070783,80,125,260,400,400,510
+4544,Purankhedi,Ircon Shivpuri Guna Tollway Limited,Public Funded,25.245762,77.615602,125,200,425,460,665,810
+4545,Banskopa,Barwa Adda Expressway Ltd.,BOT (Toll),23.491222,87.376575,80,130,275,300,435,530
+4546,Semri,PRAKASH ASPHALTINGS AND TOLL HIGHWAYS (INDIA) Limited.,OMT,25.637124,78.875044,115,185,390,430,615,750
+4547,Banushi,Devendra Kumar,Public Funded,28.941,79.8157,40,60,130,140,205,245
+4548,Hathitala,Sh. Banshi Lal Gupta,Public Funded,25.562272,71.407666,55,90,195,210,305,370
+4549,Bor Charnan,Ms Montecarlo Ltd,Public Funded,25.105861,71.549558,45,75,160,175,250,305
+4550,Harimma,Ms Highway and Tondan Tollways Highway Infrastruture Limited,BOT (Toll),27.26549,73.856074,60,100,210,230,330,400
+4551,Nimbi Jodha,Sh. Bholanath Rajpati Shukla,BOT (Toll),27.30534,74.1915,50,80,170,185,270,325
+4552,Jindpur,Ms Topline Infra Project Ltd.,Public Funded,25.865,80.691,55,95,195,210,305,370
+4553,Aihar,Anil Kumar Shukla,Public Funded,26.197,81.0326,55,90,190,210,300,365
+4554,Limdi,Ms Vanshika Construction,Public Funded,25.467,41.293,85,135,280,305,440,535
+4555,Milk Majra,Ms Coral Associates,Public Funded,30.21128,77.194411,90,145,310,335,480,585
+4556,Durgamvaripalli,Lalji Pathak,Public Funded,13.7143,78.873269,45,70,145,160,230,280
+4557,Buchireddypalem,Ms Chabbra Associates,Public Funded,14.543265,79.862348,35,60,125,140,200,240
+4558,DC PALLI,Sri Sai Enterprises,Public Funded,14.6854,79.5156,45,75,155,170,245,295
+4559,Zidda,Ms Prakash Asphalting and Toll Highways(I) Ltd.,Public Funded,40.32217,9.3264,115,185,385,420,605,735
+4560,Leherabega,Ms Prakash Asphaltings and Toll Highways (I) Ltd.,BOT (Toll),30.233092,75.102496,70,110,235,255,370,450
+4561,Paind,ERA Infra Engineering Ltd.  Patel Engineering Ltd.,Public Funded,30.4,75.5,85,135,280,310,440,540
+4562,Dhareri jattan,Ms Shiva Corporation(India) Ltd.,Public Funded,76.499529,30.39255,45,70,145,160,225,275
+4563,Azizpur,Ridhi Sidhi Housing Pvt. Ltd.,Public Funded,76.759305,30.5930556,40,65,140,150,215,265
+4566,Bhavdeen,Ms Jai Singha and Co.,Public Funded,29.53293,75.20313,70,115,235,260,370,450
+4567,Halaharvi,Sri sai enterprises,Public Funded,15.818714,77.453999,45,75,150,165,240,290
+4568,Ramdevra,Ms Shiva Corporation(India) Ltd.,Public Funded,27.0175781,72.0194626,70,110,230,250,360,440
+4569,Lathi,Sh. Anil Kumar Shukla,Public Funded,27.0298347,71.446434,70,110,235,255,365,445
+4570,Mudkhera,Ms Kalyan Toll Infrastructure Ltd.,BOT (Toll),25.668,77.73,95,155,325,355,515,625
+4571,Panihaar,Ms R.K. Jain Infra Projects Pvt. Ltd.,BOT (Toll),26.0978,78.0158,90,145,305,335,480,580
+4572,Salasar,Ircon PB Tollway Limited,BOT (Toll),28.00137,73.06546,70,110,235,255,370,450
+4573,Nokhra,Ircon PB Tollway Limited,BOT (Toll),27.45006,72.40303,60,100,205,225,325,395
+4574,Khirwa,Ircon PB Tollway Limited,BOT (Toll),27.2827777,72.3230556,25,45,95,100,145,175
+4575,Khuian Malkan,Raja Ram Godara,Public Funded,29.880727,74.793736,60,95,200,220,315,385
+4576,Pasyih,Skylark Infra Engg Pvt. Ltd.,Public Funded,25.4817,92.2882,30,50,110,120,170,205
+4577,Lomshinong,Coral Associates,Public Funded,25.706,92.3756,55,90,185,200,290,355
+4578,Davuluru,Ms Ranchor Infra Developers Pvt. Ltd.,Public Funded,16.4126432,80.7859938,120,195,405,440,635,770
+4579,Pandutala,Bansi lal gupta,Public Funded,80.8085833,22.3905556,85,135,290,315,450,550
+4580,Thiruppachethi,Aravind Chandrasakaran,Public Funded,9.780999,78.335299,85,135,285,310,445,540
+4581,Mohammad Ibrahimpur,Rekha Khampariya,Public Funded,28.5798201,78.7958556,70,115,240,260,375,455
+4582,Dumberwadi,Anil Kumar Shukla,Public Funded,19.24404,74.013274,50,85,175,195,275,335
+4583,Sonho,Rajendra Singh,Public Funded,25.924072,84.967898,40,65,135,145,210,255
+4584,Pokhraira,G.R.InfraProject Ltd,Public Funded,26.055956,85.182733,30,50,105,110,160,195
+4585,Belon,Ms Coral Associates,Public Funded,28.1859646,78.3630407,75,120,255,280,400,485
+4586,Hadawa,Bashistha Narain Pandey,Public Funded,27.08318,83.232649,20,35,75,80,115,140
+4588,Chhajarsi,Ms Eagle Infra India Ltd.,Public Funded,28.70178,77.621477,140,230,480,520,750,915
+4589,Bara,Ms Topline Infra Project Pvt. Ltd.,Public Funded,26.6293177,81.3336137,95,155,325,355,510,625
+4590,Asroga,Ms Topline Infra Project Pvt. Ltd.,Public Funded,26.18151,81.56264,100,165,345,375,540,655
+4591,Kherwasani,Ms Eagle Infra India Ltd.,Public Funded,24.122464,80.599361,110,180,375,405,585,710
+4592,Bogalur,Coral Associates,Public Funded,9.398195,78.71394,80,130,270,295,425,515
+4593,Dhoki,Two lane with paved shoulder Road has been constructed by PWD GoM on EPC and transfer to NHAI for To,Public Funded,19.15597,74.41116,40,65,140,155,220,270
+4594,Majhgawan,Ms Tirupati Buildcon Pvt. Ltd.,Public Funded,23.48399,80.30481,65,105,215,235,340,415
+4595,Pathoroudi,Ms. A. V. Enterprises,Public Funded,23.24908,82.05883,40,70,145,155,225,270
+4596,Shahdol,Ms Sri Sai Trading Co,Public Funded,23.28186,81.429282,45,75,155,170,245,295
+4597,Chhapra (TP I),Biaora to Dewas Highway Private Limited,Public Funded,23.657222,76.614862,95,155,325,350,505,615
+4598,Rojwas(TP II),Biaora to Dewas Highway Private Limited,Public Funded,23.330918,76.175973,130,210,440,480,690,840
+4599,Dattigaon,IVRCL INDORE GUJRAT TOLLWAYS LTD.,Public Funded,22.741519,74.836537,135,210,425,650,650,830
+4600,Methwada,IVRCL INDORE GUJRAT TOLLWAYS LTD.,Public Funded,22.6731595,75.545744,150,235,480,735,735,940
+4601,Muthojipet,T. Suryanarayana Reddy,Public Funded,18.002244,79.903564,30,45,95,100,145,180
+4602,Amdi,Suresh Chandra Agarwal,Public Funded,26.3827777,80.8863888,95,150,320,345,500,605
+4603,Pargaon,Yedeshi Aurangabad Tollway Pvt. Ltd.,Public Funded,18.63166,75.6977,75,120,250,275,395,480
+4604,Padalshingi,Yedeshi Aurangabad Tollway Pvt. Ltd.,Public Funded,19.3181,75.7487,100,165,345,380,545,660
+4605,Bhokarwadi Malewadi,Yedeshi Aurangabad Tollway Pvt. Ltd.,Public Funded,19.60083,75.6152,100,160,340,370,530,645
+4606,Jagtara,Ms Alok Buildtech Pvt. Ltd.,Public Funded,20.604749,81.419576,45,75,155,170,240,295
+4607,Mashora,Ms Innovision Ltd.,Public Funded,19.662176,81.658696,60,95,195,215,305,375
+4608,Badayiguda,Riddhi Siddhi Associates,Public Funded,19.161402,81.98472,55,85,180,195,280,345
+4609,Saliwada,Sh. Amit Khampariya,Public Funded,80.030222,23.105109,30,50,110,120,170,210
+4611,Aksada,Ms A.V. Enterprises,Public Funded,26.7024838,82.6745948,45,75,160,175,250,305
+4612,Chhapwa,Ms Ganeshgarhia Construction Pvt. Ltd.,Public Funded,27.2644,83.3643,35,55,115,125,180,220
+4613,Nainsar,Ms Ganeshgarhia Construction Pvt. Ltd.,Public Funded,26.9209,83.297,35,55,115,125,175,215
+4614,Mohtara,Ms Inderdeep Construction Co.,Public Funded,23.418277,80.078098,115,190,395,430,615,750
+4615,Odhaki Paipkhar,Sh. Amit Khapariya,Public Funded,24.404862,81.079578,105,170,360,390,565,685
+4617,Gollaprolu,Ms Sri Sai Enterprises,Public Funded,17.1387,82.2718,45,75,160,175,250,305
+4618,Mathur,Ms Coral Associates,Public Funded,13.1766,80.2449,35,55,120,130,185,225
+4619,Dilawarpur,Ms Dilip Buildcon Ltd,Public Funded,19.0990474,78.2133991,45,75,160,170,250,300
+4620,Mandana,Ms Datar Security Service Group,Public Funded,24.966405,75.93462,55,90,190,210,300,365
+4621,Kair Fakir ki Dhani,Ms GR Infraprojects,Public Funded,26.630978,71.205575,60,95,200,220,315,385
+4622,Pidhi,Ms. Shiva Buildtech Pvt. Ltd.,Public Funded,26.3395,82.244267,75,120,255,280,400,485
+4623,Aindhi,Ms. GKC Projects Ltd Hyd,Public Funded,26.245278,81.593749,70,110,235,255,365,445
+4626,Sabli,Varinder Kour,Public Funded,28.1602222,80.1005555,45,70,150,165,235,285
+4627,Patgaon,M B Consortium,Public Funded,26.565182,90.238792,95,155,325,355,510,620
+4628,Kannolli,V. Vidyasagar Reddy,Public Funded,16.786827,75.739668,65,100,215,230,335,405
+4629,Harval,Ms Larsen  Toubro Pvt Ltd,Public Funded,67.7752043,18.82095,80,130,270,295,425,515
+5626,Talmod,Solapur Tollways Pvt. Ltd.,BOT (Toll),17.826227,76.74068,55,90,185,200,290,350
+5627,Phulwadi,Solapur Tollways Pvt. Ltd.,BOT (Toll),17.79978,76.193308,50,85,175,190,275,335
+5628,Boharipar (Khursi),Anoj Kumar Agarwala,Public Funded,23.047864,79.907251,145,235,490,535,765,930
+5629,Sehatganj,Ms Backbone Enterprises Ltd.Ashish Infracon Pvt. Ltd. (J.V.) Ahmedabad,Public Funded,23.257753,77.638119,50,80,165,180,260,315
+5630,Husnapur,Ms.D P Jain  Co. Infrastructure Pvt Ltd.,Public Funded,20.551197,78.039108,100,160,335,365,520,635
+5631,Belekeri,IRB WestCoast Tollway Limited,Public Funded,14.710895,74.2936251,90,140,290,320,450,570
+5632,Holegadde,IRB WestCoast Tollway Limited,Public Funded,14.3593904,74.419155,90,140,290,320,450,565
+5633,Shirur,IRB WestCoast Tollway Limited,Public Funded,13.9334681,74.5966233,85,135,285,310,445,540
+5634,Sali Bamandanga,SEW KrishnagarBaharampore Highways Limited (Concessionaire) SEW Infrastructure Limited (EPC Contract,BOT (Toll),23.629195,88.36003,95,150,315,345,495,600
+5636,Nawabganj (Adampur)only entry  exit lane plaza at Allahabad Bypass,Ms Allahabad Bypass Toll Pathways Pvt Ltd,OMT,25.558856,81.772125,235,370,770,840,1190,1485
+5637,Ashiv,Rajkumar Dhakane,Public Funded,18.127774,76.358179,70,115,235,260,370,450
+5638,Namkhna,Suresh Chandra Agarwal,Public Funded,21.7575,88.233611,10,20,40,45,65,80
+5639,Mudhipar,Ms Skylark Infra Engineering Pvt. Ltd.,Public Funded,27.2038,77.5011,45,70,150,165,235,285
+5640,Bhojpuri,Ms Ranchor Infra Developers Pvt. Ltd.,Public Funded,21.950763,82.061806,85,135,285,310,445,540
+5641,Haladgaon,Ms Prakash Asphaltings and Toll Highways (India) Ltd.,Public Funded,20.857818,78.876369,95,155,325,350,505,615
+5642,Vadodara,Ms.IRB Ahmedabad Vadodara Super Express Tollway Pvt.Ltd.,Public Funded,22.96882,72.65872,125,205,430,470,675,820
+5643,Jalouli,Ms Gawar Construction Ltd,Public Funded,30.211173,77.194286,100,165,345,375,540,655
+5644,Bhago Majra,Ms Surya International Pvt. Ltd.,Public Funded,30.7609536,76.6078459,100,165,345,375,540,655
+5645,Ghulal,Mahender Godara,Public Funded,30.84737,76.13282,100,160,330,360,520,630
+5646,Mikirati Hawgaon,Haren Mahanta,Public Funded,26.1311484,92.8389911,90,145,305,330,475,580
+5648,Bharatkund,Ms Surya International Pvt. Ltd.,Public Funded,26.640821,82.134434,40,60,130,140,200,245
+5649,Kadisahena,NA,Public Funded,25.634583,15.002951,80,130,270,295,425,515
+5650,Lal Ka Khera,Ms A. V. Enterprises,Public Funded,25.482404,75.31341,40,65,135,150,215,260
+5651,Pallai,NA,Public Funded,25.884209,75.958515,60,95,200,215,310,380
+5652,Lacchhiwala,Ms Feedback Highways OMT Pvt. Ltd.,Public Funded,30.209841,78.125409,95,155,325,355,510,625
+5653,Gowraram,MD Karimunnisa,Public Funded,17.268021,80.679776,40,65,135,150,215,260
+5654,Kitlana,NA,Public Funded,28.69299,76.158534,45,70,145,155,225,275
+5655,Kuchadi,Ms Coral Associates,Public Funded,21.6975366,69.5328098,125,200,415,455,655,795
+5656,Okhamadi,NA,Public Funded,22.080199,69.1338701,95,155,330,360,515,630
+5657,Bachhuan,Ms Jai Singh and Co.,Public Funded,31.0114039,76.389817,60,100,210,225,325,395
+5658,Behram,Ms Jai Singh And Co.,Public Funded,31.204433,75.876799,100,160,330,360,520,630
+5659,Ghogarkuthi,Vinod Kumar Malik,Public Funded,26.3049388,89.6188889,35,60,125,135,195,235
+5660,Madanpur,NA,Public Funded,26.309387,91.716408,125,200,420,455,655,800
+5661,Mahasamudram,NA,Public Funded,13.194889,79.017469,90,150,310,340,490,595
+5662,Rangalibazna,Sonu Kumar,Public Funded,26.6847777,89.2308333,75,125,260,285,410,500
+5663,Selu Ambu,Anil Kumar Shukla,Public Funded,18.67605,76.39189,45,70,145,155,225,275
+5664,Sulkhapara,Sh. Anil Kumar Shukla,Public Funded,26.8733055,88.9147222,60,100,205,225,325,395
+5665,Balibhasa,Ms Prakash Asphaltings and Toll Highways (India) Ltd.,Public Funded,22.3446262,87.1266524,75,125,260,285,410,495
+5666,Manderdisa,Ms Inderdeep Construction Co.,Public Funded,25.7197,93.1279,100,165,345,375,540,655
+5667,Kachnaria,Ms Ganeshgarhia Construction Pvt. Ltd.,Public Funded,23.879731,76.909815,70,110,235,255,370,450
+5668,Mandir Hasaud,Raipur Expressways Ltd.,BOT (Toll),21.23198,81.7591667,60,110,215,345,345,345
+5669,Sonkacch,Mahender Godara,Public Funded,23.359605,77.221079,85,140,295,320,460,560
+5670,Jellipalli,Chabra s ASSOCIATES,Public Funded,14.7928655,77.3621177,65,105,225,245,350,425
+5671,KUMHARI,na,Public Funded,21.252824,81.537318,15,20,40,40,90,90
+5672,Yerradoddi,Coral Assoiciates,Public Funded,14.1691649,78.1349519,60,100,205,225,325,395
+5673,Yerkaram,T. Suryanarayana Reddy,Public Funded,17.14501,79.34495,40,65,135,145,210,255
+5674,Hingonia,Ms Skylark Infra Engineering Pvt. Ltd.,Public Funded,26.8508333,75.9247222,60,100,210,225,325,395
+5675,Sitarampura,Ms Jai Singh Company,Public Funded,26.7472222,75.7686111,55,95,195,210,305,370
+5676,Bhamb,Ms DBL Mahagaon Yavtamal Highways Pvt Ltd,Public Funded,20.234893,78.017434,110,180,380,415,595,725
+5677,Butati,Ms Shiva Corporation India Ltd.,Public Funded,26.547568,74.506682,55,90,190,205,300,365
+5678,Badighati,Ms Shiva Corporation India Ltd.,Public Funded,26.935547,73.979626,40,60,130,140,205,250
+5679,Chhara,Ms Jai Singh and Co.,Public Funded,28.71338,76.72458,65,105,225,245,350,425
+5680,Komalla,Sonu Kumar,Public Funded,17.463853,79.170604,110,180,380,415,595,725
+5681,Komatipalli,Anil Kumar Shukla,Public Funded,18.011824,79.295938,60,100,210,230,330,400
+5682,Sundra,Rishiraj Singh Rathor,Public Funded,26.052019,70.206006,40,65,135,145,210,255
+5683,Bishunpurwa,Patel Engineering Ltd.  Ujjain Engicon India Pvt. Ltd.,Public Funded,26.997191,84.375456,30,50,110,120,170,205
+5684,Gunjangarh,Ms Dineshchandra Tanot Infra Pvt Ltd,Public Funded,26.513044,70.277217,100,160,330,360,520,635
+5685,Khuiyala,Ms Dineshchandra Tanot Infra Pvt Ltd,Public Funded,27.143983,70.388192,90,145,305,335,480,585
+5686,Satbhaiya,Ms Ranchor Infra Developers Pvt. Ltd.,Public Funded,26.687284,88.230461,60,95,200,220,315,380
+5687,Gorsar,Ms Coral Associates,Public Funded,21.318554,69.909762,100,160,335,365,525,640
+5688,Gardiya,Rishiraj Singh,Public Funded,25.5852416,70.8141667,65,105,225,245,350,430
+5689,Sinhaniya,Dinker Commercial Pvt. Ltd.,Public Funded,24.9513888,71.1511111,50,80,165,180,255,310
+5690,Doongri,Dinker Commercial Pvt. Ltd.,Public Funded,24.9463888,71.4225,60,95,195,215,305,375
+5691,Kobadi,AMRISH MANIKRAO MANKAR,Public Funded,21.61976,72.1415933,45,75,155,170,245,300
+5692,Nageshri,Anil Kumar Shukla,Public Funded,20.916389,71.321944,45,70,145,160,230,280
+5693,Sherpur Chamrah,Montecarlo LtdBackbone Ent Ltd(JV),Public Funded,26.8219,83.29387,45,75,160,175,250,305
+5694,Chotiya,Bansi Lal Gupta,Public Funded,22.7777,82.48068,65,100,215,230,335,405
+5695,Pachira,Pushpa Rai,Public Funded,23.19509,82.92553,30,45,100,105,155,185
+5696,Kharbi,Anil Kumar Shukla,Public Funded,20.60611,79.82361,35,55,110,120,175,215
+5697,Bandapalli,Ms Chabbras Associates,Public Funded,13.30534,79.11473,50,85,175,190,270,330
+5698,Chitimiti Chintala,na,Public Funded,14.77064,78.36504,30,45,100,105,155,185
+5699,Kalapathar,Sahakar Global Ltd,Public Funded,23.21784,86.936479,65,105,215,235,340,410
+5700,Khawasa FP,Ashish Agrawal,Public Funded,21.703044,79.433797,100,160,335,365,520,635
+5701,Mejia,na,Public Funded,23.537809,87.12463,45,75,155,170,245,300
+5702,Dularpur,Ms Krishana Construction,Public Funded,27.5786686,81.6335653,50,85,175,190,275,335
+5703,Gurhe,Raja Ram Godara,Public Funded,30.824455,75.590539,55,85,180,195,280,345
+5704,Khamar,Ms RKD Constructions,Public Funded,20.41813,86.02029,55,90,190,210,300,365
+5705,Bhagalpur,Welcome Infratoll Limited,Public Funded,25.23225,87.01002,20,35,75,80,120,145
+5706,Kurana,Freedom Point Experessway Pvt. Ltd.,Public Funded,28.62808,77.78575,100,165,345,375,540,655
+5707,Khaikhat,Devedra Kumar,Public Funded,26.3191,87.90342,65,105,215,235,340,410
+5708,Badewadi,na,Public Funded,19.17306,75.3424,45,70,145,160,230,280
+5709,Peont,Ms Jai Singh and Co.,Public Funded,29.624188,76.786401,75,120,250,270,390,475
+5710,Dagrai,Ms Skylark Infra Engineering Pvt. Ltd.,BOT (Toll),25.62096,78.476725,135,215,450,490,705,860
+5711,Joharia shaikh,PSL infratech pvt. Ltd.,Public Funded,23.796836,78.546162,80,125,265,290,415,505
+5712,Sayed Mazera,Ms Skylark Infra Engg. Pvt. Ltd,Public Funded,30.00135,77.42393,45,75,150,165,240,290
+5713,Chhapar,Ms RSCPLSKCABIPL J.V.,Public Funded,29.585833,77.778333,55,90,185,205,295,355
+5714,Bahadrabad,Ms Inderdeep Construction Co.,Public Funded,29.91215,78.02168,95,155,320,350,505,615
+5715,Sarsawa,Ms Jai Singh  Co.,Public Funded,30.04082,77.38787,125,200,420,460,660,805
+5716,Bhagwanpur,Ms MBL (CGRG) Road Ltd.,Public Funded,29.931253,77.820383,50,80,170,185,265,320
+5717,Ramnagar Gansiyari,Ms Surya International Private Limited,Public Funded,25.7261111,81.9255555,50,80,170,185,270,325
+5718,Hejamadi,Ms. Navayuga Udupi Tollway Pvt. Ltd.,Public Funded,13.10819,74.78444,40,70,145,225,225,275
+5719,Madai,Ms Skylark Infra Engineering Pvt. Ltd.,Public Funded,22.54994,79.60109,100,165,340,370,535,650
+5720,K N Hundy,Md Yousuf Ali,Public Funded,12.21389,76.66306,55,90,185,200,290,350
+5721,Yeddore,Md. Yousuf Ali,Public Funded,12.2437,76.88332,40,65,140,150,220,265
+5722,Kannegala,Md. Yousuf Ali,Public Funded,11.78008,76.61368,30,50,100,110,160,195
+5723,Harro,NA,Public Funded,25.11559,81.75417,60,100,205,225,320,390
+5724,Mungari,NA,Public Funded,25.29878,81.94765,40,65,135,150,215,260
+5725,Umapur,NA,Public Funded,25.27192,81.74293,45,75,155,170,240,295
+5726,Nimbasar,Mahender Godara,Public Funded,26.15387,71.27751,65,100,215,235,335,410
+5727,Narsana,Ms H G Infra pvt ltd,Public Funded,25.485729,72.569789,50,85,175,195,275,335
+5729,Gumanpura,MS HG Infra Engineering Ltd.,Public Funded,25.992661,75.9384815,60,95,205,220,320,385
+5730,Bideibadkudar,Ms Ranchor Infra Developer Pvt. Ltd.,Public Funded,21.5058155,85.0582372,135,215,450,490,710,860
+5731,Khachrol,Ms Riddhi Siddhi Associates,Public Funded,27.2046,77.4977,65,110,225,245,355,430
+5732,Millampalli,Anil Kumar Shukla,Public Funded,16.06238,79.30513,35,55,120,130,185,225
+5734,Gangajali,Maheder Godara,Public Funded,28.47524,72.61884,55,90,185,200,290,355
+5735,Barsalpur,Ms. Gawar Khajuwala Bap highways pvt. Ltd.,Public Funded,28.047877,72.349573,60,100,205,225,325,395
+5736,Seora,Ms. Gawar Khajuwala Bap highways pvt. Ltd.,Public Funded,27.51125,72.27998,65,105,220,240,340,415
+5737,Medapi,Anil Kumar Shukla,Public Funded,16.026029,79.48465,50,80,165,180,260,315
+5738,Pandillapalli,Anil Kumar Shukla,Public Funded,15.46596,79.07232,45,75,160,170,250,300
+5739,Shahabpur,Praveen Kumar,Public Funded,26.94928,81.25645,35,60,125,135,195,235
+5740,Singarajupally,Sri Sai Enterprises,Public Funded,17.590143,79.276497,35,55,115,125,180,220
+5741,Kokpara,Prakash Asphaltings and Toll Highways(India) Ltd.,Public Funded,22.44634,86.59847,100,160,340,370,530,645
+5742,Hazaribag,Shiva Corporation India Ltd,Public Funded,24.0445225,85.3856876,65,105,220,245,350,425
+5743,Jiwana,Anil Kumar Shukla,Public Funded,29.164995,77.276135,85,140,290,315,455,550
+5744,Khatkar,na,Public Funded,29.394776,76.252134,110,175,370,400,580,705
+5745,Sanwara,Ms Ranchor Infra Developers Pvt. Ltd.,Public Funded,30.892075,77.004646,65,105,215,235,340,410
+5746,Saini Majra,Ms Jai Singh and Co.,Public Funded,30.19749,76.50534,90,150,315,340,490,600
+5747,Thana,Sadbhav Engineering Limited,Public Funded,29.91029,76.50666,80,130,270,295,425,515
+5748,Chak Bamniya,Ms DBL,Public Funded,31.017874,75.299925,115,185,385,420,605,735
+5749,Kot Karor,Ms DBL,Public Funded,30.82689,74.916494,45,70,145,160,225,275
+5750,Usma,Ms DBL,Public Funded,31.37021,74.95469,150,245,515,560,810,985
+5751,Kothiya,Suresh Chandra Agarwal,Public Funded,24.54,86.95,30,50,100,110,160,195
+5752,Puraini,Ms PNC Infratech Ltd.,Public Funded,29.407553,78.446612,80,130,270,295,425,520
+5753,Bathalapalli,MD Yousuf Ali,Public Funded,14.500116,77.796611,65,100,210,230,330,405
+5755,Jodi Dharampuram,Sonu Kumar,Public Funded,14.987394,77.915283,55,85,185,200,285,350
+5756,Navasari,Anil Kumar Shukla,Public Funded,24.285173,86.348624,20,35,70,80,115,140
+5757,Jakhauli(EPE),PUNIT SINGH,HAM,28.91709,28.91709,,,,,,
+5758,Maujpur(EPE),ORIENTAL STRUCTURAL ENG PVT LTD,HAM,28.28198,77.43815,,,,,,
+5759,Chhajju Nagar(EPE),GAYATRI PROJECTS,HAM,28.09952,77.36404,,,,,,
+5760,Mawikalan(EPE),SADBHAV ENGINEERING PVT. LTD.,HAM,28.87713,77.25082,,,,,,
+5761,Duhai(EPE),SADBHAV ENGINEERING PVT. LTD.,HAM,28.73377,77.47471,,,,,,
+5762,Dasna(EPE),JAIPARKASH ASSOCIATES LTD,HAM,28.68572,77.53373,,,,,,
+5763,Bilakbarpur(EPE),ASOKA BUILDCON,HAM,28.52294,77.59598,,,,,,
+5764,Fatehpur Rampur(EPE),ASOKA BUILDCON,HAM,28.43818,77.58719,,,,,,
+5765,Patariya Goyal,Ms RSB Infra Pvt. Ltd.,Public Funded,23.131971,76.689998,35,55,110,120,175,215
+5766,Aashpur,Ms A. K. Construction Company,Public Funded,27.486582,78.79216,80,130,270,295,425,520
+5768,Badarpur Elevated,Shiva Corporation(India) Ltd.,BOT (Toll),28.4762963,77.3056512,28,42,84,84,84,
+5769,Pachwara,Mahender Godara,Public Funded,25.134123,79.37991,85,135,285,310,445,540
+5770,Gadanki,Ms KNR Tirumala Infra Pvt Ltd,Public Funded,13.478827,79.188024,95,155,325,350,505,615
+5771,Lamber,Ms Navayuga Quazigund Expressway Ltd,Public Funded,33.50381,75.18015,145,235,490,535,770,940
+5772,Ujroo,Ms Navayuga Quazigund Expressway Ltd,Public Funded,33.5661,75.18689,145,235,490,535,770,940
+5773,Panikauri,Ms Topline Infra Projects Pvt. Ltd.,Public Funded,26.573915,88.522596,80,135,280,305,435,530
+5774,Husludanga,Ms Kalyan Toll Infrastructure Ltd.,Public Funded,26.5605725,88.9195854,60,100,205,225,325,395
+5775,Banglore  Neelamangla,Ms Navayuga Bengalooru Tollway Private Limited,BOT (Toll),13.07541,77.48594,30,45,95,,155,
+5776,Golhaura,Puspa Rai,Public Funded,27.443591,82.924243,30,45,100,105,155,185
+5777,Mauhari,Ms Jabalpur Tolls,Public Funded,24.577226,80.690857,45,75,155,165,240,290
+5778,Devgaon,Vinod Kumar Malik,Public Funded,24.779103,79.828395,70,115,240,265,380,460
+5779,Toda,Suresh Chandra Agarwal,Public Funded,25.2426039,85.7863632,50,80,170,185,265,320
+5780,Padmanavpur,Ainul Hoque,Public Funded,21.62325,86.925376,55,90,195,210,305,370
+5781,Sukhuapada,Sh. Anil Kumar Shukla,Public Funded,22.07456,86.643509,45,75,160,175,250,305
+5783,Kollam,Kanwar Singh Yadav,Public Funded,8.92166,76.57579,25,45,90,100,140,170
+5784,Mandwara,Ms Shiva Industrial Security Agency (Gujarat) Ltd.,Public Funded,22.050977,75.1191572,30,45,95,105,150,185
+5785,Nashirabad,Ms Coral Associates,Public Funded,21.016609,75.684364,95,155,325,350,505,615
+5786,Fekari,Fekari Infrastructure Pvt. Ltd.,BOT (Toll),21.040041,75.829323,15,,40,65,65,
+5787,Kachkoot,Seema Chowdhary,Public Funded,33.87457,75.04281,115,185,385,420,600,735
+5788,Vaddupalli,T. Suryanarayna Reddy,Public Funded,14.67048,77.45172,50,80,170,185,270,330
+5789,Semraraja,Devendra Kumar,Public Funded,27.144604,83.562172,25,45,90,100,145,175
+5790,Kaithi,Bholanath Rajpati Shukla,Public Funded,25.494937,83.147623,130,210,440,480,695,845
+5791,Balachera,Ms Laxmi Motors,Public Funded,24.946554,92.756124,40,65,135,145,210,255
+5792,Vishankheda,Amit Khampariya,Public Funded,23.022194,77.570611,35,60,125,135,195,235
+5793,Bagwada,Ms Skylark Infra Engineering Pvt. Ltd.,Public Funded,22.781523,77.733774,105,170,360,390,560,685
+5794,Paraghat,Ms A K Construction,Public Funded,22.010617,82.323591,65,105,220,220,345,420
+5795,Jagatpur Patti,PNC Infratech Ltd.,Public Funded,29.244179,78.884934,110,175,370,405,580,710
+5796,Edalhatu,Ms Eagle Infra India Ltd.,Public Funded,23.180503,85.57528,110,180,375,410,585,715
+5797,Chitlapalli,Ms Inderdeep Construction Company,Public Funded,17.078508,77.581042,65,100,215,235,335,410
+5798,Munnanur,Md Karimunnisa,Public Funded,16.74527,78.2858,45,70,150,165,235,285
+5799,Gummadidala,V. Vidyasagar Reddy,Public Funded,17.673312,78.371721,65,105,225,245,350,430
+5800,Bahadrabad,Ms Sam (India) Builtwell Pvt. Ltd.,Public Funded,29.923433,78.021434,85,140,290,320,455,555
+5804,Keezhkuppam,Ms.Karnataka Commercial  Industrial Corporation Private Limited,Public Funded,11.576895,78.936138,45,70,145,160,230,280
+5806,Karodi,Ms Arcons Infrastructure and Construction Pvt. Ltd.,Public Funded,19.890841,75.205602,65,100,215,235,335,410
+5854,Jawahar Nagar,Feedback Highways OMT Pvt. Ltd.,Public Funded,18.212094,80.028503,40,60,130,140,200,245
+5855,Kothagudem,Sri Sai Enterprises,Public Funded,17.406428,79.6421309,70,115,240,260,375,455
+5856,Dharmaram,Ms. DBL Mangloor Highways Pvt. Ltd.,Public Funded,18.2658,77.7871,75,125,260,285,410,500
+5857,Khireitangiri,Ms Montecarlo Singhara Binjhabahal Highway Pvt. Ltd.,HAM,21.7056475,85.6972661,90,145,305,335,480,585
+5858,Jansanpur,Ms Montecarlo Singhara Binjhabahal Highway Pvt. Ltd.,HAM,21.4483033,85.3733547,60,95,200,220,315,385
+5859,Chahar,Anil Kumar Shukla,Public Funded,30.9887,75.7908,35,60,125,135,195,240
+5860,Atraila Shiv Ghulam,MS Dinesh Rai,HAM,24.9619444,82.3058333,100,165,345,375,540,660
+5861,Koyla,Ms Sadbhav Rudrapur Highway Pvt. Ltd.,Public Funded,28.83044,79.09648,40,65,140,155,220,265
+5862,Rajora Khurd,H G Infra,Public Funded,26.85467,77.7221,70,115,240,260,375,460
+5863,Tarwa Dewa,Ms Apco Navakalyan Expressway pvt.ltd,Public Funded,27.195225,79.370778,105,170,350,385,550,670
+5864,Hatnoor,na,Public Funded,20.170518,75.132249,100,160,335,365,525,640
+5865,Harshili,Ms Ramky  Infrastructure Ltd.  Brij Gopal Construction Co. Ltd. (JV),Public Funded,23.018177,78.121077,135,220,465,505,725,885
+5866,Tankla,Ms Inderdeep Construction Co.,Public Funded,27.01333,73.5004,45,75,160,175,250,305
+5867,Netra,Ms Gannon Dunkerley  Co. Ltd,Public Funded,26.578605,73.15355,65,105,220,240,345,420
+5869,Ferozeshah,Ceigall India Ltd.,Public Funded,30.8695,74.7731,35,55,115,125,180,215
+5870,Hesmi (Mandar),MS A.K. Construction Company,Public Funded,23.472,85.0597,70,115,235,260,370,450
+5871,Bhadbhid,MS Kalthia Bhavnagar Pipli Highway (P) Ltd.,Public Funded,21.985008,72.091742,45,75,155,165,240,295
+5872,Galia,Ms Topline Infra Projects Pvt. Ltd.,Public Funded,26.4421,91.0485,45,70,150,165,235,285
+5873,Sirohi Bahali,Gawar Narnaul Highway Pvt. Ltd.,Public Funded,27.9327,76.12727,125,200,415,455,650,795
+5874,Thakri,na,Public Funded,29.4884012,73.3932932,40,65,140,150,220,265
+5875,Patroda,GR Infraproject Ltd,Public Funded,29.0601598,73.0975538,80,130,270,295,420,515
+5876,Chapirevula,Rayalseema Expressway Private Limited,BOT (Toll),15.4603934,78.4518509,120,185,385,590,590,750
+5877,Kandra,Ms Montecarlo Limited,Public Funded,22.0521055,85.4941527,60,95,200,215,310,380
+5878,Kodikottai,Ms.DRASPVM(JV),Public Funded,9.8879515,78.8477001,35,60,125,135,195,235
+5879,Vennathur,Ms.DRASPVM(JV),Public Funded,9.5424934,78.8632246,35,55,110,120,175,210
+5880,Luhari,Ms BALA JI ENTERPRISES,Public Funded,25.343052,78.916511,140,225,475,515,745,905
+5881,Belgada,Ms JSP Project Pvt. Ltd.,Public Funded,27.119331,82.895889,70,110,235,255,370,450
+5882,Mungwari,Ms Anil kumar Shukla,Public Funded,24.644141,79.336369,35,60,125,135,190,235
+5883,Ujara,Ms. Surendra kumar  Shukla,0,25.085635,79.708403,35,60,125,135,195,235
+5884,Nalavadi,Ms. BSCPL  KNR (JV)  Contractor,Public Funded,15.3697,75.3575,115,190,395,430,620,755
+5885,Halligudi,Ms. BSCKNR,Public Funded,15.3909,75.8551,100,160,340,370,535,650
+5886,Ludana,Kalyani Commodities Private Limited in Consortium with Ashok Kumar,Public Funded,29.24132,76.518153,50,85,175,190,275,335
+5887,Bankapur,Ms. Montecarlo Hubli Haveri Highway Pvt. Ltd.,Public Funded,14.9121501,75.2797247,55,85,180,200,285,350
+5888,Thiruvallam,MS JAI KAMTANATH AND COMPANY,Public Funded,8.4326672,76.959595,75,120,255,280,400,490
+5890,Hirehalli,SRI SAI ENTERPRISES,HAM,14.50436,70.6707,60,100,210,230,330,400
+5891,Thimmalapura,na,Public Funded,15.057368,76.3569133,85,135,285,310,445,540
+5892,Khiriya,Ms Bansal Construction Works Pvt. Ltd.,Public Funded,23.089011,78.484877,90,145,300,325,470,570
+5893,Newli,Ms Bansal Construction Pvt. Ltd.,Public Funded,24.075877,77.37374,65,110,225,245,355,435
+5894,Jharothi,Ms Ram Niwas and Company,Public Funded,28.921999,76.953192,75,120,250,270,390,475
+5895,Shrishikalan,Niraml Kumar Pandey,Public Funded,25.435025,80.12783,35,55,115,125,185,225
+5896,Bass,Gawar Construction Limited,Public Funded,29.1266207,76.2092175,50,85,175,195,275,335
+5897,Andhiyari,Raebareilly Allahabad Highway Pvt. Ltd.,BOT (Toll),25.61188,81.642923,80,125,265,410,410,500
+5900,Hitouta,Ms  A. K Construction Company,Public Funded,28.264748,80.250888,35,60,120,135,190,235
+5901,Sarai Sundar,Ms  Anil Kumar Shukla,Public Funded,28.578965,79.862811,25,45,90,100,145,175
+5902,Morwala,CeigallSBPL (JV),Public Funded,28.641001,76.381516,50,80,165,180,260,315
+5903,Bisawas,Anil Kumar Shukla,Public Funded,28.46956,75.890932,35,60,120,135,190,235
+5904,Choti villor,Ms Ganeshgarhia Constrcution Pvt. Ltd,Public Funded,24.6739351,71.8270341,25,45,95,100,145,175
+5905,Balana,Ms Kaltiya,Public Funded,25.293327,73.085753,50,85,175,195,275,335
+5906,Binawas,Ms L and T Ltd.,Public Funded,26.27886,73.394295,90,145,305,330,475,580
+5907,Biratiya Kalan,Ms L and T Ltd.,Public Funded,26.121946,74.062649,75,120,255,280,400,485
+5908,Nekawala,HG INFRA ENG.LTD,Public Funded,27.244988,76.0641958,55,90,190,210,300,365
+5909,Rabawata,Ms PNC Rajasthan Highways Pvt. Ltd,Public Funded,26.500317,76.998323,30,50,105,115,165,200
+5910,Titoli,Ms PNC Rajasthan Highways Pvt. Ltd,Public Funded,26.7706,76.339247,75,120,255,275,400,485
+5911,Thirpali Bari,Ms Rajendra Singh Bhamboo Infra Pvt. Ltd.,Public Funded,28.40023,75.54903,35,60,125,135,200,240
+5912,Panthwada,na,Public Funded,24.493991,72.26879,20,35,70,75,110,130
+5913,Bhordu,na,Public Funded,24.447181,71.751233,35,55,120,130,190,230
+5914,Kala Tibba,J.K Associates,Public Funded,30.1043537,74.26151,45,75,155,165,240,290
+5915,Balluana,Mahender Godara,Public Funded,30.2275,74.7638,55,90,185,200,290,350
+5916,Chainwa (Chapraitha),Ms GR Infra Pvt. Ltd.,Public Funded,26.0265694,84.4909778,45,70,150,165,235,285
+5917,Thawe (Brindavan),Ms GR Infra Pvt. Ltd.,Public Funded,26.4229472,84.3869972,40,65,140,150,220,265
+5918,Etaura Bujurg,Raebareilly Allahabad Highway Pvt. Ltd.,Public Funded,42.07099,88.3606,20,35,75,120,120,145
+5919,Kollapalle,Ms Inderdeep Construction Company,Public Funded,18.017805,77.927905,70,115,240,260,375,455
+5920,Dolhu Nallah (Raison),Ms Anil Kumar Shukla,Public Funded,32.075,77.127222,35,60,125,135,195,240
+5921,Beer Mandi,Patel DarahJhalawar Highway Pvt. Ltd.,Public Funded,24.6426388,76.0274722,110,180,375,405,585,710
+5922,Kathuwas,Devender Kumar,Public Funded,28.14161,76.36003,65,105,220,240,345,420
+5923,Shahpura,Ms Wagad Infra  Rajasthan,Public Funded,23.150638,79.722055,80,130,270,295,425,520
+5924,Kashi,Ms. G R Infra Projects Limited,Public Funded,28.89696,77.64521,,,,,,
+5925,Bhojpur,Ms. GR Infra Projects Limited,Public Funded,28.80015,77.69916,,,,,,
+5926,Rasoolpur Sikrod,Ms. GR Infra Projects Limited,Public Funded,28.707,77.517,,,,,,
+5927,Marripalem,na,Public Funded,17.76724,83.06185,20,35,75,80,115,140
+5928,Dukkavanipalem,Ms Sri Sai Enterprises,Public Funded,17.89709,83.34555,25,40,85,90,130,160
+5929,Mannan,Ceigall India Ltd. Ludhiana (Suresh Chandra Agarwal Toll Agency),Public Funded,31.52051,74.80809,45,75,160,175,250,305
+5930,Sarasdol,Mr. Prabhat Jain and Mr. Sujeet Jain and  Mrs. Sapna Jain (Joint venture),Public Funded,23.1157557,79.0490846,75,120,255,280,400,490
+5931,Talen (Mirzapur),Ms MCLBECPl (JV),Public Funded,23.585443,76.737047,25,40,85,95,135,165
+5932,Dhumka Tondgaon,Ms. Montecarlo Limited,Public Funded,20.01351,77.13994,60,100,205,225,325,395
+5933,Kini,Ms Maharashtra State Road Development Corporation,BOT (Toll),16.87673,74.29836,90,145,305,335,480,585
+5934,Tasawade,Ms Maharashtra State Road Development Corporation,Public Funded,17.36603,74.12282,95,155,330,360,515,630
+5935,Jagjitpura,Vinod Kumar Malik,Public Funded,30.40311,75.44181,110,175,370,400,575,700
+5937,Kalajhar,Ms Mandeepa Enterprises,Public Funded,30.26601,76.14826,100,165,340,370,535,650
+5938,Popunki,Ms Ashoka Buildcon Ltd.,Public Funded,23.71086,86.19936,75,120,255,280,400,485
+5939,Karman,Cube Highways andTransportation Assets Advisors Pvt. Ltd,Public Funded,27.855659,77.403025,85,140,290,,455,555
+5940,Gadpuri,Cube Highway,Public Funded,28.27806,77.29797,110,175,355,,695,695
+5941,Tidagundi,Ms Vijayapura Tollway Pvt Ltd,Public Funded,17.00847,75.75843,105,165,350,380,545,665
+5942,Kallakudi,Ms. KNR Srirrangam Private Limited,Public Funded,10.9971037,78.9667498,70,110,235,255,370,450
+5943,Managethi,Ms KallagamMeensurutti Highway Private Limited,Public Funded,11.133873,79.242871,45,70,150,165,235,285
+5944,Ghamroj,Ms Prakash Asphaltings Toll Highways (India) Ltd.,Public Funded,28.333785,77.067456,115,190,400,435,625,760
+5945,Ichagaon,Ms. DBL Mangalwedha Solapur Highway Pvt. Ltd.,Public Funded,17.592428,75.591836,90,140,300,325,465,570
+5946,Khedi,Kishangarh Gulabpura Tollway Limited,Public Funded,26.10415,74.68545,135,215,450,490,705,860
+5947,Kozhinjipatti (Kodairoad),DS Toll Road Limited,BOT (Toll),10.194526,77.909311,75,130,260,415,415,415

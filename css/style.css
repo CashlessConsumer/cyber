@@ -192,6 +192,25 @@ section.block.alt { background: rgba(15,22,16,0.5); border-top: 1px solid var(--
 
 /* ============ Tables ============ */
 .table-wrap { overflow-x: auto; margin: 0 0 22px; border: 1px solid var(--line); border-radius: var(--radius); }
+/* anchored sections + on-page navigation */
+h2 { scroll-margin-top: 96px; position: relative; }
+h2 .anchor { position: absolute; left: -1.1em; opacity: 0; text-decoration: none; color: var(--accent); font-weight: 400; }
+h2:hover .anchor { opacity: 1; }
+.mini-toc { border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,0.03); margin: 26px 0 30px; }
+.mini-toc summary { cursor: pointer; padding: 12px 16px; font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.mini-toc[open] summary { border-bottom: 1px solid var(--line); }
+.mini-toc nav { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 4px 18px; padding: 12px 18px 16px; }
+.mini-toc nav a { font-size: 0.9rem; color: var(--fg); text-decoration: none; padding: 3px 0; }
+.mini-toc nav a:hover { color: var(--accent); }
+.mini-toc nav .toc-n { color: var(--muted); font-family: var(--mono); font-size: 0.78rem; margin-right: 7px; }
+.back-top { position: fixed; right: 22px; bottom: 22px; z-index: 60; display: inline-flex; align-items: center; gap: 7px; padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: rgba(10,12,16,0.92); color: var(--fg); text-decoration: none; font-size: 0.8rem; font-family: var(--mono); backdrop-filter: blur(6px); }
+.back-top:hover { border-color: var(--accent); color: var(--accent); }
+@media (max-width: 640px) {
+  .table-wrap table { font-size: 0.78rem; }
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  .back-top { right: 14px; bottom: 14px; padding: 8px 12px; }
+  .mini-toc nav { grid-template-columns: 1fr; }
+}
 table { width: 100%; border-collapse: collapse; font-size: 0.92rem; min-width: 560px; }
 thead th {
   text-align: left; font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.04em;
