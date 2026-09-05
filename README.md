@@ -11,13 +11,12 @@ financial and government infrastructure.
 |------|-------|
 | `index.html` | Hub — index of all cyber efforts |
 | `pages/bank-in-report.html` | `.bank.in` namespace security audit + IDRBT registry investigation |
-| `pages/toll-shadow-apps.html` | Toll shadow-software investigation ('Mobdata'/'Any') + open plaza-registry dataset; PDF: `pages/toll-shadow-apps-explainer.pdf` |
-| `pages/toll-shadow-apps.html` | Toll shadow-software scam explainer ('Mobdata'/'Any', ED PMLA 2026) + open plaza-registry dataset |
+| `pages/toll-shadow-apps.html` | Shadow Toll — 'The FASTag Toll Scam: Cash Antagonism Is Not a Cybersecurity Strategy' + open plaza-registry datasets |
 | `pages/breaches.html` | Ransomware breach verification index (BoB / Triple X, Dodo / DireWolf) |
 | `pages/bob-breach.html` | Bank of Baroda breach verification gateway (links to bobbreach.cashlessconsumer.in) |
 | `pages/cert-in-dotenv.html` | CERT-In responsible disclosures — `.env` files on `.bank.in` |
 | `pages/about.html` | Methodology, ethics, disclosure policy |
-| `pages/toll-shadow-apps-explainer.pdf` | 24-page LaTeX (Eisvogel) explainer report backing the shadow-toll page |
+| `pages/toll-shadow-apps-explainer.pdf` | 25-page LaTeX (Eisvogel) explainer: cover, TOC, index, 5 charts, 22 sections |
 
 ## Structure
 
