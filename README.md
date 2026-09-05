@@ -11,7 +11,7 @@ financial and government infrastructure.
 |------|-------|
 | `index.html` | Hub — index of all cyber efforts |
 | `pages/bank-in-report.html` | `.bank.in` namespace security audit + IDRBT registry investigation |
-| `pages/toll-shadow-apps.html` | Shadow Toll — 'The FASTag Toll Scam: Press Release vs. Reality' (v2 neutral-analysis report PDF) + open plaza-registry datasets |
+ | `pages/toll-shadow-apps.html` | Shadow Toll — 'The FASTag Bypass' (v2.1 report PDF) + open plaza-registry datasets |
 | `pages/breaches.html` | Ransomware breach verification index (BoB / Triple X, Dodo / DireWolf) |
 | `pages/bob-breach.html` | Bank of Baroda breach verification gateway (links to bobbreach.cashlessconsumer.in) |
 | `pages/cert-in-dotenv.html` | CERT-In responsible disclosures — `.env` files on `.bank.in` |
