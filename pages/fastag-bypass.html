@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The FASTag Bypass — plain-language explainer | cyber.cashlessconsumer.in</title>
+  <meta name="description" content="How shadow software on India's highway toll booths printed fake receipts for two years at ~100 plazas — explained simply, with the numbers we can defend.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span></a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="pages/bank-in-report.html">.bank.in Audit</a>
+      <a href="pages/breaches.html">Breaches</a>
+      <a href="pages/cert-in-dotenv.html">CERT-In .env</a>
+      <a href="about.html">Method &amp; ethics</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<section class="page-hero toll">
+  <div class="inner">
+    <span class="kicker">Plain-language explainer · Updated 6 September 2026</span>
+    <h1>The FASTag Bypass, <span class="mono">explained simply</span></h1>
+    <p class="lede">For roughly two years, unauthorised software on highway toll booth computers secretly pocketed cash from vehicles without a valid FASTag — printing receipts that looked perfectly honest — at ~100 plazas across 14+ states, while NHAI's national system recorded almost none of it. Police caught it; the audits never did. This page gives you the whole story in five short answers, with the numbers we can actually defend.</p>
+    <div class="chiplist">
+      <span class="chip">~100 plazas</span>
+      <span class="chip">14+ states</span>
+      <span class="chip">2-year run</span>
+      <span class="chip">₹45,000/day measured at one plaza</span>
+      <span class="chip tag-green">No FASTag data breached</span>
+      <span class="chip tag-amber">Caught by police, not audits</span>
+    </div>
+    <div class="cta-row">
+      <a class="cta primary" href="toll-shadow-apps-explainer.pdf">Full report (PDF, 37 pp)</a>
+      <a class="cta ghost" href="toll-shadow-apps.html">Deep-dive dossier</a>
+      <a class="cta ghost" href="https://x.com/logic/status/2096197799922786774" target="_blank" rel="noopener">The teaser thread</a>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="inner prose">
+    <h2 id="sec-1">1 · In 60 seconds<a class="anchor" href="#sec-1">#</a></h2>
+    <p><strong>What happened.</strong> On NH-35 in Mirzapur (UP), the toll contractor's staff ran a second, secret program on the booth computers alongside the official tolling software. When a car without a FASTag came through, the operator collected cash, and the secret program printed a barcoded receipt that looked real. That money never reached the concessionaire or the government. The official system saw a clean, boring day — because the secret program wrote exactly that.</p>
+    <p><strong>How big.</strong> UP's Special Task Force measured <strong>₹45,000/day</strong> of suppressed cash at the one plaza it caught (Atraila Shiv Gulam) — about ₹3.3 crore over two years at a single booth. The accused named <strong>42 plazas</strong> in 14 states; the ED's forensic examination now points to <strong>~100</strong>. Our harm model (full report §13C) prices the plausible total at <strong>₹13–17 crore (conservative)</strong> to <strong>₹101–138 crore (aggressive)</strong> for the 42 known plazas — and up to several hundred crore if the ~100-plaza footprint ran the same way.</p>
+    <p><strong>Who.</strong> One self-taught developer built and franchised the software. He was arrested near Varanasi airport in January 2025 with laptops, phones and a receipt printer. The collection agencies that ran the plazas employed the booth staff; what the agencies knew is the open question — a court has already found NHAI's first answer to it inadequate.</p>
+    <p><strong>Why nobody caught it.</strong> Audits read what the booth's official software reports. The secret software is the thing reporting. Every "all clear" was the fox filing the henhouse log. The scheme was caught by a police <em>sting</em>, not by any audit, dashboard, or reconciliation flag.</p>
+    <p><strong>Where it stands.</strong> NHAI's February 2025 crackdown (debarments, ~₹100 crore of forfeited guarantees) was <strong>set aside by the Delhi High Court in July 2026</strong> — a press note and a confession aren't proof, and no shadow software was found on the petitioners' plazas. In September 2026 the <strong>Enforcement Directorate opened a money-laundering case</strong>, raided 14 premises, and its device forensics surfaced the ~100-plaza footprint. The careful reading: the fraud is well-evidenced; the map of who knew what is still being drawn.</p>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="inner prose">
+    <h2 id="sec-2">2 · The poster numbers<a class="anchor" href="#sec-2">#</a></h2>
+    <a href="../images/fastag-bypass-scam-poster.png" target="_blank" rel="noopener"><img src="../images/fastag-bypass-scam-poster.png" alt="Estimating the FASTag Bypass Scam — scenario table poster" style="width:100%;height:auto;border:1px solid var(--line);border-radius:var(--radius);"></a>
+    <p style="font-size:0.85rem;color:var(--muted);margin-top:10px;">These are <em>estimates from public data</em>, not court findings. The one hard number in the record is the STF's ₹45,000/day at Atraila; everything else scales it by plaza fees (public) under two intensity assumptions and three coverage windows. Method and reproducible script: <a href="toll-shadow-apps-explainer.pdf">report §13C</a> · <a href="https://zo.pub/cashlessconsumer/fastagscam-open-data">open data</a>.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>What officials said</th><th>Our model says</th></tr></thead>
+        <tbody>
+          <tr><td>STF: ₹120 crore across the network</td><td><strong>Consistent.</strong> Implies ₹2.9 crore/plaza ≈ 635 days at Atraila's measured intensity — inside our central band.</td></tr>
+          <tr><td>Early press: ₹750 crore</td><td><strong>Inflated.</strong> Needs 5.4× Atraila's intensity at <em>every</em> plaza for two full years. No supporting evidence.</td></tr>
+          <tr><td>NHAI encashed ~₹100 cr in guarantees (later set aside)</td><td>Eerily close to our aggressive 42-plaza band (₹101–138 cr) — the state's gut feel matched the harm, even when its legal case didn't.</td></tr>
+          <tr><td>ED: receipts "running in crores", ~100 plazas</td><td>Consistent with the central 100-plaza band: <strong>₹88–123 crore</strong>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="inner prose">
+    <h2 id="sec-3">3 · Timeline in eight rows<a class="anchor" href="#sec-3">#</a></h2>
+    <div class="table-wrap">
+      <table class="dates">
+        <thead><tr><th>Date</th><th>Event</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">2021</td><td>The developer works briefly at a toll plaza and starts building the bypass.</td></tr>
+          <tr><td class="mono">~2023</td><td>The fraud goes live; franchises spread it across 14+ states.</td></tr>
+          <tr><td class="mono">19 Jan 2025</td><td>UP STF arrests the developer; seizures include the printer used for shadow receipts.</td></tr>
+          <tr><td class="mono">22–23 Jan 2025</td><td>FIR at Lalganj (Mirzapur). STF press note names 42 plazas in 14 states.</td></tr>
+          <tr><td class="mono">Mar 2025</td><td>NHAI debars 14 collection agencies, forfeits ₹100+ crore in securities. The minister tells Parliament the FASTag system itself was never breached — true, and beside the point.</td></tr>
+          <tr><td class="mono">Apr 2026</td><td>Cash is abolished at national-highway plazas — FASTag only (UPI at 1.25×). The bypass vector is gone; the audit gap that allowed it isn't.</td></tr>
+          <tr><td class="mono">3 Jul 2026</td><td>Delhi High Court sets aside the debarments and forfeitures: a press note, one confession and statistics are not evidence. No agency employee was named in any charge sheet.</td></tr>
+          <tr><td class="mono">2–3 Sep 2026</td><td>ED raids 14 premises under PMLA (₹1.03 crore cash, 8 accounts). Device forensics point to ~100 plazas.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="inner prose">
+    <h2 id="sec-4">4 · Questions people actually ask<a class="anchor" href="#sec-4">#</a></h2>
+    <p><strong>Is my FASTag affected?</strong> No. Tags, bank accounts and the national clearing system were never compromised. This was cash-lane leakage at the booth — your tag payments flowed normally. The scam's victims were mostly drivers who legally paid cash, and the public purse.</p>
+    <p><strong>What were "Mobdata" and "Any"?</strong> Two names for the shadow software, from ED-attributed reporting. We found no trace of either in app stores, code repositories or certificate logs — consistent with private codenames, not products. (Unrelated to "MobData", a Chinese analytics SDK that shares a name.)</p>
+    <p><strong>Didn't cameras and audits watch the booths?</strong> The audit trail is written by the booth's own computer. A second program on that computer can make any audit look clean. That's the design flaw — and it's generic to every system that delegates its edge to private contractors.</p>
+    <p><strong>So banning cash fixed it?</strong> It removed this particular bypass, and pushed the residual friction elsewhere (and onto those who can't or won't use tags). The court record shows the enforcement response to the underlying fraud was struck down; the software-audit gap remains open. Digital-first is a fine default — but "digital" is not automatically "audited", and pretending otherwise is how a scam runs for two years.</p>
+    <p><strong>What would real accountability look like?</strong> Our RTI asks target the paper trail: how many remittance alerts the exception system generated, plaza by plaza; forensic reports from seized devices; the status of the national toll-reconciliation system. If the state's own numbers exist, publishing them costs nothing.</p>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="inner prose">
+    <h2 id="sec-5">5 · Sources &amp; further reading<a class="anchor" href="#sec-5">#</a></h2>
+    <ul>
+      <li><strong>Full report (PDF, 37 pp)</strong> — <a href="toll-shadow-apps-explainer.pdf">The FASTag Bypass: investigative analysis</a> · method, judgment analysis, harm model, footnoted sources.</li>
+      <li><strong>Deep-dive dossier (this site)</strong> — <a href="toll-shadow-apps.html">42-plaza registry, open data, ED case tracker</a>.</li>
+      <li><strong>Delhi HC judgment, 3 Jul 2026</strong> — <a href="https://indiankanoon.org/doc/99533796" target="_blank" rel="noopener">Sunil Suryanarayana Reddy v. NHAI</a> (Indian Kanoon).</li>
+      <li><strong>ED case reporting, 3–4 Sep 2026</strong> — <a href="https://www.tribuneindia.com/news/india/about-100-highway-plazas-used-illegal-apps-to-collect-toll-from-vehicles-not-bearing-fastag-stickers-ed/" target="_blank" rel="noopener">The Tribune</a> and others (see report Appendix D).</li>
+      <li><strong>Open data</strong> — <a href="https://zo.pub/cashlessconsumer/fastagscam-open-data">plaza registry, TIS snapshot, harm model CSVs</a> (zo.pub).</li>
+      <li><strong>Harm model</strong> — anchored on STF ₹45,000/day (judgment para 5); fee-scaled from the public Rajmargyatra dataset; script + methodology in the report §13C and the open-data bundle. All estimates; not findings of any court or agency.</li>
+    </ul>
+    <div class="callout">
+      <strong>CashlessConsumer's line.</strong> We are pro-digital and pro-consumer — which is why we insist digital systems be transparent, accountable, privacy-respecting, and never compulsory. Cash antagonism didn't stop this scam; an unaudited edge ran it for two years under a "100% digital, corruption-free" banner. Liberty to pay cash, and humility about what software can and cannot prove, make payment systems stronger — not weaker.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <span class="f-brand"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
+    <div class="f-links">
+      <a href="https://cashlessconsumer.in">cashlessconsumer.in</a>
+      <a href="https://x.com/logic" target="_blank" rel="noopener">@logic</a>
+      <a href="about.html">Method &amp; Ethics</a>
+    </div>
+    <span class="f-note">Public documents only · No PII published · Human-supervised agentic work</span>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
