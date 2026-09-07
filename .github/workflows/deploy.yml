@@ -22,7 +22,7 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p _site
-          cp -r pages css js data 404.html index.html CNAME _site/ 2>/dev/null || true
+          cp -r pages css js data images 404.html index.html CNAME _site/ 2>/dev/null || true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
