@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SharePoint, Structurally Quiet — Architecture Analysis | CashlessConsumer</title>
+<meta name="description" content="On-prem SharePoint's exfiltration gap is not an unreported bug. It is the product's design: read equals download, one grant can cover an entire estate, and nothing watches bulk behaviour by default. Why MSRC will never file it as a CVE — and why that taxonomy doesn't reduce the blast radius.">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="canonical" href="https://cyber.cashlessconsumer.in/pages/sharepoint-structural-gaps.html">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../index.html"><span class="mark">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+    <nav class="links">
+      <a href="../index.html">Home</a>
+      <a href="toll-shadow-apps.html">Shadow Toll</a>
+      <a href="bank-in-report.html">.bank.in Audit</a>
+      <a href="breaches.html">Breaches</a>
+      <a href="cert-in-dotenv.html">CERT-In · .env</a>
+      <a href="sharepoint-structural-gaps.html">SharePoint</a>
+      <a href="about.html">Method &amp; Ethics</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<details class="disclosure">
+  <div class="inner">
+    <summary><span class="ai-badge">Agentic work</span> Human-supervised AI on Zo Computer <span class="dblink">▸ what this means</span></summary>
+    <div class="d-body">
+      <p>Everything on this site is <b>agentic cyber work</b>: AI agents running on
+      <b>Zo Computer</b> plan the probes, execute read-only scans, analyse the results and
+      draft the findings — <b>predominantly on GLM 5.3 Flash</b> — the cheapest flash-tier model available, run with Zero Data Retention. A human steers and monitors
+      every stage. No scan runs, no finding is disclosed and no text is published without human
+      review and sign-off.</p>
+      <p>The machine does the legwork at speed and scale; the intent, the ethics and the
+      accountability are human.</p>
+    </div>
+  </div>
+</details>
+
+<main>
+  <section class="page-hero">
+    <div class="inner">
+      <div class="crumb"><a href="../index.html">cyber</a> / Architecture analysis</div>
+      <span class="kicker">🏛️ Platform analysis · pattern-level, no incident referenced</span>
+      <h1>SharePoint, <span class="mono">structurally quiet</span></h1>
+      <p class="lede">
+        If a single valid username and password can quietly copy an entire document estate — hundreds of
+        thousands of files, over weeks, without any alarm firing — is that a vulnerability?
+        Microsoft's taxonomy says <strong>no</strong>. This page explains why that answer is technically
+        defensible, operationally unacceptable, and what it costs the customers who hold identity documents,
+        credit files and KYC archives on these platforms.
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <h2>Scope note</h2>
+      <p>
+        This is a <strong>pattern-level analysis</strong> of on-premises Microsoft SharePoint Server as a product
+        platform, drawn from its documented architecture and from general experience assessing document-management
+        estates in regulated Indian sectors. <strong>No specific incident, organisation or dataset is referenced,
+        implied or discoverable from this page.</strong> Where concrete events are cited, they are public
+        vendor and regulator publications (MSRC, CISA, NVD).
+      </p>
+
+      <h2>The chain, and where the product is silent</h2>
+      <p>
+        Every bulk exfiltration from a document farm follows the same six links. The striking property of
+        on-prem SharePoint is how many of them the product simply does not see:
+      </p>
+      <div class="table-wrap">
+      <table>
+        <tr><th>Link in the chain</th><th>On-prem SharePoint, out of the box</th><th>Cloud estate (SharePoint Online)</th></tr>
+        <tr><td>Credential</td><td>AD username + password; NTLM/Kerberos/Forms auth. MFA is <strong>not a product capability</strong> — it requires bolting an AD FS / third-party MFA adapter onto every auth path.</td><td>Entra ID; MFA enforcement rolling out platform-wide since 2025–2026.</td></tr>
+        <tr><td>Authentication anomaly</td><td>None consumed. IIS/ULS logs record sign-ins; nothing flags impossible travel, new ASN or odd user-agents.</td><td>Entra ID Protection (P2 licence) evaluates sign-in risk.</td></tr>
+        <tr><td>Enumeration</td><td>Search, tree-walk and list views are normal user behaviour. No bulk-read heuristic exists in the product.</td><td>Same gap for API/Graph paths; cloud analytics help only if consumed.</td></tr>
+        <tr><td>Read / download</td><td><strong>Read = download.</strong> The permission model has no separate egress dimension. Opening a file and copying the entire library use the same permission bit.</td><td>Conditional Access app controls can block download to unmanaged devices — configurable, not default.</td></tr>
+        <tr><td>Exfiltration</td><td>No native egress monitoring. On-box DLP (2016+) inspects stored content, not bulk download behaviour.</td><td>Purview DLP with sensitive-info types; again, a purchase and a configuration project.</td></tr>
+        <tr><td>Hosting / monetisation</td><td>Outside the product's world entirely.</td><td>Same.</td></tr>
+      </table>
+      </div>
+
+      <h2>Read = download: the missing dimension</h2>
+      <p>
+        The deepest of these gaps is structural: SharePoint's permission model answers one question —
+        <em>"who may open this item?"</em> — and has no native notion of <em>"is this identity behaving like a
+        crawler?"</em> The same grant that lets an employee do their job lets any holder of that grant walk every
+        folder they can see, at network speed, indefinitely. There is no rate concept, no volume concept, and
+        no permission that distinguishes "view" from "acquire".
+      </p>
+      <p>
+        To make it concrete: a farm holding a couple of hundred thousand files can be walked in roughly
+        2–4 thousand requests a day — a rounding error in IIS logs, invisible unless someone has built a
+        volumetric baseline in an external SIEM. The logging to notice it <em>exists</em>; the noticing is a
+        separate purchase, integration and staffing decision that most on-prem document farms never receive.
+      </p>
+
+      <h2>One grant, whole estate</h2>
+      <p>
+        SharePoint's web-application policy model allows a single grant to apply across <strong>every site
+        collection</strong> in the farm — this is exactly how search crawlers and service accounts are meant to
+        work. It is a legitimate administrative pattern with an uncomfortable property: one credential with one
+        broad grant is, by design, sufficient to read the entire estate. And out of the box, the product offers
+        no effective-permissions report that answers "who, realistically, can read what across this farm?" —
+        answering that question is its own consulting engagement.
+      </p>
+
+      <h2>"Hasn't Microsoft been told all this?"</h2>
+      <p>
+        Yes — repeatedly, for over a decade. The reason nothing changes is not ignorance or neglect. It is that
+        <strong>this genre of weakness is, by MSRC's own servicing criteria, not a vulnerability.</strong> Missing
+        MFA on an authentication path is a configuration choice. Read-equals-download is the permission model
+        working as designed. Silent bulk behaviour is the absence of a feature, not the presence of a defect.
+        Vendor taxonomies across the industry draw this line the same way — Kerberoasting, LLMNR poisoning and
+        ESXi's complete lack of MFA are all "architectural boundaries", documented as hardening guidance, never
+        CVEs.
+      </p>
+      <p>
+        What <em>does</em> get filed and fixed is code-level failure — and that channel demonstrably works.
+        In July 2025, the <strong>ToolShell</strong> chain (CVE-2025-53770 / CVE-2025-53771, hardening the
+        days-earlier CVE-2025-49704 / -49706) gave unauthenticated remote code execution on on-prem SharePoint
+        Server and was exploited at scale, including against government agencies. Microsoft shipped emergency
+        patches for 2016 / 2019 / Subscription Edition within days; CISA added the flaws to the Known Exploited
+        Vulnerabilities catalog and published malware-analysis reports. SharePoint Online was not affected.
+        Notably, Microsoft's own protection guidance for that episode leaned on posture: enable AMSI
+        integration (made default in September 2023 updates only, after years of being optional) and deploy
+        Defender — i.e. the code fix rides on top of the same hardening defaults that were never there.
+      </p>
+      <p>
+        The rest of the loop is commercial. Every structural gap has a Microsoft product as its remedy —
+        Entra P2 for identity risk, Purview for DLP, Defender for Cloud Apps for download blocking, Sentinel
+        for the SIEM baseline — or the strategic answer: migrate to SharePoint Online, where Conditional Access
+        and session controls exist natively. Meanwhile SharePoint Server 2016 exits support in July 2026, and
+        NVD's own remediation guidance for the ToolShell era tells operators of end-of-life farms to disconnect
+        them from the internet entirely. A whole market — permission-auditing vendors (AvePoint, SysKit, Rencore
+        and peers) — exists precisely because the platform's defaults don't answer its own "who can read what"
+        question. The gap is known, reported, monetised — and, by taxonomy, unfixable as a bug.
+      </p>
+      <p>
+        None of this reduces the blast radius. Call it a design property, call it a business strategy — a farm
+        holding identity documents, loan files and KYC archives remains one leaked password away from a silent,
+        complete, lawful-looking copy. <strong>CVE-or-not is a filing question. The harm is an architecture
+        question.</strong>
+      </p>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="inner prose">
+      <h2>What a defensible on-prem SharePoint posture looks like</h2>
+      <ul>
+        <li><strong>Put MFA in front of every auth path</strong> — AD FS with an MFA adapter or a third-party identity provider; verify each protocol (NTLM, Kerberos, Forms) is covered, not just the browser login page.</li>
+        <li><strong>Contain the network.</strong> A document farm holding customer records has no business being internet-reachable; gate access behind VPN/zero-trust broker, and treat an exception list as a board-level liability.</li>
+        <li><strong>Patch on calendar and keep AMSI on</strong> — the ToolShell episode showed the on-prem exploit window is measured in days.</li>
+        <li><strong>Answer "who can read what" annually.</strong> Run effective-permission audits across site collections; review web-application policies and crawl/service accounts; kill orphaned grants.</li>
+        <li><strong>Build the volumetric baseline.</strong> Ship IIS/ULS to a SIEM and alarm on per-identity request volume and unusual user-agents — the crawl that copies a farm is invisible without it.</li>
+        <li><strong>Classify the crown jewels.</strong> Identity documents and KYC archives deserve DLP and, honestly, a migration plan — the on-prem platform's trajectory is end-of-support, not endowment.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <h2>Further reading</h2>
+      <ul>
+        <li>MSRC — <em>Customer guidance for SharePoint vulnerability CVE-2025-53770</em> (ToolShell): <a href="https://msrc.microsoft.com/blog/2025/07/customer-guidance-for-sharepoint-vulnerability-cve-2025-53770/" target="_blank" rel="noopener">msrc.microsoft.com</a></li>
+        <li>CISA — <em>Update: Microsoft Releases Guidance on Exploitation of SharePoint Vulnerabilities</em>: <a href="https://www.cisa.gov/news-events/alerts/2025/07/20/update-microsoft-releases-guidance-exploitation-sharepoint-vulnerabilities" target="_blank" rel="noopener">cisa.gov</a> · <a href="https://www.cisa.gov/news-events/analysis-reports/ar25-218a" target="_blank" rel="noopener">MAR-251132.c1.v1</a></li>
+        <li>Unit42 (Palo Alto Networks) — <em>Active Exploitation of Microsoft SharePoint Vulnerabilities</em>: <a href="https://unit42.paloaltonetworks.com/microsoft-sharepoint-cve-2025-49704-cve-2025-49706-cve-2025-53770/" target="_blank" rel="noopener">unit42.paloaltonetworks.com</a></li>
+        <li>Microsoft — <em>Securing future plans: mandatory MFA for Microsoft 365 admin center</em>: <a href="https://learn.microsoft.com/en-us/entra/identity/authentication-concepts/mandatory-mfa-frequently-asked-questions" target="_blank" rel="noopener">learn.microsoft.com</a></li>
+        <li>NVD — CVE-2025-53770 (incl. disconnect-EOL guidance): <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-53770" target="_blank" rel="noopener">nvd.nist.gov</a></li>
+        <li>vNinja — <em>ESXi Has No MFA</em> (same genre: architectural boundary, not a missing setting): <a href="https://vninja.net/2026/07/03/esxi-mfa-gap-hardening-checklist/" target="_blank" rel="noopener">vninja.net</a></li>
+      </ul>
+      <p class="muted">
+        Consistent with our method: this page publishes the pattern and the hardening path, not any incident.
+        Breach-specific verification work lives elsewhere on this site, at metadata level only.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <span class="f-brand"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
+    <div class="f-links">
+      <a href="https://cashlessconsumer.in">cashlessconsumer.in</a>
+      <a href="https://x.com/logic" target="_blank" rel="noopener">@logic</a>
+      <a href="../pages/about.html">Method & Ethics</a>
+    </div>
+    <span class="f-note">All probes read-only · No PII published · Human-supervised agentic work</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

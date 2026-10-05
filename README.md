@@ -15,6 +15,7 @@ financial and government infrastructure.
 | `pages/breaches.html` | Ransomware breach verification index (BoB / Triple X, Dodo / DireWolf) |
 | `pages/bob-breach.html` | Bank of Baroda breach verification gateway (links to bobbreach.cashlessconsumer.in) |
 | `pages/cert-in-dotenv.html` | CERT-In responsible disclosures — `.env` files on `.bank.in` |
+| `pages/sharepoint-structural-gaps.html` | "SharePoint, Structurally Quiet" — on-prem SharePoint's exfiltration gap as design property (pattern-level, no incident referenced) |
 | `pages/about.html` | Methodology, ethics, disclosure policy |
 | `pages/toll-shadow-apps-explainer.pdf` | 25-page LaTeX (Eisvogel) explainer: cover, TOC, index, 5 charts, 22 sections |
 
