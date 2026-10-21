@@ -5,31 +5,33 @@
 ## Positioning
 
 This is the **index surface** for CashlessConsumer's independent cyber security
-research. It showcases three flagship efforts and links outward to full
+research. It showcases four flagship efforts and links outward to full
 investigations. It is deliberately **static** (plain HTML/CSS/JS, no build
 step at deploy) — matching the proven `BoBBreach` deployment pattern and
 removing runtime dependencies. Nothing here stores or surfaces PII.
 
-## Bounded contexts (the three pillars)
+## Bounded contexts (the pillars)
 
 | Context | Responsibility | Where the depth lives |
 |---|---|---|
 | `bank-in` | `.bank.in`/financial-TLD namespace audit + IDRBT registry investigation | live data at CCAgentOrg/bank-in-domains + bank-domains-ui; IDRBT report at bankin-report.cashlessconsumer.in |
 | `bob-breach` | Verification gateway only — signs the key facts, points to the full investigation | CashlessConsumer/BoBBreach → bobbreach.cashlessconsumer.in |
 | `cert-in-env` | Responsibly-disclosed `.env`/actuator/phpinfo/log exposures on `.bank.in` | evidence distilled from bank-in-research scan + CERT-In timeline |
+| `emudhra-ca` | eMudhra CA key-compromise consumer record: gateway page + full investigation site (`pages/emudhra/`) | master note in `Kaarana/notes/`, voice-gated per `Skills/cc-comms-voice`; sources + build in workspace `Projects/cyber/pages/emudhra/` |
 
 A **reporter plane** (about + methodology + disclosure policy) is a shared
-context referenced by all three pages.
+context referenced by all pages.
 
 ## Content contract
 
-The three pillar pages expose a stable, machine-checkable fact surface so the
+The pillar pages expose a stable, machine-checkable fact surface so the
 site can be regenerated from data without hand-edited HTML absorbing drift:
 
 - `bank-in`: math-critical tables (`top banks`, `UAT count`, `TLD parallels`).
 - `bob-breach`: signed headline stats (162,111 files · 16,474 dirs · ~1.07 TB ·
   1,088+ branches · Triple X · 24 Jul 2026).
 - `cert-in-env`: the exposure ledger + remediation status column.
+- `emudhra-ca`: the five-fact status table on the gateway page (guessable keys, CT absence, recovery account, India chains, regulatory silence).
 
 `ARCHITECTURE.md` is the single reference for column semantics and for which
 source CSV feeds each figure, so re-runs and corrections stay deterministic.
