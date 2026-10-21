@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eMudhra CA compromise: Security Investigations | CashlessConsumer</title>
+<meta name="description" content="Eight intermediate certificates from an Indian certificate authority with 3–8 bits of private-key randomness. One key was the number 4. Consumer exposure, India systems on the vendor, and the regulatory silence that followed.">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="canonical" href="https://cyber.cashlessconsumer.in/pages/emudhra.html">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../index.html"><span class="mark">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+    <nav class="links">
+      <a href="../index.html">Home</a>
+      <a href="breaches.html">Breaches</a>
+      <a href="bank-in-report.html">.bank.in Audit</a>
+      <a href="emudhra.html" class="active">eMudhra CA</a>
+      <a href="cert-in-dotenv.html">CERT-In · .env</a>
+      <a href="about.html">Method &amp; Ethics</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<details class="disclosure">
+  <div class="inner">
+    <summary><span class="ai-badge">Agentic work</span> Human-supervised AI on Zo Computer <span class="dblink">▸ what this means</span></summary>
+    <div class="d-body">
+      <p>Everything on this site is <b>agentic cyber work</b>: AI agents running on
+      <b>Zo Computer</b> plan the probes, execute read-only scans, analyse the results and
+      draft the findings — <b>predominantly on GLM 5.3 Flash</b> — the cheapest flash-tier model available, run with Zero Data Retention. A human steers and monitors
+      every stage. No scan runs, no finding is disclosed and no text is published without human
+      review and sign-off.</p>
+      <p>The machine does the legwork at speed and scale; the intent, the ethics and the
+      accountability are human.</p>
+    </div>
+  </div>
+</details>
+
+<main>
+  <section class="page-hero emudhra">
+    <div class="inner">
+      <div class="crumb"><a href="../index.html">cyber</a> / eMudhra CA</div>
+      <span class="kicker">🔐 Trust infrastructure</span>
+      <h1>eMudhra CA compromise: eight &ldquo;secret&rdquo; keys, one was the number 4</h1>
+      <p class="lede">
+        In early October 2026, eMudhra, an Indian certificate authority licensed by the Controller
+        of Certifying Authorities and trusted by every major browser, issued eight intermediate
+        certificates whose private keys carried <strong>3 to 8 bits of randomness</strong>. A real
+        key of this class has about 2<sup>384</sup> possible values. These eight are 4, 56, 66, 115,
+        155, 156, 230 and 237. Anyone holding them could mint valid certificates for any website on
+        earth, and browsers would show the padlock and say nothing. The full consumer investigation,
+        public statement and open letter live in this site's <a href="../emudhra/index.html">eMudhra
+        section</a>.
+      </p>
+      <div class="cta-row">
+        <a class="cta primary" href="../emudhra/index.html">Full investigation →</a>
+        <a class="cta ghost" href="../emudhra/statement.html">Public statement</a>
+        <a class="cta ghost" href="../emudhra/letter.html">Open letter to RBI &amp; MeitY</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner">
+      <div class="stats">
+        <div class="stat-card"><div class="num">8</div><div class="label">intermediate CAs compromised</div></div>
+        <div class="stat-card"><div class="num">3–8 bits</div><div class="label">private-key randomness</div></div>
+        <div class="stat-card"><div class="num">4</div><div class="label">one literal private key</div></div>
+        <div class="stat-card"><div class="num">17 Oct 2026</div><div class="label">reported; browsers blocked within days</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <h2>What we can state</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Fact</th><th>Basis</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Eight intermediates, guessable keys</b></td>
+              <td>Researcher &ldquo;Wayne&rdquo; proved key control on 17 Oct by signing taunts with each private key; Mozilla and Chrome bug trackers confirmed</td>
+              <td><span class="pill warn">confirmed</span></td>
+            </tr>
+            <tr>
+              <td><b>No evidence of misuse</b></td>
+              <td>Public certificate-transparency logs show no fraudulent issuance in the exposure window</td>
+              <td><span class="pill">absence of evidence, not proof of safety</span></td>
+            </tr>
+            <tr>
+              <td><b>Recovery, not accident</b></td>
+              <td>eMudhra's own account: keys moved to US/EU data centres under an &ldquo;approved deviation&rdquo;; re-signing done with broken keys instead of halting</td>
+              <td><span class="pill warn">process failure</span></td>
+            </tr>
+            <tr>
+              <td><b>India systems on the vendor</b></td>
+              <td>Our live TLS handshakes: UIDAI's website and GeM serve certificates from eMudhra chains; IDRBT (the RBI-established institute running the banking sector's CA) builds issuance on eMudhra's emCA platform</td>
+              <td><span class="pill warn">verified by us</span></td>
+            </tr>
+            <tr>
+              <td><b>Regulatory silence</b></td>
+              <td>No public statement from CCA India, RBI, MeitY or CERT-In as of 21 Oct 2026, while Mozilla and Chrome ran public incident processes</td>
+              <td><span class="pill warn">open</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <h2>What it means for consumers</h2>
+      <p>For a window of days, anyone holding those keys on a network between you and your bank
+      could impersonate the bank so well that your browser would certify the impostor. Updated
+      Chrome, Firefox and Safari carry the fix; Signal, WhatsApp and WireGuard pin their own
+      trust. The unfixable tail is old Android phones, routers, smart TVs, forgotten servers and
+      unpatched tooling, and that tail is disproportionately Indian. We make no finding that
+      anyone was intercepted. We say the conditions were met, and no Indian authority has told
+      consumers otherwise.</p>
+      <p><a href="../emudhra/index.html#consumers">Full consumer guidance →</a></p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <h2>What we demand</h2>
+      <p>Our open letter to the Reserve Bank of India and MeitY, copied to CCA India, CERT-In and
+      IDRBT, asks four things, numbered for answer:</p>
+      <ol>
+        <li>A public accounting from eMudhra, verified by an independent auditor, of every key that left its custody.</li>
+        <li>A public incident report from IDRBT on banking-PKI exposure, given its issuance rides on eMudhra's emCA platform.</li>
+        <li>Consumer remediation: explicit guidance from RBI and MeitY to banks and government services on trust-store updates, and notification duties where long-lived clients stay exposed.</li>
+        <li>An independent, open and verifiable investigation of India's certificate ecosystem, with public audit trails. That standing is currently borrowed from foreign browser root programs.</li>
+      </ol>
+      <p><a href="../emudhra/letter.html">Read the open letter →</a></p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <h2>Explore the full investigation</h2>
+      <ul>
+        <li><a href="../emudhra/index.html">Consumer guide</a>: what happened, who is protected and exposed, do-this-today checklist, curated video explainers</li>
+        <li><a href="../emudhra/statement.html">Public statement</a>: the full sourced account, footnote by footnote</li>
+        <li><a href="../emudhra/letter.html">Open letter</a>: to RBI and MeitY, with a 14-day answer clock</li>
+        <li><a href="../emudhra/company.html">Corporate history</a>: eMudhra's people, licence, listing, acquisitions and who profits</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="inner">
+    <div>CashlessConsumer · independent security research · <a href="../index.html">cyber.cashlessconsumer.in</a> · <a href="mailto:cashlessconsumerin@gmail.com">cashlessconsumerin@gmail.com</a></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
