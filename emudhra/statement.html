@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public statement — eMudhra CA Compromise — CashlessConsumer</title>
+<meta name="description" content="CashlessConsumer public statement on the eMudhra CA compromise: eight intermediate certificates with guessable private keys, and no word from Indian regulators.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="hub-crumb"><a href="../index.html">&#9670; cyber.cashlessconsumer.in</a><span class="sep">/</span>eMudhra CA compromise</div>
+<header class="site-header">
+  <div class="wrap-wide">
+    <a class="brand" href="index.html">
+      <span class="brand-badge">CC</span>
+      <span class="brand-name">CashlessConsumer</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html#consumers">For consumers</a>
+      <a href="statement.html">Statement</a>
+      <a href="letter.html">Open letter</a>
+      <a href="index.html#videos">Videos</a>
+      <a href="index.html#sources">Sources</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" style="padding:44px 0 40px;">
+    <div class="wrap">
+      <div class="hero-kicker">eMudhra CA compromise · 21 October 2026</div>
+      <h1 style="font-size:clamp(24px,4vw,34px);">Public statement: eight &ldquo;secret&rdquo; keys anyone could guess. One was the number 4. And no Indian authority has said a word.</h1>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="banner-note">Draft for review, 21 October 2026. Numbers and quotes are sourced in the footnotes; what we verified ourselves is marked as our own verification.</div>
+      <div class="prose">
+<p>We are CashlessConsumer, a consumer collective working on digital
+payments and public digital infrastructure. Below is a failure most
+Indians will never see, in a system everyone depends on. Every claim
+here is sourced. Where we checked something ourselves, we say so.</p>
+<p><strong>What happened.</strong> The padlock in your browser stands
+for a promise: this really is your bank. Keeping that promise is the job
+of companies called Certificate Authorities, which browsers agree to
+trust. One of the most embedded of them in India is eMudhra Ltd of
+Bengaluru: licensed by the Controller of Certifying Authorities (CCA
+India),<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a> listed on the stock exchanges, and a
+certificate supplier to government websites.</p>
+<p>Between 1 and 10 October 2026, eMudhra created eight intermediate
+certificates. Their private keys were not random. A key of this class
+should allow about 2³⁸⁴ possible values; these eight contained 3 to 8
+bits of actual randomness. Their values were 4, 56, 66, 115, 155, 156,
+230 and 237. One of the “unknowable” keys of one of India’s largest
+trust companies was the number 4. An AI agent recovered a key on its
+first attempt with a one-line prompt, as recorded in the Mozilla
+incident tracker by the researcher coordinating the response.<a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a><a href="#fn3" class="footnote-ref"
+id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Anyone holding such a key can mint a credential for any website on
+earth (your bank, Gmail, UIDAI), and browsers will call it genuine. The
+padlock shows. No warning appears. This is not a forecast: the keys are
+public, and deriving all eight takes minutes on a laptop.</p>
+<p><strong>Who caught it.</strong> A researcher known as “Wayne”
+reported the flaw on 17 October 2026, proving control of the keys by
+signing a message with each one. Firefox and Chrome stopped trusting all
+eight intermediates within hours. Apple followed on 19 October. A public
+disclosure site with test endpoints went up on 20 October.<a href="#fn4"
+class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> The
+system worked. It worked because of a volunteer researcher, an AI agent,
+and browser security teams sitting outside India.</p>
+<p><strong>What we are not saying.</strong> We make no allegation of
+misuse. We did not investigate whether anyone exploited these keys; that
+requires powers and access we do not have. Certificate Transparency
+shows nothing was minted from them, and we treat that as a reason to
+investigate calmly, not as a certificate of innocence. Our demand stands
+whether or not any harm occurred: the failure itself, and the silence
+around it, are the case.</p>
+<p><strong>What no Indian authority has said.</strong> As of 21 October
+2026, we could not find a public statement, order or incident record on
+this matter from CCA India, RBI, IDRBT, UIDAI or GeM. The statutory body
+that licenses eMudhra has published nothing. There is no public incident
+process for Indian-licensed CAs at all. Certificate auditors in India
+are chosen and paid by the companies they audit.</p>
+<p>The vendor’s own account, on the public record, does not comfort.
+Keys meant to stay locked inside tamper-proof hardware were made
+exportable under an “approved deviation” and shipped to data centres in
+the US and EU, in the name of “data sovereignty”. Indian policy insists
+data stay in India; the vendor made the keys portable instead. When
+revocation lists signed with the correct keys failed verification,
+eMudhra re-signed them with the broken keys rather than halting issuance
+and investigating.<a href="#fn5" class="footnote-ref" id="fnref5"
+role="doc-noteref"><sup>5</sup></a> We ask the obvious question: if a
+licensed trust company cannot stop itself from signing with a key it
+knows is broken, what exactly did the licence certify?</p>
+<p><strong>Why this lands on Indian desks.</strong> Our own desk checks,
+20–21 October 2026, from Indian and sandbox vantages:<a href="#fn6"
+class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<ul>
+<li>uidai.gov.in and gem.gov.in, the Government e-Marketplace, serve
+website certificates issued by eMudhra. We offer this as a fact of
+jurisdiction, not as evidence of compromise: these chains are different
+from the compromised ones and remain trusted.</li>
+<li>IDRBT, the RBI-established institute that certifies Indian banking,
+builds its issuance on eMudhra’s emCA platform, with over 3,00,000
+certificates issued for interbank messaging and national payment
+systems.<a href="#fn7" class="footnote-ref" id="fnref7"
+role="doc-noteref"><sup>7</sup></a><a href="#fn8" class="footnote-ref"
+id="fnref8" role="doc-noteref"><sup>8</sup></a></li>
+<li>Chrome is formally reviewing “the status of eMudhra’s remaining CA
+certificate”.<a href="#fn9" class="footnote-ref" id="fnref9"
+role="doc-noteref"><sup>9</sup></a> If that root goes, these websites
+stop loading in updated browsers until they migrate. Consumers would
+bear a vendor’s failure.</li>
+<li>The devices least likely to ever receive a trust update are
+years-old Android phones, smart TVs and forgotten servers. That is also
+a fair description of what most Indians use. The long tail of this
+incident is Indian.</li>
+</ul>
+<p><strong>What we ask.</strong> Two things, in order: an open and
+verifiable investigation, and a remediation path for consumers if it
+finds harm. The full open letter to RBI and MeitY follows below. In
+summary:</p>
+<ol type="1">
+<li>An open, verifiable, published investigation into eMudhra’s licensed
+operations: the key-generation ceremonies behind the eight certificates,
+the “approved deviation” that made keys exportable, the transfer of keys
+overseas, and the re-signing of revocation lists with a known-broken
+key. Evidence preserved, findings public.</li>
+<li>CERT-In: confirm whether this incident was reported within the
+6-hour window the April 2022 directions require, and publish the action
+taken.<a href="#fn10" class="footnote-ref" id="fnref10"
+role="doc-noteref"><sup>10</sup></a></li>
+<li>A standing public incident process for licensed CAs, on the model
+Mozilla and Chrome already run free of charge for the same vendors.</li>
+<li>Certificate audits appointed and paid by the regulator, not the
+vendor.</li>
+<li>A consumer remediation framework agreed in advance: if the
+investigation establishes any interception, affected people are notified
+and made whole, the cost falls on the responsible vendor, and liability
+between certificate authority, website operator and payment provider is
+settled by rule, not by fight.</li>
+<li>UIDAI, GeM and IDRBT: publish your certificate issuers and
+pre-position migration away from eMudhra roots, sequenced with browser
+makers so no distrust decision lands on users unannounced.</li>
+<li>RBI: guidance to regulated entities on trust-store updates in
+banking apps and channels.</li>
+</ol>
+<p><strong>What you should do today.</strong> Update your browser, phone
+and computer. That one step covers most of the risk. If you run servers,
+containers or CI systems, list everything that checks certificates and
+update its trust stores. If your organisation buys eMudhra certificates,
+ask for the root-cause analysis in writing.</p>
+<p>Crores of us press “pay” every day and never think about the padlock.
+The machinery that keeps the padlock honest sits mostly outside India,
+and the part inside India has no public way to prove it works. It should
+not take a foreign bug tracker for the country to learn its own bank’s
+front door is sound.</p>
+<p><em>— CashlessConsumer · cashlessconsumer.in ·
+cashlessconsumerin@gmail.com</em></p>
+<section class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>CCA India, eMudhra Certification
+Practice Statement and eSign empanelment records —
+https://cca.gov.in/sites/files/pdf/Licensed-CA/eMudhra-CPS-v2.1.pdf ·
+https://cca.gov.in/service-providers.html<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Dan Goodin, “The Internet goes on
+high alert after discovery of 8 compromised TLS certs,” Ars Technica, 20
+Oct 2026 —
+https://arstechnica.com/security/2026/10/the-internet-goes-on-high-alert-after-discovery-of-8-compromised-tls-certs/<a
+href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>“eMudhra Intermediate CA Compromise”
+public disclosure site, 20 Oct 2026 —
+https://emudhra.we-have-a-problem.com/<a href="#fnref3"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>“eMudhra Intermediate CA Compromise”
+public disclosure site, 20 Oct 2026 —
+https://emudhra.we-have-a-problem.com/<a href="#fnref4"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>eMudhra statement and Mozilla
+researcher verification, Mozilla bug 2083449 —
+https://bugzilla.mozilla.org/show_bug.cgi?id=2083449<a href="#fnref5"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>Desk verification,
+CashlessConsumer/Kaarana, 20–21 Oct 2026: live TLS handshakes for
+uidai.gov.in, gem.gov.in, esign.emudhra.com, idrbt.ac.in,
+idrbtca.org.in, npci.org.in, rbi.org.in, mca.gov.in, digilocker (sandbox
++ Oracle Cloud Mumbai vantage); compromised-chain structure from
+https://emudhra.we-have-a-problem.com/chains.zip<a href="#fnref6"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p>IDRBT, “Certifying Authority” —
+https://www.idrbt.ac.in/certifying-authority<a href="#fnref7"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8" role="doc-endnote"><p>eMudhra case study, “IDRBT Secures
+Banking PKI Infrastructure” (emCA/emRA deployment) —
+https://emudhra.com/en/resources/idrbt-india-pki<a href="#fnref8"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9" role="doc-endnote"><p>Chrome root program statement; Hacker
+News discussion, 20–21 Oct 2026 —
+https://news.ycombinator.com/item?id=50166579<a href="#fnref9"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10" role="doc-endnote"><p>CERT-In Directions under section
+70B(6) of the IT Act, 28 April 2022 (CIR/2022/11) — six-hour incident
+reporting requirement — https://www.cert-in.org.in/<a href="#fnref10"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+      </div>
+      <div class="callout">
+        <h3>Related on this site</h3>
+        <p><a href="index.html#consumers">What this means for consumers</a> · <a href="index.html#videos">Videos that explain the mechanics</a> · <a href="index.html#sources">Every source</a> · <a href="../index.html">More security research at cyber.cashlessconsumer.in</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap-wide">
+    <div>CashlessConsumer · an Indian consumer collective for digital payments and public digital infrastructure.</div>
+    <div><a href="https://cashlessconsumer.in">cashlessconsumer.in</a> · <a href="mailto:cashlessconsumerin@gmail.com">cashlessconsumerin@gmail.com</a></div>
+  </div>
+</footer>
+</body>
+</html>
