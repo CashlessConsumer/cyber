@@ -43,7 +43,7 @@ financial and government infrastructure.
 - **toll-shadow-apps:** IHMCL NH fee-plaza list (Aug 2025 PDF, gov source) parsed via
   `pdftotext -layout` — 1,129 plazas, 22 states. Scam-plaza crosswalk from STF/ED
   press coverage (see `Documents/research/FASTagScam/` for the full evidence folder).
-- **emudhra-ca:** master note `Kaarana/notes/2026-10-21-emudhra-statement-open-letter-rbi-meity.md`; desk verification of live TLS handshakes 20–21 Oct 2026; sources footnoted per page (Ars Technica, disclosure site, Mozilla bug, CCA India, IDRBT, RBI). Markdown sources + build script for the section live in the workspace at `Projects/cyber/pages/emudhra/`; this repo carries the served HTML.
+- **emudhra-ca:** master note `Kaarana/notes/2026-10-21-emudhra-statement-open-letter-rbi-meity.md`; desk verification of live TLS handshakes 20-21 Oct 2026; sources footnoted per page (Ars Technica, disclosure site, Mozilla bug, CCA India, IDRBT, RBI). Markdown sources + build script for the section live in the workspace at `Projects/cyber/pages/emudhra/`; this repo carries the served HTML.
 - **cert-in-env:** `Projects/bank-in-research/bank_in_env_scan.csv`,
   `bank_in_env_exposure.md`, `CERT-In-reply-draft.md`.
 - **toll-shadow-apps:** `data/toll-plazas-ihmcl-aug2025.csv` — parsed from
