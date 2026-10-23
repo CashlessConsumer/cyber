@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campaign: open the books on eMudhra — eMudhra CA Compromise — CashlessConsumer</title>
+<meta name="description" content="CashlessConsumer public-audit campaign: transparent public audit of eMudhra's role in Indian banking and government trust infrastructure. Evidence, demands, and a two-minute mail action.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+
+<style>
+.mailbtn-row { display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 10px; }
+.mailbtn { display:inline-block; background:#f0b429; color:#101418; font-weight:700; font-size:15px;
+  padding:12px 22px; border-radius:8px; text-decoration:none; letter-spacing:.2px; }
+.mailbtn:hover { background:#ffd166; }
+.noscript-note { font-size:13.5px; color:#5a6a7a; }
+.toplink { float:right; font-size:13px; }
+div.footnotes { border-top:1px solid #d8dee6; margin-top:34px; padding-top:6px; font-size:14px; }
+</style>
+
+</head>
+<body>
+<div class="hub-crumb"><a href="../../index.html">&#9670; cyber.cashlessconsumer.in</a><span class="sep">/</span>eMudhra CA compromise</div>
+<header class="site-header">
+  <div class="wrap-wide">
+    <a class="brand" href="index.html">
+      <span class="brand-badge">CC</span>
+      <span class="brand-name">CashlessConsumer</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html#consumers">For consumers</a>
+      <a href="statement.html">Statement</a>
+      <a href="letter.html">Open letter</a>
+      <a href="company.html">The company</a>
+      <a href="campaign.html">Campaign</a>
+      <a href="index.html#sources">Sources</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" style="padding:44px 0 40px;">
+    <div class="wrap">
+      <div class="hero-kicker">eMudhra CA compromise · 21 October 2026</div>
+      <h1 style="font-size:clamp(24px,4vw,34px);">Open the books on eMudhra: a public audit campaign</h1>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="banner-note">Live campaign, launched 23 October 2026. Numbers and quotes are sourced in the footnotes; what we verified ourselves is marked as our own verification.</div>
+      <div class="prose">
+<h1 id="top">Open the books on eMudhra</h1>
+<p><em>Public audit campaign · CashlessConsumer · 23 October
+2026</em></p>
+<p>When you press “pay”, sign a company filing, or bid on a government
+tender, an eMudhra product sits somewhere in the chain: the certificate,
+the signing software, or the platform that issued both. Eight of that
+company’s “secret” signing keys turned out to be small enough to guess.
+One of them was the number 4. The licence that lets this company operate
+India’s trust infrastructure is renewed every five years. A licence
+renewal is not an audit. It is a subscription.</p>
+<p>We are asking for the subscription to come with proof of service: a
+transparent public audit of eMudhra’s role across Indian banking and
+government technology. Below is the evidence, the demands, and a
+two-minute way to add your name.</p>
+<h2 id="why-now">Why now</h2>
+<p>On 17 October 2026, a researcher using the name Wayne reported to
+browser vendors that eight intermediate CA certificates operated by
+eMudhra’s emSign programme had private keys recoverable by anyone from
+the public certificate. The keys were generated at a key ceremony on 30
+April 2025 with 3 to 8 bits of entropy instead of the expected 384; the
+eight values were 4, 56, 66, 115, 155, 156, 230 and 237 (public record:
+the incident tracker at emudhra.we-have-a-problem.com and CCADB
+entries).<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a> Firefox, Chrome, Apple and Microsoft
+blocked the affected chains within days. eMudhra revoked the
+certificates on 18 and 19 October 2026.</p>
+<p>Three facts make this a campaign and not just an incident.</p>
+<p><strong>First, the window.</strong> The weak keys worked for roughly
+seventeen and a half months. Certificate Transparency logs contain zero
+certificates issued from them, which proves desktop browsers with CT
+enforcement were not attacked through logged issuance. It does not prove
+non-CT clients, including most Android banking apps, were not.<a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a> The incident’s own coordinator
+writes: “We do not know if attackers exploited the flawed key generation
+to target these clients.”<a href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a> No one can say “no misuse” from the
+outside. Only a forensic audit with issuance logs and network telemetry
+can.</p>
+<p><strong>Second, the footprint.</strong> eMudhra is not one vendor
+among many. It is the vendor behind (verified by us on 22 October 2026
+unless noted):</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Where</th>
+<th>What eMudhra supplies</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IDRBT Certifying Authority</td>
+<td>The emCA and emRA platform that issues certificates for RBI, banks
+and financial institutions on INFINET and national payment systems</td>
+<td>eMudhra’s own case study PDF; the IDRBT CA subscriber portal runs at
+praman.idrbtca.org.in/emRASubscriber/ <a href="#fn4"
+class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a></td>
+</tr>
+<tr class="even">
+<td>IDRBT CA operations</td>
+<td>The 19 January 2026 cutover to the new platform, which required
+reissue and revocation of every certificate issued before that date</td>
+<td>idrbtca.org.in notices <a href="#fn5" class="footnote-ref"
+id="fnref5" role="doc-noteref"><sup>5</sup></a></td>
+</tr>
+<tr class="odd">
+<td>.bank.in domains</td>
+<td>120 currently valid certificates across 49 bank hostnames, on
+eMudhra chains</td>
+<td>Our CT and TLS scans, 22 October 2026 <a href="#fn6"
+class="footnote-ref" id="fnref6"
+role="doc-noteref"><sup>6</sup></a></td>
+</tr>
+<tr class="even">
+<td>Banks’ signing workflows</td>
+<td>The emSigner multi-tenant SaaS; hostnames visible in CT logs include
+iciciapp, iciciweb, kotak, rbl, sbicards (plus an admin host), iob,
+aubank, muthootmicrofin, asirvadmicrofinance, hindujahousingfinance</td>
+<td>Our CT observations, 22 October 2026 <a href="#fn7"
+class="footnote-ref" id="fnref7"
+role="doc-noteref"><sup>7</sup></a></td>
+</tr>
+<tr class="odd">
+<td>Digital signing at desks</td>
+<td>emBridge, the localhost signing middleware installed on officials’
+computers, including the one proxied by IDRBT’s own portal</td>
+<td>Our June 2026 investigation <a href="#fn8" class="footnote-ref"
+id="fnref8" role="doc-noteref"><sup>8</sup></a>; CDSL’s public
+installation guide <a href="#fn9" class="footnote-ref" id="fnref9"
+role="doc-noteref"><sup>9</sup></a></td>
+</tr>
+<tr class="even">
+<td>eSign</td>
+<td>eSign Service Provider empanelled since 25 June 2015</td>
+<td>CCA service providers page <a href="#fn10" class="footnote-ref"
+id="fnref10" role="doc-noteref"><sup>10</sup></a></td>
+</tr>
+<tr class="odd">
+<td>Government e-marketplace</td>
+<td>GeM’s buyer onboarding routes eSign through eMudhra registration and
+requires the emBridge app</td>
+<td>GeM buyer FAQ <a href="#fn11" class="footnote-ref" id="fnref11"
+role="doc-noteref"><sup>11</sup></a></td>
+</tr>
+<tr class="even">
+<td>Certification of its own security</td>
+<td>ISO/IEC 27001 certificate that expired 4 May 2026, issued by a
+certifier whose IAS accreditation was cancelled in 2023</td>
+<td>Our verification, 22 October 2026 <a href="#fn12"
+class="footnote-ref" id="fnref12"
+role="doc-noteref"><sup>12</sup></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Third, the audit gap.</strong> eMudhra’s Certifying Authority
+operation is audited every year by an auditor empanelled by the
+Controller of Certifying Authorities. The audit criteria state the
+report is issued “solely for the information and use of the Controller
+of Certifying Authorities and management” of the CA, “not intended to
+be… used for any other purposes”.<a href="#fn13" class="footnote-ref"
+id="fnref13" role="doc-noteref"><sup>13</sup></a> The public has never
+seen one. IDRBT procures its own CA annual audit through GeM (bid
+GEM/2023/B/3388421, May 2023), and that outcome is not public either.<a
+href="#fn14" class="footnote-ref" id="fnref14"
+role="doc-noteref"><sup>14</sup></a> So the company whose keys were the
+numbers 4 through 237 operates under a regime where the only public
+quality signal is a five-year licence renewal. We could not find a
+published tender, RFP or award record for the emCA/emRA contract itself,
+only tenders for the hardware and audits around it. That absence is a
+fact about public records, not proof of wrongdoing in procurement.</p>
+<h2 id="what-we-did-not-find">What we did not find</h2>
+<p>For the record, because fairness is a discipline and not a mood: we
+found no evidence that eMudhra’s India DSC chain, which roots at CCA’s
+India PKI, was touched by the emSign G3 flaw, which lived in the global
+browser-trusted hierarchy. We found no evidence of misuse of the
+compromised keys; as stated above, no one outside a forensic
+investigation can find such evidence either way. IDRBT’s registrar
+portal was patched after our June 2026 disclosure, and CERT-In
+acknowledged the report; we have not verified the patch covers all
+33-plus endpoints, only that the monitored ones were fixed. We found no
+indication that RBI or IDRBT has published any statement on the
+compromise as of 22 October 2026. That silence is itself part of this
+campaign.</p>
+<h2 id="the-track-record-what-proactive-looks-like">The track record:
+what proactive looks like</h2>
+<p>This campaign sits on two years of proactive audit by this
+collective, because the model works.</p>
+<p>In June 2026 we published the .bank.in registry investigation:
+33-plus unauthenticated API endpoints on IDRBT’s registrar portal
+exposing 5,576 bank-employee records, 6,752 bcrypt password hashes,
+1,535 invoices worth ₹4.72 crore, and 1,072 orphan super-admin
+accounts.<a href="#fn15" class="footnote-ref" id="fnref15"
+role="doc-noteref"><sup>15</sup></a> We disclosed to CERT-In. It was
+patched. In the same report we red-teamed the “DSC defence”, the claim
+that physical tokens made the exposure harmless, and documented four
+unauthenticated DSC-signing endpoints on the portal’s eMudhra middleware
+proxy.<a href="#fn16" class="footnote-ref" id="fnref16"
+role="doc-noteref"><sup>16</sup></a></p>
+<p>In October 2026, when the emSign keys broke, we ran the wire before
+writing the headline: fresh TLS handshakes on all 3,355 live .bank.in
+HTTPS hosts and CT queries for 3,529 valid certificates. Result: zero
+certificates from the compromised chains, no direct damage, and a
+precisely named forward-risk pool if browsers remove eMudhra’s remaining
+roots (Bandhan Bank’s retail netbanking is the largest consumer).<a
+href="#fn17" class="footnote-ref" id="fnref17"
+role="doc-noteref"><sup>17</sup></a> We shipped TrustCheck, an Android
+app that tells any user whether their own phone still trusts the
+affected chains.<a href="#fn18" class="footnote-ref" id="fnref18"
+role="doc-noteref"><sup>18</sup></a> We published an open letter to RBI
+and MeitY with numbered demands.<a href="#fn19" class="footnote-ref"
+id="fnref19" role="doc-noteref"><sup>19</sup></a></p>
+<p>Read-only scans, published evidence, named consequences. No breach
+required. That is the posture we are asking the state to adopt toward
+its own trust vendor.</p>
+<h2 id="why-proactive-is-the-only-way-now">Why proactive is the only way
+now</h2>
+<p>Attackers automate; so must assurance. The G3 flaw was found by an
+outside researcher, not by the licensed auditor, the certifier, or the
+regulator. The window in which the weak keys were live was 17.5 months;
+the window in which the world fixed its browsers was about 72 hours.
+Machines now audit at the speed the attack runs, which is what this
+collective’s pipeline does, and what a public audit regime would
+institutionalise. The alternative is learning about the front door from
+a foreign bug tracker. Who pays when assurance lags: every consumer
+whose app trusts a chain nobody outside CCA and the CA has examined,
+with no notification, no advisory, and no recourse.</p>
+<h2 id="the-demands">The demands</h2>
+<p>Numbered, verb-led, answerable. Deadline: <strong>14 days, 5 November
+2026</strong>. Where an office does not answer, we publish the
+non-response and pursue the same questions by RTI, whose appeal route
+ends at the same door.</p>
+<p><strong>To the Controller of Certifying Authorities</strong>
+(cca@cca.gov.in, info@cca.gov.in):</p>
+<ol type="1">
+<li>Publish executive summaries of the annual CA audits of eMudhra for
+FY2024-25 and FY2025-26, redacted only for subscriber data.</li>
+<li>Commission an incident audit of the emSign G3 compromise covering
+the 30 April 2025 key ceremony, the “approved deviation” that allowed
+weak keys, and issuance and HSM access logs, and publish its
+findings.</li>
+<li>State whether any misuse of the compromised keys was found, or state
+plainly that it cannot be ascertained.</li>
+<li>Publish the empanelment review of SCK Certifications, eMudhra’s ISO
+27001 certifier, and the CCA position on expired certificates still
+claimed on vendor websites.</li>
+</ol>
+<p><strong>To IDRBT</strong> (cahelp@idrbt.ac.in):</p>
+<ol start="5" type="1">
+<li>Publish the procurement record for the emCA/emRA platform behind the
+IDRBT CA: RFP, evaluation, award, and vendor risk assessment.</li>
+<li>Publish the post-compromise vendor review of eMudhra components in
+IDRBT CA operations, including any code-lineage relationship between
+emCA and the affected emSign tooling, and the scope of the January 2026
+certificate reissue.</li>
+</ol>
+<p><strong>To the Reserve Bank of India</strong> (supervisory route;
+public contact dpss@rbi.org.in):</p>
+<ol start="7" type="1">
+<li>Issue a public statement on PKI vendor concentration in banking and
+advise supervised entities on exposure through emSigner, emBridge and
+emCA, as RBI’s outsourcing circulars already require vendors to be
+assessable.</li>
+</ol>
+<p><strong>To MeitY</strong> (via CPGRAMS, pgportal.gov.in):</p>
+<ol start="8" type="1">
+<li>Re-examine eSign ESP empanelment conditions to require published
+audit outcomes, a software bill of materials for emSigner and emBridge,
+and a public security whitepaper for the emBridge localhost API, whose
+unauthenticated proxying we documented in June 2026.</li>
+</ol>
+<h2 id="send-a-mail-two-minutes">Send a mail: two minutes</h2>
+<p>Pick a target. The link opens your mail client with the letter filled
+in. Add your name; send as yourself.</p>
+<p class="mailbtn-row">
+<a class="mailbtn" id="btn-cca">Mail CCA</a>
+<a class="mailbtn" id="btn-idrbt">Mail IDRBT</a>
+<a class="mailbtn" id="btn-rbi">Mail RBI</a>
+<a class="mailbtn" id="btn-certin">Mail CERT-In</a>
+</p>
+<p class="noscript-note">
+No JavaScript? Copy the letters below into mail to cca@cca.gov.in,
+cahelp@idrbt.ac.in, dpss@rbi.org.in or incident@cert-in.org.in.
+</p>
+<details>
+<summary>
+<b>Letter to CCA</b> (cca@cca.gov.in, info@cca.gov.in)
+</summary>
+<pre>Subject: Demand: publish eMudhra CA audit summaries and G3 incident audit
+
+To the Controller of Certifying Authorities,
+
+eMudhra's emSign programme issued intermediate CA certificates on 30 April 2025 whose private keys had 3-8 bits of entropy; one key value was the number 4. The keys were recoverable by anyone for about 17.5 months before researchers reported them on 17 October 2026. Annual CA audits are submitted to your office but never published.
+
+We ask you, as the licensing authority under the IT Act:
+1. Publish executive summaries of eMudhra's annual CA audits for FY2024-25 and FY2025-26.
+2. Commission and publish an incident audit of the emSign G3 compromise, including the April 2025 key ceremony and the approved deviation that permitted weak keys.
+3. State whether any misuse was found, or state plainly that it cannot be ascertained.
+4. Publish your review of SCK Certifications, the certifier whose ISO 27001 certificate for eMudhra expired on 4 May 2026 and whose IAS accreditation was cancelled in 2023.
+
+Please respond by 5 November 2026. Non-responses will be published and pursued by RTI.
+
+Yours sincerely,
+[Name]
+[Citizen of India]</pre>
+</details>
+<details>
+<summary>
+<b>Letter to IDRBT</b> (cahelp@idrbt.ac.in)
+</summary>
+<pre>Subject: Demand: publish emCA procurement record and post-compromise vendor review
+
+To the Director, IDRBT,
+
+IDRBT's Certifying Authority issues digital certificates for RBI, banks and payment systems, and runs on eMudhra's emCA and emRA platform, as eMudhra's own case study and the praman.idrbtca.org.in/emRASubscriber portal show. On 19 January 2026 the CA cut over to this platform and reissued certificates. In October 2026, eight eMudhra intermediate keys in the emSign programme were found to be weak; one was the number 4.
+
+We ask IDRBT to publish:
+1. The procurement record for the emCA/emRA platform: RFP, evaluation, award and vendor risk assessment.
+2. Your post-compromise vendor review, including whether any IDRBT CA component shares code lineage with the affected emSign tooling, and the scope and rationale of the January 2026 certificate reissue.
+
+Please respond by 5 November 2026. Non-responses will be published and pursued by RTI.
+
+Yours sincerely,
+[Name]</pre>
+</details>
+<details>
+<summary>
+<b>Letter to RBI</b> (dpss@rbi.org.in)
+</summary>
+<pre>Subject: Demand: statement on PKI vendor concentration in banking
+
+To the Reserve Bank of India,
+
+Banking-sector certificate infrastructure is concentrated with one vendor: eMudhra supplies the emCA/emRA platform behind IDRBT's CA, emSigner signing workflows used by banks, and the emBridge middleware on officials' desktops. In October 2026 eight emSign intermediate keys were found recoverable; the incident coordinator states misuse cannot be ruled in or out. RBI's outsourcing circulars require vendors to be assessable; nothing public exists for this vendor.
+
+We ask RBI to:
+1. Issue a public statement on PKI vendor concentration in banking.
+2. Advise supervised entities on assessing exposure through emSigner, emBridge and emCA, and on notification duties to customers.
+
+Please respond by 5 November 2026.
+
+Yours sincerely,
+[Name]</pre>
+</details>
+<details>
+<summary>
+<b>Letter to CERT-In</b> (incident@cert-in.org.in)
+</summary>
+<pre>Subject: Request: public advisory on eMudhra emSign G3 exposure in India
+
+To CERT-In,
+
+The eMudhra emSign intermediate CA key compromise (reported 17 October 2026) affects non-browser clients that do not enforce Certificate Transparency, including Android banking apps. Browsers have blocked the chains; no Indian advisory has been published for Indian users and enterprises.
+
+We request CERT-In to:
+1. Publish an advisory naming affected chains and remediation for non-CT clients.
+2. State whether any exploitation targeting Indian entities was observed, or that observation is not possible.
+3. Confirm coordination with CCA on the incident audit.
+
+Yours sincerely,
+[Name]</pre>
+</details>
+<p>
+<a href="https://pgportal.gov.in" class="mailbtn">MeitY via CPGRAMS</a>
+— register the grievance with the CCA/MeitY text from the CCA letter
+above.
+</p>
+<h2 id="sources">Sources</h2>
+<p>Everything above is public or marked as our own verification, with
+dates.</p>
+<hr />
+<p><strong>CashlessConsumer</strong> (consumer collective) ·
+cashlessconsumer.in · cashlessconsumerin@gmail.com</p>
+<p>Drafted and verified by CashlessConsumer’s agentic research pipeline
+(human-supervised AI on Zo Computer). Scan evidence and run directories
+are published; this page carries the campaign.</p>
+<section class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>emudhra.we-have-a-problem.com
+(incident tracker: affected intermediates, dates, entropy, coordinator
+quote)<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Mozilla bug 2083449; Chrome Root
+Program statement of 20 October 2026<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>emudhra.we-have-a-problem.com
+(incident tracker: affected intermediates, dates, entropy, coordinator
+quote)<a href="#fnref3" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>emudhra.com case study PDF
+(emudhra-case-study-idrbt.pdf); idrbtca.org.in notices observed 22
+October 2026; IDRBT CA CPS v4.2.4 (July 2025)<a href="#fnref4"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>emudhra.com case study PDF
+(emudhra-case-study-idrbt.pdf); idrbtca.org.in notices observed 22
+October 2026; IDRBT CA CPS v4.2.4 (July 2025)<a href="#fnref5"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>Our scans of 22 October 2026: 3,355
+live .bank.in HTTPS hosts (TLS handshakes) and 3,529 valid certificates
+via crt.sh; run directories and evidence at
+zo.pub/cashlessconsumer/idrbt-open-data and the daily feed
+github.com/CCAgentOrg/bank-in-domains<a href="#fnref6"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p>Our scans of 22 October 2026: 3,355
+live .bank.in HTTPS hosts (TLS handshakes) and 3,529 valid certificates
+via crt.sh; run directories and evidence at
+zo.pub/cashlessconsumer/idrbt-open-data and the daily feed
+github.com/CCAgentOrg/bank-in-domains<a href="#fnref7"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8" role="doc-endnote"><p>Our investigation, June 2026:
+bankin-report.cashlessconsumer.in and the dsc-defense page; evidence
+archive zo.pub/cashlessconsumer/idrbt-bankin-security<a href="#fnref8"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9" role="doc-endnote"><p>CDSL emBridge troubleshooting guide
+(cdslindia.com); Odisha Treasury emBridge proxy manual<a href="#fnref9"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10" role="doc-endnote"><p>cca.gov.in service-providers page,
+observed 22 October 2026<a href="#fnref10" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn11" role="doc-endnote"><p>gem.gov.in buyer FAQ, observed 22
+October 2026<a href="#fnref11" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn12" role="doc-endnote"><p>Our threat note of 22 October 2026:
+the certificate SCK/05/EML/23/91/2406 expired 4 May 2026; IAS cancelled
+SCK’s accreditation MSCB-244 on 17 October 2023<a href="#fnref12"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13" role="doc-endnote"><p>CCA, Audit Criteria for Certifying
+Authorities (CCA-CAAC.pdf): report “solely for the information and use
+of the Controller… and management”<a href="#fnref13"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14" role="doc-endnote"><p>IDRBT, Pre-Bid Queries and
+Responses, GeM bid GEM/2023/B/3388421, May 2023 (idrbt.ac.in)<a
+href="#fnref14" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn15" role="doc-endnote"><p>Our investigation, June 2026:
+bankin-report.cashlessconsumer.in and the dsc-defense page; evidence
+archive zo.pub/cashlessconsumer/idrbt-bankin-security<a href="#fnref15"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn16" role="doc-endnote"><p>Our investigation, June 2026:
+bankin-report.cashlessconsumer.in and the dsc-defense page; evidence
+archive zo.pub/cashlessconsumer/idrbt-bankin-security<a href="#fnref16"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn17" role="doc-endnote"><p>Our scans of 22 October 2026: 3,355
+live .bank.in HTTPS hosts (TLS handshakes) and 3,529 valid certificates
+via crt.sh; run directories and evidence at
+zo.pub/cashlessconsumer/idrbt-open-data and the daily feed
+github.com/CCAgentOrg/bank-in-domains<a href="#fnref17"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn18" role="doc-endnote"><p>TrustCheck app:
+zo.pub/cashlessconsumer/trustcheck; source Projects/trustcheck<a
+href="#fnref18" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn19" role="doc-endnote"><p>Open letter to RBI and MeitY, 21
+October 2026: cyber.cashlessconsumer.in/pages/emudhra/letter.html<a
+href="#fnref19" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+      </div>
+      <div class="callout">
+        <h3>Related on this site</h3>
+        <p><a href="index.html#consumers">What this means for consumers</a> · <a href="index.html#videos">Videos that explain the mechanics</a> · <a href="index.html#sources">Every source</a> · <a href="../../index.html">More security research at cyber.cashlessconsumer.in</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap-wide">
+    <div>CashlessConsumer · an Indian consumer collective for digital payments and public digital infrastructure.</div>
+    <div><a href="https://cashlessconsumer.in">cashlessconsumer.in</a> · <a href="mailto:cashlessconsumerin@gmail.com">cashlessconsumerin@gmail.com</a></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var DEADLINE = '5 November 2026';
+  var SIGN = 'Yours sincerely,\n[Your name]\n[Citizen of India]';
+  var TARGETS = {
+    'btn-cca': {
+      to: ['cca','cca.gov.in'].join('@'),
+      cc: ['info','cca.gov.in'].join('@'),
+      subject: 'Demand: publish eMudhra CA audit summaries and the emSign G3 incident audit',
+      body: 'To the Controller of Certifying Affairs,'.replace('Certifying Affairs','Certifying Authorities') + '\n\neMudhra\u2019s emSign programme issued intermediate CA certificates on 30 April 2025 whose private keys had 3\u20138 bits of entropy; one key value was the number 4. The keys were recoverable by anyone for about 17.5 months before researchers reported them on 17 October 2026. Annual CA audits are submitted to your office but never published.\n\nWe ask you, as the licensing authority under the IT Act:\n1. Publish executive summaries of eMudhra\u2019s annual CA audits for FY2024-25 and FY2025-26.\n2. Commission and publish an incident audit of the emSign G3 compromise, including the April 2025 key ceremony and the approved deviation that permitted weak keys.\n3. State whether any misuse was found, or state plainly that it cannot be ascertained.\n4. Publish your review of SCK Certifications, the certifier whose ISO 27001 certificate for eMudhra expired on 4 May 2026.\n\nPlease respond by ' + DEADLINE + '. Non-responses will be published and pursued by RTI.\n\n' + SIGN
+    },
+    'btn-idrbt': {
+      to: ['cahelp','idrbt.ac.in'].join('@'),
+      cc: '',
+      subject: 'Demand: publish the emCA procurement record and post-compromise vendor review',
+      body: 'To the Director, IDRBT,\n\nIDRBT\u2019s Certifying Authority issues digital certificates for RBI, banks and payment systems, and runs on eMudhra\u2019s emCA and emRA platform, as eMudhra\u2019s own case study and the praman.idrbtca.org.in/emRASubscriber portal show. On 19 January 2026 the CA cut over to this platform and reissued certificates. In October 2026, eight eMudhra emSign intermediate keys were found to be weak; one was the number 4.\n\nWe ask IDRBT to publish:\n1. The procurement record for the emCA/emRA platform: RFP, evaluation, award and vendor risk assessment.\n2. Your post-compromise vendor review, including whether any IDRBT CA component shares code lineage with the affected emSign tooling, and the scope and rationale of the January 2026 certificate reissue.\n\nPlease respond by ' + DEADLINE + '. Non-responses will be published and pursued by RTI.\n\n' + SIGN
+    },
+    'btn-rbi': {
+      to: ['dpss','rbi.org.in'].join('@'),
+      cc: '',
+      subject: 'Demand: public statement on PKI vendor concentration in banking',
+      body: 'To the Reserve Bank of India,\n\nBanking-sector certificate infrastructure is concentrated with one vendor: eMudhra supplies the emCA/emRA platform behind IDRBT\u2019s CA, emSigner signing workflows used by banks, and the emBridge middleware on officials\u2019 desktops. In October 2026 eight emSign intermediate keys were found recoverable; the incident coordinator states misuse cannot be ruled in or out. RBI\u2019s outsourcing circulars require vendors to be assessable; nothing public exists for this vendor.\n\nWe ask RBI to:\n1. Issue a public statement on PKI vendor concentration in banking.\n2. Advise supervised entities on assessing exposure through emSigner, emBridge and emCA, and on notification duties to customers.\n\nPlease respond by ' + DEADLINE + '.\n\n' + SIGN
+    },
+    'btn-certin': {
+      to: ['incident','cert-in.org.in'].join('@'),
+      cc: ['info','cert-in.org.in'].join('@'),
+      subject: 'Request: public advisory on eMudhra emSign G3 exposure for Indian users',
+      body: 'To CERT-In,\n\nThe eMudhra emSign intermediate CA key compromise (reported 17 October 2026) affects non-browser clients that do not enforce Certificate Transparency, including Android banking apps. Browsers have blocked the chains; no Indian advisory has been published for Indian users and enterprises.\n\nWe request CERT-In to:\n1. Publish an advisory naming affected chains and remediation for non-CT clients.\n2. State whether any exploitation targeting Indian entities was observed, or that observation is not possible.\n3. Confirm coordination with CCA on the incident audit.\n\n' + SIGN
+    }
+  };
+  Object.keys(TARGETS).forEach(function(id){
+    var el = document.getElementById(id);
+    if (!el) return;
+    var t = TARGETS[id];
+    var href = 'mailto:' + t.to + '?subject=' + encodeURIComponent(t.subject) + '&body=' + encodeURIComponent(t.body);
+    if (t.cc) href += '&cc=' + encodeURIComponent(t.cc);
+    el.setAttribute('href', href);
+  });
+})();
+</script>
+</body>
+</html></body>
+</html>
