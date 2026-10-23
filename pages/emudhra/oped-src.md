@@ -83,6 +83,6 @@ Crores of us bank and pay online every day and never think about the padlock. It
 
 **Editor notes (not for publication):**
 
-- Length: \~2,300 words body. Decode ran the UPI op-ed at similar length with 9 question-heads; this has 8.
+- Length: \~2,200 words body. Decode ran the UPI op-ed at similar length with 9 question-heads; this has 8.
 - All figures verifiable: CERT-In advisory CIAD-2026-0050 (21 Oct 2026) for the company claims, BDO/WebTrust context, revocation date and "do not establish confirmed malicious exploitation" line; Mozilla bug 2083449 for the \~30,000-cert/97%-ACME figure and response timeline; Google Chrome blog for the 27 Oct root removal; thehackernews.com (20 Oct) for the Microsoft/Go/Ubuntu/Firefox 158.0.1 dates and the six-TLS-plus-two-code-signing split; Scott Helme's "Eight Bits of Trust" for the sub-second recovery and AI-agent recovery; Moneycontrol (21 Oct) for the 20% lower-circuit fall; corporate figures (Rs 701.6 crore, 32% government/defence, 50M+ certificates, licence to Nov 2028) from eMudhra filings as compiled at cyber.cashlessconsumer.in/pages/emudhra/company.html; UIDAI/GeM/IDRBT dependencies from our own desk verification of 20–21 Oct (live TLS handshakes, sandbox + Mumbai vantage).
 - Companion formats available on request: a 101-style fact-checked explainer (already published on cashlessconsumer.in), X-thread cut of this piece, and TrustCheck (Android app that tests a user's own device).
