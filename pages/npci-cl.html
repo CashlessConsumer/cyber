@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPCI Common Library: the invisible component in every UPI app | CashlessConsumer</title>
+<meta name="description" content="We reverse-engineered 17 UPI app versions from 2016–2026 to trace NPCI's Common Library — the mandatory PIN-pad component inside GPay, PhonePe and BHIM. Every signer certificate we found was already expired when shipped. Full evidence kit public for independent verification.">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="canonical" href="https://cyber.cashlessconsumer.in/pages/npci-cl.html">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="../index.html"><span class="mark">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+    <nav class="links">
+      <a href="../index.html">Home</a>
+      <a href="breaches.html">Breaches</a>
+      <a href="bank-in-report.html">.bank.in Audit</a>
+      <a href="emudhra.html">eMudhra CA</a>
+      <a href="npci-cl.html" class="active">UPI Common Library</a>
+      <a href="cert-in-dotenv.html">CERT-In · .env</a>
+      <a href="about.html">Method &amp; Ethics</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<details class="disclosure">
+  <div class="inner">
+    <summary><span class="ai-badge">Agentic work</span> Human-supervised AI on Zo Computer <span class="dblink">▸ what this means</span></summary>
+    <div class="d-body">
+      <p>Everything on this site is <b>agentic cyber work</b>: AI agents running on
+      <b>Zo Computer</b> plan the probes, execute read-only scans, analyse the results and
+      draft the findings — <b>predominantly on GLM 5.3 Flash</b> — the cheapest flash-tier model available, run with Zero Data Retention. A human steers and monitors
+      every stage. No scan runs, no finding is disclosed and no text is published without human
+      review and sign-off.</p>
+      <p>The machine does the legwork at speed and scale; the intent, the ethics and the
+      accountability are human.</p>
+    </div>
+  </div>
+</details>
+
+<main>
+  <section class="page-hero">
+    <div class="inner">
+      <div class="crumb"><a href="../index.html">cyber</a> / UPI Common Library</div>
+      <span class="kicker">🔐 Payments infrastructure</span>
+      <h1>The invisible library inside every UPI app</h1>
+      <p class="lede">
+        Every UPI app in India — GPay, PhonePe, BHIM, your bank's app — must embed a component
+        it does not compile: the <strong>NPCI Common Library (CL)</strong>. It draws the PIN pad,
+        scrambles your PIN, holds your UPI&nbsp;Lite wallet, and attests your device. We took apart
+        <strong>17 app versions from 2016 to 2026</strong> to reconstruct what it does and how it
+        changed. Along the way we found that <strong>every CL signer certificate in the corpus was
+        already expired when the app shipped</strong> — a finding
+        <a href="https://x.com/captn3m0" rel="noopener">Nemo (@captn3m0)</a> hit
+        independently; he found it, we followed. The full evidence kit is public so you can
+        verify every claim yourself.
+      </p>
+      <div class="cta-row">
+        <a class="cta primary" href="https://github.com/CashlessConsumer/npci-cl-evolution" rel="noopener">Evidence kit on GitHub →</a>
+        <a class="cta ghost" href="https://cashlessconsumer.zo.space/npci-cl-evolution" rel="noopener">Plain-language explainer</a>
+        <a class="cta ghost" href="https://cashlessconsumer.zo.space/npci-expired-cert" rel="noopener">Expired-certificate ELI5</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner">
+      <div class="stats">
+        <div class="stat-card"><div class="num">17</div><div class="label">app versions dissected (2016–2026)</div></div>
+        <div class="stat-card"><div class="num">4</div><div class="label">architectural eras of the CL</div></div>
+        <div class="stat-card"><div class="num">3 of 3</div><div class="label">CL signer certs expired at ship time</div></div>
+        <div class="stat-card"><div class="num">1</div><div class="label">mandatory vendor component in every UPI app</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <h2>What the CL actually is</h2>
+      <p>UPI rules require every app to take its PIN-entry and PIN-security component from NPCI,
+      not build their own. That component lives inside the APK under
+      <code>org.npci.upi.security.pinactivitycomponent</code>. It draws the keypad you type your
+      UPI PIN on, encrypts the PIN into a payment-network cryptogram, and — since 2022 — holds
+      your UPI&nbsp;Lite wallet balance on-device. Nothing else in the app is allowed to see your
+      PIN. It is, functionally, a single point of trust that a decade of UPI security sits on.</p>
+      <h2>Four eras, from 17 autopsies</h2>
+      <ol>
+        <li><strong>2016 — the WebView SDK.</strong> BHIM 1.0 embeds a whole NPCI app shell
+        (<code>CL_VERSION&nbsp;2.0</code>): a JavaScript bridge, an encrypted web bundle, OTP rules.
+        The "library" was practically an app inside an app.</li>
+        <li><strong>2020–2022 — the Java component.</strong> Rebuilt as a real library
+        (<code>2.3</code>), componentized, obfuscated by R8. UPI&nbsp;Lite moved <em>into</em> it
+        in 2022: a SQLite wallet with its own key-rotation and balance rules.</li>
+        <li><strong>2023–2025 — the freeze.</strong> GPay and PhonePe ship the identical frozen
+        <code>2.3-v1.8</code> for roughly three years. One component, zero published changelog,
+        riding inside millions of app updates.</li>
+        <li><strong>2025–26 — native + server-side.</strong> PSPs swap the Java CL for a native
+        binary (<code>libSecureComponent.so</code>: device attestation, secure-element hooks,
+        "native defender" service). And NPCI's Consolidated Circular (Sep 2026) adds a
+        <strong>Server-Side Common Library hosted at NPCI</strong> — for the first time the CL's
+        monopoly ends, and NPCI itself becomes part of your payment's critical path.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <h2>The certificate finding</h2>
+      <p>The CL ships with X.509 certificates that sign its payloads and prove the component to
+      NPCI's switch. We pulled every one from the corpus and checked validity. All three distinct
+      signers were <strong>already expired when the app containing them shipped</strong>:</p>
+      <table>
+        <thead><tr><th>Shipped in</th><th>Signer</th><th>Validity</th><th>State at ship</th></tr></thead>
+        <tbody>
+          <tr><td>BHIM 1.0 (2016) → BHIM 2.3.1 (2020)</td><td><code>upinpci</code> ← IDRBT CA 2014</td><td>31 Mar 2016 → 31 Mar 2018</td><td>expired before most of its own shipping window</td></tr>
+          <tr><td>GPay 210 (Jan 2023) → PhonePe 25.09 (Sep 2025)</td><td><code>upinpci</code> ← IDRBT CA 2014</td><td>19 Jan 2022 → 19 Jan 2024</td><td>expired Jan 2024; shipped ~20 more months</td></tr>
+          <tr><td>GPay &amp; PhonePe current builds (Oct 2026)</td><td><code>upinpci</code> ← IDRBT Sub CA 2022</td><td>20 Sep 2023 → 19 Sep 2025</td><td>expired ~13 months</td></tr>
+          <tr><td>GPay &amp; PhonePe current builds (eRupee signer)</td><td><code>psosigner.npci.org.in</code> ← DigiCert EV</td><td>1 Sep 2023 → 1 Oct 2024</td><td>expired ~24 months</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Does an expired cert break your payment?</strong> No — the apps treat these as
+      signing/identity material, not TLS chain anchors, and nothing in the observed flow enforces
+      expiry. That's also the point: there is no visible hygiene, no rotation story, and no
+      consumer-visible attestation of the component holding your PIN. Nemo published the
+      independent discovery and follow-ups (including the eRupee signer) —
+      <a href="https://x.com/captn3m0" rel="noopener">@captn3m0</a> on X.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <h2>Verify it yourself</h2>
+      <p>Every claim above re-derives from the <a href="https://github.com/CashlessConsumer/npci-cl-evolution" rel="noopener">evidence kit</a>:
+      the full report, the feature matrix (17 samples × 28 markers with match evidence), the RASP
+      survey across 5 apps, the extracted certificates, per-sample SHA-256 hashes, and the exact
+      pipeline scripts. No APKs are redistributed (they're copyrighted); the kit carries hashes and
+      source links so you can fetch the same files and confirm byte-for-byte:</p>
+      <pre><code># 1. fetch a UPI app APK (APKPure, apkeep, or any source)
+apkeep -a com.phonepe.app -d .
+
+# 2. confirm it's the same file we dissected
+sha256sum com.phonepe.app*.apk        # compare with data/hashes.txt
+
+# 3. unpack and look at the CL signer certificate
+unzip -o com.phonepe.app*.apk -d pp
+openssl x509 -in pp/signer-upi.crt -noout -subject -dates -fingerprint -sha256
+
+# 4. read the CL's own version constants
+jadx --single-class org.npci.upi.security.pinactivitycomponent.CLConstants \
+     --no-res -d out pp/classes*.dex
+grep -E "VERSION" out/**/CLConstants.java</code></pre>
+      <p>Method note: 12 samples came from the archive.org <code>apkarchive</code> item (fetched via an
+      Indian vantage node), 5 current builds from APKPure. Read-only analysis; no apps were run;
+      nothing in the kit is user data.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <h2>Read more</h2>
+      <ul>
+        <li><a href="https://cashlessconsumer.zo.space/npci-cl-evolution" rel="noopener">The invisible library — plain-language page</a> (what the CL is, installed-app checks, MASF)</li>
+        <li><a href="https://cashlessconsumer.zo.space/npci-expired-cert" rel="noopener">GPay's expired UPI certificate, ELI5</a> (why Google distrusts eMudhra in hours but ships expired UPI certs for years)</li>
+        <li><a href="https://github.com/CashlessConsumer/npci-cl-evolution" rel="noopener">GitHub: CashlessConsumer/npci-cl-evolution</a> (report, data, certs, scripts)</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="inner">
+    <div>CashlessConsumer · independent security research · <a href="../index.html">cyber.cashlessconsumer.in</a> · <a href="mailto:cashlessconsumerin@gmail.com">cashlessconsumerin@gmail.com</a></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
