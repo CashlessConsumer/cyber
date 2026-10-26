@@ -63,6 +63,44 @@
         <a class="cta ghost" href="#explainer">How SFMS works (explainer)</a>
         <a class="cta ghost" href="#stack">Doors &amp; keys — the rulebook</a>
         <a class="cta ghost" href="breaches.html">All breach verifications</a>
+      </div>      <div class="prose" style="max-width:100%">
+        <div class="callout" style="margin-top:22px">
+          <div class="co-title">TL;DR</div>
+          <ul style="margin-bottom:0">
+            <li><strong>What happened:</strong> on 15–17 Oct 2026, <strong>187 payment
+            instructions</strong> moved <strong>₹13.97 crore</strong> out of Central Bank
+            of India's own settlement account at the RBI, into 36 accounts across 36 banks.
+            The bank says none of these transactions exist in any of its own systems.</li>
+            <li><strong>Verified (L4):</strong> the transfers and the numbers — police
+            complaint/FIR, five independent outlets, and CBI's own exchange filing reporting
+            an outward-RTGS disruption in exactly that window.</li>
+            <li><strong>Disputed (L1):</strong> the breach vector. The bank claims entry via
+            <strong>IFTAS's central SFMS server through the bank's own SFMS connection</strong>;
+            IFTAS — the RBI subsidiary that runs the hub — says no system of theirs was
+            compromised. Nothing public settles it, and both sides hold the logs that would.</li>
+            <li><strong>Stands either way:</strong> the disclosure gap — a ~19 Oct
+            "technical glitch" exchange filing, an FIR only on 22 Oct, against a
+            <strong>6-hour</strong> DAKSH incident-reporting clock — and 187 debits running
+            three days on an account meant to reconcile <em>daily</em>.</li>
+            <li><strong>What the rulebook says (26 Oct):</strong> SFMS/RTGS has
+            <strong>three sanctioned access channels</strong>, not one — and the small-member
+            PO module contemplates public-internet access, so "INFINET-only" needs an
+            asterisk. Every message carries an IDRBT-CA certificate; the System-Certificate
+            private key belongs on a smart card or hardware token. <strong>No public circular
+            specifically mandates MFA for SFMS console logins.</strong></li>
+            <li><strong>What one bank's estate looked like</strong> (BoB leak documentation —
+            context, not accusation; not the accused bank): password-only SFMS logins until
+            the Oct 2025 pen-test pass, a single admin password starting the sender/receiver
+            processes, and 7 critical pen-test findings still open at report date.</li>
+            <li><strong>Customers:</strong> no customer lost a rupee — this was the bank's own
+            settlement float, not deposits. The systemic question — <em>could the same be done
+            from any other bank's server?</em> — remains publicly unanswered.</li>
+            <li><strong>Would settle it:</strong> IFTAS hub logs + RTGS settlement audit
+            trail for 15–17 Oct; a substantive CBI exchange clarification replacing
+            "technical glitch"; a substantive IFTAS statement; the Maharashtra Cyber
+            chargesheet mapping the 36-account mule network.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
