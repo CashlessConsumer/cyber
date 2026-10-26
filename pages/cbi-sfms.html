@@ -8,7 +8,12 @@
 <meta name="theme-color" content="#0a0e0a">
 <link rel="canonical" href="https://cyber.cashlessconsumer.in/pages/cbi-sfms.html">
 <link rel="stylesheet" href="../css/style.css">
-</head>
+    <style>
+      .tabbar { display: flex; gap: 10px; margin-top: 26px; flex-wrap: wrap; align-items: center; }
+      .tab-btn { cursor: pointer; border: 1px solid var(--line-strong); background: transparent; color: var(--fg); padding: 10px 18px; border-radius: 999px; font: inherit; font-weight: 600; }
+      .tab-btn.active { background: var(--accent); border-color: var(--accent); color: #04140b; }
+    </style>
+  </head>
 <body>
 
 <header class="topbar">
@@ -58,65 +63,47 @@
         whole story. We registered the incident, separated the corroborated from the merely
         claimed, and found a disclosure gap that does not depend on who is right.
       </p>
-      <div class="cta-row">
-        <a class="cta primary" href="#verdict">Our verdict →</a>
-        <a class="cta ghost" href="#explainer">How SFMS works (explainer)</a>
-        <a class="cta ghost" href="#stack">Doors &amp; keys — the rulebook</a>
+
+      <div class="tabbar" role="tablist" aria-label="Page views">
+        <button class="tab-btn active" data-tab="explainer" role="tab" aria-selected="true">&#128214; Explainer &mdash; how SFMS works</button>
+        <button class="tab-btn" data-tab="analysis" role="tab" aria-selected="false">&#128269; Analysis &mdash; the incident</button>
         <a class="cta ghost" href="breaches.html">All breach verifications</a>
-      </div>      <div class="prose" style="max-width:100%">
-        <div class="callout" style="margin-top:22px">
-          <div class="co-title">TL;DR</div>
+      </div>
+    </div>
+  </section>
+
+<div id="tab-explainer">
+
+<section class="block"><div class="inner prose">
+        <div class="callout">
+          <div class="co-title">TL;DR &mdash; the explainer</div>
           <ul style="margin-bottom:0">
-            <li><strong>What happened:</strong> on 15–17 Oct 2026, <strong>187 payment
-            instructions</strong> moved <strong>₹13.97 crore</strong> out of Central Bank
-            of India's own settlement account at the RBI, into 36 accounts across 36 banks.
-            The bank says none of these transactions exist in any of its own systems.</li>
-            <li><strong>Verified (L4):</strong> the transfers and the numbers — police
-            complaint/FIR, five independent outlets, and CBI's own exchange filing reporting
-            an outward-RTGS disruption in exactly that window.</li>
-            <li><strong>Disputed (L1):</strong> the breach vector. The bank claims entry via
-            <strong>IFTAS's central SFMS server through the bank's own SFMS connection</strong>;
-            IFTAS — the RBI subsidiary that runs the hub — says no system of theirs was
-            compromised. Nothing public settles it, and both sides hold the logs that would.</li>
-            <li><strong>Stands either way:</strong> the disclosure gap — a ~19 Oct
-            "technical glitch" exchange filing, an FIR only on 22 Oct, against a
-            <strong>6-hour</strong> DAKSH incident-reporting clock — and 187 debits running
-            three days on an account meant to reconcile <em>daily</em>.</li>
-            <li><strong>What the rulebook says (26 Oct):</strong> SFMS/RTGS has
-            <strong>three sanctioned access channels</strong>, not one — and the small-member
-            PO module contemplates public-internet access, so "INFINET-only" needs an
-            asterisk. Every message carries an IDRBT-CA certificate; the System-Certificate
-            private key belongs on a smart card or hardware token. <strong>No public circular
-            specifically mandates MFA for SFMS console logins.</strong></li>
-            <li><strong>What one bank's estate looked like</strong> (BoB leak documentation —
-            context, not accusation; not the accused bank): password-only SFMS logins until
-            the Oct 2025 pen-test pass, a single admin password starting the sender/receiver
-            processes, and 7 critical pen-test findings still open at report date.</li>
-            <li><strong>Customers:</strong> no customer lost a rupee — this was the bank's own
-            settlement float, not deposits. The systemic question — <em>could the same be done
-            from any other bank's server?</em> — remains publicly unanswered.</li>
-            <li><strong>Would settle it:</strong> IFTAS hub logs + RTGS settlement audit
-            trail for 15–17 Oct; a substantive CBI exchange clarification replacing
-            "technical glitch"; a substantive IFTAS statement; the Maharashtra Cyber
-            chargesheet mapping the 36-account mule network.</li>
+            <li><strong>SFMS is India's domestic SWIFT.</strong> Since 2001, every inter-bank
+            RTGS and NEFT payment instruction travels as a structured, PKI-signed message on
+            it. The hub is run by <strong>IFTAS</strong>, a company wholly owned by the RBI
+            (it took over from IDRBT in 2016).</li>
+            <li><strong>The money itself moves at the RBI.</strong> SFMS carries
+            instructions; settlement happens in each bank's account at the RBI. Whoever can
+            get a valid message accepted <em>is</em> the sender, economically &mdash; which is
+            why message authenticity is everything.</li>
+            <li><strong>Three sanctioned doors</strong> (RTGS Regulations 4.21): the
+            thick-client member interface over <strong>INFINET</strong> (the closed
+            RBI-promoted network), a bank-gateway Web-API, and a browser
+            <strong>PO module</strong> for small members &mdash; with public-internet access
+            contemplated, so &ldquo;INFINET-only&rdquo; needs an asterisk.</li>
+            <li><strong>Every message carries an IDRBT-CA digital certificate</strong>, and
+            the certificate rulebook says the key signing certificate belongs on a
+            <strong>smart card or hardware token</strong> &mdash; by design, a stolen password
+            alone should not move money.</li>
+            <li><strong>The gap:</strong> no public circular specifically mandates MFA for
+            the SFMS console itself. Member-edge practices are enforced by audit, not by the
+            hub &mdash; and how well that works varies by bank.</li>
           </ul>
         </div>
-      </div>
     </div>
   </section>
 
-  <section class="block">
-    <div class="inner">
-      <div class="stats">
-        <div class="stat-card"><div class="num">187</div><div class="label">unauthorised transfers (15–17 Oct 2026)</div></div>
-        <div class="stat-card"><div class="num">₹13.97 cr</div><div class="label">out of the bank's RBI settlement account</div></div>
-        <div class="stat-card"><div class="num">36</div><div class="label">beneficiary accounts, one per bank</div></div>
-        <div class="stat-card"><div class="num">0</div><div class="label">matching records in the bank's own systems (per complaint)</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="explainer">
+<section class="block" id="explainer">
     <div class="inner prose">
       <h2>First, the three systems — a 90-second explainer</h2>
       <p><strong>1. The settlement account.</strong> Every bank keeps a current account with
@@ -139,105 +126,7 @@
     </div>
   </section>
 
-  <section class="block alt">
-    <div class="inner prose">
-      <h2>What the police complaint says</h2>
-      <p>On 22 October 2026, the bank's General Manager (Treasury) filed a complaint with
-      Maharashtra Cyber; the Nodal Cyber Police Station, Mumbai, registered an FIR for
-      cheating by personation. Per the complaint, as reported by Hindustan Times, Free Press
-      Journal, Hellobanker, The Probe and The Wire:</p>
-      <ul>
-        <li>The outflow ran <strong>15–17 October</strong> — 6 transfers on the 15th,
-        88 on the 16th, 93 on the 17th — totalling ₹13.97&nbsp;crore to 36 beneficiary
-        accounts, each at a different bank.</li>
-        <li>The bank's forensic sweep found <strong>none of the 187 transactions</strong> in
-        branch records, internet or mobile banking, the core banking system, its RTGS
-        settlement records, or its own SFMS server.</li>
-        <li>The only traces: <strong>partial entries for 10 transactions</strong> in SFMS
-        database logs, whose transaction IDs match nothing in bank records. The 187
-        "sender" accounts named in the messages do not belong to the bank.</li>
-        <li>Entry alleged: unknown persons reached <strong>IFTAS's central SFMS server
-        through the bank's own SFMS server</strong> and generated the payment messages
-        there.</li>
-        <li>The bank notified RBI, IFTAS, the RBI's DAKSH incident-reporting portal, NCIIPC
-        and CERT-In.</li>
-        <li>A police officer told reporters that so little is known about how the
-        transactions were generated that <strong>tracing the money is proving very
-        difficult</strong>.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="block" id="verdict">
-    <div class="inner prose">
-      <h2>Our verification: two separate verdicts</h2>
-      <p>The public is being handed one word — "hack" — for two claims of very different
-      solidity. We scored them separately, using the same claim-level rubric as our other
-      breach verifications (rumour → captured → corroborated → published).</p>
-      <table>
-        <thead><tr><th>Claim</th><th>Asserted by</th><th>Our level</th><th>Why</th></tr></thead>
-        <tbody>
-          <tr>
-            <td>The transfers happened: 187 / ₹13.97 cr / 36 accounts / 15–17 Oct</td>
-            <td>Bank complaint → FIR</td>
-            <td><strong>L4 — corroborated</strong></td>
-            <td>Police complaint + five independent outlets with consistent numbers + the exchange filing independently confirming a three-day outward-RTGS disruption in exactly that window</td>
-          </tr>
-          <tr>
-            <td>The vector: entry via IFTAS's central SFMS server, through the bank's own SFMS connection</td>
-            <td>Bank complaint</td>
-            <td><strong>L1 — disputed</strong></td>
-            <td>Asserted, not evidenced in public. IFTAS's reported position: "no compromise on any system." The hub logs that would settle it are held by the party denying</td>
-          </tr>
-        </tbody>
-      </table>
-      <p><strong>The dispute is itself the story.</strong> If the bank is right, payment
-      instructions can be injected into India's bank-to-bank messaging backbone from a member
-      bank's connection without appearing in that bank's systems — a systemic finding about
-      the payment network, not a ₹14-crore loss. If IFTAS is right, the compromise is inside
-      one bank's own estate — and the bank is pointing upward. Neither party has published
-      the one artifact that would settle the other's claim: the SFMS central-hub logs and the
-      RTGS settlement audit trail for 15–17 October. <strong>Both sides hold the evidence
-      that would exonerate them. Neither has shown it.</strong></p>
-      <p>What we could not verify, and will not speculate on: the beneficiary accounts'
-      status (frozen? who holds them?), any recovery, any cash-out geography or timeline
-      (no captured source names any country — treat social-media versions as noise), and
-      whether the bank met its reporting clocks (below).</p>
-    </div>
-  </section>
-
-  <section class="block alt">
-    <div class="inner prose">
-      <h2>The disclosure gap — the finding that stands either way</h2>
-      <p>Whatever the forensics conclude, the paper trail of the bank's own disclosures is
-      public, and it is uncomfortable:</p>
-      <table>
-        <thead><tr><th>Date</th><th>What the public was told</th><th>Channel</th></tr></thead>
-        <tbody>
-          <tr><td>~19 Oct</td><td>"Technical glitch in RTGS outward system" — no cyber attribution, no amounts, no fraud</td><td>Stock-exchange filing</td></tr>
-          <tr><td>22 Oct</td><td>Cheating by personation via alleged SFMS compromise; ₹13.97 cr; police FIR</td><td>Police complaint (reported publicly 24–25 Oct)</td></tr>
-        </tbody>
-      </table>
-      <p>Both statements cannot be equally complete. And they sit inside a regulatory frame
-      that demands more: the RBI Master Direction on IT Governance (Nov 2023) and revised
-      incident-reporting rules (effective Feb 2024) require banks to report cyber incidents
-      to the RBI <strong>within six hours of detection on the DAKSH portal</strong>, plus
-      proactive CERT-In notification — CERT-In's 2022 directions separately require six-hour
-      notification. The bank says it reported to RBI, IFTAS, DAKSH, NCIIPC and CERT-In —
-      <strong>but when it detected, and when it reported, it has not said</strong>. The
-      rulebook's internal clock (hours) and the public's disclosure clock (days, euphemism
-      first) are clearly different clocks. We flagged the same hygiene gap on the SBI leak
-      story the same week.</p>
-      <p>The reconciliation question is just as sharp: after the 2016–18 SWIFT frauds
-      (Bangladesh Bank $81M; Union Bank ~$171M attempted, caught at next-day reconciliation;
-      City Union ~$2M; PNB ₹14,000 crore), the RBI mandated SWIFT–CBS integration and daily
-      reconciliation. A settlement account is meant to reconcile <em>daily</em>. Here,
-      187 transfers ran across three days. Either reconciliation failed three days running —
-      or bank and RBI records disagreed for three days without anyone noticing. The bank has
-      not answered which.</p>
-    </div>
-  </section>
-  <section class="block" id="stack">
+<section class="block" id="stack">
     <div class="inner prose">
       <h2>Doors and keys — what the rulebook actually requires</h2>
       <p>The complaint turns on one question: how hard is it, by design, to compose a payment
@@ -245,11 +134,11 @@
       the <strong>RTGS System Regulations v1.0</strong> (Oct 2024), the certificate rulebook
       of <strong>IDRBT-CA</strong> — the RBI-promoted authority whose digital certificates
       sign every SFMS message — and the RBI circular that defines <strong>INFINET and SFMS
-      membership</strong> as the entry ticket to payment systems. Then, because the public
-      rulebook cannot answer how the door is <em>kept</em>, we reviewed internal technical
-      documentation from one state-owned bank running the same SFMS product family —
-      obtained in our separate <a href="breaches.html">Bank of Baroda leak verification</a>.
-      Not the accused bank. The product family is the same one at every member bank.</p>
+      membership</strong> as the entry ticket to payment systems. How that door is <em>kept in practice</em> at a member bank is a question for
+      evidence, not rulebook &mdash; we put what one bank's real internal documentation shows
+      in the <a href="#" class="xjump" data-tab="analysis">Analysis</a> tab. (That
+      documentation comes from our separate <a href="breaches.html">Bank of Baroda leak
+      verification</a>; not the accused bank.)</p>
 
       <h3>Three documented doors into RTGS</h3>
       <p>Regulation&nbsp;4.21 of the RTGS Regulations v1.0 defines how members reach the
@@ -298,7 +187,186 @@
         otherwise.</li>
       </ul>
 
-      <h3>Inside one bank's estate (documentation, not probing)</h3>
+          </div>
+  </section>
+
+<section class="block">
+    <div class="inner prose">
+      <h2>If you bank with Central Bank of India — or anywhere</h2>
+      <ul>
+        <li><strong>No customer lost a rupee.</strong> This was the bank's own settlement
+        float, not deposits. Your account and your money are not what was attacked.</li>
+        <li><strong>Don't conflate this with the SBI story.</strong> SBI the same week
+        confirmed ~3,897 customer records found on the dark web — a data-leak incident, a
+        different failure class. Two state-owned banks, two different things, one confusing
+        news cycle.</li>
+        <li><strong>Expect phishing riding the headlines.</strong> "Your RTGS failed", "your
+        account is part of the bank fraud", "re-verify your KYC" — the bank will never ask
+        for credentials or OTPs by call, SMS or link. Verify only through the official app or
+        the number printed on your passbook. Report attempts to <strong>1930</strong> or
+        cybercrime.gov.in.</li>
+        <li><strong>The systemic question is the regulator's to answer:</strong> if
+        instructions can appear on the messaging network without a sender record anywhere,
+        could the same be done from any other bank's server? SFMS carries lakhs of crores a
+        day. That question deserves a public answer, not a two-party blame standoff.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block"><div class="inner prose">
+      <p style="color:var(--fg-muted)">The incident itself &mdash; what the police complaint says, our verification verdicts, the disclosure gap, one bank&#8217;s estate documentation, and method &amp; sources &mdash; is in the <a href="#" class="xjump" data-tab="analysis">Analysis tab</a>.</p>
+    </div>
+  </section>
+
+</div>
+
+<div id="tab-analysis" hidden>
+
+<section class="block"><div class="inner prose">
+        <div class="callout">
+          <div class="co-title">TL;DR &mdash; the analysis</div>
+          <ul style="margin-bottom:0">
+            <li><strong>What happened:</strong> 15&ndash;17 Oct 2026, <strong>187 payment
+            instructions</strong> moved <strong>&#8377;13.97 crore</strong> out of Central Bank
+            of India's own settlement account at the RBI into 36 accounts across 36 banks.
+            The bank says none of these transactions exist in any of its own systems.</li>
+            <li><strong>Verified (L4):</strong> the transfers and the numbers &mdash; police
+            complaint/FIR, five independent outlets, and CBI's own exchange filing reporting
+            an outward-RTGS disruption in exactly that window.</li>
+            <li><strong>Disputed (L1):</strong> the breach vector. The bank claims entry via
+            <strong>IFTAS's central SFMS server through the bank's own SFMS connection</strong>;
+            IFTAS says no system of theirs was compromised. Nothing public settles it, and
+            both sides hold the logs that would.</li>
+            <li><strong>Stands either way:</strong> the disclosure gap &mdash; a ~19 Oct
+            &ldquo;technical glitch&rdquo; exchange filing, an FIR only on 22 Oct, against a
+            <strong>6-hour</strong> DAKSH incident-reporting clock &mdash; and 187 debits
+            running three days on an account meant to reconcile <em>daily</em>.</li>
+            <li><strong>What one bank's estate looked like</strong> (BoB leak documentation &mdash;
+            context, not accusation; not the accused bank): password-only SFMS logins until
+            the Oct 2025 pen-test pass, a single admin password starting the sender/receiver
+            processes, and 7 critical pen-test findings still open at report date.</li>
+            <li><strong>Customers lost nothing</strong> &mdash; this was the bank's own
+            settlement float, not deposits. <strong>Would settle it:</strong> IFTAS hub logs +
+            RTGS settlement audit trail for 15&ndash;17 Oct; a substantive CBI exchange
+            clarification; a substantive IFTAS statement; the Maharashtra Cyber chargesheet.</li>
+          </ul>
+        </div>
+    </div>
+  </section>
+
+<section class="block">
+    <div class="inner">
+      <div class="stats">
+        <div class="stat-card"><div class="num">187</div><div class="label">unauthorised transfers (15–17 Oct 2026)</div></div>
+        <div class="stat-card"><div class="num">₹13.97 cr</div><div class="label">out of the bank's RBI settlement account</div></div>
+        <div class="stat-card"><div class="num">36</div><div class="label">beneficiary accounts, one per bank</div></div>
+        <div class="stat-card"><div class="num">0</div><div class="label">matching records in the bank's own systems (per complaint)</div></div>
+      </div>
+    </div>
+  </section>
+
+<section class="block alt">
+    <div class="inner prose">
+      <h2>What the police complaint says</h2>
+      <p>On 22 October 2026, the bank's General Manager (Treasury) filed a complaint with
+      Maharashtra Cyber; the Nodal Cyber Police Station, Mumbai, registered an FIR for
+      cheating by personation. Per the complaint, as reported by Hindustan Times, Free Press
+      Journal, Hellobanker, The Probe and The Wire:</p>
+      <ul>
+        <li>The outflow ran <strong>15–17 October</strong> — 6 transfers on the 15th,
+        88 on the 16th, 93 on the 17th — totalling ₹13.97&nbsp;crore to 36 beneficiary
+        accounts, each at a different bank.</li>
+        <li>The bank's forensic sweep found <strong>none of the 187 transactions</strong> in
+        branch records, internet or mobile banking, the core banking system, its RTGS
+        settlement records, or its own SFMS server.</li>
+        <li>The only traces: <strong>partial entries for 10 transactions</strong> in SFMS
+        database logs, whose transaction IDs match nothing in bank records. The 187
+        "sender" accounts named in the messages do not belong to the bank.</li>
+        <li>Entry alleged: unknown persons reached <strong>IFTAS's central SFMS server
+        through the bank's own SFMS server</strong> and generated the payment messages
+        there.</li>
+        <li>The bank notified RBI, IFTAS, the RBI's DAKSH incident-reporting portal, NCIIPC
+        and CERT-In.</li>
+        <li>A police officer told reporters that so little is known about how the
+        transactions were generated that <strong>tracing the money is proving very
+        difficult</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+<section class="block" id="verdict">
+    <div class="inner prose">
+      <h2>Our verification: two separate verdicts</h2>
+      <p>The public is being handed one word — "hack" — for two claims of very different
+      solidity. We scored them separately, using the same claim-level rubric as our other
+      breach verifications (rumour → captured → corroborated → published).</p>
+      <table>
+        <thead><tr><th>Claim</th><th>Asserted by</th><th>Our level</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>The transfers happened: 187 / ₹13.97 cr / 36 accounts / 15–17 Oct</td>
+            <td>Bank complaint → FIR</td>
+            <td><strong>L4 — corroborated</strong></td>
+            <td>Police complaint + five independent outlets with consistent numbers + the exchange filing independently confirming a three-day outward-RTGS disruption in exactly that window</td>
+          </tr>
+          <tr>
+            <td>The vector: entry via IFTAS's central SFMS server, through the bank's own SFMS connection</td>
+            <td>Bank complaint</td>
+            <td><strong>L1 — disputed</strong></td>
+            <td>Asserted, not evidenced in public. IFTAS's reported position: "no compromise on any system." The hub logs that would settle it are held by the party denying</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>The dispute is itself the story.</strong> If the bank is right, payment
+      instructions can be injected into India's bank-to-bank messaging backbone from a member
+      bank's connection without appearing in that bank's systems — a systemic finding about
+      the payment network, not a ₹14-crore loss. If IFTAS is right, the compromise is inside
+      one bank's own estate — and the bank is pointing upward. Neither party has published
+      the one artifact that would settle the other's claim: the SFMS central-hub logs and the
+      RTGS settlement audit trail for 15–17 October. <strong>Both sides hold the evidence
+      that would exonerate them. Neither has shown it.</strong></p>
+      <p>What we could not verify, and will not speculate on: the beneficiary accounts'
+      status (frozen? who holds them?), any recovery, any cash-out geography or timeline
+      (no captured source names any country — treat social-media versions as noise), and
+      whether the bank met its reporting clocks (below).</p>
+    </div>
+  </section>
+
+<section class="block alt">
+    <div class="inner prose">
+      <h2>The disclosure gap — the finding that stands either way</h2>
+      <p>Whatever the forensics conclude, the paper trail of the bank's own disclosures is
+      public, and it is uncomfortable:</p>
+      <table>
+        <thead><tr><th>Date</th><th>What the public was told</th><th>Channel</th></tr></thead>
+        <tbody>
+          <tr><td>~19 Oct</td><td>"Technical glitch in RTGS outward system" — no cyber attribution, no amounts, no fraud</td><td>Stock-exchange filing</td></tr>
+          <tr><td>22 Oct</td><td>Cheating by personation via alleged SFMS compromise; ₹13.97 cr; police FIR</td><td>Police complaint (reported publicly 24–25 Oct)</td></tr>
+        </tbody>
+      </table>
+      <p>Both statements cannot be equally complete. And they sit inside a regulatory frame
+      that demands more: the RBI Master Direction on IT Governance (Nov 2023) and revised
+      incident-reporting rules (effective Feb 2024) require banks to report cyber incidents
+      to the RBI <strong>within six hours of detection on the DAKSH portal</strong>, plus
+      proactive CERT-In notification — CERT-In's 2022 directions separately require six-hour
+      notification. The bank says it reported to RBI, IFTAS, DAKSH, NCIIPC and CERT-In —
+      <strong>but when it detected, and when it reported, it has not said</strong>. The
+      rulebook's internal clock (hours) and the public's disclosure clock (days, euphemism
+      first) are clearly different clocks. We flagged the same hygiene gap on the SBI leak
+      story the same week.</p>
+      <p>The reconciliation question is just as sharp: after the 2016–18 SWIFT frauds
+      (Bangladesh Bank $81M; Union Bank ~$171M attempted, caught at next-day reconciliation;
+      City Union ~$2M; PNB ₹14,000 crore), the RBI mandated SWIFT–CBS integration and daily
+      reconciliation. A settlement account is meant to reconcile <em>daily</em>. Here,
+      187 transfers ran across three days. Either reconciliation failed three days running —
+      or bank and RBI records disagreed for three days without anyone noticing. The bank has
+      not answered which.</p>
+    </div>
+  </section>
+
+<section class="block alt" id="estate">
+    <div class="inner prose">
+    <h2>Inside one bank's estate &mdash; what the &ldquo;strong door&rdquo; sits behind</h2>
       <p>The internal documentation we reviewed from the BoB leak — architecture manuals,
       operating SOPs, a 2025 penetration-test post-compliance report, and RBI-inspection
       evidence — shows what the "strong door" sits behind in practice at one member bank:</p>
@@ -329,30 +397,7 @@
     </div>
   </section>
 
-  <section class="block">
-    <div class="inner prose">
-      <h2>If you bank with Central Bank of India — or anywhere</h2>
-      <ul>
-        <li><strong>No customer lost a rupee.</strong> This was the bank's own settlement
-        float, not deposits. Your account and your money are not what was attacked.</li>
-        <li><strong>Don't conflate this with the SBI story.</strong> SBI the same week
-        confirmed ~3,897 customer records found on the dark web — a data-leak incident, a
-        different failure class. Two state-owned banks, two different things, one confusing
-        news cycle.</li>
-        <li><strong>Expect phishing riding the headlines.</strong> "Your RTGS failed", "your
-        account is part of the bank fraud", "re-verify your KYC" — the bank will never ask
-        for credentials or OTPs by call, SMS or link. Verify only through the official app or
-        the number printed on your passbook. Report attempts to <strong>1930</strong> or
-        cybercrime.gov.in.</li>
-        <li><strong>The systemic question is the regulator's to answer:</strong> if
-        instructions can appear on the messaging network without a sender record anywhere,
-        could the same be done from any other bank's server? SFMS carries lakhs of crores a
-        day. That question deserves a public answer, not a two-party blame standoff.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="block alt">
+<section class="block alt">
     <div class="inner prose">
       <h2>What would settle this</h2>
       <ol>
@@ -371,7 +416,7 @@
     </div>
   </section>
 
-  <section class="block">
+<section class="block">
     <div class="inner prose">
       <h2>Method &amp; sources</h2>
       <p>Read-only OSINT, 25 Oct 2026: press cross-check (five outlets), IFTAS corporate
@@ -402,6 +447,9 @@
       </ul>
     </div>
   </section>
+
+</div>
+
 </main>
 
 <footer>
@@ -416,6 +464,39 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var btns = document.querySelectorAll('.tab-btn');
+  function show(t, scroll) {
+    document.getElementById('tab-explainer').hidden = t !== 'explainer';
+    document.getElementById('tab-analysis').hidden = t !== 'analysis';
+    btns.forEach(function (b) {
+      var on = b.dataset.tab === t;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    if (scroll) window.scrollTo({ top: 0 });
+  }
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () { show(b.dataset.tab, true); });
+  });
+  document.querySelectorAll('.xjump').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      show(a.dataset.tab, false);
+    });
+  });
+  var h = location.hash;
+  var inAnalysis = false;
+  function fromHash() {
+    var inAnalysis = false;
+    try { inAnalysis = !!document.querySelector('#tab-analysis ' + location.hash); } catch (e) {}
+    return location.hash === '#analysis' || inAnalysis ? 'analysis' : 'explainer';
+  }
+  show(fromHash(), false);
+  window.addEventListener('hashchange', function () { show(fromHash(), false); });
+})();
+</script>
 <script src="../js/main.js"></script>
 </body>
 </html>
