@@ -5,7 +5,10 @@ financial and government infrastructure. The index splits into **Our work**
 (original research: audits, disclosures, reverse-engineering) and **Our
 verifications** (other parties' claims checked against evidence — leak sites,
 breach chatter, institutional statements). The `.bank.in` audit and CERT-In
-.env disclosures are our original work, not verifications.
+.env disclosures are our original work, not verifications. eMudhra sits under
+verifications: its core facts (guessable keys, live-chain evidence) are
+desk-verified claims against live TLS handshakes; the consumer guide, statement,
+open letter and public-audit campaign are work products on top.
 
 **Site:** [cyber.cashlessconsumer.in](https://cyber.cashlessconsumer.in)
 

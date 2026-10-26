@@ -12,9 +12,11 @@ removing runtime dependencies. Nothing here stores or surfaces PII.
 
 ## Hub split (2026-10-25)
 
-`index.html` separates **Our work** (bank-in, cert-in-env, toll-shadow, emudhra-ca,
-npci-cl, sharepoint — things we found, probed or built) from **Our verifications**
-(breaches ledger + cbi-sfms — other parties' claims we checked). New pages must
+`index.html` separates **Our work** (bank-in, cert-in-env, toll-shadow, npci-cl,
+sharepoint — things we found, probed or built) from **Our verifications** (breaches
+ledger + cbi-sfms + emudhra-ca — other parties' claims we checked; eMudhra moved
+2026-10-26 because its core facts are claim-verification against live TLS
+handshakes, with the campaign/letter as work products on top). New pages must
 declare which side they belong on.
 
 ## Bounded contexts (the pillars)
