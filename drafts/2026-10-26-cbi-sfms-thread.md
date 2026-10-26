@@ -1,8 +1,5 @@
-# Draft for review — not yet sent or published. Date: 2026-10-26
-
-X thread on the Central Bank of India / SFMS incident. Post from @cashlesscnsmr.
-Links to: https://cyber.cashlessconsumer.in/pages/cbi-sfms.html
-Video: output/2026-10-26-sfms-special-bulletin-video.mp4 (attach to tweet 1)
+# POSTED 2026-10-26 — @cashlesscnsmr thread https://x.com/cashlesscnsmr/status/2114581107756699979 (8 tweets, IDs 2114581107756699979 → 2114581318453321970). Video attached to tweet 1.
+YouTube: https://youtube.com/shorts/Hsh-prCb5Iw (public, Cashless Consumer channel)
 
 ---
 
