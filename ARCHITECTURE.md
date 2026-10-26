@@ -10,6 +10,13 @@ investigations. It is deliberately **static** (plain HTML/CSS/JS, no build
 step at deploy) — matching the proven `BoBBreach` deployment pattern and
 removing runtime dependencies. Nothing here stores or surfaces PII.
 
+## Hub split (2026-10-25)
+
+`index.html` separates **Our work** (bank-in, cert-in-env, toll-shadow, emudhra-ca,
+npci-cl, sharepoint — things we found, probed or built) from **Our verifications**
+(breaches ledger + cbi-sfms — other parties' claims we checked). New pages must
+declare which side they belong on.
+
 ## Bounded contexts (the pillars)
 
 | Context | Responsibility | Where the depth lives |
@@ -18,6 +25,7 @@ removing runtime dependencies. Nothing here stores or surfaces PII.
 | `bob-breach` | Verification gateway only — signs the key facts, points to the full investigation | CashlessConsumer/BoBBreach → bobbreach.cashlessconsumer.in |
 | `cert-in-env` | Responsibly-disclosed `.env`/actuator/phpinfo/log exposures on `.bank.in` | evidence distilled from bank-in-research scan + CERT-In timeline |
 | `emudhra-ca` | eMudhra CA key-compromise consumer record: gateway page + full investigation site (`pages/emudhra/`) | master note in `Kaarana/notes/`, voice-gated per `Skills/cc-comms-voice`; sources + build in workspace `Projects/cyber/pages/emudhra/` |
+| `cbi-sfms` | Central Bank of India SFMS/RTGS incident (Oct 2026) verification + explainer | claim review `CyberOpsec/reviews/2026-10-25-cbi-sfms-rtgs-heist-claim-review.md`; bench rows incident `cbisfms2026` in `Projects/breach-bench/bench.duckdb`; article snapshots hashed in bench `snapshots` |
 
 A **reporter plane** (about + methodology + disclosure policy) is a shared
 context referenced by all pages.

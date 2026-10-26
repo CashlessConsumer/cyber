@@ -48,10 +48,11 @@
       <span class="kicker">🛡️ Breach verification</span>
       <h1>When ransomware crews claim Indian fintech, we check</h1>
       <p class="lede">
-        Leak-site claims are attacker marketing until independently verified. This is our
-        running ledger of breach verifications against Indian financial infrastructure —
-        what the attackers claim, what the company says, what the metadata actually shows,
-        and where the stories diverge. Metadata-level only; no PII is republished, ever.
+        When someone claims Indian financial infrastructure was hit — a ransomware dump, a
+        dark-web data sale, or 187 payment instructions no bank says it sent — we check. This is
+        our running verification ledger: what the claimants assert, what the institutions say,
+        what the evidence actually shows, and where the stories diverge. Metadata-level only;
+        no PII is republished, ever.
       </p>
     </div>
   </section>
@@ -100,6 +101,47 @@
           <span class="arrow">→</span>
         </div>
       </a>
+
+      <a class="case" href="cbi-sfms.html">
+        <div class="case-head">
+          <span class="emoji">🏦</span>
+          <h2>Central Bank of India <span class="pill warn">transfers verified · breach vector disputed</span></h2>
+        </div>
+        <p>
+          On <b>15–17 October 2026</b>, 187 payment instructions moved <b>₹13.97 crore</b> out of
+          CBI's settlement account at the RBI — with <b>no sender record in any of the bank's own
+          systems</b>. The bank blames the central SFMS messaging hub run by IFTAS, RBI's own
+          subsidiary; IFTAS denies any compromise. We scored the two claims separately and mapped
+          the disclosure gap: the exchange filing called it a "technical glitch" three days before
+          the police complaint named cheating by personation.
+        </p>
+        <div class="case-meta">
+          <span class="pill">187 transfers · ₹13.97 cr</span>
+          <span class="pill">36 beneficiary accounts</span>
+          <span class="pill">transfers L4 · breach vector L1 disputed</span>
+          <span class="arrow">→</span>
+        </div>
+      </a>
+
+      <div class="case">
+        <div class="case-head">
+          <span class="emoji">🪪</span>
+          <h2>State Bank of India <span class="pill">bank-confirmed data loss</span></h2>
+        </div>
+        <p>
+          The "Siriusim" dark-web listing (16 October, 3.75 lakh records + 2,722 PDFs) sat at L0
+          for five days — no tracker footprint, no actor history, vendor-stack field shape. On
+          <b>21 October SBI's exchange filing confirmed real data loss</b>: ~3,897 customer records
+          (names, mobiles, DOBs, addresses, branch/CIF IDs, loan details) found on the dark web,
+          investigation with a CERT-In-empanelled agency. The claim was right where its evidence
+          was not — a caution for every L0 verdict, ours included.
+        </p>
+        <div class="case-meta">
+          <span class="pill">3.75 lakh claimed → 3,897 confirmed</span>
+          <span class="pill">confirmed by bank filing</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
 
       <div class="callout info">
         <div class="co-title">How we verify — and what we won't do</div>
