@@ -61,6 +61,7 @@
       <div class="cta-row">
         <a class="cta primary" href="#verdict">Our verdict →</a>
         <a class="cta ghost" href="#explainer">How SFMS works (explainer)</a>
+        <a class="cta ghost" href="#stack">Doors &amp; keys — the rulebook</a>
         <a class="cta ghost" href="breaches.html">All breach verifications</a>
       </div>
     </div>
@@ -198,6 +199,97 @@
       not answered which.</p>
     </div>
   </section>
+  <section class="block" id="stack">
+    <div class="inner prose">
+      <h2>Doors and keys — what the rulebook actually requires</h2>
+      <p>The complaint turns on one question: how hard is it, by design, to compose a payment
+      message on a member connection? The governing documents are public, so we read them:
+      the <strong>RTGS System Regulations v1.0</strong> (Oct 2024), the certificate rulebook
+      of <strong>IDRBT-CA</strong> — the RBI-promoted authority whose digital certificates
+      sign every SFMS message — and the RBI circular that defines <strong>INFINET and SFMS
+      membership</strong> as the entry ticket to payment systems. Then, because the public
+      rulebook cannot answer how the door is <em>kept</em>, we reviewed internal technical
+      documentation from one state-owned bank running the same SFMS product family —
+      obtained in our separate <a href="breaches.html">Bank of Baroda leak verification</a>.
+      Not the accused bank. The product family is the same one at every member bank.</p>
+
+      <h3>Three documented doors into RTGS</h3>
+      <p>Regulation&nbsp;4.21 of the RTGS Regulations v1.0 defines how members reach the
+      system. There are <strong>three access channels</strong>, not one:</p>
+      <ul>
+        <li><strong>Thick-client / member-interface members</strong> connect over a
+        dedicated, RBI-approved telecom medium — in practice INFINET, the closed financial
+        network built by IDRBT and now run by IFTAS.</li>
+        <li><strong>Web / REST-API members</strong> connect through their own bank gateway —
+        the core-banking-to-SFMS bridge.</li>
+        <li><strong>The "PO" module</strong> is browser-based, for members averaging
+        100 or fewer RTGS payments a day — and the rulebook contemplates
+        <strong>public-internet access</strong> for it, under conditions the Bank is to
+        prescribe.</li>
+      </ul>
+      <p>So "INFINET-only" needs a qualification. All three channels ride INFINET
+      <em>or any other network the Bank approves</em>; the closed financial network is the
+      default, but the rulebook itself carries an internet door. What the rulebook does not
+      publish is which member uses which door.</p>
+
+      <h3>The keys: every message carries a certificate</h3>
+      <p>SFMS is PKI-protected. Each message is signed with a digital certificate from
+      <strong>IDRBT-CA</strong> (a licensed Certifying Authority since 2002). Its published
+      Certification Practice Statement v3.2 (2012) defines <strong>Class&nbsp;2</strong>
+      certificates for individuals and <strong>Class&nbsp;3</strong> for individuals and
+      servers — the latter requiring physical appearance before a Registration Authority.
+      For the <em>System Certificate</em> — the machine identity authenticating a bank
+      gateway to the hub — §2.12.3 says the <strong>private key should be held in a secure
+      token or smart card</strong>, with a <strong>hardware security module recommended</strong>
+      for applications processing high-value transactions. In the designed model, sending a
+      payment instruction requires a physical key object bound to a verified identity. A
+      stolen password alone should not be enough — where that model is actually enforced.</p>
+
+      <h3>What the rulebook does <em>not</em> say</h3>
+      <ul>
+        <li>There is <strong>no public circular that specifically mandates multi-factor
+        authentication for SFMS console logins</strong> — as of 26 Oct 2026 we found none.
+        Annex&nbsp;10 of the RTGS Regulations (Oct 2024) does require MFA for "users,
+        applications, systems", a ban on internet-facing critical systems, and patch
+        currency — but as generic participant duties, audited annually, not as product
+        rules.</li>
+        <li>There is <strong>no public register</strong> of which member bank uses which
+        access channel, and no published MFA standard for the SFMS console itself.</li>
+        <li>Certificate practice is set by a document from <strong>2012</strong> (CPS v3.2);
+        what banks do inside their estates is their own affair until an audit says
+        otherwise.</li>
+      </ul>
+
+      <h3>Inside one bank's estate (documentation, not probing)</h3>
+      <p>The internal documentation we reviewed from the BoB leak — architecture manuals,
+      operating SOPs, a 2025 penetration-test post-compliance report, and RBI-inspection
+      evidence — shows what the "strong door" sits behind in practice at one member bank:</p>
+      <ul>
+        <li>A Windows application server running <strong>SFMS 7.0.1</strong>, with an
+        Oracle 19c database behind it and message-queue links into core banking.</li>
+        <li>Estate docs describe a <strong>single administrative password</strong> used to
+        start the SFMS sender/receiver processes, and a manual
+        <strong>"reprocess failed messages"</strong> path on the same console.</li>
+        <li>The 2025 DFS-guideline penetration test across that NEFT/RTGS/SFMS estate:
+        <strong>284 findings, 28 critical — 7 critical still open</strong> at report date.
+        The SFMS gateway application's own pen-test scored <strong>3 High + 1 Medium, with
+        2 High open</strong> in Oct 2025 — including <strong>password-only logins</strong>
+        for SFMS users, closed only during the Oct 2025 compliance pass. (The newer NEFT/RTGS
+        console at the same bank did get OTP second-factor.)</li>
+        <li>What does exist, and matters here: <strong>per-login access logs with source IP
+        addresses</strong> at the bank site, reviewed monthly against an approved
+        user-validation note — a replicable paper trail of who connected, from where, and
+        when.</li>
+      </ul>
+      <p><strong>We publish this as context, not accusation.</strong> The accused bank is not
+      Bank of Baroda, and nothing here says what happened on 15–17 October in CBI's estate.
+      The point is narrower: the certificate-and-closed-network image of SFMS coexists, at
+      member banks, with console-era practices that pen-tests keep flagging and compliance
+      passes keep closing late. Whoever composed the 187 messages left a trail in one of two
+      places — the member's own SFMS access logs, or the hub's. Both banks in this dispute
+      hold such logs. That is exactly why the artifacts listed below would settle this.</p>
+    </div>
+  </section>
 
   <section class="block">
     <div class="inner prose">
@@ -246,9 +338,15 @@
       <h2>Method &amp; sources</h2>
       <p>Read-only OSINT, 25 Oct 2026: press cross-check (five outlets), IFTAS corporate
       history (IDRBT, RBI, Companies Act records), RBI Master Direction and CERT-In
-      reporting-requirement texts, exchange-filing coverage, precedent case records. We did
-      not probe any bank or IFTAS infrastructure and collected no beneficiary, customer or
-      account-holder data. Full claim review with evidence hashes:
+      reporting-requirement texts, exchange-filing coverage, precedent case records.
+      Extended 26 Oct 2026 with a documentation deep-dive for the <a href="#stack">doors
+      and keys</a> section: RTGS System Regulations v1.0, IDRBT-CA Certification Practice
+      Statement v3.2, RBI access circulars and IFTAS service pages — plus internal technical
+      documentation from one state-owned bank running the same SFMS product family, reviewed
+      as part of our separate <a href="breaches.html">Bank of Baroda leak verification</a>
+      (aggregate findings only; no individuals, no account data). We did not probe any bank
+      or IFTAS infrastructure and collected no beneficiary, customer or account-holder data.
+      Full claim review with evidence hashes:
       <code>CyberOpsec/reviews/2026-10-25-cbi-sfms-rtgs-heist-claim-review.md</code>; incident
       registered as <code>cbisfms2026</code> on our breach-verification bench.</p>
       <ul>
@@ -259,7 +357,10 @@
         <li>Economic Times — the "technical glitch" filing and the SBI disclosure context — <a href="https://economictimes.indiatimes.com/industry/banking/finance/banking/sbi-probes-suspected-data-breach-after-3-75-lakh-records-surface-on-dark-web/articleshow/135083347.cms" rel="noopener">economictimes.indiatimes.com</a></li>
         <li>CNBC Awaaz (Aseem Manchanda, 24–25 Oct) — IFTAS: no compromise on any system — <a href="https://x.com/aseemmanchanda/status/2114201042602938827" rel="noopener">x.com</a></li>
         <li>IFTAS corporate facts — <a href="https://www.idrbt.ac.in/iftas" rel="noopener">idrbt.ac.in/iftas</a> · <a href="https://en.wikipedia.org/wiki/Structured_Financial_Messaging_System" rel="noopener">Wikipedia: SFMS</a></li>
-        <li>RBI six-hour DAKSH incident-reporting requirement — <a href="https://m.rbi.org.in/scripts/NotificationUser.aspx/Scripts/NotificationUser.aspx?Id=13625&amp;Mode=0" rel="noopener">RBI Master Direction text</a></li>
+        <li>RBI six-hour DAKSH incident-reporting requirement — <a href="https://m.rbi.org.in/scripts/NotificationUser.aspx/Scripts/NotificationUser.aspx?Id=13625&amp;Mode=0" rel="noopener">RBI Master Direction text</a></li>        <li>RTGS System Regulations v1.0 (Oct 2024) — Reg 4.21 access channels, Annex 10 baseline cyber-security duties, Reg 6.10 settlement-account statements — <a href="https://rbidocs.rbi.org.in/rdocs/RTGS/PDFs/RTGSSYSTEMREGULATIONS251024126AD4AE78F9410388FB1232668862D3.PDF" rel="noopener">RBI, canonical PDF</a></li>
+        <li>IDRBT-CA Certification Practice Statement v3.2 — certificate classes (Class 2 individuals, Class 3 servers), §6.2.3 private keys on smart card/hardware token — <a href="https://cca.gov.in/sites/files/pdf/Licensed-CA/IDRBT-CPS-v3.2.pdf" rel="noopener">cca.gov.in</a></li>
+        <li>RBI, Access for Non-banks to Centralised Payment Systems (RBI/2021-22/73, 28 Jul 2021) — INFINET membership + SFMS use as the CPS entry ticket — <a href="https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12133" rel="noopener">rbi.org.in</a></li>
+        <li>IFTAS SFMS service page — ISO 20022, INFINET as communication medium, LC/BG/E-FDR — <a href="https://iftas.in/sfms/" rel="noopener">iftas.in</a></li>
       </ul>
     </div>
   </section>
