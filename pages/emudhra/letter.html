@@ -7,16 +7,29 @@
 <meta name="description" content="CashlessConsumer open letter to the Reserve Bank of India and MeitY on the eMudhra CA compromise and the silence of Indian trust-infrastructure supervision.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+<meta property="og:site_name" content="CashlessConsumer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Open letter to RBI and MeitY — eMudhra CA Compromise — CashlessConsumer">
+<meta property="og:description" content="CashlessConsumer open letter to the Reserve Bank of India and MeitY on the eMudhra CA compromise and the silence of Indian trust-infrastructure supervision.">
+<meta property="og:url" content="https://cyber.cashlessconsumer.in/pages/emudhra/letter.html">
+<meta property="og:image" content="https://cyber.cashlessconsumer.in/images/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="cyber.cashlessconsumer.in — independent security research by CashlessConsumer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@logic">
+<meta name="color-scheme" content="light">
 </head>
 <body>
-<div class="hub-crumb"><a href="../../index.html">&#9670; cyber.cashlessconsumer.in</a><span class="sep">/</span>eMudhra CA compromise</div>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="hub-crumb" aria-label="Breadcrumb"><a href="../../index.html"><span aria-hidden="true">&#9670;</span> cyber.cashlessconsumer.in</a><span class="sep">/</span>eMudhra CA compromise</nav>
 <header class="site-header">
   <div class="wrap-wide">
     <a class="brand" href="index.html">
       <span class="brand-badge">CC</span>
       <span class="brand-name">CashlessConsumer</span>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="eMudhra sections">
       <a href="index.html#consumers">For consumers</a>
       <a href="statement.html">Statement</a>
       <a href="campaign.html">Campaign</a>
@@ -26,7 +39,7 @@
     </nav>
   </div>
 </header>
-<main>
+<main id="main">
   <section class="hero" style="padding:44px 0 40px;">
     <div class="wrap">
       <div class="hero-kicker">eMudhra CA compromise · 21 October 2026</div>
@@ -68,7 +81,7 @@ read.</p>
 (all independently verifiable)</h2>
 <p>In early October 2026, eMudhra Ltd, an Indian company licensed by the
 Controller of Certifying Authorities under the IT Act,<a href="#fn1"
-class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+class="footnote-ref" id="fnref1"><sup>1</sup></a>
 whose emSign brand is trusted by every major browser, issued eight
 intermediate CA certificates whose private keys carried 3 to 8 bits of
 randomness. A NIST P-384 key of this class should have about 2³⁸⁴
@@ -76,7 +89,7 @@ possible values. The eight keys are 4, 56, 66, 115, 155, 156, 230 and
 237. One key was the number 4. An AI agent recovered a key on its first
 attempt using a one-line prompt; the Mozilla researcher coordinating the
 response recorded this in the incident tracker.<a href="#fn2"
-class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a><a
+class="footnote-ref" id="fnref2"><sup>2</sup></a><a
 href="#fn3" class="footnote-ref" id="fnref3"
 role="doc-noteref"><sup>3</sup></a></p>
 <p>The fix came from outside the country. A researcher known as “Wayne”
@@ -84,7 +97,7 @@ proved key control on 17 October by signing a message with each key.
 Firefox and Chrome distrusted all eight intermediates within hours;
 Apple followed on 19 October; a public disclosure site with test
 endpoints went up on 20 October.<a href="#fn4" class="footnote-ref"
-id="fnref4" role="doc-noteref"><sup>4</sup></a> Certificate Transparency
+id="fnref4"><sup>4</sup></a> Certificate Transparency
 shows no certificates were minted from the compromised keys. We make no
 claim of interception or misuse, and we did not attempt a forensic
 assessment of any Indian system. That work belongs to the authorities we
@@ -96,7 +109,7 @@ and EU data centres for “data sovereignty” reasons. A script flaw used
 test keys as real issuer keys. When revocation lists signed with the
 correct keys failed verification, the company re-signed them with the
 broken keys instead of halting issuance and investigating.<a href="#fn5"
-class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> The
+class="footnote-ref" id="fnref5"><sup>5</sup></a> The
 compromised intermediates are held by the company’s Netherlands and US
 entities.<a href="#fn6" class="footnote-ref" id="fnref6"
 role="doc-noteref"><sup>6</sup></a></p>
@@ -105,7 +118,7 @@ What we verified about Indian dependency (our own desk work)</h2>
 <p>On 20–21 October 2026 we ran live TLS handshakes against government
 and banking endpoints from sandbox and India-based (Oracle Cloud Mumbai)
 vantages, and inspected the served chains:<a href="#fn7"
-class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
 <ul>
 <li><strong>uidai.gov.in</strong> serves its web certificate from an
 eMudhra issuer (EM OV TLS CA - G2A-1, chaining to emSign Root CA - G1);
@@ -114,12 +127,12 @@ so does <strong>gem.gov.in</strong>, the Government e-Marketplace.</li>
 Indian banking, publicly documents its issuance on eMudhra’s emCA/emRA
 platform, with over 3,00,000 certificates for interbank messaging on
 INFINET and national payment systems.<a href="#fn8" class="footnote-ref"
-id="fnref8" role="doc-noteref"><sup>8</sup></a><a href="#fn9"
+id="fnref8"><sup>8</sup></a><a href="#fn9"
 class="footnote-ref" id="fnref9"
 role="doc-noteref"><sup>9</sup></a></li>
 <li>Chrome’s root program is explicitly reviewing “the status of
 eMudhra’s remaining CA certificate”.<a href="#fn10" class="footnote-ref"
-id="fnref10" role="doc-noteref"><sup>10</sup></a> If root programs
+id="fnref10"><sup>10</sup></a> If root programs
 remove eMudhra’s roots, these websites stop loading in updated browsers
 until they migrate. That outage would be avoidable if migration is
 sequenced now.</li>
@@ -230,65 +243,65 @@ cashlessconsumer.in · cashlessconsumerin@gmail.com</p>
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>CCA India, eMudhra Certification
+<li id="fn1"><p>CCA India, eMudhra Certification
 Practice Statement and eSign empanelment records —
 https://cca.gov.in/sites/files/pdf/Licensed-CA/eMudhra-CPS-v2.1.pdf ·
 https://cca.gov.in/service-providers.html<a href="#fnref1"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>Dan Goodin, “The Internet goes on
+class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Dan Goodin, “The Internet goes on
 high alert after discovery of 8 compromised TLS certs,” Ars Technica, 20
 Oct 2026 —
 https://arstechnica.com/security/2026/10/the-internet-goes-on-high-alert-after-discovery-of-8-compromised-tls-certs/<a
-href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>“eMudhra Intermediate CA Compromise”
+href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>“eMudhra Intermediate CA Compromise”
 public disclosure site, 20 Oct 2026 —
 https://emudhra.we-have-a-problem.com/<a href="#fnref3"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>“eMudhra Intermediate CA Compromise”
+class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>“eMudhra Intermediate CA Compromise”
 public disclosure site, 20 Oct 2026 —
 https://emudhra.we-have-a-problem.com/<a href="#fnref4"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p>eMudhra statement and Mozilla
+class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>eMudhra statement and Mozilla
 researcher verification, Mozilla bug 2083449 —
 https://bugzilla.mozilla.org/show_bug.cgi?id=2083449<a href="#fnref5"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6" role="doc-endnote"><p>eMudhra statement and Mozilla
+class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>eMudhra statement and Mozilla
 researcher verification, Mozilla bug 2083449 —
 https://bugzilla.mozilla.org/show_bug.cgi?id=2083449<a href="#fnref6"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7" role="doc-endnote"><p>Desk verification,
+class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Desk verification,
 CashlessConsumer/Kaarana, 20–21 Oct 2026: live TLS handshakes for
 uidai.gov.in, gem.gov.in, esign.emudhra.com, idrbt.ac.in,
 idrbtca.org.in, npci.org.in, rbi.org.in, mca.gov.in, digilocker (sandbox
 + Oracle Cloud Mumbai vantage); compromised-chain structure from
 https://emudhra.we-have-a-problem.com/chains.zip<a href="#fnref7"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8" role="doc-endnote"><p>IDRBT, “Certifying Authority” —
+class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>IDRBT, “Certifying Authority” —
 https://www.idrbt.ac.in/certifying-authority<a href="#fnref8"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9" role="doc-endnote"><p>eMudhra case study, “IDRBT Secures
+class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>eMudhra case study, “IDRBT Secures
 Banking PKI Infrastructure” (emCA/emRA deployment) —
 https://emudhra.com/en/resources/idrbt-india-pki<a href="#fnref9"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10" role="doc-endnote"><p>Chrome root program statement;
+class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>Chrome root program statement;
 Hacker News discussion, 20–21 Oct 2026 —
 https://news.ycombinator.com/item?id=50166579<a href="#fnref10"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11" role="doc-endnote"><p>RBI operationalisation of .bank.in;
+class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p>RBI operationalisation of .bank.in;
 IDRBT appointed exclusive registrar, authorised by NIXI under MeitY —
 RBI press release/notifications, 2024–25; bank migration guidance via
 IDRBT (sahyog@idrbt.ac.in).<a href="#fnref11" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn12" role="doc-endnote"><p>CERT-In Directions under section
+<li id="fn12"><p>CERT-In Directions under section
 70B(6) of the IT Act, 28 April 2022 (CIR/2022/11) — six-hour incident
 reporting requirement — https://www.cert-in.org.in/<a href="#fnref12"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+class="footnote-back">↩︎</a></p></li>
 </ol>
 </section>
 
       </div>
       <div class="callout">
-        <h3>Related on this site</h3>
+        <h2 class="related-h">Related on this site</h2>
         <p><a href="index.html#consumers">What this means for consumers</a> · <a href="index.html#videos">Videos that explain the mechanics</a> · <a href="index.html#sources">Every source</a> · <a href="../../index.html">More security research at cyber.cashlessconsumer.in</a></p>
       </div>
     </div>

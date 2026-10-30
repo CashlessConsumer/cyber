@@ -8,31 +8,51 @@
 <meta name="theme-color" content="#0a0e0a">
 <link rel="canonical" href="https://cyber.cashlessconsumer.in/">
 <link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta name="color-scheme" content="dark">
+<meta property="og:site_name" content="CashlessConsumer">
+<meta property="og:type" content="website">
+<meta property="og:title" content="cyber.cashlessconsumer.in — Security Investigations by CashlessConsumer">
+<meta property="og:description" content="Security research hub: the .bank.in financial namespace audit, Bank of Baroda breach verification, CERT-In .env disclosures, and the toll shadow-software investigation with open plaza-registry data.">
+<meta property="og:url" content="https://cyber.cashlessconsumer.in/">
+<meta property="og:image" content="https://cyber.cashlessconsumer.in/images/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="cyber.cashlessconsumer.in — independent security research by CashlessConsumer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@logic">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="topbar">
   <div class="inner">
-    <a class="brand" href="index.html"><span class="mark">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
-    <nav class="links">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+        <nav class="links" id="primary-nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="pages/fastag-bypass.html">Shadow Toll</a>
       <a href="pages/bank-in-report.html">.bank.in Audit</a>
       <a href="pages/breaches.html">Breaches</a>
       <a href="pages/cbi-sfms.html">CBI · SFMS</a>
       <a href="pages/sharepoint-structural-gaps.html">SharePoint</a>
-      <a href="pages/emudhra.html">eMudhra CA</a>      <a href="pages/npci-cl.html">UPI Common Library</a>
+      <a href="pages/emudhra.html">eMudhra CA</a>
+      <a href="pages/npci-cl.html">UPI Common Library</a>
       <a href="pages/cert-in-dotenv.html">CERT-In · .env</a>
       <a href="pages/about.html">Method &amp; Ethics</a>
     </nav>
-    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
   </div>
 </header>
 
 <details class="disclosure">
-  <div class="inner">
-    <summary><span class="ai-badge">Agentic work</span> Human-supervised AI on Zo Computer <span class="dblink">▸ what this means</span></summary>
-    <div class="d-body">
+  <summary>
+    <div class="inner">
+      <span class="ai-badge">Agentic work</span> Human-supervised AI on Zo Computer <span class="dblink">▸ what this means</span>
+    </div>
+  </summary>
+  <div class="d-body">
+    <div class="inner">
       <p>Everything on this site is <b>agentic cyber work</b>: AI agents running on
       <b>Zo Computer</b> plan the probes, execute read-only scans, analyse the results and
       draft the findings — <b>predominantly on GLM 5.3 Flash</b> — the cheapest flash-tier model available, run with Zero Data Retention. A human steers and monitors
@@ -46,7 +66,7 @@
 
 
 
-<main>
+<main id="main">
   <section class="hero">
     <div class="inner">
       <span class="kicker">🔐 Independent security research · India</span>
@@ -65,62 +85,62 @@
 
   <section class="block">
     <div class="inner">
-      <span class="kicker">🛠️ Our work — original research: audits, disclosures, reverse-engineering</span>
+      <h2 class="kicker"><span aria-hidden="true">🛠️</span> Our work — original research: audits, disclosures, reverse-engineering</h2>
       <div class="grid3">
 
-        <a class="card" href="pages/bank-in-report.html">
-          <div class="card-head"><span class="emoji">📡</span><span class="tag">namespace recon</span></div>
-          <h2>.bank.in security audit</h2>
+        <a class="card" id="card-1" href="pages/bank-in-report.html" aria-labelledby="card-1-title">
+          <div class="card-head"><span class="emoji" aria-hidden="true">📡</span><span class="tag">namespace recon</span></div>
+          <h3 id="card-1-title">.bank.in security audit</h3>
           <p>The Indian financial namespace, mapped: 4,199 subdomains probed daily for resolution, HTTPS and exposure — plus the IDRBT registry investigation.</p>
           <div class="card-meta">
             <span class="pill">4,199 probed</span>
             <span class="pill">daily</span>
-            <span class="arrow">→</span>
+            <span class="arrow" aria-hidden="true">→</span>
           </div>
         </a>
 
 
-        <a class="card" href="pages/cert-in-dotenv.html">
-          <div class="card-head"><span class="emoji">📄</span><span class="tag tag-amber">responsible disclosure</span></div>
-          <h2>CERT-In · .env exposures</h2>
+        <a class="card" id="card-2" href="pages/cert-in-dotenv.html" aria-labelledby="card-2-title">
+          <div class="card-head"><span class="emoji" aria-hidden="true">📄</span><span class="tag tag-amber">responsible disclosure</span></div>
+          <h3 id="card-2-title">CERT-In · .env exposures</h3>
           <p>Production .env files served in plain sight on licensed banks' domains — reported to CERT-In and RBI, tracked to remediation.</p>
           <div class="card-meta">
             <span class="pill">1,393 hosts scanned</span>
             <span class="pill">2 .env leaks</span>
-            <span class="arrow">→</span>
+            <span class="arrow" aria-hidden="true">→</span>
           </div>
         </a>
-        <a class="card" href="pages/sharepoint-structural-gaps.html">
-          <div class="card-head"><span class="emoji">🏛️</span><span class="tag">architecture analysis</span></div>
-          <h2>SharePoint, structurally quiet</h2>
+        <a class="card" id="card-3" href="pages/sharepoint-structural-gaps.html" aria-labelledby="card-3-title">
+          <div class="card-head"><span class="emoji" aria-hidden="true">🏛️</span><span class="tag">architecture analysis</span></div>
+          <h3 id="card-3-title">SharePoint, structurally quiet</h3>
           <p>On-prem SharePoint's exfiltration gap is a design property, not a CVE: no MFA by default, read&nbsp;=&nbsp;download, estate-wide grants, silence in the logs. Pattern-level — no incident referenced.</p>
           <div class="card-meta">
             <span class="pill">pattern-level</span>
             <span class="pill">hardening checklist</span>
-            <span class="arrow">→</span>
+            <span class="arrow" aria-hidden="true">→</span>
           </div>
         </a>
 
-        <a class="card" href="pages/npci-cl.html">
-          <div class="card-head"><span class="emoji">🧩</span><span class="tag tag-amber">payments infrastructure</span></div>
-          <h2>The invisible UPI library</h2>
+        <a class="card" id="card-4" href="pages/npci-cl.html" aria-labelledby="card-4-title">
+          <div class="card-head"><span class="emoji" aria-hidden="true">🧩</span><span class="tag tag-amber">payments infrastructure</span></div>
+          <h3 id="card-4-title">The invisible UPI library</h3>
           <p>17 UPI app versions from 2016&ndash;2026 dissected to trace NPCI's mandatory Common Library &mdash; the PIN pad inside GPay, PhonePe and BHIM. Every signer certificate in the corpus was already expired when shipped. Full evidence kit on GitHub for independent verification.</p>
           <div class="card-meta">
             <span class="pill">17 APKs, 10 years</span>
             <span class="pill">3/3 certs expired at ship</span>
             <span class="pill">verification kit on GitHub</span>
-            <span class="arrow">→</span>
+            <span class="arrow" aria-hidden="true">→</span>
           </div>
         </a>
 
-        <a class="card" href="pages/fastag-bypass.html">
-          <div class="card-head"><span class="emoji">🛣️</span><span class="tag tag-amber">DPI systems investigation</span></div>
-          <h2>The FASTag bypass</h2>
+        <a class="card" id="card-5" href="pages/fastag-bypass.html" aria-labelledby="card-5-title">
+          <div class="card-head"><span class="emoji" aria-hidden="true">🛣️</span><span class="tag tag-amber">DPI systems investigation</span></div>
+          <h3 id="card-5-title">The FASTag bypass</h3>
           <p>~100 highway plazas ran shadow software that printed NHAI-identical receipts while pocketing cash from non-FASTag vehicles — while the national system saw almost none of it. A one-man software shop gave contractors an unofficial lane around NHAI's toll system: the definitive DPI-fraud case study.</p>
           <div class="card-meta">
             <span class="pill">1,129 plazas parsed</span>
             <span class="pill">PMLA case 2026</span>
-            <span class="arrow">&rarr;</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
           </div>
         </a>
 
@@ -130,39 +150,39 @@
 
   <section class="block">
     <div class="inner">
-      <span class="kicker">🛡️ Our verifications — other people's claims, checked against evidence</span>
+      <h2 class="kicker"><span aria-hidden="true">🛡️</span> Our verifications — other people's claims, checked against evidence</h2>
       <div class="grid3">
 
-        <a class="card" href="pages/cbi-sfms.html">
-          <div class="card-head"><span class="emoji">🏦</span><span class="tag tag-red">claim verification</span></div>
-          <h2>The SFMS heist claim</h2>
+        <a class="card" id="card-6" href="pages/cbi-sfms.html" aria-labelledby="card-6-title">
+          <div class="card-head"><span class="emoji" aria-hidden="true">🏦</span><span class="tag tag-red">claim verification</span></div>
+          <h3 id="card-6-title">The SFMS heist claim</h3>
           <p>187 payment instructions moved ₹13.97 crore out of Central Bank of India's RBI settlement account — with no sender record in any of the bank's own systems. The bank blames the central messaging hub; IFTAS, RBI's own subsidiary, denies any compromise. We scored the claims separately.</p>
           <div class="card-meta">
             <span class="pill">transfers L4 · breach vector L1 disputed</span>
             <span class="pill on">New</span>
-            <span class="arrow">→</span>
+            <span class="arrow" aria-hidden="true">→</span>
           </div>
         </a>
 
-        <a class="card" href="pages/breaches.html">
-          <div class="card-head"><span class="emoji">🕵️</span><span class="tag tag-red">breach verification</span></div>
-          <h2>Ransomware &amp; leak-claim verification</h2>
+        <a class="card" id="card-7" href="pages/breaches.html" aria-labelledby="card-7-title">
+          <div class="card-head"><span class="emoji" aria-hidden="true">🕵️</span><span class="tag tag-red">breach verification</span></div>
+          <h3 id="card-7-title">Ransomware &amp; leak-claim verification</h3>
           <p>Leak-site and breach claims, independently checked at metadata level. Bank of Baroda (Triple X, 1.07 TB, verified), Dodo Payments (DireWolf, L2), the SBI "375k records" listing (fabrication/recycle prior — then a confirmed bank-side loss), Rajasthan Police (ScarlettGroup).</p>
           <div class="card-meta">
             <span class="pill">5 incidents on the bench</span>
             <span class="pill">claimbook L0–L5</span>
-            <span class="arrow">→</span>
+            <span class="arrow" aria-hidden="true">→</span>
           </div>
         </a>
-        <a class="card" href="pages/emudhra.html">
-          <div class="card-head"><span class="emoji">🔑</span><span class="tag tag-red">trust verification</span></div>
-          <h2>eMudhra CA compromise</h2>
+        <a class="card" id="card-8" href="pages/emudhra.html" aria-labelledby="card-8-title">
+          <div class="card-head"><span class="emoji" aria-hidden="true">🔑</span><span class="tag tag-red">trust verification</span></div>
+          <h3 id="card-8-title">eMudhra CA compromise</h3>
           <p>Eight intermediate certificates from an Indian CA that browsers trust carried private keys a schoolchild could guess. One key was the number 4. Claims desk-verified against live TLS handshakes; the full consumer guide, public statement and open letter to RBI and MeitY ride on that verification.</p>
           <div class="card-meta">
             <span class="pill">8 keys, 3&ndash;8 bits</span>
             <span class="pill">RBI &middot; MeitY letter</span>
             <span class="pill on">New: public-audit campaign &middot; send a mail</span>
-            <span class="arrow">→</span>
+            <span class="arrow" aria-hidden="true">→</span>
           </div>
         </a>
 
@@ -177,10 +197,10 @@
           <h2>Flagship sites</h2>
         </div>
         <div class="linklist">
-          <a href="https://bobbreach.cashlessconsumer.in" target="_blank" rel="noopener"><span>BoB breach investigation</span><span class="arrow">↗</span></a>
-          <a href="https://bankin-report.cashlessconsumer.in" target="_blank" rel="noopener"><span>IDRBT registry report</span><span class="arrow">↗</span></a>
-          <a href="https://ccagentorg.github.io/bank-domains-ui/" target="_blank" rel="noopener"><span>Live .bank.in search UI</span><span class="arrow">↗</span></a>
-          <a href="https://github.com/CCAgentOrg/bank-in-domains" target="_blank" rel="noopener"><span>bank-in-domains dataset</span><span class="arrow">↗</span></a>
+          <a href="https://bobbreach.cashlessconsumer.in" target="_blank" rel="noopener"><span>BoB breach investigation</span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="https://bankin-report.cashlessconsumer.in" target="_blank" rel="noopener"><span>IDRBT registry report</span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="https://ccagentorg.github.io/bank-domains-ui/" target="_blank" rel="noopener"><span>Live .bank.in search UI</span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="https://github.com/CCAgentOrg/bank-in-domains" target="_blank" rel="noopener"><span>bank-in-domains dataset</span><span class="arrow" aria-hidden="true">↗</span></a>
         </div>
       </div>
     </div>
@@ -189,7 +209,7 @@
 
 <footer>
   <div class="inner">
-    <span class="f-brand"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
+    <span class="f-brand"><span class="mark" aria-hidden="true">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
     <div class="f-links">
       <a href="https://cashlessconsumer.in">cashlessconsumer.in</a>
       <a href="https://x.com/logic" target="_blank" rel="noopener">@logic</a>
@@ -198,6 +218,28 @@
     <span class="f-note">All probes read-only · No PII published · Human-supervised agentic work</span>
   </div>
 </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "cyber.cashlessconsumer.in",
+  "alternateName": "CashlessConsumer Security Investigations",
+  "url": "https://cyber.cashlessconsumer.in/",
+  "publisher": { "@type": "Organization", "name": "CashlessConsumer", "url": "https://cashlessconsumer.in/" },
+  "hasPart": [
+    { "@type": "WebPage", "name": "The FASTag bypass", "url": "https://cyber.cashlessconsumer.in/pages/fastag-bypass.html" },
+    { "@type": "WebPage", "name": ".bank.in security audit", "url": "https://cyber.cashlessconsumer.in/pages/bank-in-report.html" },
+    { "@type": "WebPage", "name": "Ransomware &amp; leak-claim verification", "url": "https://cyber.cashlessconsumer.in/pages/breaches.html" },
+    { "@type": "WebPage", "name": "CBI · SFMS incident verified", "url": "https://cyber.cashlessconsumer.in/pages/cbi-sfms.html" },
+    { "@type": "WebPage", "name": "SharePoint, structurally quiet", "url": "https://cyber.cashlessconsumer.in/pages/sharepoint-structural-gaps.html" },
+    { "@type": "WebPage", "name": "eMudhra CA compromise", "url": "https://cyber.cashlessconsumer.in/pages/emudhra.html" },
+    { "@type": "WebPage", "name": "The invisible UPI library", "url": "https://cyber.cashlessconsumer.in/pages/npci-cl.html" },
+    { "@type": "WebPage", "name": "CERT-In · .env exposures", "url": "https://cyber.cashlessconsumer.in/pages/cert-in-dotenv.html" },
+    { "@type": "WebPage", "name": "Method &amp; Ethics", "url": "https://cyber.cashlessconsumer.in/pages/about.html" }
+  ]
+}
+</script>
 
 <script src="js/main.js"></script>
 </body>

@@ -84,3 +84,18 @@ cyber/
 ├── CNAME
 ├── .github/workflows/deploy.yml
 ```
+
+## UX & agent layer (2026-10-30)
+
+Accessibility + agent-readability pass, no content changes. Every page: skip-to-content
+link, `#main` target, unified 10-item nav (JS adds `.active` + `aria-current`), visible
+"Agentic work" disclosure (`<summary>` is now the first child of `<details>` — the old
+nested markup made the strip render as a generic "Details" label with all copy hidden),
+aria-labelled scrollable table regions, `scope="col"` headers, underlined in-prose links
+(WCAG 1.4.1), decorative glyphs `aria-hidden`, reduced-motion gating, AA-passing tertiary
+text (`--muted-2: #8a9e91`). cbi-sfms tabs are a correct ARIA tablist (roving tabindex,
+arrow keys, the "All breach verifications" link moved out of the tablist). Agent surface:
+favicon/apple-touch-icon, per-page Open Graph + Twitter meta (`images/og.png`,
+`pages/emudhra/og.png`), JSON-LD WebSite+ItemList on the hub, `sitemap.xml`, `robots.txt`,
+`llms.txt`, themed `404.html`. Local check: serve the tree, run axe-core on every page —
+zero violations is the merge bar.

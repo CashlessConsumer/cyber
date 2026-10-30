@@ -6,24 +6,62 @@
 <title>The FASTag Bypass — How a one-man software shop went around NHAI's toll system — CashlessConsumer</title>
 <meta name="description" content="Two years of shadow software at ~100 FASTag toll plazas — how India's war on cash missed the real attack surface, and why more digitisation is no substitute for IT audit capability.">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+<meta name="color-scheme" content="dark">
+<meta property="og:site_name" content="CashlessConsumer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The FASTag Bypass — How a one-man software shop went around NHAI's toll system — CashlessConsumer">
+<meta property="og:description" content="Two years of shadow software at ~100 FASTag toll plazas — how India's war on cash missed the real attack surface, and why more digitisation is no substitute for IT audit capability.">
+<meta property="og:url" content="https://cyber.cashlessconsumer.intoll-shadow-apps.html">
+<meta property="og:image" content="https://cyber.cashlessconsumer.in/images/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="cyber.cashlessconsumer.in — independent security research by CashlessConsumer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@logic">
 </head>
 <body id="top">
 
 <header class="topbar">
   <div class="inner">
-    <a class="brand" href="../index.html"><span class="mark">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
-    <nav class="links">
+    <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+        <nav class="links" id="primary-nav" aria-label="Primary">
       <a href="../index.html">Home</a>
+      <a href="fastag-bypass.html">Shadow Toll</a>
       <a href="bank-in-report.html">.bank.in Audit</a>
-      <a href="toll-shadow-apps.html" class="active">Shadow Toll</a>
       <a href="breaches.html">Breaches</a>
+      <a href="cbi-sfms.html">CBI · SFMS</a>
+      <a href="sharepoint-structural-gaps.html">SharePoint</a>
+      <a href="emudhra.html">eMudhra CA</a>
+      <a href="npci-cl.html">UPI Common Library</a>
       <a href="cert-in-dotenv.html">CERT-In · .env</a>
       <a href="about.html">Method &amp; Ethics</a>
     </nav>
-    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
   </div>
 </header>
 
+<details class="disclosure">
+  <summary>
+    <div class="inner">
+      <span class="ai-badge">Agentic work</span> Human-supervised AI on Zo Computer <span class="dblink">▸ what this means</span>
+    </div>
+  </summary>
+  <div class="d-body">
+    <div class="inner">
+      <p>Everything on this site is <b>agentic cyber work</b>: AI agents running on
+      <b>Zo Computer</b> plan the probes, execute read-only scans, analyse the results and
+      draft the findings — <b>predominantly on GLM 5.3 Flash</b> — the cheapest flash-tier model available, run with Zero Data Retention. A human steers and monitors
+      every stage. No scan runs, no finding is disclosed and no text is published without human
+      review and sign-off.</p>
+      <p>The machine does the legwork at speed and scale; the intent, the ethics and the
+      accountability are human.</p>
+    </div>
+  </div>
+</details>
+
+<main id="main">
 <section class="page-hero toll">
   <div class="inner">
     <span class="kicker">DPI systems investigation · September 2026</span>
@@ -41,7 +79,7 @@
       <a class="cta" href="toll-shadow-apps-explainer.pdf">Read the full PDF report (38 pp)</a>
       <a class="cta ghost" href="#opendata">Jump to the open data</a>
     </div>
-  <details class="mini-toc"><summary>On this page (10 sections)</summary><nav><a href="#sec-1-how-a-toll-plaza-actually-wo"><span class="toc-n">1</span>How a toll plaza actually works</a><a href="#sec-2-the-scam"><span class="toc-n">2</span>The scam</a><a href="#sec-3-why-nobody-caught-it"><span class="toc-n">3</span>Why nobody caught it</a><a href="#sec-4-timeline"><span class="toc-n">4</span>Timeline</a><a href="#sec-5-the-names-problem"><span class="toc-n">5</span>The names problem</a><a href="#sec-6-what-changed-and-what-didn-t"><span class="toc-n">6</span>What changed (and what didn't)</a><a href="#sec-privacy"><span class="toc-n">7</span>Privacy & the state's stake</a><a href="#sec-7-for-the-driver"><span class="toc-n">8</span>For the driver</a><a href="#sec-8-the-open-data"><span class="toc-n">9</span>The open data</a><a href="#sec-9-sources-amp-evidence"><span class="toc-n">10</span>Sources & evidence</a></nav></details>
+  <details class="mini-toc"><summary>On this page (10 sections)</summary><nav aria-label="On this page"><a href="#sec-1-how-a-toll-plaza-actually-wo"><span class="toc-n">1</span>How a toll plaza actually works</a><a href="#sec-2-the-scam"><span class="toc-n">2</span>The scam</a><a href="#sec-3-why-nobody-caught-it"><span class="toc-n">3</span>Why nobody caught it</a><a href="#sec-4-timeline"><span class="toc-n">4</span>Timeline</a><a href="#sec-5-the-names-problem"><span class="toc-n">5</span>The names problem</a><a href="#sec-6-what-changed-and-what-didn-t"><span class="toc-n">6</span>What changed (and what didn't)</a><a href="#sec-privacy"><span class="toc-n">7</span>Privacy & the state's stake</a><a href="#sec-7-for-the-driver"><span class="toc-n">8</span>For the driver</a><a href="#sec-8-the-open-data"><span class="toc-n">9</span>The open data</a><a href="#sec-9-sources-amp-evidence"><span class="toc-n">10</span>Sources & evidence</a></nav></details>
   </div>
 </section>
 
@@ -73,9 +111,9 @@
     <h2 id="sec-2-the-scam">2 · The scam<a class="anchor" href="#sec-2-the-scam">#</a></h2>
     <p>In January 2025, UP STF raided the Atraila Shiv Gulam plaza on NH-135 near Mirzapur after a citizen complaint about cash being taken from tag-less vehicles <em>without</em> receipts. What they found was not a greedy booth clerk but a small software firm's work.</p>
     <p><strong>Alok Kumar Singh</strong>, 35, an MCA who had briefly worked at a toll plaza in 2021, had built a pair of applications — later referred to as <em>'Mobdata'</em> and <em>'Any'</em> — and rented them out to collection agencies across the country:</p>
-    <div class="table-wrap">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="2 · The scam (table, scrolls horizontally)">
       <table>
-        <thead><tr><th>Element</th><th>What it did</th></tr></thead>
+        <thead><tr><th scope="col">Element</th><th scope="col">What it did</th></tr></thead>
         <tbody>
           <tr><td>Client app (booth PC)</td><td>Ran on the plaza's own computers alongside the official TMS. Computed the same 2× fee from the public toll schedule. Printed <strong>identical thermal receipts</strong> on the same printer — drivers had no way to tell.</td></tr>
           <tr><td>The 5% rule</td><td>Only ~5% of non-FASTag transactions were keyed into the official TMS — just enough to make the day's exemption/violation numbers look plausible. The rest existed only in the shadow app.</td></tr>
@@ -107,9 +145,9 @@
 <section class="block">
   <div class="inner prose">
     <h2 id="sec-4-timeline">4 · Timeline<a class="anchor" href="#sec-4-timeline">#</a></h2>
-    <div class="table-wrap">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="4 · Timeline (table, scrolls horizontally)">
       <table class="dates">
-        <thead><tr><th>Date</th><th>Event</th></tr></thead>
+        <thead><tr><th scope="col">Date</th><th scope="col">Event</th></tr></thead>
         <tbody>
           <tr><td class="mono">2021</td><td>Singh works briefly at a toll plaza; begins building the bypass.</td></tr>
           <tr><td class="mono">~2023</td><td>Fraud goes live; spreads to agencies across 14+ states.</td></tr>
@@ -140,9 +178,9 @@
 <section class="block">
   <div class="inner prose">
     <h2 id="sec-6-what-changed-and-what-didn-t">6 · What changed (and what didn't)<a class="anchor" href="#sec-6-what-changed-and-what-didn-t">#</a></h2>
-    <div class="table-wrap">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="6 · What changed (and what didn't) (table, scrolls horizontally)">
       <table>
-        <thead><tr><th>Fix</th><th>Status</th><th>Verdict</th></tr></thead>
+        <thead><tr><th scope="col">Fix</th><th scope="col">Status</th><th scope="col">Verdict</th></tr></thead>
         <tbody>
           <tr><td>Cash abolished at plazas (FASTag/UPI-only)</td><td>Live since Apr 2026</td><td class="tag-green">Kills this fraud's vector entirely</td></tr>
           <tr><td>MLFF barriers-free tolling (violations become digital e-notices)</td><td>First RFPs issued; one-plaza pilots</td><td class="tag-green">Digitises the exception itself — but scales one plaza at a time</td></tr>
@@ -183,9 +221,9 @@
     <h2 id="sec-8-the-open-data">9 · The open data<a class="anchor" href="#sec-8-the-open-data">#</a></h2>
       <p><strong>Update (5 Sep):</strong> joining the scam plaza list to IHMCL&rsquo;s March 2023 plaza master &mdash; which records the NETC <em>acquiring bank</em> per plaza (1,233 plazas; export: <a href="https://zo.pub/cashlessconsumer/fastagscam-open-data/fastag-tracker-acquirer-ihmcl-2023.csv">fastag-tracker-acquirer-ihmcl-2023.csv</a>) &mdash; one bank sits under most resolvable scam plazas: <strong>IDFC FIRST Bank</strong>. Strict matching resolves 18 of 42 plazas; 15 of the 18 (83%) are IDFC-acquired against a network base rate of 39.7% &mdash; about 1-in-5,200 by chance. The likely mechanism is selection, not detection: IDFC was IHMCL&rsquo;s largest acquirer exactly in the small public-funded-plaza segment where this scam lived. And the acquirer only routes <em>tagged</em> transactions &mdash; the shadow app&rsquo;s takings were cash from exempt vehicles, flows that never touch the bank. We read it as a map of where the merchant rail was thinnest, not as evidence of bank-side knowledge. The 2023&ndash;25 acquirer register and per-plaza exempt-transaction logs remain an RTI away.</p>
     <p>To test how far the scam network reached into the official registry, we parsed IHMCL's <em>National Highway Fee Plaza list</em> (August 2025 — the official NETC plaza registry) from PDF into structured data:</p>
-    <div class="table-wrap">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="9 · The open data — state plaza registry (table, scrolls horizontally)">
       <table>
-        <thead><tr><th>State</th><th>Plazas in registry</th></tr></thead>
+        <thead><tr><th scope="col">State</th><th scope="col">Plazas in registry</th></tr></thead>
         <tbody>
           <tr><td>Rajasthan</td><td>164</td></tr>
           <tr><td>Uttar Pradesh</td><td>141</td></tr>
@@ -203,9 +241,9 @@
       </table>
     </div>
     <p><strong>1,129 plazas across 22 states.</strong> The scam's footprint touches this registry everywhere: for example, the case's ground-zero plaza —</p>
-    <div class="table-wrap">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="9 · The open data — scam plazas vs registry (table, scrolls horizontally)">
       <table>
-        <thead><tr><th>Scam plaza (from STF/press)</th><th>NETC code</th><th>In official registry (Aug 2025)?</th></tr></thead>
+        <thead><tr><th scope="col">Scam plaza (from STF/press)</th><th scope="col">NETC code</th><th scope="col">In official registry (Aug 2025)?</th></tr></thead>
         <tbody>
           <tr><td>Atraila Shiv Gulam (Mirzapur, UP) — ground zero</td><td class="mono">320132</td><td>Yes — still listed</td></tr>
           <tr><td>Patni Pratappur (Shamli, UP)</td><td class="mono">536051</td><td>Yes</td></tr>
@@ -235,7 +273,6 @@
       <div class="card" style="margin-top:14px">
         <p><strong>Are any of the scam plazas ToT (institutional-leased) assets? No.</strong> The July 2026 official plaza master carries a concession-type marker per plaza (TOT / PF / Conc. / STATE). Cross-walking all 42 Jagran-listed plazas: every legible row resolves to <span class="chip exposed">PF</span> public-funded or state-highway authority — <span class="chip remediated">zero TOT</span>. Atraila: PF/HAM. The master's TOT-flagged plazas (Saurashtra cluster, Godavari belt, Jhansi–Lalitpur–Rae Bareli = real ToT bundles 11–12, Ranchi, Ghaziabad-Maple) share no name with the scam list. The scam lived precisely where institutional money and 30-year P&amp;Ls are absent — low-bid, two-year user-fee contracts on public-funded plazas, plus state roads outside NHAI oversight entirely.</p>
       </div>
-    </div>
   </div>
 </section>
 
@@ -259,9 +296,11 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="inner">
-    <span class="f-brand"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
+    <span class="f-brand"><span class="mark" aria-hidden="true">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
     <div class="f-links">
       <a href="https://cashlessconsumer.in">cashlessconsumer.in</a>
       <a href="https://x.com/logic" target="_blank" rel="noopener">@logic</a>
@@ -269,9 +308,9 @@
     </div>
     <span class="f-note">Public documents only · No PII published · Human-supervised agentic work</span>
   </div>
+<a class="back-top" href="#top" aria-label="Back to top">↑ top</a>
 </footer>
 
 <script src="../js/main.js"></script>
-<a class="back-top" href="#top" aria-label="Back to top">↑ top</a>
 </body>
 </html>

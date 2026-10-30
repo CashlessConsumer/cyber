@@ -1,0 +1,33 @@
+# cyber.cashlessconsumer.in
+
+> Independent security research on India's financial and government
+> infrastructure, published by CashlessConsumer. Two kinds of work live here:
+> **Our work** — original research (audits, responsible disclosures,
+> reverse-engineering) — and **Our verifications** — other parties' claims
+> checked against evidence (leak sites, breach chatter, institutional
+> statements). All probes are read-only, findings are disclosed responsibly
+> before publication, and no consumer PII is ever republished. All site work is
+> human-supervised AI on Zo Computer.
+
+Method and ethics: [Method & Ethics](https://cyber.cashlessconsumer.in/pages/about.html): read-only probes, metadata-level analysis, no PII, responsible disclosure to CERT-In and affected institutions.
+
+## Our work — original research
+
+- [.bank.in security audit](https://cyber.cashlessconsumer.in/pages/bank-in-report.html): the Indian financial namespace mapped — 4,199 subdomains probed for resolution, HTTPS and exposure, plus the IDRBT registry investigation. Live data: [bank-in-domains](https://github.com/CCAgentOrg/bank-in-domains), [search UI](https://ccagentorg.github.io/bank-domains-ui/), [IDRBT registry report](https://bankin-report.cashlessconsumer.in).
+- [CERT-In · .env exposures](https://cyber.cashlessconsumer.in/pages/cert-in-dotenv.html): production .env files served on licensed banks' domains — reported to CERT-In and RBI, tracked to remediation.
+- [SharePoint, structurally quiet](https://cyber.cashlessconsumer.in/pages/sharepoint-structural-gaps.html): on-prem SharePoint's exfiltration gap as a design property (pattern-level, no incident referenced).
+- [The invisible UPI library](https://cyber.cashlessconsumer.in/pages/npci-cl.html): 17 UPI app versions (2016–2026) reverse-engineered to trace NPCI's mandatory Common Library; every signer certificate in the corpus was expired when shipped. Verification kit: [npci-cl-evolution](https://github.com/CashlessConsumer/npci-cl-evolution).
+- [The FASTag bypass](https://cyber.cashlessconsumer.in/pages/fastag-bypass.html): shadow software at ~100 highway toll plazas printed NHAI-identical receipts while pocketing cash — the DPI-fraud case study, with [open plaza data](https://zo.pub/cashlessconsumer/fastagscam-open-data). Report detail: [Shadow Toll](https://cyber.cashlessconsumer.in/pages/toll-shadow-apps.html).
+
+## Our verifications — claims checked against evidence
+
+- [Ransomware & leak-claim verification index](https://cyber.cashlessconsumer.in/pages/breaches.html): claims scored on a claimbook L0–L5 rubric, metadata-level only.
+- [Bank of Baroda breach](https://cyber.cashlessconsumer.in/pages/bob-breach.html): verification gateway — full investigation at [bobbreach.cashlessconsumer.in](https://bobbreach.cashlessconsumer.in). [Dodo Payments](https://cyber.cashlessconsumer.in/pages/dodo-breach.html) (DireWolf) also on the bench.
+- [CBI / SFMS incident](https://cyber.cashlessconsumer.in/pages/cbi-sfms.html): 187 unauthorised RTGS transfers, ₹13.97 crore, out of Central Bank of India's settlement account (Oct 2026); transfers corroborated, breach vector disputed — claims scored separately.
+- [eMudhra CA compromise](https://cyber.cashlessconsumer.in/pages/emudhra.html): eight intermediate certificates from a trusted Indian CA had guessable private keys (one was the number 4). Full record: [investigation site](https://cyber.cashlessconsumer.in/pages/emudhra/), [public statement](https://cyber.cashlessconsumer.in/pages/emudhra/statement.html), [open letter to RBI and MeitY](https://cyber.cashlessconsumer.in/pages/emudhra/letter.html), [public-audit campaign](https://cyber.cashlessconsumer.in/pages/emudhra/campaign.html).
+
+## For agents
+
+- Machine index: [sitemap.xml](https://cyber.cashlessconsumer.in/sitemap.xml)
+- This file: [llms.txt](https://cyber.cashlessconsumer.in/llms.txt)
+- Contact: [@logic](https://x.com/logic) · [cashlessconsumer.in](https://cashlessconsumer.in)

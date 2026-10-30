@@ -12,22 +12,62 @@
       .table-wrap td, .table-wrap th { white-space: normal; }
     }
   </style>
+<link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+<meta name="color-scheme" content="dark">
+<meta property="og:site_name" content="CashlessConsumer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The FASTag Bypass — one-page summary | cyber.cashlessconsumer.in">
+<meta property="og:description" content="How shadow software on India's highway toll booths printed fake receipts for two years at ~100 plazas — the case, the numbers, the court reversal, and what we demand of NPCI and NHAI.">
+<meta property="og:url" content="https://cyber.cashlessconsumer.infastag-bypass.html">
+<meta property="og:image" content="https://cyber.cashlessconsumer.in/images/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="cyber.cashlessconsumer.in — independent security research by CashlessConsumer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@logic">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <header>
   <div class="inner">
-    <a class="brand" href="index.html"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span></a>
-    <nav class="links">
-      <a href="index.html">Home</a>
-      <a href="pages/bank-in-report.html">.bank.in Audit</a>
-      <a href="pages/breaches.html">Breaches</a>
-      <a href="pages/cert-in-dotenv.html">CERT-In .env</a>
-      <a href="about.html">Method &amp; ethics</a>
+    <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+        <nav class="links" id="primary-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="fastag-bypass.html">Shadow Toll</a>
+      <a href="bank-in-report.html">.bank.in Audit</a>
+      <a href="breaches.html">Breaches</a>
+      <a href="cbi-sfms.html">CBI · SFMS</a>
+      <a href="sharepoint-structural-gaps.html">SharePoint</a>
+      <a href="emudhra.html">eMudhra CA</a>
+      <a href="npci-cl.html">UPI Common Library</a>
+      <a href="cert-in-dotenv.html">CERT-In · .env</a>
+      <a href="about.html">Method &amp; Ethics</a>
     </nav>
-    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
   </div>
 </header>
 
+<details class="disclosure">
+  <summary>
+    <div class="inner">
+      <span class="ai-badge">Agentic work</span> Human-supervised AI on Zo Computer <span class="dblink">▸ what this means</span>
+    </div>
+  </summary>
+  <div class="d-body">
+    <div class="inner">
+      <p>Everything on this site is <b>agentic cyber work</b>: AI agents running on
+      <b>Zo Computer</b> plan the probes, execute read-only scans, analyse the results and
+      draft the findings — <b>predominantly on GLM 5.3 Flash</b> — the cheapest flash-tier model available, run with Zero Data Retention. A human steers and monitors
+      every stage. No scan runs, no finding is disclosed and no text is published without human
+      review and sign-off.</p>
+      <p>The machine does the legwork at speed and scale; the intent, the ethics and the
+      accountability are human.</p>
+    </div>
+  </div>
+</details>
+
+<main id="main">
 <section class="page-hero toll">
   <div class="inner">
     <span class="kicker">One-page summary · Updated 6 September 2026</span>
@@ -63,11 +103,11 @@
 <section class="block alt">
   <div class="inner prose">
     <h2 id="sec-2">The numbers, checked<a class="anchor" href="#sec-2">#</a></h2>
-    <a href="../images/fastag-bypass-scam-poster.png" target="_blank" rel="noopener"><img src="../images/fastag-bypass-scam-poster.png" alt="Estimating the FASTag Bypass Scam — scenario table poster" style="width:100%;height:auto;border:1px solid var(--line);border-radius:var(--radius);"></a>
+    <a href="../images/fastag-bypass-scam-poster.png" target="_blank" rel="noopener"><img src="../images/fastag-bypass-scam-poster.png" alt="Estimating the FASTag Bypass Scam — scenario table poster" width="1920" height="1080" loading="lazy" decoding="async" style="width:100%;height:auto;border:1px solid var(--line);border-radius:var(--radius);"></a>
     <p style="font-size:0.85rem;color:var(--muted);margin-top:10px;">These are <em>estimates from public data</em>, not court findings. The one hard number in the record is the STF's ₹45,000/day at Atraila; everything else scales it under two intensity assumptions and three coverage windows. Method and reproducible script: <a href="toll-shadow-apps-explainer.pdf">report §13C</a> · <a href="https://zo.pub/cashlessconsumer/fastagscam-open-data">open data</a>.</p>
-    <div class="table-wrap">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="The numbers, checked# (table, scrolls horizontally)">
       <table>
-        <thead><tr><th>What officials said</th><th>Our model says</th></tr></thead>
+        <thead><tr><th scope="col">What officials said</th><th scope="col">Our model says</th></tr></thead>
         <tbody>
           <tr><td>STF: ₹120 crore across the network</td><td><strong>Consistent.</strong> Implies ₹2.9 crore/plaza ≈ 635 days at Atraila's measured intensity — inside our central band.</td></tr>
           <tr><td>Early press: ₹750 crore</td><td><strong>Inflated.</strong> Needs 5.4× Atraila's intensity at <em>every</em> plaza for two full years. No supporting evidence.</td></tr>
@@ -118,9 +158,11 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="inner">
-    <span class="f-brand"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
+    <span class="f-brand"><span class="mark" aria-hidden="true">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
     <div class="f-links">
       <a href="https://cashlessconsumer.in">cashlessconsumer.in</a>
       <a href="https://x.com/logic" target="_blank" rel="noopener">@logic</a>

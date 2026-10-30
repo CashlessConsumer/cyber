@@ -1,0 +1,5 @@
+# cyber.cashlessconsumer.in
+User-agent: *
+Allow: /
+
+Sitemap: https://cyber.cashlessconsumer.in/sitemap.xml

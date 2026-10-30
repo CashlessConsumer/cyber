@@ -8,28 +8,51 @@
 <meta name="theme-color" content="#0a0e0a">
 <link rel="canonical" href="https://cyber.cashlessconsumer.in/pages/cert-in-dotenv.html">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+<meta name="color-scheme" content="dark">
+<meta property="og:site_name" content="CashlessConsumer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CERT-In Reports · Exposed .env Files — Security Investigations">
+<meta property="og:description" content="CashlessConsumer's responsible disclosures to CERT-In of production .env files exposed at the web root of Indian banks — SMTP credentials and API key pairs in plain sight, plus the 9-entity expanded disclosure.">
+<meta property="og:url" content="https://cyber.cashlessconsumer.in/pages/cert-in-dotenv.html">
+<meta property="og:image" content="https://cyber.cashlessconsumer.in/images/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="cyber.cashlessconsumer.in — independent security research by CashlessConsumer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@logic">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="topbar">
   <div class="inner">
-    <a class="brand" href="../index.html"><span class="mark">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
-    <nav class="links">
+    <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◆</span> cyber<span class="tld">.cashlessconsumer.in</span></a>
+        <nav class="links" id="primary-nav" aria-label="Primary">
       <a href="../index.html">Home</a>
-      <a href="toll-shadow-apps.html">Shadow Toll</a>
+      <a href="fastag-bypass.html">Shadow Toll</a>
       <a href="bank-in-report.html">.bank.in Audit</a>
       <a href="breaches.html">Breaches</a>
+      <a href="cbi-sfms.html">CBI · SFMS</a>
+      <a href="sharepoint-structural-gaps.html">SharePoint</a>
+      <a href="emudhra.html">eMudhra CA</a>
+      <a href="npci-cl.html">UPI Common Library</a>
       <a href="cert-in-dotenv.html">CERT-In · .env</a>
       <a href="about.html">Method &amp; Ethics</a>
     </nav>
-    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
   </div>
 </header>
 
 <details class="disclosure">
-  <div class="inner">
-    <summary><span class="ai-badge">Agentic work</span> Human-supervised AI on Zo Computer <span class="dblink">▸ what this means</span></summary>
-    <div class="d-body">
+  <summary>
+    <div class="inner">
+      <span class="ai-badge">Agentic work</span> Human-supervised AI on Zo Computer <span class="dblink">▸ what this means</span>
+    </div>
+  </summary>
+  <div class="d-body">
+    <div class="inner">
       <p>Everything on this site is <b>agentic cyber work</b>: AI agents running on
       <b>Zo Computer</b> plan the probes, execute read-only scans, analyse the results and
       draft the findings — <b>predominantly on GLM 5.3 Flash</b> — the cheapest flash-tier model available, run with Zero Data Retention. A human steers and monitors
@@ -43,7 +66,7 @@
 
 
 
-<main>
+<main id="main">
   <section class="page-hero env">
     <div class="inner">
       <div class="crumb"><a href="../index.html">cyber</a> / CERT-In · .env</div>
@@ -65,10 +88,10 @@
         Prompted by a post asking, “it shouldn't be this easy,” we ran a systematic, read-only scan across the entire
         <span class="mono">.bank.in</span> namespace on <strong>18 August 2026</strong>.
       </p>
-      <div class="table-wrap">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="How it was found (table, scrolls horizontally)">
         <table>
           <thead>
-            <tr><th>Metric</th><th>Value</th></tr>
+            <tr><th scope="col">Metric</th><th scope="col">Value</th></tr>
           </thead>
           <tbody>
             <tr><td>Unique hostnames scanned</td><td>1,393</td></tr>
@@ -81,10 +104,10 @@
       </div>
 
       <h2>The confirmed <span class="mono">.env</span> exposures</h2>
-      <div class="table-wrap">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="The confirmed .env exposures (table, scrolls horizontally)">
         <table>
           <thead>
-            <tr><th>Host</th><th>Bank</th><th>What was exposed</th></tr>
+            <tr><th scope="col">Host</th><th scope="col">Bank</th><th scope="col">What was exposed</th></tr>
           </thead>
           <tbody>
             <tr>
@@ -110,10 +133,10 @@
         Beyond the two live <span class="mono">.env</span> leaks, the scan surfaced additional misconfigurations that were all folded
         into a single expanded disclosure to CERT-In — nine entities in total:
       </p>
-      <div class="table-wrap">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="The wider scan: 9 entities revealed (table, scrolls horizontally)">
         <table>
           <thead>
-            <tr><th>#</th><th>Class</th><th>Entities</th></tr>
+            <tr><th scope="col">#</th><th scope="col">Class</th><th scope="col">Entities</th></tr>
           </thead>
           <tbody>
             <tr><td>1–2</td><td><b>Production <span class="mono">.env</span></b></td><td>NSDL Payments Bank, Baran Nagrik Sahakari Bank</td></tr>
@@ -157,10 +180,10 @@
         Three separate disclosures went to CERT-In in the last fortnight, plus direct notifications to affected entities.
         CERT-In registered and actioned each; references are quoted from their PGP-signed replies.
       </p>
-      <div class="table-wrap">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Reports filed — 14–28 Aug 2026 (table, scrolls horizontally)">
         <table>
           <thead>
-            <tr><th>Report</th><th>Filed</th><th>CERT-In reference</th></tr>
+            <tr><th scope="col">Report</th><th scope="col">Filed</th><th scope="col">CERT-In reference</th></tr>
           </thead>
           <tbody>
             <tr>
@@ -187,10 +210,10 @@
         Ten days after the expanded report, we re-probed every reported path with the same read-only method. Detail below is
         limited to the <span class="mono">.env</span> exposures; for the other classes we state only entity + class + status.
       </p>
-      <div class="table-wrap">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Re-check — 28 Aug 2026 (table, scrolls horizontally)">
         <table>
           <thead>
-            <tr><th>Entity</th><th>Class</th><th>19 Aug (reported)</th><th>28 Aug (re-check)</th></tr>
+            <tr><th scope="col">Entity</th><th scope="col">Class</th><th scope="col">19 Aug (reported)</th><th scope="col">28 Aug (re-check)</th></tr>
           </thead>
           <tbody>
             <tr><td>Baran Nagrik Sahakari Bank</td><td><span class="mono">.env</span></td><td>live (206)</td><td><span class="pill on">Fixed</span> — 403; CERT-In confirmed closure 21 Aug</td></tr>
@@ -217,10 +240,10 @@
       </p>
 
       <h2>Earlier remediation status</h2>
-      <div class="table-wrap">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Earlier remediation status (table, scrolls horizontally)">
         <table>
           <thead>
-            <tr><th>Entity</th><th>Status</th></tr>
+            <tr><th scope="col">Entity</th><th scope="col">Status</th></tr>
           </thead>
           <tbody>
             <tr><td>NSDL Payments Bank</td><td><span class="pill on">WAF-blocked</span> (19 Aug) — verify origin removal recommended</td></tr>
@@ -247,7 +270,7 @@
 
 <footer>
   <div class="inner">
-    <span class="f-brand"><span class="mark">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
+    <span class="f-brand"><span class="mark" aria-hidden="true">◆</span> cyber<span>.cashlessconsumer.in</span> — independent security research</span>
     <div class="f-links">
       <a href="https://cashlessconsumer.in">cashlessconsumer.in</a>
       <a href="https://x.com/logic" target="_blank" rel="noopener">@logic</a>

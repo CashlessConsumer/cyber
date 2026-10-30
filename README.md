@@ -39,8 +39,18 @@ open letter and public-audit campaign are work products on top.
 | `data/` | Open datasets referenced by pages (CSV) |
 | `css/style.css` | Shared stylesheet (dark security theme) |
 | `js/main.js` | Shared nav + theme toggle |
+| `images/` | favicon.svg + PNG fallbacks + apple-touch-icon + og.png social cards |
+| `sitemap.xml` / `robots.txt` / `llms.txt` | Crawler + agent surface |
 | `CNAME` | Custom domain: cyber.cashlessconsumer.in |
 | `.github/workflows/deploy.yml` | GitHub Pages build & deploy |
+
+## UX & agent layer (2026-10-30)
+
+- Skip-to-content link, landmarks, `aria-label`ed primary nav, valid `<details><summary>` agentic-work disclosure, `aria-expanded` mobile toggle (Escape + outside-click close), `aria-current` active link.
+- WCAG 2.2 AA contrast (`--muted-2` lifted to 6.8:1), focus-visible rings incl. summary/CTA, `prefers-reduced-motion` gates, prose links underlined (not color-only), table wrappers keyboard-scrollable (`role=region` + labels).
+- Brand assets: `images/favicon.svg` + PNG fallbacks + `apple-touch-icon`; OG/Twitter meta + `og.png` card on every page; `color-scheme` declared.
+- Agent surface: `sitemap.xml`, `robots.txt`, `llms.txt`, JSON-LD `WebSite` graph on the hub.
+- Unified 10-item nav on every page (was 5 divergent sets, incl. broken `pages/pages/…` links on fastag-bypass); themed 404.
 
 ## Data provenance
 

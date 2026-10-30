@@ -10,9 +10,19 @@
 <meta property="og:type" content="website">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+<meta property="og:site_name" content="CashlessConsumer">
+<meta property="og:url" content="https://cyber.cashlessconsumer.in/pages/emudhra/index.html">
+<meta property="og:image" content="https://cyber.cashlessconsumer.in/images/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="cyber.cashlessconsumer.in — independent security research by CashlessConsumer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@logic">
+<meta name="color-scheme" content="light">
 </head>
 <body>
-<div class="hub-crumb"><a href="../../index.html">&#9670; cyber.cashlessconsumer.in</a><span class="sep">/</span>eMudhra CA compromise</div>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="hub-crumb" aria-label="Breadcrumb"><a href="../../index.html"><span aria-hidden="true">&#9670;</span> cyber.cashlessconsumer.in</a><span class="sep">/</span>eMudhra CA compromise</nav>
 
 <header class="site-header">
   <div class="wrap-wide">
@@ -20,7 +30,7 @@
       <span class="brand-badge">CC</span>
       <span class="brand-name">CashlessConsumer</span>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="eMudhra sections">
       <a href="#consumers">For consumers</a>
       <a href="statement.html">Statement</a>
       <a href="letter.html">Open letter</a>
@@ -32,7 +42,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="hero">
     <div class="wrap">
       <div class="hero-kicker">eMudhra CA compromise &middot; 21 October 2026</div>
@@ -92,14 +102,14 @@
       <h3>Who is protected, and who is not</h3>
       <div class="cols">
         <div class="col ok">
-          <h4>Protected after updates</h4>
+          <h3>Protected after updates</h3>
           <ul>
             <li>Chrome, Firefox and Safari, updated after 17&ndash;19 October</li>
             <li>Signal, WhatsApp and WireGuard, which verify certificates independently</li>
           </ul>
         </div>
         <div class="col bad">
-          <h4>Exposed for longer</h4>
+          <h3>Exposed for longer</h3>
           <ul>
             <li>Command-line tools: curl, pip, package managers</li>
             <li>Docker images and CI systems with frozen CA bundles</li>
@@ -144,17 +154,17 @@ curl https://dv-g3b-aaa-emudhra.we-have-a-problem.com/</code></pre>
       <div class="videos">
         <div class="video-card">
           <div class="video-embed"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/zoxUqwfY8SY" title="The Hack That Faked Google's Padlock" allowfullscreen></iframe></div>
-          <h4>The Hack That Faked Google's Padlock</h4>
+          <h3>The Hack That Faked Google's Padlock</h3>
           <p class="fine">SuperUzer &middot; 14 Oct 2026 &middot; the companion incident: hijacked .gh/.sl/.as registries, valid Google certificates, and how Certificate Transparency and CRLSets caught and killed them.</p>
         </div>
         <div class="video-card">
           <div class="video-embed"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/UIcCwuYzxcE" title="How HTTPS Works - It's Not Just Encryption" allowfullscreen></iframe></div>
-          <h4>How HTTPS Works &ndash; It's Not Just Encryption</h4>
+          <h3>How HTTPS Works &ndash; It's Not Just Encryption</h3>
           <p class="fine">LearnThatStack &middot; Apr 2026 &middot; the chain of trust, what a certificate authority actually vouches for, and why self-signed certificates fail. Start here if the padlock has always been a mystery.</p>
         </div>
         <div class="video-card">
           <div class="video-embed"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/EnY6fSng3Ew" title="HTTPS, SSL, TLS & Certificate Authority Explained" allowfullscreen></iframe></div>
-          <h4>HTTPS, SSL, TLS &amp; Certificate Authority Explained</h4>
+          <h3>HTTPS, SSL, TLS &amp; Certificate Authority Explained</h3>
           <p class="fine">Laiture &middot; 40-minute deep dive &middot; the full mechanics of handshakes, intermediate CAs and trust chains, which is precisely the machinery eMudhra broke.</p>
         </div>
       </div>
