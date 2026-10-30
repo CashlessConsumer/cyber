@@ -433,11 +433,15 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-v
   color: var(--purple); border: 1px solid rgba(180,143,217,0.45);
   background: rgba(180,143,217,0.1); border-radius: 999px; padding: 3px 10px;
 }
-.dblink { margin-left: auto; font-family: var(--mono); font-size: 0.76rem; color: var(--muted-2); }
+.dblink { font-family: var(--mono); font-size: 0.76rem; color: var(--muted-2); }
+.dblink .chev { display: inline-block; }
+@media (prefers-reduced-motion: no-preference) { .dblink .chev { transition: transform .15s; } }
+.disclosure[open] .dblink .chev { transform: rotate(90deg); }
 .disclosure[open] .dblink { color: var(--accent); }
 .disclosure[open] summary { margin-bottom: 6px; }
-.disclosure .d-body .inner { padding-bottom: 18px; max-width: none; }
-.disclosure .d-body { color: var(--muted); max-width: 860px; }
+.disclosure .d-body .inner { padding-bottom: 18px; }
+.disclosure .d-body .inner > p { max-width: 820px; }
+.disclosure .d-body { color: var(--muted); }
 .disclosure .d-body p { margin: 0 0 10px; }
 .disclosure .d-body p:last-child { margin-bottom: 0; }
 .disclosure .d-body b { color: var(--fg-strong); }
