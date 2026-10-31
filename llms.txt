@@ -21,6 +21,7 @@ Method and ethics: [Method & Ethics](https://cyber.cashlessconsumer.in/pages/abo
 
 ## Our verifications — claims checked against evidence
 
+- [India banking & fintech cyber incident ledger](https://cyber.cashlessconsumer.in/pages/incidents.html): dated incidents with entities, tags, and media + our-page links; filterable by last 30 days and tags.
 - [Ransomware & leak-claim verification index](https://cyber.cashlessconsumer.in/pages/breaches.html): claims scored on a claimbook L0–L5 rubric, metadata-level only.
 - [Bank of Baroda breach](https://cyber.cashlessconsumer.in/pages/bob-breach.html): verification gateway — full investigation at [bobbreach.cashlessconsumer.in](https://bobbreach.cashlessconsumer.in). [Dodo Payments](https://cyber.cashlessconsumer.in/pages/dodo-breach.html) (DireWolf) also on the bench.
 - [CBI / SFMS incident](https://cyber.cashlessconsumer.in/pages/cbi-sfms.html): 187 unauthorised RTGS transfers, ₹13.97 crore, out of Central Bank of India's settlement account (Oct 2026); transfers corroborated, breach vector disputed — claims scored separately.
