@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bank of Baroda Breach — A Forensic Reconstruction · SecuriReport · CashlessConsumer</title>
+<meta name="description" content="Chaptered forensic report: metadata-only reconstruction of the Bank of Baroda leak — census, cartography, temporal archaeology, exfiltration economics, attribution analysis, control gaps. No personal data. Every figure traceable.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="inner">
+      <a href="../" class="brand">cyber<span class="muted">.cashlessconsumer.in</span></a>
+      <nav class="links">
+        <a href="bank-in-report.html">.bank.in report</a>
+        <a href="sharepoint-structural-gaps.html">SharePoint analysis</a>
+        <a href="cert-in-dotenv.html">CERT-In disclosures</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="page-hero">
+    <div class="inner">
+      <p class="kicker">Forensic reconstruction · updated 2026-10-05</p>
+      <h1>The Bank of Baroda breach, <span class="mono">reconstructed from its own shadow</span></h1>
+      <p class="lede">Between April and August 2026, the extortion group TripleX published a mirror of a
+      Bank of Baroda SharePoint file estate — 162,111 files, 1,065.8&nbsp;GB across 90 document libraries.
+      No filesystem metadata survives in the mirror. This report reconstructs what the estate <em>was</em>,
+      how it moved, and what the bank's own documents say about its controls — from filenames, folder
+      grammar and byte arithmetic alone. Every figure traces to a numbered entry in a local evidence
+      ledger; personal leaf data is excluded by design.</p>
+      <p class="pills"><span class="pill">162,111 files</span><span class="pill">1,065.8 GB</span><span class="pill">90 roots</span><span class="pill">EVID ledger: 246 entries</span><span class="pill">no PII</span></p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="inner prose">
+      <p class="muted">Contents —
+      <a href="#ch1">1 The incident</a> ·
+      <a href="#ch2">2 The dump, enumerated</a> ·
+      <a href="#ch3">3 What was exposed</a> ·
+      <a href="#ch4">4 The metadata reconstruction</a> ·
+      <a href="#ch5">5 The temporal floor</a> ·
+      <a href="#ch6">6 Attribution</a> ·
+      <a href="#ch7">7 The structural gap</a> ·
+      <a href="#ch8">8 The bank's own record</a> ·
+      <a href="#ch9">9 Disclosure vs record</a> ·
+      <a href="#ch10">10 Regulation and the consumer</a> ·
+      <a href="#ch11">11 Open questions</a> ·
+      <a href="#appa">Appendix A Methodology</a> ·
+      <a href="#appb">Appendix B Artifacts</a></p>
+    </div>
+  </section>
+
+  <section class="block" id="ch1">
+    <div class="inner">
+      <h2>Chapter 1 — The incident</h2>
+      <div class="prose">
+        <p>TripleX, a data-extortion outfit operating a leak-and-listing model, listed what it described as
+        Bank of Baroda data on 12 May 2026 and later served a browsable mirror of a file estate from an
+        onion service. The bank's securities filing of 27 July 2026 described a "potential business email
+        compromise" affecting a "small number of customers". CERT-In and RBI involvement followed within
+        days. The mirror went dark on 24 July 2026 and did not return during 30+ days of automated
+        monitoring.</p>
+        <div class="table-wrap">
+        <table>
+          <tr><th>Date (2026)</th><th>Event</th><th>Class</th></tr>
+          <tr><td>Feb–Apr</td><td>Backdoored app (WEF/KYC tooling) circulates on a Telegram channel; planted file observed dated 16 April</td><td>pre-incident</td></tr>
+          <tr><td>12 May</td><td>TripleX blog post + first dump snapshot (92,347 files / 9,783 dirs)</td><td>extortion begins</td></tr>
+          <tr><td>25 May</td><td>Open browsable mirror observed</td><td>escalation</td></tr>
+          <tr><td>24–25 Jun</td><td>Latest dated artefacts in corpus created (see Ch 5)</td><td>collection floor</td></tr>
+          <tr><td>26 Jul</td><td>Second snapshot: 159,469 files / 17,783 dirs</td><td>corpus growth</td></tr>
+          <tr><td>26 Jul</td><td>First press report (Reuters)</td><td>disclosure</td></tr>
+          <tr><td>27 Jul</td><td>Bank's exchange filing: "potential BEC", "no material impact"; stock falls ~2.1%</td><td>disclosure</td></tr>
+          <tr><td>31 Jul</td><td>CERT-In engagement reported; RBI monitoring reported; 6-hour incident clock examined</td><td>regulatory</td></tr>
+          <tr><td>4 Aug</td><td>Third snapshot: 162,111 files / 18,099 dirs; mirror offline from 24 Jul</td><td>final state</td></tr>
+        </table>
+        </div>
+        <p class="muted">The bank's stated 15 August 2025 initial-compromise date is TripleX's claim on its
+        extortion blog — nine months before the first listing. Unverified, and in tension with the corpus's
+        own collection floor (Ch 5).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="ch2">
+    <div class="inner">
+      <h2>Chapter 2 — The dump, enumerated</h2>
+      <div class="prose">
+        <p>Three crawler snapshots let the corpus's own growth be measured rather than taken from the
+        group's marketing:</p>
+        <div class="table-wrap">
+        <table>
+          <tr><th>Snapshot</th><th>Date</th><th>Files</th><th>Dirs</th><th>Δ</th></tr>
+          <tr><td>S1</td><td>12 May</td><td>92,347</td><td>9,783</td><td>initial listing dump</td></tr>
+          <tr><td>S2</td><td>26 Jul</td><td>159,469</td><td>17,783</td><td>+67,122 files, deeper traversal</td></tr>
+          <tr><td>S3</td><td>4 Aug</td><td>162,111</td><td>18,099</td><td>+2,642 — near-closed tree</td></tr>
+        </table>
+        </div>
+        <p>Declared size: 1,065.8&nbsp;GB — roughly 29% of the "3.7&nbsp;TB" the group claimed. The gap is a
+        found property of extortion pricing, not a measurement error: the inflation factor is ~3.4×.
+        Structure (below) and naming (Ch 4) identify the estate as an on-premises document-management
+        deployment — <span class="mono">Shared Documents/</span> libraries, group-site roots, personal
+        workspaces — mirrored as shadow copies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="ch3">
+    <div class="inner">
+      <h2>Chapter 3 — What was exposed</h2>
+      <div class="prose">
+        <p>Content findings come from a 91-file high-signal download set, distilled without exposing
+        personal data. Themes, in descending severity:</p>
+        <ul>
+          <li><strong>Identity and onboarding:</strong> a mule-account KYC ledger (9,504 rows, 32&nbsp;MB)
+          carrying 69,600+ ID-field instances (name, address, phone, email, PAN/Aadhaar-class fields);
+          AEPS customer complaint bundles; digital-onboarding audit packs.</li>
+          <li><strong>Credit book:</strong> an account-wise NPA ledger (March 2021, 713,742 rows ≈ ₹1.00
+          lakh crore) including 14,027 fraud-flagged accounts ≈ ₹31,987 crore — the bank's own
+          credit-quality record.</li>
+          <li><strong>Security operations:</strong> VAPT detail reports (KPMG observations, credential
+          material), IS-audit packs for overseas territories (Fiji, Uganda, UAE, Botswana, Mauritius,
+          Seychelles), a server-details workbook containing plaintext application credentials (counted,
+          never reproduced), FIM/patching correspondence.</li>
+          <li><strong>Governance:</strong> CBI FIR on alleged nepotistic transfers; compliance-forum
+          minutes; policy corpus (KYC/AML 2018+2021, DR/BCP, compliance policy).</li>
+          <li><strong>Inspection apparatus:</strong> zonal inspection packs naming 13 geographies; BoB
+          World special-audit waves; concurrent-audit findings.</li>
+          <li><strong>The NMC/Shetty record:</strong> nine documents naming the NMC/Shetty group —
+          including a 31 Dec 2018 Oman annual audit listing the group's hospital entity as the #9
+          territory borrower on a stale rating, seventeen months before the red-flag dated 10 May 2020,
+          and an inspection that began the day after Muddy Waters' December 2019 short report.</li>
+        </ul>
+        <p>The pattern across all six: <em>working paper</em> — audits, registers, complaint bundles — not
+        a core-banking extract. Core banking was, on this evidence, never the breached tier.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="ch4">
+    <div class="inner">
+      <h2>Chapter 4 — The metadata reconstruction <span class="muted">(novel chapter)</span></h2>
+      <div class="prose">
+        <p>The mirror exposes no filesystem timestamps, no ACLs, no ownership. It exposes names, paths,
+        sizes, structure. This chapter is the methodology and findings of squeezing a bank's internal
+        architecture out of those four properties — an L15 (depth-15) crawl, pseudonymized into a
+        redacted inventory, loaded into a DuckDB bench, and interrogated in eight passes. Nothing below
+        opens a single file.</p>
+
+        <h3>4.0 Method and its limits first</h3>
+        <p>Breadth-first enumeration to depth 15; convergence measured per level. L12→L15 contributed
+        under 0.3% of the corpus (+4 files at L15 itself), so the census describes ≥99.9% of the
+        <em>mirror</em>. Filenames parse to usable dates for only <strong>17.8%</strong> of files — every
+        temporal claim conditions on that subset, never extrapolates. A public inventory uses
+        pseudonymized leaf tokens; counts survive, identities do not. Four things metadata can never
+        prove: access, mtime, breach completeness, redaction fidelity. The full epistemics chapter is
+        reproduced in the project repository (M8).</p>
+
+        <h3>4.1 Census — the shape of the estate</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Measure</th><th>Value</th></tr>
+          <tr><td>Files / bytes / roots</td><td>162,111 / 1,065.8 GB / 90</td></tr>
+          <tr><td>Dominant type</td><td>PDF — 84,291 files (52.0%); 363 distinct extensions</td></tr>
+          <tr><td>Depth</td><td>median 5, p90 ≤ 7, max 14 — SharePoint-style trees</td></tr>
+          <tr><td>Heavy tail</td><td>top 1% of files carry 80.4% of bytes; median file 0.30 MB</td></tr>
+        </table></div>
+        <p>A document-heavy audit culture, not a data-platform culture: the bank's most digitized
+        workflow is its most audited one.</p>
+
+        <h3>4.2 Cartography — 90 roots, one org chart</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Unit class (naming-derived)</th><th>Roots</th><th>Files</th><th>GB</th></tr>
+          <tr><td>department-sharepoint</td><td>41</td><td>75,285</td><td>862.0</td></tr>
+          <tr><td>bobworld-audit</td><td>8</td><td>26,700</td><td>49.2</td></tr>
+          <tr><td>audit-other</td><td>16</td><td>25,689</td><td>46.0</td></tr>
+          <tr><td>zonal-inspection</td><td>12</td><td>18,230</td><td>38.3</td></tr>
+          <tr><td>personal-or-team-ws</td><td>11</td><td>15,385</td><td>69.1</td></tr>
+          <tr><td>risk-compliance</td><td>2</td><td>822</td><td>1.1</td></tr>
+        </table></div>
+        <p>One root — <span class="mono">VAReports</span> — holds 66.6% of all bytes (710.3&nbsp;GB,
+        18,066 files). A single document library outweighs the rest of the estate combined. Zonal
+        inspection grammar names 13 geographies. Surname-style roots sit beside department trees: shadow
+        personal folders on shared infrastructure — precisely the sprawl that turns one credential into a
+        corpus-wide breach. (Individual-named collections are counted here and analysed only in a
+        restricted dossier; this public report carries aggregates only.)</p>
+
+        <h3>4.3 Naming-grammar forensics</h3>
+        <p>Six pattern classes across 90 units: <span class="mono">other</span> 74.2%,
+        <span class="mono">numeric-id-name</span> 17.7%, <span class="mono">prefix-code</span> 6.2%,
+        <span class="mono">regulatory-audit-term</span> 1.7%, WhatsApp media 0.2%. Recurring
+        <span class="mono">gnrc_*_groupid</span> and <span class="mono">AuditInspectionZO*</span>
+        grammars mark centrally-provisioned templates instantiated per team and zone; personal
+        workspaces break the schemes — the unmanaged-endpoint signature.</p>
+
+        <h3>4.4 Temporal archaeology</h3>
+        <p>On the 17.8% dateable subset, the cadence shows a living estate: inspection cycles, year-end
+        closings (Dec 2023: 4,155; Dec 2025: 1,389) and a BoB World special-audit ridge (Apr 2025:
+        10,120 — the peak month). Units' last active months: department-sharepoint 2025-04,
+        risk-compliance 2025-07, personal workspaces 2023-04. The estate was working paper, not a cold
+        archive — and its freshness extends to within weeks of the leak window (Ch 5).</p>
+
+        <h3>4.5 Duplication topology</h3>
+        <p>10,656 duplicate clusters (normalized name + exact size) cover 28,182 files; redundant bytes
+        beyond first copy: 100.2&nbsp;GB (9.4%). The largest redundant artefacts are security tooling —
+        a Tenable Core ISO (10.75&nbsp;GB) stored twice, a 4.2&nbsp;GB pcap twice, Nessus feed archives
+        thrice. <strong>Zero files</strong> sit in folders named like backup directories: redundancy here
+        is manual copy-as-backup, not enterprise backup. Every duplicate is one more location that had to
+        be secured, and one more copy an intruder could take.</p>
+
+        <h3>4.6 Sensitivity surface (care tier)</h3>
+        <p>Eight filename-cue regex classes (Aadhaar, PAN, passport, voter-ID, ration card, driving
+        licence, KYC-set, photo/signature), aggregated with a k≥5 floor: 559 files (0.3%) carry at least
+        one ID-document cue — largest classes PAN (189) and KYC-set (175). Concentration pattern matters
+        more than counts: KYC evidence is smeared across audit packs, zonal returns and personal
+        workspaces. That is why a folder-tree leak becomes an identity-leak problem even when no identity
+        database was touched.</p>
+
+        <h3>4.7 Exfiltration economics</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Link</th><th>Full corpus</th><th>PDF core only</th></tr>
+          <tr><td>100 Mbps broadband</td><td>0.99 days (23.7 h)</td><td>3.2 h</td></tr>
+          <tr><td>1 Gbps office fiber</td><td>2.4 h</td><td>0.3 h</td></tr>
+        </table></div>
+        <p>Detection windows measured in weeks are irrelevant against exfiltration windows measured in
+        hours — the entire governance argument for egress monitoring, in one table.</p>
+
+        <h3>4.8 Post-series probes</h3>
+        <p>Three follow-on probes sharpen the picture. (1) <strong>Dual estate:</strong> byte-vs-count
+        divergence and UNC-style archive naming show at least two storage systems feeding one mirror —
+        a bulk file server plus SharePoint libraries. (2) <strong>Group-site census:</strong> the
+        <span class="mono">gnrc_&lt;team&gt;_groupid</span> grammar yields dozens of per-team group sites
+        with uniform templates — one grant on the parent covers them all. (3) <strong>The daily-series
+        clock:</strong> an MSME Digi-Udyam daily-report series (548 files, 513 filename-dated) stops at
+        24 June 2026 — five days after TripleX's listing — giving the collection floor of Ch 5.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="ch5">
+    <div class="inner">
+      <h2>Chapter 5 — The temporal floor</h2>
+      <div class="prose">
+        <p>Filename clocks beat press timelines. The latest dated artefacts: an mConnect Android build
+        stamped <strong>25 June 2026</strong>, and the Digi-Udyam daily series ending <strong>24 June
+        2026</strong>. If that series kept updating on the live system after 24 June — unobservable from
+        outside — the collection/exfiltration window collapses to <strong>~24–25 June 2026 ± days</strong>.
+        Either way, one property stands: collection <em>continued for roughly six weeks after</em> the
+        group's 12 May listing itself — consistent with TripleX's add-and-repost pattern on other
+        listings, and inconsistent with a single-day theft narrative.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="ch6">
+    <div class="inner">
+      <h2>Chapter 6 — Attribution: the insider question</h2>
+      <div class="prose">
+        <p>A source narrative holds that the breach originated with a disgruntled employee who posted a
+        SharePoint link in retaliation for a transfer. Tested against the corpus, five structural
+        findings bear on it:</p>
+        <ol>
+          <li><strong>Breadth:</strong> 90 roots across departments, zones, geographies — a
+          department-scoped grudge does not produce this denominator.</li>
+          <li><strong>Crawl signature:</strong> mirror growth (+67,122 files between snapshots) with
+          recursion to depth 15 is crawler behaviour, not manual browsing.</li>
+          <li><strong>Named collections:</strong> 11 surname-style roots (15,385 files) exist, but they
+          read as shadow workspaces, not targeted exfiltration; their mix matches the estate around
+          them.</li>
+          <li><strong>Dual estate:</strong> reaching the bulk file server requires different access than
+          the SharePoint tenancy — two credentials or two compromises, not one aggrieved link-post.</li>
+          <li><strong>Credential economics:</strong> the estate's own audit corpus documents shared and
+          plaintext credentials; a bought or phished credential is a sufficient explanation.</li>
+        </ol>
+        <p>A workforce-positioning test (public RTI salary disclosures, Dec 2025 vs Sep 2026) shows
+        26,438 posting changes across ~67,000 officers — 39% posting churn in nine months, with several
+        thousand punitive-signature moves (cross-state, urban→rural, pay cut). The test establishes that
+        <em>if</em> the source ever names a person, there is a dataset to check them against; it does not,
+        and cannot, name anyone by itself. <strong>Verdict: the insider narrative is unfalsifiable as
+        stated; the structural evidence favours credential compromise harvested by crawl, monetized via
+        the extortion channel.</strong> Person-level analysis is maintained in a restricted dossier and
+        intentionally absent from this report.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="ch7">
+    <div class="inner">
+      <h2>Chapter 7 — The structural gap</h2>
+      <div class="prose">
+        <p>Strip the incident away and a design property remains — pattern-level, vendor-generic
+        (<a href="sharepoint-structural-gaps.html">analysis</a>):</p>
+        <div class="table-wrap"><table>
+          <tr><th>Default</th><th>Consequence in this corpus</th></tr>
+          <tr><td>Default-allow inheritance; one grant = whole collection</td><td>90 roots, 16,474 directories under one read grant</td></tr>
+          <tr><td>Read = download</td><td>no stream-only tier; 1,065.8 GB leaves as copies</td></tr>
+          <tr><td>No per-file egress telemetry on the DMS tier</td><td>bulk crawls leave no file-level trail</td></tr>
+          <tr><td>Audit fields (created-by, modified-by, versions) absent from shadow copies</td><td>forensics starve: no mtime, no actor</td></tr>
+          <tr><td>Two-estate asymmetry</td><td>core banking hardened; document estate treated as plumbing</td></tr>
+        </table></div>
+        <p>None of this requires zero days. The ToolShell family (CVE-2025-53770 et al.) showed the
+        on-prem tier is a live national target — CISA's July 2025 emergency directive covered exactly
+        this class of server — but this reconstruction needs only a standing read grant and patience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="ch8">
+    <div class="inner">
+      <h2>Chapter 8 — The bank's own record, read from the leak</h2>
+      <div class="prose">
+        <p>The corpus contains the bank's own audit and compliance apparatus — an unusual vantage:
+        the institution assessing itself while the assessment sits inside the stolen mirror.</p>
+        <ul>
+          <li><strong>Process exists, at scale:</strong> TAM/TOM methodology docs, IT-security site
+          inventory (1,488 docs), 259 quarterly user-validation files, VAPT mastersheets with server
+          ownership and remediation triage (Critical/High/Medium/Low).</li>
+          <li><strong>Findings get negotiated:</strong> a draft IS-audit report shows management
+          requesting an observation's removal — the lifecycle underperforms the paperwork.</li>
+          <li><strong>Compensating controls are partial:</strong> file-integrity monitoring is scoped to
+          mobile-banking servers; the document estate has no equivalent visible control.</li>
+          <li><strong>Hygiene fails at the bottom:</strong> one spreadsheet of server details carries
+          plaintext application credentials — counted, never reproduced here.</li>
+        </ul>
+        <p>The picture is not absence of controls; it is controls that stop at the boundary of the tier
+        that actually leaked.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="ch9">
+    <div class="inner">
+      <h2>Chapter 9 — Disclosure vs record</h2>
+      <div class="prose">
+        <div class="table-wrap"><table>
+          <tr><th>Disclosure (27 Jul filing)</th><th>Measured record</th><th>Verdict</th></tr>
+          <tr><td>"Potential business email compromise"</td><td>corpus is a document-management mirror with a dual-estate signature; no mailbox artefacts</td><td>framing narrows the incident</td></tr>
+          <tr><td>"3.7 TB"</td><td>1,065.8 GB declared in mirror</td><td>the claim is TripleX's, inherited uncritically</td></tr>
+          <tr><td>"Small number of customers / no material impact"</td><td>mule-KYC ledger alone carries 69,600+ identity-field instances</td><td>contradicted by corpus</td></tr>
+          <tr><td>"Core banking not touched"</td><td>no core-banking extracts found in distill set</td><td>consistent — the one accurate claim</td></tr>
+        </table></div>
+        <p>SEBI LODR requires materiality disclosure; the filing chose the narrowest available frame.
+        CERT-In's six-hour rule turns on when the bank <em>knew</em> — a question the public record
+        cannot settle, and which the 12 May listing makes uncomfortable: the group was advertising the
+        estate for ten weeks before the filing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="ch10">
+    <div class="inner">
+      <h2>Chapter 10 — Regulation and the consumer</h2>
+      <div class="prose">
+        <p>The incident lands in a regulatory seam. CERT-In's 6-hour directive presumes detection; RBI's
+        cyber framework governs banking systems; SEBI LODR governs disclosure; the DPDP Act's breach
+        regime was not yet in force. The leaked tier — a document estate — belongs clearly to none, which
+        is precisely why the pattern repeats across Indian banking.</p>
+        <p>For the person whose data is in the corpus, the practical playbook:</p>
+        <ul>
+          <li>Assume the mule-KYC bundle means identity fields are circulating: watch for
+          onboarding-in-your-name fraud; pull free credit reports from all four bureaus; dispute unknown
+          accounts.</li>
+          <li>Phishing will now be <em>perfectly</em> targeted — callers will know your account, branch
+          and complaint history. Bank never verifies you by asking for OTPs; hang up and call the
+          printed number.</li>
+          <li>1930 (cyber fraud helpline) within the golden hour if money moves; complain at
+          cybercrime.gov.in.</li>
+          <li>The bank owes notification under its own fair-practice code and RBI's customer-protection
+          framework — ask for it in writing; the gap between the filing and the corpus is the complaint.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="ch11">
+    <div class="inner">
+      <h2>Chapter 11 — Open questions</h2>
+      <div class="prose">
+        <ul>
+          <li>Mirror offline since 24 July 2026; 30+ days of monitoring, no return. Claims about
+          "complete" contents are bounded by three snapshots of a mirror, not the original theft.</li>
+          <li>No mtime: chronology is filename-inferred and biased toward units that date documents.</li>
+          <li>The Digi-Udyam series continuity after 24 June is unobservable; organic pauses can mimic a
+          crawl cutoff.</li>
+          <li>Entry vector: TripleX claims a weak password on 15 Aug 2025; the corpus's dual-estate
+          signature needs at least two grants. Both may be true.</li>
+          <li>The insider narrative: unfalsifiable as stated, but falsifiable the day a name, posting or
+          date is supplied — the test dataset already exists.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="appa">
+    <div class="inner">
+      <h2>Appendix A — Methodology and evidence discipline</h2>
+      <div class="prose">
+        <p>Every quantitative claim in this report is registered in a local evidence ledger
+        (246 EVID/CTX entries) with claim text, source artefact (URL or hash-referenced local path),
+        verification status and date. Claims are graded L0–L5 (raw artefact → verified by independent
+        recompute); figures here sit at L2 (distilled from the artefact by us, recomputable) unless
+        marked as claim. Content analysis uses a 91-file high-signal download set processed through a
+        PII-stripping distillation pipeline (1,525 distilled files; 2.3&nbsp;GB → 5.9&nbsp;MB). The
+        public inventory is pseudonymized per a redaction manifest; aggregate cells below k=5 are
+        suppressed. Personal leaf data never appears in this report or its published figures.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="appb">
+    <div class="inner">
+      <h2>Appendix B — Artifacts and reproduction</h2>
+      <div class="prose">
+        <p>The reconstruction is a DuckDB bench over the redacted inventory
+        (<span class="mono">files_enriched</span>, 162,111 rows), with per-chapter recompute scripts
+        (census, cartography, naming, temporal, duplication, sensitivity, exfil, epistemics) and a
+        chapter series (M1–M8) in the project repository. The workforce-positioning test rebuilds from
+        two public RTI salary-disclosure PDFs. The three dump snapshots, onion-service monitoring state
+        (30+ days, down since 24 Jul) and the full claim ledger are preserved in the same repository.
+        The metadata chapter series: <span class="mono">pages/metadata-chapters/M1–M8</span>.</p>
+        <p class="muted">Related: <a href="sharepoint-structural-gaps.html">SharePoint, structurally
+        quiet — why this pattern is a design property</a> · <a href="bank-in-report.html">the .bank.in
+        namespace, measured</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>  <footer class="site-footer">
+    <div class="inner">
+      <p>CashlessConsumer · independent consumer collective · reconstruction from public leak mirrors and public records; no personal data reproduced · <a href="../">all investigations</a></p>
+    </div>
+  </footer>
+</body>
+</html>
