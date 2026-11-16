@@ -25,6 +25,7 @@ open letter and public-audit campaign are work products on top.
 | `pages/sharepoint-structural-gaps.html` | "SharePoint, Structurally Quiet" — on-prem SharePoint's exfiltration gap as design property (pattern-level, no incident referenced) |
 | `pages/emudhra.html` | eMudhra CA compromise — eight intermediate certificates with guessable private keys (Oct 2026); gateway to the full consumer investigation + statement + open letter |
 | `pages/npci-cl.html` | NPCI UPI Common Library — 17 APKs (2016–2026) reverse-engineered; expired signer certificates; verification kit at CashlessConsumer/npci-cl-evolution |
+| `pages/tn-rdpr-sna.html` | TN RDPR SNA heist (Oct 2026) — open investigation: ₹22.3 cr in health grants out of the department's Single Nodal Account; vendor portal (SQUAREUP FMS by LeadWinner Corp) verified from outside; RBI-perimeter analysis |
 | `pages/cbi-sfms.html` | Central Bank of India SFMS/RTGS incident (Oct 2026) — ₹13.97 cr in 187 unauthorised transfers; claim-level verification (transfers L4 corroborated / IFTAS-central-SFMS vector L1 disputed by IFTAS), disclosure-gap timeline, consumer explainer; 26 Oct: doors-and-keys section — RTGS Regs 4.21 access channels, IDRBT-CA CPS certificate/token rules, no public MFA mandate for SFMS consoles, one-bank estate documentation (BoB leak, aggregate) |
 | `pages/emudhra/` | Full eMudhra investigation site (self-contained brand): consumer guide, public statement, open letter, corporate history of eMudhra |
 | `pages/about.html` | Methodology, ethics, disclosure policy |
